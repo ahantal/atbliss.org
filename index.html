@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>@Bliss — Coming Soon</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #faf8f4;
+      color: #2c2a26;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1.5rem;
+    }
+
+    .lotus {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 2rem;
+      opacity: 0.85;
+    }
+
+    .site-name {
+      font-size: 2.6rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: #4a3f6b;
+      text-align: center;
+      margin-bottom: 0.4rem;
+    }
+
+    .tagline {
+      font-size: 1rem;
+      color: #888;
+      letter-spacing: 0.12em;
+      text-align: center;
+      text-transform: uppercase;
+      margin-bottom: 3rem;
+    }
+
+    .divider {
+      width: 60px;
+      height: 1px;
+      background: #c9bfdf;
+      margin: 0 auto 2.5rem;
+    }
+
+    .essence {
+      max-width: 640px;
+      text-align: center;
+      font-size: 1.1rem;
+      line-height: 1.85;
+      color: #3e3a34;
+      margin-bottom: 2.5rem;
+      font-style: italic;
+    }
+
+    .essence strong {
+      font-style: normal;
+      font-weight: normal;
+      color: #4a3f6b;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      justify-content: center;
+      max-width: 780px;
+      margin-bottom: 3rem;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid #e5dff0;
+      border-radius: 12px;
+      padding: 1.5rem 1.75rem;
+      max-width: 340px;
+      text-align: left;
+    }
+
+    .card-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #9b8fc0;
+      margin-bottom: 0.6rem;
+    }
+
+    .card-text {
+      font-size: 0.97rem;
+      line-height: 1.75;
+      color: #3e3a34;
+    }
+
+    .question-block {
+      max-width: 580px;
+      text-align: center;
+      background: #f2eef9;
+      border-radius: 14px;
+      padding: 2rem 2.25rem;
+      margin-bottom: 3rem;
+      border: 1px solid #d9d0ef;
+    }
+
+    .question-block p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #3e3a34;
+    }
+
+    .question-block em {
+      font-style: italic;
+      color: #4a3f6b;
+    }
+
+    .coming-soon {
+      font-size: 0.82rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #aaa;
+      text-align: center;
+    }
+
+    .dot {
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #c9bfdf;
+      margin: 0 6px;
+      vertical-align: middle;
+    }
+
+    footer {
+      margin-top: 3rem;
+      font-size: 0.8rem;
+      color: #bbb;
+      text-align: center;
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Lotus SVG icon -->
+  <svg class="lotus" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none">
+    <ellipse cx="50" cy="72" rx="22" ry="8" fill="#e5dff0"/>
+    <path d="M50 70 C44 55 28 48 26 35 C26 35 38 38 50 55 C62 38 74 35 74 35 C72 48 56 55 50 70Z" fill="#c9bfdf"/>
+    <path d="M50 70 C47 52 34 42 36 26 C36 26 45 32 50 50 C55 32 64 26 64 26 C66 42 53 52 50 70Z" fill="#a990cc"/>
+    <path d="M50 70 C48 54 42 44 44 30 C44 30 48 38 50 55 C52 38 56 30 56 30 C58 44 52 54 50 70Z" fill="#7b5ea7"/>
+    <ellipse cx="50" cy="69" rx="5" ry="4" fill="#4a3f6b"/>
+  </svg>
+
+  <h1 class="site-name">@Bliss</h1>
+  <p class="tagline">At Bliss Foundation</p>
+
+  <div class="divider"></div>
+
+  <p class="essence">
+    We believe every human being carries a <strong>divine, pure essence</strong> within — and that remembering this essence becomes possible through awareness, compassion, courage, and a sense of play.
+  </p>
+
+  <div class="cards">
+    <div class="card">
+      <div class="card-label">Mission</div>
+      <div class="card-text">
+        To create safe, playful, and inclusive spaces where people of all ages remember their pure inner essence, heal in community, and explore the shared wisdom of diverse traditions — awakening love, compassion, and oneness in everyday life.
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-label">Vision</div>
+      <div class="card-text">
+        A world where every human being feels deeply connected to themselves, to each other, and to the One — living with open hearts, courageous authenticity, and a shared sense of sacred unity beyond all labels, beliefs, and divisions.
+      </div>
+    </div>
+  </div>
+
+  <div class="question-block">
+    <p>
+      In every practice, every conversation, and every gathering, we ask ourselves a simple question:<br/><br/>
+      <em>"What do I not know — or not remember — that could bring me, and us, a little closer to the One, to love, and to truth... to Bliss?"</em>
+    </p>
+  </div>
+
+  <p class="coming-soon">
+    Our site is being lovingly built
+    <span class="dot"></span>
+    Come back soon
+  </p>
+
+  <footer>
+    &copy; 2025 At Bliss Foundation &nbsp;&middot;&nbsp; atbliss.org
+  </footer>
+
+</body>
+</html>
