@@ -3,201 +3,587 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>@Bliss — Coming Soon</title>
+  <title>At Bliss Foundation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    :root {
+      --gold: #c9a84c;
+      --gold-light: #e8cF88;
+      --deep: #0a0c14;
+      --deep2: #10131f;
+      --text: #e8e4dc;
+      --muted: #9a968f;
+      --border: rgba(201, 168, 76, 0.2);
+    }
+
+    html { scroll-behavior: smooth; }
+
     body {
-      font-family: 'Georgia', serif;
-      background-color: #faf8f4;
-      color: #2c2a26;
+      font-family: 'DM Sans', sans-serif;
+      background: var(--deep);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 3rem;
+      background: rgba(10, 12, 20, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      color: var(--gold-light);
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--text); }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--gold-light); }
+
+    /* HERO */
+    .hero {
+      position: relative;
       min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('Everyone_Connected.JPG');
+      background-size: cover;
+      background-position: center top;
+      filter: brightness(0.45) saturate(0.8);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(10,12,20,0.3) 0%,
+        rgba(10,12,20,0.1) 40%,
+        rgba(10,12,20,0.7) 80%,
+        rgba(10,12,20,1) 100%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      text-align: center;
+      max-width: 780px;
+      padding: 2rem;
+      animation: fadeUp 1.2s ease both;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: 0.02em;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: rgba(232, 228, 220, 0.75);
+      line-height: 1.8;
+      max-width: 540px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      padding: 0.85rem 2.4rem;
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      font-size: 0.78rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.25s, color 0.25s;
+    }
+
+    .hero-cta:hover {
+      background: var(--gold);
+      color: var(--deep);
+    }
+
+    /* DIVIDER */
+    .divider {
+      width: 1px;
+      height: 80px;
+      background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+      margin: 0 auto;
+    }
+
+    /* SECTIONS */
+    section { padding: 6rem 2rem; }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 300;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-body {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: rgba(232, 228, 220, 0.75);
+      max-width: 620px;
+    }
+
+    /* MISSION */
+    .mission {
+      background: var(--deep2);
+    }
+
+    .mission-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .mission-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-style: italic;
+      font-weight: 300;
+      line-height: 1.5;
+      color: var(--gold-light);
+      border-left: 1px solid var(--gold);
+      padding-left: 2rem;
+    }
+
+    /* PILLARS */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3.5rem;
+    }
+
+    .pillar {
+      padding: 2rem;
+      border: 1px solid var(--border);
+      position: relative;
+      transition: border-color 0.25s;
+    }
+
+    .pillar::before {
+      content: '';
+      position: absolute;
+      top: -1px; left: 2rem; right: 2rem;
+      height: 2px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .pillar:hover { border-color: rgba(201, 168, 76, 0.45); }
+    .pillar:hover::before { transform: scaleX(1); }
+
+    .pillar-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      font-weight: 300;
+      color: var(--border);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .pillar-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--gold-light);
+      margin-bottom: 0.75rem;
+    }
+
+    .pillar-text {
+      font-size: 0.9rem;
+      line-height: 1.75;
+      color: var(--muted);
+    }
+
+    /* VISION */
+    .vision {
+      background: var(--deep2);
+      text-align: center;
+    }
+
+    .vision .section-body {
+      margin: 0 auto;
+      text-align: left;
+      max-width: 700px;
+    }
+
+    /* FORM SECTION */
+    .connect {
+      background: var(--deep);
+    }
+
+    .connect-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .form-embed-wrapper {
+      border: 1px solid var(--border);
+      overflow: hidden;
+      background: rgba(255,255,255,0.03);
+      min-height: 520px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 3rem 1.5rem;
     }
 
-    .lotus {
-      width: 72px;
-      height: 72px;
-      margin: 0 auto 2rem;
-      opacity: 0.85;
-    }
-
-    .site-name {
-      font-size: 2.6rem;
-      font-weight: 400;
-      letter-spacing: 0.06em;
-      color: #4a3f6b;
+    .form-placeholder {
       text-align: center;
-      margin-bottom: 0.4rem;
+      padding: 3rem 2rem;
+      color: var(--muted);
     }
 
-    .tagline {
-      font-size: 1rem;
-      color: #888;
-      letter-spacing: 0.12em;
-      text-align: center;
-      text-transform: uppercase;
-      margin-bottom: 3rem;
+    .form-placeholder p {
+      font-size: 0.85rem;
+      line-height: 1.7;
+      margin-bottom: 0.5rem;
     }
 
-    .divider {
-      width: 60px;
-      height: 1px;
-      background: #c9bfdf;
-      margin: 0 auto 2.5rem;
+    .form-placeholder code {
+      font-size: 0.75rem;
+      background: rgba(201,168,76,0.1);
+      color: var(--gold);
+      padding: 0.2rem 0.5rem;
+      border-radius: 2px;
+      display: block;
+      margin-top: 1rem;
     }
 
-    .essence {
-      max-width: 640px;
-      text-align: center;
-      font-size: 1.1rem;
-      line-height: 1.85;
-      color: #3e3a34;
-      margin-bottom: 2.5rem;
-      font-style: italic;
-    }
+    /* Replace the above with your iframe: */
+    /* .form-embed-wrapper iframe {
+         width: 100%;
+         height: 600px;
+         border: none;
+       } */
 
-    .essence strong {
-      font-style: normal;
-      font-weight: normal;
-      color: #4a3f6b;
-    }
-
-    .cards {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.25rem;
-      justify-content: center;
-      max-width: 780px;
-      margin-bottom: 3rem;
-    }
-
-    .card {
-      background: #fff;
-      border: 1px solid #e5dff0;
-      border-radius: 12px;
-      padding: 1.5rem 1.75rem;
-      max-width: 340px;
-      text-align: left;
-    }
-
-    .card-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #9b8fc0;
-      margin-bottom: 0.6rem;
-    }
-
-    .card-text {
-      font-size: 0.97rem;
-      line-height: 1.75;
-      color: #3e3a34;
-    }
-
-    .question-block {
-      max-width: 580px;
-      text-align: center;
-      background: #f2eef9;
-      border-radius: 14px;
-      padding: 2rem 2.25rem;
-      margin-bottom: 3rem;
-      border: 1px solid #d9d0ef;
-    }
-
-    .question-block p {
-      font-size: 1.05rem;
-      line-height: 1.8;
-      color: #3e3a34;
-    }
-
-    .question-block em {
-      font-style: italic;
-      color: #4a3f6b;
-    }
-
-    .coming-soon {
-      font-size: 0.82rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: #aaa;
-      text-align: center;
-    }
-
-    .dot {
-      display: inline-block;
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: #c9bfdf;
-      margin: 0 6px;
-      vertical-align: middle;
-    }
-
+    /* FOOTER */
     footer {
-      margin-top: 3rem;
-      font-size: 0.8rem;
-      color: #bbb;
-      text-align: center;
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: var(--gold-light);
+      letter-spacing: 0.1em;
+    }
+
+    .footer-copy {
+      font-size: 0.75rem;
+      color: var(--muted);
       letter-spacing: 0.05em;
+    }
+
+    footer nav a {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-left: 2rem;
+      transition: color 0.2s;
+    }
+
+    footer nav a:hover { color: var(--gold-light); }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .mission-grid, .pillars-grid, .connect-grid { grid-template-columns: 1fr; }
+      section { padding: 4rem 1.5rem; }
+      footer { flex-direction: column; gap: 1.5rem; text-align: center; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Lotus SVG icon -->
-  <svg class="lotus" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none">
-    <ellipse cx="50" cy="72" rx="22" ry="8" fill="#e5dff0"/>
-    <path d="M50 70 C44 55 28 48 26 35 C26 35 38 38 50 55 C62 38 74 35 74 35 C72 48 56 55 50 70Z" fill="#c9bfdf"/>
-    <path d="M50 70 C47 52 34 42 36 26 C36 26 45 32 50 50 C55 32 64 26 64 26 C66 42 53 52 50 70Z" fill="#a990cc"/>
-    <path d="M50 70 C48 54 42 44 44 30 C44 30 48 38 50 55 C52 38 56 30 56 30 C58 44 52 54 50 70Z" fill="#7b5ea7"/>
-    <ellipse cx="50" cy="69" rx="5" ry="4" fill="#4a3f6b"/>
-  </svg>
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">At Bliss <span>Foundation</span></a>
+    <ul class="nav-links">
+      <li><a href="#mission">Mission</a></li>
+      <li><a href="#pillars">Our Work</a></li>
+      <li><a href="#vision">Vision</a></li>
+      <li><a href="#connect">Connect</a></li>
+    </ul>
+  </nav>
 
-  <h1 class="site-name">@Bliss</h1>
-  <p class="tagline">At Bliss Foundation</p>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">At Bliss Foundation &nbsp;·&nbsp; atbliss.org</p>
+      <h1 class="hero-title">
+        Everyone<br /><em>Connected</em>
+      </h1>
+      <p class="hero-sub">
+        A foundation devoted to cultivating inner peace, human connection,
+        and collective flourishing — so that bliss is not a destination, but a way of being.
+      </p>
+      <a href="#connect" class="hero-cta">Get Involved</a>
+    </div>
+  </section>
 
   <div class="divider"></div>
 
-  <p class="essence">
-    We believe every human being carries a <strong>divine, pure essence</strong> within — and that remembering this essence becomes possible through awareness, compassion, courage, and a sense of play.
-  </p>
-
-  <div class="cards">
-    <div class="card">
-      <div class="card-label">Mission</div>
-      <div class="card-text">
-        To create safe, playful, and inclusive spaces where people of all ages remember their pure inner essence, heal in community, and explore the shared wisdom of diverse traditions — awakening love, compassion, and oneness in everyday life.
+  <!-- MISSION -->
+  <section class="mission" id="mission">
+    <div class="section-inner">
+      <div class="mission-grid">
+        <div class="reveal">
+          <p class="section-label">Our Mission</p>
+          <h2 class="section-title">Rooted in the belief that wellbeing belongs to everyone</h2>
+          <p class="section-body">
+            At Bliss Foundation exists to bridge the gap between inner transformation
+            and outer impact. We believe that when individuals experience true wellbeing —
+            emotionally, spiritually, and communally — the ripple extends outward,
+            touching families, neighborhoods, and the world.
+          </p>
+          <br />
+          <p class="section-body">
+            Through programs, partnerships, and presence, we create the conditions
+            for people to thrive — not despite their circumstances, but through them.
+          </p>
+        </div>
+        <div class="reveal" style="transition-delay: 0.15s;">
+          <blockquote class="mission-quote">
+            "Bliss is not found at the end of a journey —<br />
+            it is the quality of the journey itself."
+          </blockquote>
+        </div>
       </div>
     </div>
-    <div class="card">
-      <div class="card-label">Vision</div>
-      <div class="card-text">
-        A world where every human being feels deeply connected to themselves, to each other, and to the One — living with open hearts, courageous authenticity, and a shared sense of sacred unity beyond all labels, beliefs, and divisions.
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- PILLARS -->
+  <section id="pillars">
+    <div class="section-inner">
+      <p class="section-label reveal">Our Work</p>
+      <h2 class="section-title reveal">Three pillars of transformation</h2>
+
+      <div class="pillars-grid">
+        <div class="pillar reveal">
+          <div class="pillar-num">01</div>
+          <div class="pillar-title">Inner Wellbeing</div>
+          <p class="pillar-text">
+            Mindfulness, healing, and personal growth programs that help individuals
+            reconnect with themselves — their breath, their body, their purpose.
+          </p>
+        </div>
+        <div class="pillar reveal" style="transition-delay: 0.1s;">
+          <div class="pillar-num">02</div>
+          <div class="pillar-title">Human Connection</div>
+          <p class="pillar-text">
+            Spaces and experiences that bring people together across difference —
+            fostering belonging, empathy, and the understanding that we are more
+            alike than we are apart.
+          </p>
+        </div>
+        <div class="pillar reveal" style="transition-delay: 0.2s;">
+          <div class="pillar-num">03</div>
+          <div class="pillar-title">Community Impact</div>
+          <p class="pillar-text">
+            Initiatives that translate personal transformation into collective action,
+            addressing the root causes of disconnection in our communities.
+          </p>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <div class="question-block">
-    <p>
-      In every practice, every conversation, and every gathering, we ask ourselves a simple question:<br/><br/>
-      <em>"What do I not know — or not remember — that could bring me, and us, a little closer to the One, to love, and to truth... to Bliss?"</em>
-    </p>
-  </div>
+  <!-- VISION -->
+  <section class="vision" id="vision">
+    <div class="section-inner">
+      <p class="section-label reveal">Our Vision</p>
+      <h2 class="section-title reveal">A world where every person knows bliss</h2>
+      <p class="section-body reveal" style="transition-delay: 0.1s;">
+        We envision a world in which the experience of deep peace and genuine joy is
+        not the privilege of a few but the birthright of all. A world where communities
+        are woven together by care, where individuals are seen and supported, and where
+        the light that radiates from one soul has the power to illuminate countless others.
+      </p>
+      <br />
+      <p class="section-body reveal" style="transition-delay: 0.18s;">
+        That is the world At Bliss Foundation is building — one connection at a time.
+      </p>
+    </div>
+  </section>
 
-  <p class="coming-soon">
-    Our site is being lovingly built
-    <span class="dot"></span>
-    Come back soon
-  </p>
+  <!-- CONNECT / FORM -->
+  <section class="connect" id="connect">
+    <div class="section-inner">
+      <div class="connect-grid">
+        <div>
+          <p class="section-label reveal">Connect</p>
+          <h2 class="section-title reveal">Be part of something greater</h2>
+          <p class="section-body reveal" style="transition-delay:0.1s;">
+            Whether you are looking to volunteer, partner, donate, or simply learn more —
+            we would love to hear from you. Fill out the form and a member of our team
+            will be in touch.
+          </p>
+          <br />
+          <p class="section-body reveal" style="transition-delay:0.15s; font-size: 0.85rem;">
+            You can also reach us directly at<br />
+            <span style="color: var(--gold-light);">hello@atbliss.org</span>
+          </p>
+        </div>
 
+        <!-- GOOGLE FORM EMBED — replace the src with your Google Form embed URL -->
+        <div class="form-embed-wrapper reveal" style="transition-delay:0.2s;">
+
+          <!--
+            PASTE YOUR GOOGLE FORM EMBED CODE HERE.
+            Replace everything between these comments with:
+
+            <iframe
+              src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true"
+              width="100%"
+              height="600"
+              frameborder="0"
+              marginheight="0"
+              marginwidth="0"
+              style="border:none; display:block;">
+              Loading…
+            </iframe>
+          -->
+
+          <div class="form-placeholder">
+            <p>Your Google Form will appear here.</p>
+            <p>Paste your Google Form <strong>embed code</strong><br />between the comment tags above.</p>
+            <code>Google Form embed goes here</code>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
-    &copy; 2025 At Bliss Foundation &nbsp;&middot;&nbsp; atbliss.org
+    <div class="footer-logo">At Bliss Foundation</div>
+    <p class="footer-copy">&copy; 2025 At Bliss Foundation · atbliss.org</p>
+    <nav>
+      <a href="#mission">Mission</a>
+      <a href="#pillars">Work</a>
+      <a href="#connect">Contact</a>
+    </nav>
   </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
 
 </body>
 </html>
