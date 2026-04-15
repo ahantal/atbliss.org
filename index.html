@@ -297,11 +297,7 @@
       border: 1px solid var(--border);
       overflow: hidden;
       background: rgba(255,255,255,0.03);
-      min-height: 520px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      min-height: 1126px;
     }
 
     .form-placeholder {
@@ -385,11 +381,73 @@
       transform: none;
     }
 
+    /* MANIFESTO */
+    .manifesto {
+      background: var(--deep);
+    }
+
+    .manifesto-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .manifesto-block {
+      padding: 2rem;
+      border: 1px solid var(--border);
+      position: relative;
+    }
+
+    .manifesto-block::after {
+      content: '';
+      position: absolute;
+      bottom: -1px; left: 2rem; right: 2rem;
+      height: 1px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .manifesto-block:hover::after { transform: scaleX(1); }
+
+    .manifesto-text {
+      font-size: 1rem;
+      line-height: 1.9;
+      color: rgba(232, 228, 220, 0.75);
+    }
+
+    .manifesto-question {
+      border-top: 1px solid var(--border);
+      padding-top: 3rem;
+      text-align: center;
+    }
+
+    .manifesto-q-label {
+      font-size: 0.78rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .manifesto-q-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-style: italic;
+      font-weight: 300;
+      line-height: 1.6;
+      color: var(--gold-light);
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
     /* RESPONSIVE */
     @media (max-width: 768px) {
       nav { padding: 1rem 1.5rem; }
       .nav-links { display: none; }
-      .mission-grid, .pillars-grid, .connect-grid { grid-template-columns: 1fr; }
+      .mission-grid, .pillars-grid, .manifesto-grid, .connect-grid { grid-template-columns: 1fr; }
       section { padding: 4rem 1.5rem; }
       footer { flex-direction: column; gap: 1.5rem; text-align: center; }
     }
@@ -402,8 +460,9 @@
     <a href="#" class="nav-logo">At Bliss <span>Foundation</span></a>
     <ul class="nav-links">
       <li><a href="#mission">Mission</a></li>
-      <li><a href="#pillars">Our Work</a></li>
       <li><a href="#vision">Vision</a></li>
+      <li><a href="#manifesto">Manifesto</a></li>
+      <li><a href="#pillars">Our Work</a></li>
       <li><a href="#connect">Connect</a></li>
     </ul>
   </nav>
@@ -418,8 +477,8 @@
         Everyone<br /><em>Connected</em>
       </h1>
       <p class="hero-sub">
-        A foundation devoted to cultivating inner peace, human connection,
-        and collective flourishing — so that bliss is not a destination, but a way of being.
+        Safe, playful, and inclusive spaces where people of all ages remember their pure inner essence,
+        heal in community, and explore the shared wisdom of diverse traditions.
       </p>
       <a href="#connect" class="hero-cta">Get Involved</a>
     </div>
@@ -433,23 +492,17 @@
       <div class="mission-grid">
         <div class="reveal">
           <p class="section-label">Our Mission</p>
-          <h2 class="section-title">Rooted in the belief that wellbeing belongs to everyone</h2>
+          <h2 class="section-title">Safe, playful, and inclusive spaces for all</h2>
           <p class="section-body">
-            At Bliss Foundation exists to bridge the gap between inner transformation
-            and outer impact. We believe that when individuals experience true wellbeing —
-            emotionally, spiritually, and communally — the ripple extends outward,
-            touching families, neighborhoods, and the world.
-          </p>
-          <br />
-          <p class="section-body">
-            Through programs, partnerships, and presence, we create the conditions
-            for people to thrive — not despite their circumstances, but through them.
+            To create safe, playful, and inclusive spaces where people of all ages remember
+            their pure inner essence, heal in community, and explore the shared wisdom of
+            diverse traditions — awakening love, compassion, and oneness in everyday life.
           </p>
         </div>
         <div class="reveal" style="transition-delay: 0.15s;">
           <blockquote class="mission-quote">
-            "Bliss is not found at the end of a journey —<br />
-            it is the quality of the journey itself."
+            "Awakening love, compassion, and oneness<br />
+            in everyday life."
           </blockquote>
         </div>
       </div>
@@ -462,32 +515,32 @@
   <section id="pillars">
     <div class="section-inner">
       <p class="section-label reveal">Our Work</p>
-      <h2 class="section-title reveal">Three pillars of transformation</h2>
+      <h2 class="section-title reveal">Three pillars of re-membering</h2>
 
       <div class="pillars-grid">
         <div class="pillar reveal">
           <div class="pillar-num">01</div>
-          <div class="pillar-title">Inner Wellbeing</div>
+          <div class="pillar-title">Pure Inner Essence</div>
           <p class="pillar-text">
-            Mindfulness, healing, and personal growth programs that help individuals
-            reconnect with themselves — their breath, their body, their purpose.
+            Awareness, compassion, courage, and play — helping every person of every age
+            reconnect with the divine essence they carry within.
           </p>
         </div>
         <div class="pillar reveal" style="transition-delay: 0.1s;">
           <div class="pillar-num">02</div>
-          <div class="pillar-title">Human Connection</div>
+          <div class="pillar-title">Shared Wisdom</div>
           <p class="pillar-text">
-            Spaces and experiences that bring people together across difference —
-            fostering belonging, empathy, and the understanding that we are more
-            alike than we are apart.
+            Exploring diverse religions, philosophies, and ancient traditions not as
+            competing systems, but as different paths opening to the same Truth —
+            revealing the bridges between them.
           </p>
         </div>
         <div class="pillar reveal" style="transition-delay: 0.2s;">
           <div class="pillar-num">03</div>
-          <div class="pillar-title">Community Impact</div>
+          <div class="pillar-title">Healing in Community</div>
           <p class="pillar-text">
-            Initiatives that translate personal transformation into collective action,
-            addressing the root causes of disconnection in our communities.
+            Gatherings where children, parents, and all seekers show up as they are,
+            without judgment — allowing heart, mind, and body to heal and expand together.
           </p>
         </div>
       </div>
@@ -498,17 +551,66 @@
   <section class="vision" id="vision">
     <div class="section-inner">
       <p class="section-label reveal">Our Vision</p>
-      <h2 class="section-title reveal">A world where every person knows bliss</h2>
+      <h2 class="section-title reveal">A world where every human being feels deeply connected</h2>
       <p class="section-body reveal" style="transition-delay: 0.1s;">
-        We envision a world in which the experience of deep peace and genuine joy is
-        not the privilege of a few but the birthright of all. A world where communities
-        are woven together by care, where individuals are seen and supported, and where
-        the light that radiates from one soul has the power to illuminate countless others.
+        A world where every human being feels deeply connected to themselves, to each other,
+        and to the One — living with open hearts, courageous authenticity, and a shared sense
+        of sacred unity beyond all labels, beliefs, and divisions.
       </p>
-      <br />
-      <p class="section-body reveal" style="transition-delay: 0.18s;">
-        That is the world At Bliss Foundation is building — one connection at a time.
-      </p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- MANIFESTO -->
+  <section class="manifesto" id="manifesto">
+    <div class="section-inner">
+      <p class="section-label reveal">Manifesto</p>
+      <h2 class="section-title reveal">What we believe</h2>
+
+      <div class="manifesto-grid">
+
+        <div class="manifesto-block reveal">
+          <p class="manifesto-text">
+            We believe every human being carries a divine, pure essence within — and that
+            remembering this essence becomes possible through awareness, compassion, courage,
+            and a sense of play.
+          </p>
+        </div>
+
+        <div class="manifesto-block reveal" style="transition-delay:0.1s;">
+          <p class="manifesto-text">
+            We approach different religions, philosophies, and ancient wisdoms not as competing
+            systems, but as different paths opening to the same Truth — and we seek to reveal
+            the bridges between them.
+          </p>
+        </div>
+
+        <div class="manifesto-block reveal" style="transition-delay:0.18s;">
+          <p class="manifesto-text">
+            @Bliss does not seek to replace any religion or tradition. It exists to make visible
+            the consciousness of Oneness and universal compassion that lives at the heart of them all.
+          </p>
+        </div>
+
+        <div class="manifesto-block reveal" style="transition-delay:0.26s;">
+          <p class="manifesto-text">
+            @Bliss is a space of re-membering together, where children, parents, and all seekers
+            can show up as they are, without judgment — and allow heart, mind, and body to heal
+            and expand together.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="manifesto-question reveal" style="transition-delay:0.3s;">
+        <p class="manifesto-q-label">In every practice, every conversation, every gathering, we ask:</p>
+        <blockquote class="manifesto-q-text">
+          "What do I not know — or not remember — to bring me, and us,
+          a little closer to the One, to love, and to truth. To Bliss?"
+        </blockquote>
+      </div>
+
     </div>
   </section>
 
@@ -534,27 +636,16 @@
         <!-- GOOGLE FORM EMBED — replace the src with your Google Form embed URL -->
         <div class="form-embed-wrapper reveal" style="transition-delay:0.2s;">
 
-          <!--
-            PASTE YOUR GOOGLE FORM EMBED CODE HERE.
-            Replace everything between these comments with:
-
-            <iframe
-              src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true"
-              width="100%"
-              height="600"
-              frameborder="0"
-              marginheight="0"
-              marginwidth="0"
-              style="border:none; display:block;">
-              Loading…
-            </iframe>
-          -->
-
-          <div class="form-placeholder">
-            <p>Your Google Form will appear here.</p>
-            <p>Paste your Google Form <strong>embed code</strong><br />between the comment tags above.</p>
-            <code>Google Form embed goes here</code>
-          </div>
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLScWPSA1wNFi5MClaf_Vl8btcdyq4uLEG7zjgnB9Z4i0wD95rw/viewform?embedded=true"
+            width="100%"
+            height="1126"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+            style="border:none; display:block;">
+            Loading…
+          </iframe>
 
         </div>
       </div>
@@ -567,8 +658,9 @@
     <p class="footer-copy">&copy; 2025 At Bliss Foundation · atbliss.org</p>
     <nav>
       <a href="#mission">Mission</a>
-      <a href="#pillars">Work</a>
-      <a href="#connect">Contact</a>
+      <a href="#vision">Vision</a>
+      <a href="#manifesto">Manifesto</a>
+      <a href="#connect">Connect</a>
     </nav>
   </footer>
 
