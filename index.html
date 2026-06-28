@@ -299,34 +299,6 @@
       max-width: 640px;
     }
 
-    /* ── ABOUT ── */
-    .about { background: var(--deep2); }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6rem;
-      align-items: center;
-    }
-
-    .about-img {
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      background: linear-gradient(145deg, rgba(201,168,76,0.07) 0%, rgba(10,12,20,0.7) 100%);
-      border: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--muted);
-      font-size: 0.72rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-    }
-
-    .about-body { margin-top: 1.75rem; }
-    .about-body p { margin-bottom: 1.25rem; }
-    .about-body p:last-child { margin-bottom: 0; }
-
     /* ── MISSION / VISION ── */
     .mission { background: var(--deep); }
 
@@ -1064,7 +1036,6 @@
 
       section { padding: 5rem 1.5rem; }
 
-      .about-grid,
       .mission-grid,
       .pillars-grid,
       .community-grid,
@@ -1102,7 +1073,6 @@
   <nav id="main-nav">
     <a href="#" class="nav-logo"><img src="images/AtBlissLogo.png" alt="At Bliss Foundation" /></a>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
       <li><a href="#pillars">Our Work</a></li>
       <li><a href="#healing">Healing Arts</a></li>
       <li><a href="#chapters">Chapters</a></li>
@@ -1117,7 +1087,6 @@
 
   <!-- MOBILE NAV -->
   <div class="nav-mobile" id="mobile-nav" role="dialog" aria-label="Navigation">
-    <a href="#about"      onclick="closeNav()">About</a>
     <a href="#mission"    onclick="closeNav()">Mission &amp; Vision</a>
     <a href="#pillars"    onclick="closeNav()">The Four Pillars</a>
     <a href="#healing"    onclick="closeNav()">Healing Arts</a>
@@ -1143,34 +1112,6 @@
       <div class="hero-actions">
         <a href="#retreat" class="btn btn-primary">Retreat · January 2027</a>
         <a href="#connect" class="btn btn-outline">Get Involved</a>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <div class="section-inner">
-      <div class="about-grid">
-        <div class="reveal">
-          <div class="about-img">Founder Portrait</div>
-        </div>
-        <div>
-          <p class="section-label reveal">Our Story</p>
-          <h2 class="section-title reveal">The Human Origin of @Bliss</h2>
-          <div class="about-body section-body reveal" style="transition-delay:0.1s; max-width:none;">
-            <p>
-              [Founder story content to be confirmed. This section will share the personal journey and lived experience that gave rise to At Bliss Foundation — what was searched for, what was found, and what called for sharing.]
-            </p>
-            <p>
-              @Bliss was born from a deep personal inquiry — one that led across traditions, practices, and communities — and from the recognition that the longing for connection, healing, and remembrance is universal.
-            </p>
-            <p>
-              What began as a personal search became a shared calling.
-            </p>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -1442,7 +1383,7 @@
           <div class="chapter-inner">
             <div>
               <div class="chapter-tag">Chapter 04</div>
-              <div class="chapter-name">Turkey<br /><span class="chapter-country">Anatolia</span></div>
+              <div class="chapter-name">Türkiye<br /><span class="chapter-country">Anatolia</span></div>
               <p class="chapter-desc">Ancient crossroads of East and West. Sufi tradition, Ottoman mysticism, Rumi's homeland. Where the path to the One has been walked for centuries.</p>
             </div>
             <span class="chapter-status">Coming Soon</span>
@@ -1633,7 +1574,6 @@
       <div>
         <div class="footer-col-title">Foundation</div>
         <ul class="footer-links">
-          <li><a href="#about">About</a></li>
           <li><a href="#mission">Mission &amp; Vision</a></li>
           <li><a href="#pillars">The Four Pillars</a></li>
           <li><a href="#manifesto">Manifesto</a></li>
@@ -1656,7 +1596,7 @@
           <li><a href="#chapters">Virginia, USA</a></li>
           <li><a href="#chapters">St. Thomas, USVI</a></li>
           <li><a href="#chapters">Norway — Coming Soon</a></li>
-          <li><a href="#chapters">Turkey — Coming Soon</a></li>
+          <li><a href="#chapters">Türkiye — Coming Soon</a></li>
         </ul>
       </div>
     </div>
