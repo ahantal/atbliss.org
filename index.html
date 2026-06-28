@@ -299,6 +299,19 @@
       max-width: 640px;
     }
 
+    /* ── VIBRATION ── */
+    .vibration { background: var(--deep2); }
+
+    .vibration .section-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      margin-bottom: 1.75rem;
+    }
+
+    .vibration .section-body {
+      max-width: 780px;
+      font-size: 1.05rem;
+    }
+
     /* ── MISSION / VISION ── */
     .mission { background: var(--deep); }
 
@@ -519,7 +532,7 @@
 
     .event-row {
       display: grid;
-      grid-template-columns: 110px 1fr auto;
+      grid-template-columns: 130px 1fr;
       gap: 2.5rem;
       align-items: center;
       padding: 1.75rem 0;
@@ -817,6 +830,51 @@
       color: var(--muted);
     }
 
+    /* ── FOUNDER ── */
+    .founder { background: var(--deep3); }
+
+    .founder-grid {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .founder-photo {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      border: 1px solid var(--border);
+    }
+
+    .founder-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 300;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+      line-height: 1.1;
+    }
+
+    .founder-role {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2rem;
+    }
+
+    .founder-bio p {
+      font-size: 0.93rem;
+      line-height: 1.9;
+      color: rgba(232, 228, 220, 0.72);
+      margin-bottom: 1.25rem;
+    }
+
+    .founder-bio p:last-child { margin-bottom: 0; }
+
     /* ── MANIFESTO ── */
     .manifesto { background: var(--deep2); }
 
@@ -1041,13 +1099,14 @@
       .community-grid,
       .chapters-grid,
       .retreat-grid,
+      .founder-grid,
       .connect-grid { grid-template-columns: 1fr; gap: 3rem; }
 
       .modality-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
       .facilitator-grid { grid-template-columns: 1fr; gap: 1rem; }
       .manifesto-grid { grid-template-columns: 1fr; }
 
-      .event-row { grid-template-columns: 88px 1fr; }
+      .event-row { grid-template-columns: 100px 1fr; }
       .event-location { display: none; }
 
       .retreat-rings { display: none; }
@@ -1075,8 +1134,10 @@
     <ul class="nav-links">
       <li><a href="#pillars">Our Work</a></li>
       <li><a href="#healing">Healing Arts</a></li>
+      <li><a href="#community">Community Life</a></li>
       <li><a href="#chapters">Chapters</a></li>
       <li><a href="#retreat">Retreat 2027</a></li>
+      <li><a href="#founder">Founder</a></li>
       <li><a href="#manifesto">Manifesto</a></li>
       <li><a href="#connect" class="nav-cta">Connect</a></li>
     </ul>
@@ -1094,6 +1155,7 @@
     <a href="#upcoming"   onclick="closeNav()">Sessions &amp; Events</a>
     <a href="#chapters"   onclick="closeNav()">Chapters</a>
     <a href="#retreat"    onclick="closeNav()">Retreat 2027</a>
+    <a href="#founder"    onclick="closeNav()">Founder</a>
     <a href="#manifesto"  onclick="closeNav()">Manifesto</a>
     <a href="#support"    onclick="closeNav()">Support</a>
     <a href="#connect"    onclick="closeNav()">Connect</a>
@@ -1104,15 +1166,26 @@
     <div class="hero-bg"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <div class="hero-logo-wrap"><img src="images/AtBlissLogo.png" alt="At Bliss Foundation" class="hero-logo-img" /></div>
-      <h1 class="hero-title">What matters is<br /><em>how you vibrate</em></h1>
+      <h1 class="hero-title"><em>Can you feel it?</em></h1>
       <p class="hero-sub">
-        Your body is a resonance calibrator. How you vibrate shapes how you feel, how you heal, and how you connect. At Bliss creates spaces where people of all ages remember their frequency — and return to universal love, to oneness, to themselves.
+        You may not have the words for it yet. Only a feeling. A pull toward something you cannot name, a sense that beneath all the chaos and the noise and the pain, something beautiful is waiting. If you have ever felt that and wondered why, or what it means, or what to do next, you are exactly where you need to be. Welcome.
       </p>
       <div class="hero-actions">
         <a href="#retreat" class="btn btn-primary">Retreat · January 2027</a>
         <a href="#connect" class="btn btn-outline">Get Involved</a>
       </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- VIBRATION -->
+  <section class="vibration" id="vibration">
+    <div class="section-inner">
+      <h2 class="section-title reveal">What matters is how you vibrate</h2>
+      <p class="section-body reveal" style="transition-delay:0.1s;">
+        Human being is a resonance calibrator. Everything begins in the body and in what you think. The state of your body and the quality of your thoughts shape how you feel. And how you feel determines how you vibrate. Your vibration is not something that happens to you. It is the sum of everything you carry and everything you choose. This is where the magic begins.
+      </p>
     </div>
   </section>
 
@@ -1124,22 +1197,26 @@
       <div class="mission-grid">
         <div class="reveal">
           <p class="section-label">Our Mission</p>
-          <h2 class="section-title">Calibrate your frequency.<br />Remember your love.</h2>
+          <h2 class="section-title">Calibrate your frequency.<br />Invite light into your life.</h2>
           <p class="section-body">
-            To create safe, playful, and inclusive spaces where people of all ages remember their frequency — learning to regulate their nervous system, elevate their vibration, and awaken to universal unconditional love. Spaces where we heal in community, explore the shared wisdom of diverse traditions, and remember what we have always known: that we are all one.
+            To create safe, playful, and inclusive spaces where people of all ages remember their pure inner essence, learning to regulate their nervous system, elevate their vibration, and awaken to universal unconditional love. Spaces where we heal in community, explore the shared wisdom of diverse traditions, and remember what we have always known: that beneath every difference of name, belief, body, or nation, we are all one.
           </p>
         </div>
         <div class="reveal" style="transition-delay:0.15s;">
           <blockquote class="mission-quote">
-            "How you vibrate determines how you feel,<br />how you heal, and how you connect."
+            "You are not at the mercy of your vibration. You are its author — in every breath, every thought, every choice."
           </blockquote>
         </div>
       </div>
 
       <div class="vision-block reveal" style="transition-delay:0.2s;">
         <p class="section-label">Our Vision</p>
-        <p class="section-body">
-          A world where every human being understands that how they vibrate is how they live — and chooses, consciously, to vibrate in love. A world where the golden rule is lived, not merely spoken: do not do to another what you would not have done to you; do not harm what does not harm you; do not destroy what does not threaten your life. A world where we know — in our bodies, our thoughts, and our daily lives — that we are all one.
+        <h2 class="section-title" style="font-size:clamp(1.6rem,3vw,2.4rem); margin-bottom:1.5rem;">A world that remembers.</h2>
+        <p class="section-body" style="margin-bottom:1.25rem;">
+          A world where every human being understands that how they vibrate is how they live, and chooses, consciously, to vibrate with Light. A world where the golden rule is not a teaching but a lived reality: do not do to another what you would not have done to you; do not harm what does not harm you; do not destroy what does not threaten your life. Not as law. Not as religion. But as the natural expression of a humanity that has remembered its oneness.
+        </p>
+        <p class="section-body" style="margin-bottom:1.25rem;">
+          A world where we know this not as an idea, but in our bodies, our thoughts, and the texture of our daily lives. Where synchronicity is recognised as the fingerprint of a deeper order. Where serendipity is understood as the universe responding to a frequency it recognises. Where the force is not something we wait for, but something we return to.
         </p>
       </div>
     </div>
@@ -1224,11 +1301,6 @@
         </div>
         <div class="modality-card reveal" style="transition-delay:0.3s;">
           <div class="modality-num">VI</div>
-          <div class="modality-title">Somatic Work</div>
-          <p class="modality-text">Body-centred practices that support the integration of emotion and experience. Somatic work acknowledges that healing lives in the body, not only in the mind.</p>
-        </div>
-        <div class="modality-card reveal" style="transition-delay:0.35s;">
-          <div class="modality-num">VII</div>
           <div class="modality-title">Plant Medicine Ceremonies</div>
           <p class="modality-text">Sacred ceremonies held with reverence and care. Plant medicine as an ancient teacher — offered in intentional community, with full support before, during, and after.</p>
         </div>
@@ -1302,36 +1374,28 @@
           <div>
             <div class="event-title">Somatic Breathwork — Virginia</div>
             <p class="event-meta">Regular community sessions · Virginia, USA</p>
-            <span class="event-badge">Launching 2026</span>
           </div>
-          <div class="event-location">Virginia, USA</div>
         </div>
         <div class="event-row reveal" style="transition-delay:0.1s;">
           <div class="event-date">2026–27<br />St. Thomas</div>
           <div>
             <div class="event-title">Somatic Breathwork — St. Thomas</div>
             <p class="event-meta">Community sessions building ahead of the January 2027 retreat · St. Thomas, USVI</p>
-            <span class="event-badge">6 months after Virginia launch</span>
           </div>
-          <div class="event-location">St. Thomas, USVI</div>
         </div>
         <div class="event-row reveal" style="transition-delay:0.2s;">
-          <div class="event-date">Jan<br />2027</div>
+          <div class="event-date">Jan 2027<br />St. Thomas</div>
           <div>
             <div class="event-title">Somatic Breathwork Retreat — St. Thomas</div>
             <p class="event-meta">Multi-day immersive retreat · Programme and pricing to be confirmed</p>
-            <span class="event-badge">Signature Retreat</span>
           </div>
-          <div class="event-location">St. Thomas, USVI</div>
         </div>
         <div class="event-row reveal" style="transition-delay:0.3s;">
-          <div class="event-date">TBC<br />St. Thomas</div>
+          <div class="event-date">Mar 2027<br />St. Thomas</div>
           <div>
             <div class="event-title">Swim School — St. Thomas</div>
             <p class="event-meta">Community swim school for children and families · St. Thomas, USVI</p>
-            <span class="event-badge">Coming Soon</span>
           </div>
-          <div class="event-location">St. Thomas, USVI</div>
         </div>
       </div>
     </div>
@@ -1359,14 +1423,14 @@
             <span class="chapter-status active">Active</span>
           </div>
         </div>
-        <div class="chapter-card reveal" style="transition-delay:0.1s;">
+        <div class="chapter-card dim reveal" style="transition-delay:0.1s;">
           <div class="chapter-inner">
             <div>
               <div class="chapter-tag">Chapter 02</div>
               <div class="chapter-name">St. Thomas<br /><span class="chapter-country">US Virgin Islands</span></div>
               <p class="chapter-desc">Ocean, nature, and Caribbean healing traditions. Retreat energy and island community life. Home of the January 2027 signature retreat.</p>
             </div>
-            <span class="chapter-status active">Active</span>
+            <span class="chapter-status">Coming Soon</span>
           </div>
         </div>
         <div class="chapter-card dim reveal" style="transition-delay:0.2s;">
@@ -1492,24 +1556,61 @@
 
       <div class="manifesto-grid">
         <div class="manifesto-block reveal">
-          <p class="manifesto-text">What matters is how you vibrate. Your body is a resonance calibrator — how you vibrate shapes what you attract, what you experience, and how you connect. How you vibrate depends on how you feel. And how you feel depends on how you regulate your nervous system and what you choose to think.</p>
+          <p class="manifesto-text">What matters is how you vibrate. Your body and your thoughts are the source — the state of one and the quality of the other determine how you feel, and how you feel is the frequency you broadcast into the world. This is not metaphor. This is how you are built.</p>
         </div>
         <div class="manifesto-block reveal" style="transition-delay:0.1s;">
-          <p class="manifesto-text">We believe in universal unconditional love as the ground of all being — not as an idea but as a living frequency. We are all expressions of the One. When we vibrate in love, we remember this truth: that beneath every difference of name, belief, tradition, or nation, we are one.</p>
+          <p class="manifesto-text">We believe in universal unconditional love as the ground of all being — not as an idea but as a living frequency. We are all expressions of the One. When we vibrate in Light, we remember this truth: that beneath every difference of name, belief, tradition, or nation, we are one.</p>
         </div>
         <div class="manifesto-block reveal" style="transition-delay:0.18s;">
-          <p class="manifesto-text">We live by a simple and ancient law: do not do to another what you would not have done to you. Do not harm what does not harm you. Do not destroy what does not threaten your life. This golden thread runs through every wisdom tradition on earth — and it is the foundation of how @Bliss holds space.</p>
+          <p class="manifesto-text">We live by a simple and ancient law that every wisdom tradition on earth has spoken in its own language: do not do to another what you would not have done to you. Do not harm what does not harm you. Do not destroy what does not threaten your life. This golden thread is not a rule imposed from outside. It is a description of what becomes natural when you truly remember that we are one.</p>
         </div>
         <div class="manifesto-block reveal" style="transition-delay:0.26s;">
-          <p class="manifesto-text">@Bliss is a space of re-membering — returning to the frequency of love, to the pure inner essence you have always carried, to the oneness you have always been part of. We do not ask you to change what does not need changing. We ask only that you remember what you already are.</p>
+          <p class="manifesto-text">We approach the world's religions, philosophies, and ancient wisdoms not as competing systems but as different paths opening toward the same Truth. Taoism, Kabbalah, Sufism, Christian Mysticism, Shamanism, the Vedic traditions — each one a door. @Bliss does not seek to replace any of them. It exists to make visible the consciousness of Oneness and universal compassion that lives at the heart of them all.</p>
+        </div>
+        <div class="manifesto-block reveal" style="transition-delay:0.32s; grid-column: 1 / -1;">
+          <p class="manifesto-text">@Bliss is a space of re-membering together, where children, parents, and all seekers can show up exactly as they are, without judgment, and allow heart, mind, and body to heal and expand together. Where the sixth sense — the one no school teaches — is welcomed, cultivated, and trusted.</p>
         </div>
       </div>
 
-      <div class="manifesto-question reveal" style="transition-delay:0.32s;">
-        <p class="manifesto-q-label">In every practice, every conversation, every gathering, we ask:</p>
+      <div class="manifesto-question reveal" style="transition-delay:0.38s;">
+        <p class="manifesto-q-label">In every practice, every conversation, every gathering, we return to the same question:</p>
         <blockquote class="manifesto-q-text">
           "What do I not know — or not remember — to bring me, and us, a little closer to the One, to love, and to truth. To Bliss?"
         </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- FOUNDER -->
+  <section class="founder" id="founder">
+    <div class="section-inner">
+      <p class="section-label reveal">Founder</p>
+      <div class="founder-grid">
+        <div class="reveal">
+          <img src="images/ah.jpg" alt="Ali C. Hantal" class="founder-photo" />
+        </div>
+        <div class="reveal" style="transition-delay:0.15s;">
+          <div class="founder-name">Ali C. Hantal</div>
+          <div class="founder-role">Founder, At Bliss Foundation</div>
+          <div class="founder-bio">
+            <p>Ali C. Hantal is a serial entrepreneur, technologist, and truth seeker — a soul walking the intersection of innovation and inner transformation.</p>
+            <p>He was born in Arnavutköy, then a quiet village along the Bosphorus shores of Istanbul. After high school, he was accepted into the Philosophy Department at Boğaziçi University, one of Türkiye's most prestigious institutions. He remembers his first philosophy class with extraordinary clarity. His professor, the late Arda Denkel, walked into the room and introduced the sceptical philosophy of René Descartes — and in doing so, dismantled the dogmatic, memorised certainties that had shaped everything Ali had been taught until that moment. A door opened in his young mind that has never closed since: the door to questioning every piece of knowledge he had once accepted as fact, and every piece he would encounter from that day forward.</p>
+            <p>He has said many times that beginning his journey as a philosophy student was one of the finest things that ever happened to him. He later transferred to Business Administration before earning his MBA at the University of Baltimore, and stepping fully into the world of entrepreneurship.</p>
+            <p>In his professional life, Ali is the Founder of XR Masters, Co-President of the Open AR Cloud Association, Adoption Officer for the GeoPose Standards Working Group at the Open Geospatial Consortium, and Leader of the Forum Labs Initiative at the Metaverse Standards Forum. He believes humanity stands at a genuine civilisational inflection point — not merely technological, but existential. His work is about ensuring that rewrite happens on open, shared foundations rather than inside walled gardens, so that human agency and free will can survive, and prosper.</p>
+            <p>Yet as he moved deeper into the architecture of the digital world, he never stopped spending long hours trying to understand the fabric of the universe itself. The more precisely he could model physical reality in code and spatial data, the more he sensed that beneath every layer of the knowable world lay something that no model could fully capture: a deeper order, a living intelligence, a presence that science approaches from one direction and the ancient traditions approach from another — and that both, at their most honest, point toward the same quiet mystery.</p>
+            <p>He began noticing it not only in texts and contemplation, but in the texture of daily life itself: in the encounters that arrived at precisely the right moment, in the doors that opened before he had finished knocking, in the threads of meaning that wove themselves through seemingly unrelated events. Synchronicity and serendipity, he came to understand, are not accidents dressed up in hopeful language. They are the fingerprints of that deeper order — the moments when the living intelligence beneath the surface of things makes itself briefly, unmistakably visible to those paying attention.</p>
+            <p>From his first year at university, he began reading across the full terrain of ancient and sacred texts: the Qur'an, the Bible, the Torah, the Zohar, the Bhagavad Gita, the Masnavi, the Tao Te Ching. He then moved into Tantra, Theology, Hermetic philosophy, Kabbalah, Christian Mysticism, Shamanism, and Sufism — and arrived, slowly and unmistakably, at a single realisation: they are all pointing at the same thing. Beneath the different names, symbols, and languages, one simple and radical truth emerges: that we are all one, that this atomic realm of duality is not the whole story, and that at the heart of every great tradition lives the same golden thread — do not do to another what you would not have done to you; do not harm what does not harm you.</p>
+            <p>Since childhood, Ali had wondered about the sixth sense — why school taught five and seemed incurious about the rest. The answer, when it finally came, was both simple and vast: every human being carries this sense. It does not come from the mind. It comes from the heart, from the true inner essence, and it can only be heard — as Osho said — in an utterly silent mind.</p>
+            <p>His path draws from Taoism, Kabbalah, Sufism, Christian Mysticism, and Shamanism, guided above all by the principle of wu wei: the art of not doing. Not passivity, but the profound intelligence of non-resistance. The surfer does not fight the ocean. They read it, feel it, and move with it — and in that surrender, something extraordinary becomes possible.</p>
+            <p>His daily practice includes meditation, intention and manifestation work, shadow work, and mindful living. Ali has meditated for over twenty-five years. But the real turning point came when he discovered breathwork — and it changed everything. What had previously required deep ceremonial work to access became directly, repeatably, and profoundly available through the breath alone. He now facilitates guided breathwork sessions weekly, and that consistency has made the practice a true cornerstone of his path and his life.</p>
+            <p>He believes humanity is at a crossroads unlike any in known history. Artificial General Intelligence, war, global authoritarianism, and the slow ecocide of planetary ecosystems are converging in ways that cannot be ignored. And yet, those with even a slightly open heart can sense that something luminous is waiting on the other side. He likes to say: <em>may we be with the force</em> — rather than <em>may the force be with you</em> — because the force has always been here. It is we who drift from it.</p>
+            <p>He sees countless souls searching for a way back — to themselves, to their bodies, to the divine within, to the unity they have always been part of. That understanding is what led him to become a certified somatic breathwork practitioner and to found At Bliss Foundation.</p>
+            <p>He is also co-founding the Prosper Foundation, built on the conviction that humanity will first survive — and then it will prosper.</p>
+            <p>Ali spends most of his time between Washington, D.C., and St. Thomas, U.S. Virgin Islands.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1577,6 +1678,7 @@
           <li><a href="#mission">Mission &amp; Vision</a></li>
           <li><a href="#pillars">The Four Pillars</a></li>
           <li><a href="#manifesto">Manifesto</a></li>
+          <li><a href="#founder">Founder</a></li>
           <li><a href="#support">Support</a></li>
         </ul>
       </div>
