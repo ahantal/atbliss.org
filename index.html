@@ -833,20 +833,20 @@
     /* ── FOUNDER ── */
     .founder { background: var(--deep3); }
 
-    .founder-grid {
-      display: grid;
-      grid-template-columns: 340px 1fr;
-      gap: 5rem;
-      align-items: start;
+    .founder-wrap {
+      overflow: hidden;
     }
 
     .founder-photo {
-      width: 100%;
+      float: left;
+      width: 300px;
       aspect-ratio: 3 / 4;
       object-fit: cover;
       object-position: center top;
       display: block;
       border: 1px solid var(--border);
+      margin-right: 3.5rem;
+      margin-bottom: 1.5rem;
     }
 
     .founder-name {
@@ -1099,8 +1099,9 @@
       .community-grid,
       .chapters-grid,
       .retreat-grid,
-      .founder-grid,
       .connect-grid { grid-template-columns: 1fr; gap: 3rem; }
+
+      .founder-photo { float: none; width: 100%; max-width: 280px; margin: 0 auto 2rem; }
 
       .modality-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
       .facilitator-grid { grid-template-columns: 1fr; gap: 1rem; }
@@ -1587,11 +1588,8 @@
   <section class="founder" id="founder">
     <div class="section-inner">
       <p class="section-label reveal">Founder</p>
-      <div class="founder-grid">
-        <div class="reveal">
+      <div class="founder-wrap reveal">
           <img src="images/AH.jpg" alt="Ali C. Hantal" class="founder-photo" />
-        </div>
-        <div class="reveal" style="transition-delay:0.15s;">
           <div class="founder-name">Ali C. Hantal</div>
           <div class="founder-role">Founder, At Bliss Foundation</div>
           <div class="founder-bio">
@@ -1612,7 +1610,6 @@
             <p>He is also co-founding the <a href="https://prosperfoundation.net" target="_blank" rel="noopener" style="color:var(--gold-light); text-decoration:none; border-bottom: 1px solid rgba(232,207,136,0.3);">Prosper Foundation</a>, built on the conviction that humanity will first survive, and then it will prosper.</p>
             <p>Ali spends most of his time between Washington, D.C., St. Thomas, U.S. Virgin Islands, and Türkiye.</p>
           </div>
-        </div>
       </div>
     </div>
   </section>
@@ -1645,11 +1642,6 @@
           <h2 class="section-title reveal">Be part of something greater</h2>
           <p class="section-body reveal" style="transition-delay:0.1s;">
             Whether you are looking to volunteer, partner, donate, attend a session, or simply learn more — we would love to hear from you. Fill out the form and a member of our team will be in touch.
-          </p>
-          <br />
-          <p class="section-body reveal" style="transition-delay:0.15s; font-size:0.87rem;">
-            You can also reach us directly at<br />
-            <a href="mailto:hello@atbliss.org" style="color:var(--gold-light); text-decoration:none;">hello@atbliss.org</a>
           </p>
         </div>
         <div class="form-embed-wrapper reveal" style="transition-delay:0.2s;">
@@ -1706,7 +1698,6 @@
     </div>
     <div class="footer-bottom">
       <p class="footer-copy">&copy; 2026 At Bliss Foundation &nbsp;·&nbsp; atbliss.org</p>
-      <a href="mailto:hello@atbliss.org" class="footer-email">hello@atbliss.org</a>
     </div>
   </footer>
 
