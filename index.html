@@ -49,16 +49,17 @@
     nav.scrolled { padding: 0.85rem 3rem; }
 
     .nav-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.35rem;
-      font-weight: 300;
-      letter-spacing: 0.12em;
-      color: var(--gold-light);
+      display: flex;
+      align-items: center;
       text-decoration: none;
       flex-shrink: 0;
     }
 
-    .nav-logo span { color: var(--text); }
+    .nav-logo img {
+      height: 36px;
+      width: auto;
+      display: block;
+    }
 
     .nav-links {
       display: flex;
@@ -159,7 +160,7 @@
     .hero-bg {
       position: absolute;
       inset: 0;
-      background-image: url('Everyone_Connected.JPG');
+      background-image: url('images/Everyone_Connected.JPG');
       background-size: cover;
       background-position: center top;
       filter: brightness(0.38) saturate(0.8);
@@ -185,12 +186,15 @@
       animation: fadeUp 1.4s ease both;
     }
 
-    .hero-eyebrow {
-      font-size: 0.7rem;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.75rem;
+    .hero-logo-wrap {
+      margin-bottom: 2rem;
+    }
+
+    .hero-logo-img {
+      width: 200px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
     }
 
     .hero-title {
@@ -968,13 +972,14 @@
     }
 
     .footer-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem;
-      font-weight: 300;
-      color: var(--gold-light);
-      letter-spacing: 0.1em;
       display: block;
       margin-bottom: 1rem;
+    }
+
+    .footer-logo img {
+      height: 48px;
+      width: auto;
+      display: block;
     }
 
     .footer-tagline {
@@ -1095,7 +1100,7 @@
 
   <!-- NAV -->
   <nav id="main-nav">
-    <a href="#" class="nav-logo">At Bliss <span>Foundation</span></a>
+    <a href="#" class="nav-logo"><img src="images/AtBlissLogo.png" alt="At Bliss Foundation" /></a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#pillars">Our Work</a></li>
@@ -1130,7 +1135,7 @@
     <div class="hero-bg"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <p class="hero-eyebrow">At Bliss Foundation &nbsp;·&nbsp; atbliss.org</p>
+      <div class="hero-logo-wrap"><img src="images/AtBlissLogo.png" alt="At Bliss Foundation" class="hero-logo-img" /></div>
       <h1 class="hero-title">Everyone<br /><em>Connected</em></h1>
       <p class="hero-sub">
         Safe, playful, and inclusive spaces where people of all ages remember their pure inner essence, heal in community, and explore the shared wisdom of diverse traditions.
@@ -1622,7 +1627,7 @@
   <footer>
     <div class="footer-top">
       <div>
-        <span class="footer-logo">At Bliss Foundation</span>
+        <span class="footer-logo"><img src="images/AtBlissLogo.png" alt="At Bliss Foundation" /></span>
         <p class="footer-tagline">Safe, playful, and inclusive spaces where people of all ages remember their pure inner essence.</p>
       </div>
       <div>
