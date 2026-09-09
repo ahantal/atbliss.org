@@ -349,47 +349,123 @@
       margin: 0 auto;
     }
 
-    /* ── FOUR PILLARS ── */
-    .pillars { background: var(--deep3); }
+    .section-body strong,
+    .method-text strong,
+    .consciousness-text strong {
+      color: var(--text);
+      font-weight: 500;
+    }
 
-    .pillars-grid {
+    /* ── OUR METHODOLOGY ── */
+    .methodology { background: var(--deep3); }
+
+    .method-flow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.6rem 0.9rem;
+      margin: 2.5rem 0 4rem;
+    }
+
+    .method-flow span {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      color: var(--gold-light);
+    }
+
+    .method-flow .arrow {
+      font-family: 'DM Sans', sans-serif;
+      color: rgba(201, 168, 76, 0.4);
+    }
+
+    .method-path { position: relative; }
+
+    .method-line {
+      position: absolute;
+      top: 22px;
+      bottom: 22px;
+      left: 22px;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--gold), rgba(201, 168, 76, 0.15));
+    }
+
+    .method-stage {
+      position: relative;
+      display: flex;
+      gap: 1.75rem;
+      padding-bottom: 3rem;
+    }
+
+    .method-stage:last-child { padding-bottom: 0; }
+
+    .method-node {
+      position: relative;
+      z-index: 1;
+      flex-shrink: 0;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--gold);
+      background: var(--deep3);
+      color: var(--gold-light);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.95rem;
+    }
+
+    .method-content { padding-top: 0.35rem; }
+
+    .method-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--gold-light);
+      margin-bottom: 0.6rem;
+    }
+
+    .method-text {
+      font-size: 0.92rem;
+      line-height: 1.85;
+      color: var(--muted);
+      max-width: 620px;
+    }
+
+    /* ── CONSCIOUSNESS LEVELS ── */
+    .consciousness { background: var(--deep2); }
+
+    .consciousness-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 1.5rem;
       margin-top: 3.5rem;
     }
 
-    .pillar {
-      padding: 2.5rem;
+    .consciousness-card {
+      padding: 2.25rem 2rem;
       border: 1px solid var(--border);
-      position: relative;
       transition: border-color 0.3s;
     }
 
-    .pillar::before {
-      content: '';
-      position: absolute;
-      top: -1px; left: 2.5rem; right: 2.5rem;
-      height: 2px;
-      background: linear-gradient(to right, var(--gold), transparent);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.4s ease;
+    .consciousness-card:hover { border-color: var(--border-hover); }
+
+    .consciousness-num {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
     }
 
-    .pillar:hover { border-color: var(--border-hover); }
-    .pillar:hover::before { transform: scaleX(1); }
-
-    .pillar-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 3rem;
-      font-weight: 300;
-      color: rgba(201, 168, 76, 0.13);
-      line-height: 1;
-      margin-bottom: 1.25rem;
+    .depth-bar {
+      height: 3px;
+      background: rgba(201, 168, 76, 0.12);
+      margin-bottom: 1.5rem;
     }
 
-    .pillar-title {
+    .depth-fill { height: 100%; background: var(--gold); }
+
+    .consciousness-title {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.4rem;
       font-weight: 400;
@@ -397,437 +473,50 @@
       margin-bottom: 0.9rem;
     }
 
-    .pillar-text {
-      font-size: 0.92rem;
+    .consciousness-text {
+      font-size: 0.88rem;
       line-height: 1.8;
       color: var(--muted);
     }
 
-    /* ── HEALING ARTS ── */
-    .healing { background: var(--deep2); }
+    /* ── THE AT BLISS PATH ── */
+    .path-section { background: var(--deep); text-align: center; }
 
-    .modality-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 3.5rem;
+    .path-section .section-inner { max-width: 720px; }
+
+    .path-section .section-label,
+    .path-section .section-title { text-align: center; }
+
+    .path-section .section-body {
+      max-width: none;
+      margin: 0 auto 1.5rem;
+      text-align: center;
     }
 
-    .modality-card {
-      padding: 2.25rem;
-      border: 1px solid var(--border);
-      position: relative;
-      transition: border-color 0.3s, transform 0.3s;
+    .path-before {
+      font-size: 0.68rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 3rem 0 1.5rem;
     }
 
-    .modality-card::after {
-      content: '';
-      position: absolute;
-      bottom: -1px; left: 2rem; right: 2rem;
-      height: 1px;
-      background: var(--gold);
-      transform: scaleX(0);
-      transition: transform 0.35s ease;
-    }
-
-    .modality-card:hover { border-color: var(--border-hover); transform: translateY(-3px); }
-    .modality-card:hover::after { transform: scaleX(1); }
-
-    .modality-num {
+    .path-quote {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.6rem;
-      font-weight: 300;
-      color: rgba(201, 168, 76, 0.4);
-      margin-bottom: 1.25rem;
-      line-height: 1;
-    }
-
-    .modality-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.25rem;
-      font-weight: 400;
-      color: var(--text);
-      margin-bottom: 0.75rem;
-    }
-
-    .modality-text {
-      font-size: 0.88rem;
-      line-height: 1.78;
-      color: var(--muted);
-    }
-
-    .healing-footer-quote {
-      margin-top: 4rem;
-      padding-top: 3rem;
-      border-top: 1px solid var(--border);
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.3rem, 2.5vw, 1.75rem);
+      font-size: clamp(1.4rem, 2.8vw, 2rem);
       font-style: italic;
       font-weight: 300;
+      line-height: 1.6;
       color: var(--gold-light);
-      text-align: center;
-      max-width: 680px;
-      margin-left: auto;
-      margin-right: auto;
+      max-width: 640px;
+      margin: 2.5rem auto;
     }
 
-    /* ── COMMUNITY LIFE ── */
-    .community { background: var(--deep); }
-
-    .community-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-      margin-top: 3.5rem;
-    }
-
-    .community-card {
-      padding: 2.5rem;
-      border: 1px solid var(--border);
-      display: flex;
-      gap: 2rem;
-      align-items: flex-start;
-      transition: border-color 0.3s;
-    }
-
-    .community-card:hover { border-color: var(--border-hover); }
-
-    .community-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 3.5rem;
-      font-weight: 300;
-      color: rgba(201, 168, 76, 0.1);
-      line-height: 1;
-      flex-shrink: 0;
-      margin-top: -0.4rem;
-    }
-
-    .community-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem;
-      font-weight: 400;
-      color: var(--gold-light);
-      margin-bottom: 0.75rem;
-    }
-
-    .community-text {
-      font-size: 0.9rem;
-      line-height: 1.8;
-      color: var(--muted);
-    }
-
-    /* ── UPCOMING SESSIONS ── */
-    .upcoming { background: var(--deep3); }
-
-    .upcoming-header {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      margin-bottom: 3rem;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-    }
-
-    .events-list { border-top: 1px solid var(--border); }
-
-    .event-row {
-      display: grid;
-      grid-template-columns: 130px 1fr;
-      gap: 2.5rem;
-      align-items: center;
-      padding: 1.75rem 0;
-      border-bottom: 1px solid var(--border);
-      transition: background 0.2s;
-    }
-
-    .event-row:hover { background: rgba(201, 168, 76, 0.025); }
-
-    .event-date {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.82rem;
-      font-weight: 400;
-      color: var(--gold);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      line-height: 1.5;
-    }
-
-    .event-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.25rem;
-      font-weight: 300;
-      color: var(--text);
-      margin-bottom: 0.35rem;
-    }
-
-    .event-meta {
-      font-size: 0.78rem;
-      color: var(--muted);
-      letter-spacing: 0.04em;
-      margin-bottom: 0.5rem;
-    }
-
-    .event-badge {
-      display: inline-block;
-      padding: 0.22rem 0.7rem;
-      background: rgba(201, 168, 76, 0.08);
-      border: 1px solid rgba(201, 168, 76, 0.25);
-      font-size: 0.62rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-
-    .event-location {
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      text-align: right;
-      white-space: nowrap;
-    }
-
-    /* ── CHAPTERS ── */
-    .chapters { background: var(--deep2); }
-
-    .chapters-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-      margin-top: 3.5rem;
-    }
-
-    .chapter-card {
-      border: 1px solid var(--border);
-      transition: border-color 0.3s;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .chapter-card:hover { border-color: var(--border-hover); }
-
-    .chapter-card.dim { opacity: 0.6; }
-
-    .chapter-inner {
-      padding: 2.75rem;
-      min-height: 260px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .chapter-tag {
-      font-size: 0.62rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.85rem;
-    }
-
-    .chapter-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.1rem;
-      font-weight: 300;
-      color: var(--text);
-      line-height: 1.1;
-      margin-bottom: 1rem;
-    }
-
-    .chapter-country {
+    .path-ready {
       font-size: 1rem;
-      color: var(--muted);
-    }
-
-    .chapter-desc {
-      font-size: 0.9rem;
-      line-height: 1.75;
-      color: var(--muted);
-      max-width: 380px;
-    }
-
-    .chapter-status {
-      display: inline-block;
-      margin-top: 1.75rem;
-      padding: 0.28rem 0.85rem;
-      border: 1px solid var(--border);
-      font-size: 0.62rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .chapter-status.active {
-      border-color: rgba(201, 168, 76, 0.4);
-      color: var(--gold);
-    }
-
-    /* ── RETREAT ── */
-    .retreat {
-      background: var(--deep);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .retreat-rings {
-      position: absolute;
-      top: 50%;
-      right: -160px;
-      transform: translateY(-50%);
-      width: 580px;
-      height: 580px;
-      pointer-events: none;
-    }
-
-    .retreat-rings::before,
-    .retreat-rings::after,
-    .retreat-rings span {
-      content: '';
-      position: absolute;
-      border-radius: 50%;
-      border: 1px solid rgba(201, 168, 76, 0.06);
-    }
-
-    .retreat-rings::before { inset: 0; }
-    .retreat-rings::after  { inset: 60px; border-color: rgba(201,168,76,0.045); }
-    .retreat-rings span {
-      display: block;
-      inset: 130px;
-      border-color: rgba(201,168,76,0.035);
-    }
-
-    .retreat-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6rem;
-      align-items: center;
-    }
-
-    .retreat-badge {
-      display: inline-block;
-      padding: 0.3rem 1rem;
-      border: 1px solid rgba(201, 168, 76, 0.4);
-      font-size: 0.62rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.5rem;
-    }
-
-    .retreat-meta {
-      margin: 2rem 0 2.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-    }
-
-    .retreat-meta-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 1.25rem;
-      font-size: 0.88rem;
-      color: rgba(232,228,220,0.7);
-      line-height: 1.5;
-    }
-
-    .retreat-meta-label {
-      font-size: 0.62rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--gold);
-      width: 72px;
-      flex-shrink: 0;
-      padding-top: 0.15rem;
-    }
-
-    .retreat-card {
-      border: 1px solid var(--border);
-      padding: 2.5rem;
-    }
-
-    .retreat-card-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.05rem;
-      font-weight: 400;
-      color: var(--gold-light);
-      letter-spacing: 0.08em;
-      margin-bottom: 1.75rem;
-    }
-
-    .retreat-card ul { list-style: none; }
-
-    .retreat-card li {
-      font-size: 0.9rem;
-      color: var(--muted);
-      padding-left: 1.5rem;
-      padding-bottom: 0.9rem;
-      position: relative;
-      line-height: 1.65;
-    }
-
-    .retreat-card li:last-child { padding-bottom: 0; }
-
-    .retreat-card li::before {
-      content: '—';
-      position: absolute;
-      left: 0;
-      color: rgba(201, 168, 76, 0.5);
-    }
-
-    /* ── FACILITATORS ── */
-    .facilitators { background: var(--deep3); }
-
-    .facilitator-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 3.5rem;
-    }
-
-    .facilitator-card {
-      border: 1px solid var(--border);
-      overflow: hidden;
-      transition: border-color 0.3s;
-    }
-
-    .facilitator-card:hover { border-color: var(--border-hover); }
-
-    .facilitator-photo {
-      aspect-ratio: 1 / 1;
-      background: linear-gradient(145deg, rgba(201,168,76,0.06) 0%, rgba(10,12,20,0.8) 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .facilitator-ring {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      border: 1px solid rgba(201, 168, 76, 0.2);
-    }
-
-    .facilitator-info { padding: 1.75rem; }
-
-    .facilitator-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.2rem;
-      font-weight: 400;
-      color: var(--text);
-      margin-bottom: 0.4rem;
-    }
-
-    .facilitator-role {
-      font-size: 0.7rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.9rem;
-    }
-
-    .facilitator-bio {
-      font-size: 0.87rem;
-      line-height: 1.75;
-      color: var(--muted);
+      line-height: 1.7;
+      color: rgba(232, 228, 220, 0.85);
+      margin-bottom: 2.5rem;
     }
 
     /* ── FOUNDER ── */
@@ -994,7 +683,7 @@
 
     .footer-top {
       display: grid;
-      grid-template-columns: 1.6fr 1fr 1fr 1fr;
+      grid-template-columns: 1.6fr 1fr;
       gap: 3rem;
       padding-bottom: 3rem;
       border-bottom: 1px solid var(--border);
@@ -1095,22 +784,16 @@
       section { padding: 5rem 1.5rem; }
 
       .mission-grid,
-      .pillars-grid,
-      .community-grid,
-      .chapters-grid,
-      .retreat-grid,
+      .consciousness-grid,
       .connect-grid { grid-template-columns: 1fr; gap: 3rem; }
+
+      .method-stage { gap: 1.25rem; }
+      .method-node { width: 38px; height: 38px; font-size: 0.85rem; }
+      .method-line { left: 19px; }
 
       .founder-photo { float: none; width: 100%; max-width: 280px; margin: 0 auto 2rem; }
 
-      .modality-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-      .facilitator-grid { grid-template-columns: 1fr; gap: 1rem; }
       .manifesto-grid { grid-template-columns: 1fr; }
-
-      .event-row { grid-template-columns: 100px 1fr; }
-      .event-location { display: none; }
-
-      .retreat-rings { display: none; }
 
       .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
       .footer-bottom { flex-direction: column; gap: 0.75rem; text-align: center; }
@@ -1118,12 +801,8 @@
     }
 
     @media (max-width: 480px) {
-      .modality-grid,
-      .pillars-grid,
-      .community-grid,
       .footer-top { grid-template-columns: 1fr; }
       .hero-actions { flex-direction: column; align-items: center; }
-      .upcoming-header { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
@@ -1133,11 +812,9 @@
   <nav id="main-nav">
     <a href="#" class="nav-logo"><img src="images/AtBlissLogo.png" alt="At Bliss Foundation" /></a>
     <ul class="nav-links">
-      <li><a href="#pillars">Our Work</a></li>
-      <li><a href="#healing">Healing Arts</a></li>
-      <li><a href="#community">Community Life</a></li>
-      <li><a href="#chapters">Chapters</a></li>
-      <li><a href="#retreat">Retreat 2027</a></li>
+      <li><a href="#methodology">Our Methodology</a></li>
+      <li><a href="#consciousness">Consciousness Levels</a></li>
+      <li><a href="#path">The At Bliss Path</a></li>
       <li><a href="#founder">Founder</a></li>
       <li><a href="#manifesto">Manifesto</a></li>
       <li><a href="#connect" class="nav-cta">Connect</a></li>
@@ -1149,13 +826,10 @@
 
   <!-- MOBILE NAV -->
   <div class="nav-mobile" id="mobile-nav" role="dialog" aria-label="Navigation">
-    <a href="#mission"    onclick="closeNav()">Mission &amp; Vision</a>
-    <a href="#pillars"    onclick="closeNav()">The Four Pillars</a>
-    <a href="#healing"    onclick="closeNav()">Healing Arts</a>
-    <a href="#community"  onclick="closeNav()">Community Life</a>
-    <a href="#upcoming"   onclick="closeNav()">Sessions &amp; Events</a>
-    <a href="#chapters"   onclick="closeNav()">Chapters</a>
-    <a href="#retreat"    onclick="closeNav()">Retreat 2027</a>
+    <a href="#mission"       onclick="closeNav()">Mission &amp; Vision</a>
+    <a href="#methodology"   onclick="closeNav()">Our Methodology</a>
+    <a href="#consciousness" onclick="closeNav()">Consciousness Levels</a>
+    <a href="#path"          onclick="closeNav()">The At Bliss Path</a>
     <a href="#founder"    onclick="closeNav()">Founder</a>
     <a href="#manifesto"  onclick="closeNav()">Manifesto</a>
     <a href="#support"    onclick="closeNav()">Support</a>
@@ -1176,7 +850,7 @@
         <strong>Welcome!</strong>
       </p>
       <div class="hero-actions">
-        <a href="#retreat" class="btn btn-primary">Retreat · Spring 2027</a>
+        <a href="#path" class="btn btn-primary">Begin The At Bliss Path</a>
         <a href="#connect" class="btn btn-outline">Get Involved</a>
       </div>
     </div>
@@ -1187,9 +861,9 @@
   <!-- VIBRATION -->
   <section class="vibration" id="vibration">
     <div class="section-inner">
-      <h2 class="section-title reveal">What matters is how you vibrate</h2>
+      <h2 class="section-title reveal">What matters is how you resonate</h2>
       <p class="section-body reveal" style="transition-delay:0.1s;">
-        Human being is a resonance calibrator. Everything begins in the body and in what you think. The state of your body and the quality of your thoughts shape how you feel. And how you feel determines how you vibrate. Your vibration is not something that happens to you. It is the sum of everything you carry and everything you choose. This is where the magic begins.
+        Human being is a resonance calibrator. Everything begins in the body and in what you think. The state of your body and the quality of your thoughts shape how you feel. And how you feel determines how you resonate. Your vibration is not something that happens to you. It is the sum of everything you carry and everything you choose. This is where the magic begins.
       </p>
     </div>
   </section>
@@ -1218,7 +892,7 @@
         <p class="section-label">Our Vision</p>
         <h2 class="section-title" style="font-size:clamp(1.6rem,3vw,2.4rem); margin-bottom:1.5rem;">A world that remembers.</h2>
         <p class="section-body" style="margin-bottom:1.25rem;">
-          A world where every human being understands that how they vibrate is how they live, and chooses, consciously, to vibrate with Light. A world where the golden rule is not a teaching but a lived reality: do not do to another what you would not have done to you; do not harm what does not harm you; do not destroy what does not threaten your life. Not as law. Not as religion. But as the natural expression of a humanity that has remembered its oneness.
+          A world where every human being understands that how they resonate is how they live, and chooses, consciously, to resonate with Light. A world where the golden rule is not a teaching but a lived reality: do not do to another what you would not have done to you; do not harm what does not harm you; do not destroy what does not threaten your life. Not as law. Not as religion. But as the natural expression of a humanity that has remembered its oneness.
         </p>
         <p class="section-body" style="margin-bottom:1.25rem;">
           A world where we know this not as an idea, but in our bodies, our thoughts, and the texture of our daily lives. Where synchronicity is recognised as the fingerprint of a deeper order. Where serendipity is understood as the universe responding to a frequency it recognises. Where the force is not something we wait for, but something we return to.
@@ -1229,233 +903,72 @@
 
   <div class="divider"></div>
 
-  <!-- FOUR PILLARS -->
-  <section class="pillars" id="pillars">
+  <!-- OUR METHODOLOGY -->
+  <section class="methodology" id="methodology">
     <div class="section-inner">
-      <p class="section-label reveal">Our Work</p>
-      <h2 class="section-title reveal">The Four Pillars</h2>
-      <div class="pillars-grid">
-        <div class="pillar reveal">
-          <div class="pillar-num">01</div>
-          <div class="pillar-title">Pure Inner Essence</div>
-          <p class="pillar-text">
-            The inner work. Awareness, compassion, courage, and play — helping every person of every age reconnect with the divine essence they carry within. The foundation of everything @Bliss offers.
-          </p>
-        </div>
-        <div class="pillar reveal" style="transition-delay:0.1s;">
-          <div class="pillar-num">02</div>
-          <div class="pillar-title">Shared Wisdom</div>
-          <p class="pillar-text">
-            Exploring diverse religions, philosophies, and ancient traditions not as competing systems, but as different paths opening to the same Truth. @Bliss exists to make visible the consciousness of Oneness and universal compassion that lives at the heart of them all.
-          </p>
-        </div>
-        <div class="pillar reveal" style="transition-delay:0.2s;">
-          <div class="pillar-num">03</div>
-          <div class="pillar-title">Healing Arts</div>
-          <p class="pillar-text">
-            A living sanctuary of healing modalities — held always in community, never alone. Sessions range across breathwork, yoga, sound baths, tai chi, dance, somatic work, and plant medicine ceremonies. Each modality is a door, not a destination.
-          </p>
-        </div>
-        <div class="pillar reveal" style="transition-delay:0.3s;">
-          <div class="pillar-num">04</div>
-          <div class="pillar-title">Community Life</div>
-          <p class="pillar-text">
-            Bliss is also found in the shared rhythm of ordinary life. Community programmes make @Bliss accessible to everyone — including those who may not yet come for a ceremony or meditation, but will come to swim with their children or learn to cook.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- HEALING ARTS -->
-  <section class="healing" id="healing">
-    <div class="section-inner">
-      <p class="section-label reveal">Pillar 03</p>
-      <h2 class="section-title reveal">Healing Arts</h2>
-      <p class="section-body reveal" style="transition-delay:0.1s; margin-bottom:0;">
-        A living sanctuary of healing modalities, held always in community. Each practice is a door — not a destination — into deeper self-remembering. Sessions are open to all.
-      </p>
-
-      <div class="modality-grid">
-        <div class="modality-card reveal" style="transition-delay:0.05s;">
-          <div class="modality-num">I</div>
-          <div class="modality-title">Somatic Breathwork</div>
-          <p class="modality-text">Conscious breathing to release stored tension, trauma, and emotion from the body. Held in a safe, guided group container — the first physical expression of the @Bliss healing sanctuary.</p>
-        </div>
-        <div class="modality-card reveal" style="transition-delay:0.1s;">
-          <div class="modality-num">II</div>
-          <div class="modality-title">Yoga</div>
-          <p class="modality-text">An ancient practice of union — body, breath, and awareness in alignment. Offered in community as a moving meditation and a gateway into the present moment.</p>
-        </div>
-        <div class="modality-card reveal" style="transition-delay:0.15s;">
-          <div class="modality-num">III</div>
-          <div class="modality-title">Sound Baths</div>
-          <p class="modality-text">Immersive sound healing using singing bowls, gongs, and resonant instruments. Sound as a vehicle for deep relaxation, nervous system reset, and expanded awareness.</p>
-        </div>
-        <div class="modality-card reveal" style="transition-delay:0.2s;">
-          <div class="modality-num">IV</div>
-          <div class="modality-title">Tai Chi</div>
-          <p class="modality-text">Slow, intentional movement as meditation. Cultivating internal energy, balance, and a profound sense of ease and presence — accessible to all ages and bodies.</p>
-        </div>
-        <div class="modality-card reveal" style="transition-delay:0.25s;">
-          <div class="modality-num">V</div>
-          <div class="modality-title">Dance</div>
-          <p class="modality-text">Movement as liberation. Conscious dance creates space for authentic self-expression, joy, and release — returning the body to its natural intelligence and aliveness.</p>
-        </div>
-        <div class="modality-card reveal" style="transition-delay:0.3s;">
-          <div class="modality-num">VI</div>
-          <div class="modality-title">Plant Medicine Ceremonies</div>
-          <p class="modality-text">Sacred ceremonies held with reverence and care. Plant medicine as an ancient teacher — offered in intentional community, with full support before, during, and after.</p>
-        </div>
-      </div>
-
-      <p class="healing-footer-quote reveal" style="transition-delay:0.4s;">
-        "Each modality is offered as a door — not a destination — into deeper self-remembering."
-      </p>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- COMMUNITY LIFE -->
-  <section class="community" id="community">
-    <div class="section-inner">
-      <p class="section-label reveal">Pillar 04</p>
-      <h2 class="section-title reveal">Community Life</h2>
-      <p class="section-body reveal" style="transition-delay:0.1s; margin-bottom:0;">
-        Bliss is also found in the shared rhythm of ordinary life. These programmes make @Bliss accessible to everyone — a gateway to belonging for those who may not yet come for healing or ceremony.
-      </p>
-      <div class="community-grid">
-        <div class="community-card reveal" style="transition-delay:0.1s;">
-          <div class="community-num">1</div>
-          <div>
-            <div class="community-title">Swim School</div>
-            <p class="community-text">Making water safety and swimming accessible to children and families. An entry point into the @Bliss community for those who come not for ceremony, but for their children — and find something more.</p>
-          </div>
-        </div>
-        <div class="community-card reveal" style="transition-delay:0.2s;">
-          <div class="community-num">2</div>
-          <div>
-            <div class="community-title">Cooking Classes</div>
-            <p class="community-text">The kitchen as a place of connection and nourishment — not just of the body but of community. Cooking together as an ancient practice of belonging and care.</p>
-          </div>
-        </div>
-        <div class="community-card reveal" style="transition-delay:0.3s;">
-          <div class="community-num">3</div>
-          <div>
-            <div class="community-title">Farming &amp; Land Work</div>
-            <p class="community-text">Returning to the earth. Working with land, seasons, and growth as a practice of presence, humility, and deep connection to the living world that sustains us.</p>
-          </div>
-        </div>
-        <div class="community-card reveal" style="transition-delay:0.4s;">
-          <div class="community-num">4</div>
-          <div>
-            <div class="community-title">Everyday Skills</div>
-            <p class="community-text">Practical skills that build belonging and self-reliance. Programmes that meet people where they are — accessible, grounding, and offered in the spirit of shared life.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- UPCOMING SESSIONS -->
-  <section class="upcoming" id="upcoming">
-    <div class="section-inner">
-      <div class="upcoming-header">
-        <div>
-          <p class="section-label reveal">Sessions &amp; Events</p>
-          <h2 class="section-title reveal" style="margin-bottom:0;">Upcoming Offerings</h2>
-        </div>
-        <a href="#connect" class="btn btn-outline reveal" style="transition-delay:0.1s;">Register Interest</a>
-      </div>
-
-      <div class="events-list">
-        <div class="event-row reveal">
-          <div class="event-date">Mondays<br />Online</div>
-          <div>
-            <div class="event-title">Breath At Bliss — Mondays</div>
-            <p class="event-meta">Every Monday · 2:00 PM EDT (21:00 Türkiye) · Online</p>
-          </div>
-        </div>
-        <div class="event-row reveal" style="transition-delay:0.1s;">
-          <div class="event-date">Sundays<br />St. Thomas</div>
-          <div>
-            <div class="event-title">Breath at the Beach — Sundays</div>
-            <p class="event-meta">Every Sunday · 7:00 AM EDT · Magens Bay, St. Thomas</p>
-          </div>
-        </div>
-        <div class="event-row reveal" style="transition-delay:0.2s;">
-          <div class="event-date">Mar–Apr<br />2027</div>
-          <div>
-            <div class="event-title">Somatic Breathwork Retreat — St. Thomas</div>
-            <p class="event-meta">Multi-day immersive retreat · Programme and pricing to be confirmed</p>
-          </div>
-        </div>
-        <div class="event-row reveal" style="transition-delay:0.3s;">
-          <div class="event-date">Jun<br />2027</div>
-          <div>
-            <div class="event-title">Swim School — St. Thomas</div>
-            <p class="event-meta">Community swim school for children and families · St. Thomas, USVI</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- CHAPTERS -->
-  <section class="chapters" id="chapters">
-    <div class="section-inner">
-      <p class="section-label reveal">Where We Are</p>
-      <h2 class="section-title reveal">Global Chapters</h2>
+      <p class="section-label reveal">How It Works</p>
+      <h2 class="section-title reveal">Our Methodology</h2>
       <p class="section-body reveal" style="transition-delay:0.1s;">
-        @Bliss begins in Virginia and St. Thomas, with plans to expand to three additional chapters — each location chosen for its connection to a distinct wisdom tradition and healing energy. The geography of @Bliss is not accidental. Different paths, the same Truth.
+        The At Bliss Path unfolds across six sequential stages — a progression, not a checklist. Each stage builds on the one before it.
       </p>
 
-      <div class="chapters-grid">
-        <div class="chapter-card reveal">
-          <div class="chapter-inner">
-            <div>
-              <div class="chapter-tag">Chapter 01 · Founding</div>
-              <div class="chapter-name">Virginia<br /><span class="chapter-country">USA</span></div>
-              <p class="chapter-desc">Roots, community, and accessibility. The founding chapter and East Coast home of @Bliss. The first physical expression of the healing sanctuary.</p>
-            </div>
-            <span class="chapter-status active">Active</span>
+      <div class="method-flow reveal" style="transition-delay:0.15s;">
+        <span>Wake Up</span><span class="arrow">→</span>
+        <span>Regulate</span><span class="arrow">→</span>
+        <span>Become Coherent</span><span class="arrow">→</span>
+        <span>Resonate</span><span class="arrow">→</span>
+        <span>Enjoy</span><span class="arrow">→</span>
+        <span>Remember</span>
+      </div>
+
+      <div class="method-path">
+        <div class="method-line"></div>
+
+        <div class="method-stage reveal">
+          <div class="method-node">01</div>
+          <div class="method-content">
+            <div class="method-name">Wake Up</div>
+            <p class="method-text"><strong>If there is a voice inside you telling you what to do, that voice cannot be you.</strong> The At Bliss Path begins by recognizing the distinction between our essential awareness and the thoughts, patterns, reactions, and internal narratives passing through the mind. This realization is the beginning of waking up.</p>
           </div>
         </div>
-        <div class="chapter-card dim reveal" style="transition-delay:0.1s;">
-          <div class="chapter-inner">
-            <div>
-              <div class="chapter-tag">Chapter 02</div>
-              <div class="chapter-name">St. Thomas<br /><span class="chapter-country">US Virgin Islands</span></div>
-              <p class="chapter-desc">Ocean, nature, and Caribbean healing traditions. Retreat energy and island community life. Home of the Spring 2027 signature retreat.</p>
-            </div>
-            <span class="chapter-status">Coming Soon</span>
+
+        <div class="method-stage reveal" style="transition-delay:0.08s;">
+          <div class="method-node">02</div>
+          <div class="method-content">
+            <div class="method-name">Regulate</div>
+            <p class="method-text">Awareness alone is not enough. Through somatic breathwork and other embodied practices, participants work with the nervous system to release patterns that no longer serve them and create space for new patterns to emerge and integrate: <strong>Regulate → Release → Repattern → Integrate.</strong></p>
           </div>
         </div>
-        <div class="chapter-card dim reveal" style="transition-delay:0.2s;">
-          <div class="chapter-inner">
-            <div>
-              <div class="chapter-tag">Chapter 03</div>
-              <div class="chapter-name">Norway<br /><span class="chapter-country">Scandinavia</span></div>
-              <p class="chapter-desc">Stillness, fjords, and deep nature connection. Norse wisdom and the healing power of silence. A chapter in the quiet north.</p>
-            </div>
-            <span class="chapter-status">Coming Soon</span>
+
+        <div class="method-stage reveal" style="transition-delay:0.16s;">
+          <div class="method-node">03</div>
+          <div class="method-content">
+            <div class="method-name">Become Coherent</div>
+            <p class="method-text">Develop greater heart coherence through daily, weekly, and monthly practices. The objective is to bring the mind, body, emotions, and heart into greater alignment until coherence gradually becomes a way of living rather than simply a practice.</p>
           </div>
         </div>
-        <div class="chapter-card dim reveal" style="transition-delay:0.3s;">
-          <div class="chapter-inner">
-            <div>
-              <div class="chapter-tag">Chapter 04</div>
-              <div class="chapter-name">Türkiye<br /><span class="chapter-country">Anatolia</span></div>
-              <p class="chapter-desc">Ancient crossroads of East and West. Sufi tradition, Ottoman mysticism, Rumi's homeland, and one of the oldest shamanic cultures on earth. Where the path to the One has been walked for centuries.</p>
-            </div>
-            <span class="chapter-status">Coming Soon</span>
+
+        <div class="method-stage reveal" style="transition-delay:0.24s;">
+          <div class="method-node">04</div>
+          <div class="method-content">
+            <div class="method-name">Resonate</div>
+            <p class="method-text">Explore the Law of Resonance and the relationship between our inner state and the reality we experience, through meditation, visualization, conscious intention, and pineal-focused practices — shifting from <strong>"How do I make this happen?"</strong> to <strong>"What do I need to become coherent with?"</strong></p>
+          </div>
+        </div>
+
+        <div class="method-stage reveal" style="transition-delay:0.32s;">
+          <div class="method-node">05</div>
+          <div class="method-content">
+            <div class="method-name">Enjoy</div>
+            <p class="method-text">Life does not always have to feel like a struggle. This stage explores flowing more naturally with life — gratitude, playfulness, peace, and the art of not doing. There is still action, responsibility, and challenge, but these do not need to eliminate joy. Sometimes the practice is simply to <strong>enjoy being alive.</strong></p>
+          </div>
+        </div>
+
+        <div class="method-stage reveal" style="transition-delay:0.4s;">
+          <div class="method-node">06</div>
+          <div class="method-content">
+            <div class="method-name">Remember</div>
+            <p class="method-text">Ultimately, the At Bliss Path is not about becoming someone new. It is about <strong>remembering</strong>: who we are beneath our conditioning, why we are here, and how we can help others remember for themselves.</p>
           </div>
         </div>
       </div>
@@ -1464,90 +977,70 @@
 
   <div class="divider"></div>
 
-  <!-- RETREAT -->
-  <section class="retreat" id="retreat">
-    <div class="retreat-rings"><span></span></div>
+  <!-- CONSCIOUSNESS LEVELS -->
+  <section class="consciousness" id="consciousness">
     <div class="section-inner">
-      <div class="retreat-grid">
-        <div class="reveal">
-          <span class="retreat-badge">Signature Retreat</span>
-          <h2 class="section-title">Somatic Breathwork Retreat<br /><em style="color:var(--gold-light);">St. Thomas</em></h2>
-          <p class="section-body">
-            A multi-day immersive retreat experience in St. Thomas — bringing together somatic breathwork, nature, community, and shared wisdom. The first @Bliss signature retreat, designed for deep personal transformation held within a collective field.
-          </p>
-          <div class="retreat-meta">
-            <div class="retreat-meta-row">
-              <span class="retreat-meta-label">When</span>
-              <span>March–April 2027 · dates to be confirmed</span>
-            </div>
-            <div class="retreat-meta-row">
-              <span class="retreat-meta-label">Where</span>
-              <span>St. Thomas, US Virgin Islands</span>
-            </div>
-            <div class="retreat-meta-row">
-              <span class="retreat-meta-label">Programme</span>
-              <span>Details to be confirmed</span>
-            </div>
-            <div class="retreat-meta-row">
-              <span class="retreat-meta-label">Pricing</span>
-              <span>Details to be confirmed</span>
-            </div>
-          </div>
-          <a href="#connect" class="btn btn-primary">Register Interest</a>
-        </div>
-
-        <div class="retreat-card reveal" style="transition-delay:0.15s;">
-          <div class="retreat-card-title">What to Expect</div>
-          <ul>
-            <li>Daily somatic breathwork sessions held in the island environment</li>
-            <li>Ocean, air, and land as co-facilitators of healing</li>
-            <li>Shared wisdom circles drawing on diverse traditions</li>
-            <li>Community meals and deep human connection</li>
-            <li>Nature immersion — sunrise practices, water, stillness</li>
-            <li>Integration support and community beyond the retreat</li>
-            <li>Led by experienced facilitators in a held, safe container</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- FACILITATORS -->
-  <section class="facilitators" id="facilitators">
-    <div class="section-inner">
-      <p class="section-label reveal">Who Holds Space</p>
-      <h2 class="section-title reveal">Facilitators</h2>
+      <p class="section-label reveal">The Realizations</p>
+      <h2 class="section-title reveal">The Four Consciousness Levels</h2>
       <p class="section-body reveal" style="transition-delay:0.1s;">
-        @Bliss gatherings are held by experienced guides — healers, teachers, and practitioners who embody the work they offer. Facilitator details to be confirmed.
+        The At Bliss Path describes four levels of consciousness — <strong>Reality → Ability → Oneness → Unity.</strong> These are not ranks or achievements. They are progressively deeper realizations, moving from intellectual understanding toward something personally known and embodied.
       </p>
-      <div class="facilitator-grid">
-        <div class="facilitator-card reveal" style="transition-delay:0.1s;">
-          <div class="facilitator-photo"><div class="facilitator-ring"></div></div>
-          <div class="facilitator-info">
-            <div class="facilitator-name">Name to be confirmed</div>
-            <div class="facilitator-role">Somatic Breathwork</div>
-            <p class="facilitator-bio">Facilitator biography and background to be added.</p>
-          </div>
+
+      <div class="consciousness-grid">
+        <div class="consciousness-card reveal">
+          <div class="consciousness-num">01</div>
+          <div class="depth-bar"><div class="depth-fill" style="width:25%;"></div></div>
+          <div class="consciousness-title">Reality</div>
+          <p class="consciousness-text"><strong>There is a voice inside you, and that voice is not you.</strong> You are the captain, but much of the time the ship runs on autopilot — programmed by experience, fear, habit, and conditioning. Recognizing this is Reality. The second realization: it is possible to take back the helm. Learning how is the At Bliss Path.</p>
         </div>
-        <div class="facilitator-card reveal" style="transition-delay:0.2s;">
-          <div class="facilitator-photo"><div class="facilitator-ring"></div></div>
-          <div class="facilitator-info">
-            <div class="facilitator-name">Name to be confirmed</div>
-            <div class="facilitator-role">Sound Healing &amp; Yoga</div>
-            <p class="facilitator-bio">Facilitator biography and background to be added.</p>
-          </div>
+        <div class="consciousness-card reveal" style="transition-delay:0.1s;">
+          <div class="consciousness-num">02</div>
+          <div class="depth-bar"><div class="depth-fill" style="width:50%;"></div></div>
+          <div class="consciousness-title">Ability</div>
+          <p class="consciousness-text">Ability begins when someone moves beyond hoping they can influence their life and begins knowing, through experience, that their inner state matters — recognizing their capacity to change patterns, make conscious choices, and participate deliberately in creating their life: <strong>Awareness + Intention + Emotion + Belief + Action.</strong></p>
         </div>
-        <div class="facilitator-card reveal" style="transition-delay:0.3s;">
-          <div class="facilitator-photo"><div class="facilitator-ring"></div></div>
-          <div class="facilitator-info">
-            <div class="facilitator-name">Name to be confirmed</div>
-            <div class="facilitator-role">Somatic Work &amp; Plant Medicine</div>
-            <p class="facilitator-bio">Facilitator biography and background to be added.</p>
-          </div>
+        <div class="consciousness-card reveal" style="transition-delay:0.2s;">
+          <div class="consciousness-num">03</div>
+          <div class="depth-bar"><div class="depth-fill" style="width:75%;"></div></div>
+          <div class="consciousness-title">Oneness</div>
+          <p class="consciousness-text">The realization that beneath our apparent differences, life is profoundly interconnected: <strong>do not do to another what you would not have done to you; do not harm what does not harm you; do not destroy what does not threaten your life.</strong> Compassion becomes increasingly natural as our sense of separation decreases.</p>
+        </div>
+        <div class="consciousness-card reveal" style="transition-delay:0.3s;">
+          <div class="consciousness-num">04</div>
+          <div class="depth-bar"><div class="depth-fill" style="width:100%;"></div></div>
+          <div class="consciousness-title">Unity</div>
+          <p class="consciousness-text">Unity takes Oneness deeper — exploring the idea that consciousness itself may not be fundamentally divided the way our individual identities make it appear. The consciousness experiencing life through us participates in the same greater mystery shared by those who came before, those alive today, and those still to come.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- THE AT BLISS PATH -->
+  <section class="path-section" id="path">
+    <div class="section-inner">
+      <p class="section-label reveal">Begin The Practice</p>
+      <h2 class="section-title reveal">The At Bliss Path</h2>
+      <p class="section-body reveal" style="transition-delay:0.1s;">
+        The At Bliss Path is free and open to everyone who genuinely wishes to learn it. But like every meaningful path, it asks something of you: time for yourself, practice, the completion of exercises along the way, and above all, a willingness to look inward with curiosity and honesty. There is no belief system you are required to adopt — but there is one idea you need to be ready to explore before beginning.
+      </p>
+
+      <p class="path-before reveal" style="transition-delay:0.15s;">Before You Begin</p>
+      <p class="section-body reveal" style="transition-delay:0.18s;">
+        Read the following statement carefully. Do not agree with it simply because you think you are supposed to. Take a moment and ask yourself whether you genuinely understand what it means, and whether you are ready to explore it through your own experience.
+      </p>
+
+      <blockquote class="path-quote reveal" style="transition-delay:0.25s;">
+        "I recognize that there is a voice inside me, and I recognize that this voice is not my authentic self. I also recognize that, at times, and perhaps much of the time, this voice influences or even directs the way I live my life. If I am the captain of my ship, I can see that the ship is often running on autopilot, and that this autopilot does not necessarily share my intended course or destination. It follows patterns and directions of its own, shaped by conditioning, habits, fears, and past experiences."
+      </blockquote>
+
+      <p class="path-ready reveal" style="transition-delay:0.3s;">
+        If you can sincerely say this, <strong>you are ready to begin.</strong><br />
+        Welcome to the At Bliss Path.
+      </p>
+
+      <a href="#connect" class="btn btn-primary reveal" style="transition-delay:0.35s;">I Understand &amp; I Am Ready →</a>
     </div>
   </section>
 
@@ -1561,10 +1054,10 @@
 
       <div class="manifesto-grid">
         <div class="manifesto-block reveal">
-          <p class="manifesto-text">What matters is how you vibrate. Your body and your thoughts are the source — the state of one and the quality of the other determine how you feel, and how you feel is the frequency you broadcast into the world. This is not metaphor. This is how you are built.</p>
+          <p class="manifesto-text">What matters is how you resonate. Your body and your thoughts are the source — the state of one and the quality of the other determine how you feel, and how you feel is the frequency you broadcast into the world. This is not metaphor. This is how you are built.</p>
         </div>
         <div class="manifesto-block reveal" style="transition-delay:0.1s;">
-          <p class="manifesto-text">We believe in universal unconditional love as the ground of all being — not as an idea but as a living frequency. We are all expressions of the One. When we vibrate in Light, we remember this truth: that beneath every difference of name, belief, tradition, or nation, we are one.</p>
+          <p class="manifesto-text">We believe in universal unconditional love as the ground of all being — not as an idea but as a living frequency. We are all expressions of the One. When we resonate in Light, we remember this truth: that beneath every difference of name, belief, tradition, or nation, we are one.</p>
         </div>
         <div class="manifesto-block reveal" style="transition-delay:0.18s;">
           <p class="manifesto-text">We live by a simple and ancient law that every wisdom tradition on earth has spoken in its own language: do not do to another what you would not have done to you. Do not harm what does not harm you. Do not destroy what does not threaten your life. This golden thread is not a rule imposed from outside. It is a description of what becomes natural when you truly remember that we are one.</p>
@@ -1673,29 +1166,12 @@
         <div class="footer-col-title">Foundation</div>
         <ul class="footer-links">
           <li><a href="#mission">Mission &amp; Vision</a></li>
-          <li><a href="#pillars">The Four Pillars</a></li>
+          <li><a href="#methodology">Our Methodology</a></li>
+          <li><a href="#consciousness">Consciousness Levels</a></li>
+          <li><a href="#path">The At Bliss Path</a></li>
           <li><a href="#manifesto">Manifesto</a></li>
           <li><a href="#founder">Founder</a></li>
           <li><a href="#support">Support</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-col-title">Programmes</div>
-        <ul class="footer-links">
-          <li><a href="#healing">Healing Arts</a></li>
-          <li><a href="#community">Community Life</a></li>
-          <li><a href="#upcoming">Sessions &amp; Events</a></li>
-          <li><a href="#retreat">Retreat — Spring 2027</a></li>
-          <li><a href="#facilitators">Facilitators</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-col-title">Chapters</div>
-        <ul class="footer-links">
-          <li><a href="#chapters">Virginia, USA</a></li>
-          <li><a href="#chapters">St. Thomas, USVI</a></li>
-          <li><a href="#chapters">Norway — Coming Soon</a></li>
-          <li><a href="#chapters">Türkiye — Coming Soon</a></li>
         </ul>
       </div>
     </div>
