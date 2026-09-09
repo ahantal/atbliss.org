@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The @ Bliss Path | @ Bliss Foundation</title>
+  <meta name="description" content="The @ Bliss Path begins with experience. Learn what the Path means and take your first step with a free Soma+IQ™ The Journey session." />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #c9a84c;
+      --gold-light: #e8cf88;
+      --deep: #0a0c14;
+      --deep2: #10131f;
+      --deep3: #0d0f1a;
+      --text: #e8e4dc;
+      --muted: #9a968f;
+      --border: rgba(201, 168, 76, 0.2);
+      --border-hover: rgba(201, 168, 76, 0.45);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--deep);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 3rem;
+      background: rgba(10, 12, 20, 0.9);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      transition: padding 0.3s ease;
+    }
+
+    nav.scrolled { padding: 0.85rem 3rem; }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .nav-logo img {
+      height: 36px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.73rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover { color: var(--gold-light); }
+
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--gold-light);
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    .nav-mobile {
+      position: fixed;
+      inset: 0;
+      padding: 5.5rem 2.5rem 3rem;
+      background: rgba(10, 12, 20, 0.97);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.35s ease, visibility 0s 0.35s;
+    }
+
+    .nav-mobile.open {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.35s ease, visibility 0s 0s;
+    }
+
+    .nav-mobile a {
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--border);
+      transition: color 0.2s;
+    }
+
+    .nav-mobile a:hover,
+    .nav-mobile a:focus { color: var(--gold-light); }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-block;
+      padding: 0.85rem 2.4rem;
+      font-size: 0.76rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.25s, color 0.25s, border-color 0.25s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--deep);
+      border: 1px solid var(--gold);
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      border-color: var(--gold-light);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: var(--gold);
+      color: var(--deep);
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      width: 1px;
+      height: 80px;
+      background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+      margin: 0 auto;
+    }
+
+    /* ── SECTION BASE ── */
+    section { padding: 7rem 2rem; }
+
+    .section-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+
+    .section-inner.narrow { max-width: 760px; }
+
+    .section-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 300;
+      line-height: 1.18;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-body {
+      font-size: 1rem;
+      line-height: 1.9;
+      color: rgba(232, 228, 220, 0.72);
+      max-width: 640px;
+    }
+
+    .section-body strong { color: var(--text); font-weight: 500; }
+
+    .center { text-align: center; }
+    .center .section-body { margin: 0 auto; }
+
+    /* ── HERO ── */
+    .path-hero { background: var(--deep); padding-top: 11rem; text-align: center; }
+
+    .path-hero .section-inner { max-width: 720px; }
+
+    .path-hero-sub {
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: rgba(232, 228, 220, 0.72);
+      max-width: 620px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .path-hero-sub p { margin-bottom: 1.25rem; }
+    .path-hero-sub p:last-child { margin-bottom: 0; }
+
+    /* ── QUOTE / CASCADE ── */
+    .path-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+      font-style: italic;
+      font-weight: 300;
+      line-height: 1.6;
+      color: var(--gold-light);
+      max-width: 680px;
+      margin: 2rem auto;
+    }
+
+    .cascade {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      color: rgba(232, 228, 220, 0.8);
+      line-height: 1.9;
+      margin-bottom: 1.75rem;
+    }
+
+    .highlight-line {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: clamp(1.2rem, 2.2vw, 1.5rem);
+      color: var(--gold-light);
+      margin-top: 2rem;
+    }
+
+    .closing-line {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(1.2rem, 2.2vw, 1.5rem);
+      color: var(--gold-light);
+      margin-top: 1.75rem;
+    }
+
+    /* ── SECTION BACKGROUNDS ── */
+    .begin-section { background: var(--deep2); text-align: center; }
+    .first-step { background: var(--deep); }
+    .regulate-section { background: var(--deep3); }
+    .continue-section { background: var(--deep2); }
+    .whats-next { background: var(--deep); }
+    .map-section { background: var(--deep3); text-align: center; }
+    .doctrine-section { background: var(--deep2); }
+    .closing-section { background: var(--deep); text-align: center; }
+
+    .ready-note {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: rgba(232, 228, 220, 0.85);
+      margin: 0 auto 2.5rem;
+      max-width: 520px;
+    }
+
+    /* ── PATH FLOW ── */
+    .path-flow {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 0.6rem 0.9rem;
+      margin: 2.5rem 0;
+    }
+
+    .path-flow span {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      color: var(--gold-light);
+    }
+
+    .path-flow .arrow {
+      font-family: 'DM Sans', sans-serif;
+      color: rgba(201, 168, 76, 0.4);
+    }
+
+    /* ── STAGE GRID ── */
+    .stage-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+      text-align: left;
+    }
+
+    .stage-card {
+      border: 1px solid var(--border);
+      padding: 2rem;
+      transition: border-color 0.3s;
+    }
+
+    .stage-card:hover { border-color: var(--border-hover); }
+
+    .stage-num {
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.9rem;
+    }
+
+    .stage-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 400;
+      color: var(--gold-light);
+      margin-bottom: 0.6rem;
+    }
+
+    .stage-desc {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 3.5rem 3rem 2rem;
+      background: var(--deep);
+    }
+
+    .footer-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-logo { display: block; margin-bottom: 1rem; }
+    .footer-logo img { height: 44px; width: auto; display: block; }
+
+    .footer-tagline {
+      font-size: 0.82rem;
+      line-height: 1.75;
+      color: var(--muted);
+      max-width: 260px;
+    }
+
+    .footer-back {
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(232,207,136,0.3);
+    }
+
+    .footer-back:hover { color: var(--gold); }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-copy {
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+
+    /* ── ANIMATIONS ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+
+      section { padding: 5rem 1.5rem; }
+      .path-hero { padding-top: 8rem; }
+
+      .stage-grid { grid-template-columns: 1fr; }
+
+      .footer-top { flex-direction: column; }
+      footer { padding: 3rem 1.5rem 2rem; }
+    }
+
+    @media (max-width: 1024px) and (min-width: 769px) {
+      .stage-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="main-nav">
+    <a href="/" class="nav-logo"><img src="../images/AtBlissLogo.png" alt="@ Bliss Foundation" /></a>
+    <ul class="nav-links">
+      <li><a href="/#founder">About</a></li>
+      <li><a href="/#methodology">Our Methodology</a></li>
+      <li><a href="/#consciousness">Consciousness Levels</a></li>
+      <li><a href="/path">The @ Bliss Path</a></li>
+      <li><a href="/#manifesto">Manifesto</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE NAV -->
+  <div class="nav-mobile" id="mobile-nav" role="dialog" aria-label="Navigation">
+    <a href="/#founder"       onclick="closeNav()">About</a>
+    <a href="/#methodology"   onclick="closeNav()">Our Methodology</a>
+    <a href="/#consciousness" onclick="closeNav()">Consciousness Levels</a>
+    <a href="/path"           onclick="closeNav()">The @ Bliss Path</a>
+    <a href="/#manifesto"     onclick="closeNav()">Manifesto</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="path-hero">
+    <div class="section-inner">
+      <p class="section-label reveal">The @ Bliss Path</p>
+      <h1 class="section-title reveal" style="font-size:clamp(2.6rem,6vw,4rem);">Take back the helm.</h1>
+      <div class="path-hero-sub reveal" style="transition-delay:0.1s;">
+        <p>You may already recognize that there is a voice inside you that is not always who you truly are.</p>
+        <p>Thoughts arise. Emotions arise. Patterns take over. Sometimes we watch ourselves react in ways we did not consciously choose.</p>
+        <p>If you are the captain of your ship, you may begin to see that much of the time, the ship is running on autopilot.</p>
+        <p>The @ Bliss Path is the process of learning how to take back the helm.</p>
+      </div>
+      <a href="#first-step" class="btn btn-primary reveal" style="transition-delay:0.2s;">Begin The Path &rarr;</a>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- BEFORE YOU BEGIN -->
+  <section class="begin-section">
+    <div class="section-inner narrow center">
+      <p class="section-label reveal">Before You Begin</p>
+      <blockquote class="path-quote reveal" style="transition-delay:0.1s;">
+        "I recognize that there is a voice inside me, and that this voice is not my authentic self. I recognize that, at times, and perhaps much of the time, it influences or directs the way I live.
+        <br /><br />
+        If I am the captain of my ship, I can see that the ship is often running on autopilot, following patterns shaped by conditioning, habits, fears, and past experiences.
+        <br /><br />
+        And I sincerely want to take back the helm."
+      </blockquote>
+      <p class="ready-note reveal" style="transition-delay:0.15s;">
+        If you can sincerely say this, <strong style="color:var(--text);">you are ready to begin.</strong><br />
+        Welcome to The @ Bliss Path.
+      </p>
+      <a href="#first-step" class="btn btn-primary reveal" style="transition-delay:0.2s;">I Recognize This &amp; I Am Ready &rarr;</a>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- YOUR FIRST STEP -->
+  <section class="first-step" id="first-step">
+    <div class="section-inner narrow">
+      <p class="section-label reveal">Begin With Experience</p>
+      <h2 class="section-title reveal">Your first step is to breathe.</h2>
+      <p class="section-body reveal" style="transition-delay:0.1s; margin-bottom:1.25rem;">
+        The @ Bliss Path does not begin by asking you to accept a philosophy or adopt a new belief system.
+      </p>
+      <p class="section-body reveal" style="transition-delay:0.13s; margin-bottom:1.25rem;">
+        It begins with an experience.
+      </p>
+      <p class="section-body reveal" style="transition-delay:0.16s; margin-bottom:1.25rem;">
+        Your first step is to join us for a free online Soma+IQ&trade; The Journey Somatic Breathwork session.
+      </p>
+      <p class="section-body reveal" style="transition-delay:0.19s; margin-bottom:1.25rem;">
+        Before trying to understand every pattern in the mind, we begin with the Soma, the body as it is experienced from within.
+      </p>
+      <p class="section-body reveal" style="transition-delay:0.22s; margin-bottom:0;">
+        Through conscious breathing and embodied awareness, we begin noticing the relationship between the nervous system, thoughts, emotions, physical sensations, and the patterns that shape how we respond to life.
+      </p>
+      <p class="closing-line reveal" style="transition-delay:0.26s;">
+        You do not need to believe anything.<br />
+        <strong>Experience. Observe. Stay curious.</strong>
+      </p>
+      <div class="reveal" style="transition-delay:0.3s; margin-top:2.25rem;">
+        <a href="/breathwork" class="btn btn-primary">Join a Free Soma+IQ&trade; The Journey Session &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- REGULATE -->
+  <section class="regulate-section">
+    <div class="section-inner narrow">
+      <p class="section-label reveal">Regulate</p>
+      <h2 class="section-title reveal">Awareness alone is not enough.</h2>
+      <p class="section-body reveal" style="transition-delay:0.1s; margin-bottom:1.25rem;">
+        You may recognize a pattern intellectually and still find yourself repeating it.
+      </p>
+      <p class="section-body reveal" style="transition-delay:0.13s; margin-bottom:1.25rem;">
+        That is because our patterns do not exist only in our thoughts. They can also be experienced through our emotions, nervous system, breath, posture, physical sensations, habits, and the Soma.
+      </p>
+      <p class="section-body reveal" style="transition-delay:0.16s; margin-bottom:1.25rem;">
+        This is why Regulate is an essential part of The @ Bliss Methodology and an important part of beginning The @ Bliss Path.
+      </p>
+      <p class="section-body reveal" style="transition-delay:0.19s; margin-bottom:1.5rem;">
+        We start learning to notice what happens within us before, during, and after a reaction.
+      </p>
+      <p class="cascade reveal" style="transition-delay:0.22s;">
+        What happens to my breathing?<br />
+        What happens in my body?<br />
+        What emotion appears?<br />
+        What thought follows?<br />
+        What do I do next?
+      </p>
+      <p class="section-body reveal" style="transition-delay:0.25s; margin-bottom:1.25rem;">
+        As awareness grows, we begin creating space between the automatic reaction and the person observing it.
+      </p>
+      <p class="section-body reveal" style="transition-delay:0.28s; margin-bottom:0;">
+        Somatic Breathwork is one of the practices we use to begin exploring that space.
+      </p>
+      <p class="highlight-line reveal" style="transition-delay:0.32s;"><strong>Regulate &rarr; Release &rarr; Repattern &rarr; Integrate.</strong></p>
+      <p class="section-body reveal" style="transition-delay:0.35s; margin-top:2rem; margin-bottom:1.25rem;">
+        Regulation also extends beyond breathwork. As The @ Bliss Path develops, we explore how sleeping, eating, movement, attention, and other everyday practices influence the Soma and the way we experience life.
+      </p>
+      <p class="closing-line reveal" style="transition-delay:0.38s;">
+        The goal is not to regulate yourself perfectly.<br />
+        <strong>It is to become increasingly conscious of what is happening within you.</strong>
+      </p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- AFTER THE SESSION -->
+  <section class="continue-section">
+    <div class="section-inner narrow">
+      <p class="section-label reveal">If You Want To Continue</p>
+      <h2 class="section-title reveal">Stay with us for another 30 minutes.</h2>
+      <p class="section-body reveal" style="transition-delay:0.1s; margin-bottom:1.25rem;">
+        Every Soma+IQ&trade; The Journey session offered through @ Bliss will be followed by an optional 30-minute introduction to The @ Bliss Path.
+      </p>
+      <p class="section-body reveal" style="transition-delay:0.13s; margin-bottom:1.25rem;">
+        There is no obligation to stay. If the experience has made you curious and you would like to understand what comes next, simply remain with us after the breathwork session.
+      </p>
+      <p class="section-body reveal" style="transition-delay:0.16s; margin-bottom:1.5rem;">
+        During these 30 minutes, we will talk about what you may have observed during the experience, introduce the ideas behind The @ Bliss Path, and explain how you can continue.
+      </p>
+      <p class="closing-line reveal" style="transition-delay:0.2s;">
+        The breathwork session is an experience.<br />
+        The next 30 minutes are an invitation to explore.
+      </p>
+      <p class="section-body reveal" style="transition-delay:0.24s; margin-top:1.75rem; margin-bottom:0;">
+        No separate registration is required for the additional 30 minutes. Anyone attending the breathwork session may choose to stay.
+      </p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- WHAT COMES NEXT -->
+  <section class="whats-next">
+    <div class="section-inner narrow">
+      <p class="section-label reveal">What Comes Next</p>
+      <h2 class="section-title reveal">The Path goes deeper.</h2>
+      <p class="section-body reveal" style="transition-delay:0.1s; margin-bottom:1.25rem;">
+        The @ Bliss Path is not a breathwork program. Breathwork is one practice within a much broader journey of self-observation, regulation, contemplation, mindful living, coherence, resonance, philosophy, and remembering.
+      </p>
+      <p class="section-body reveal" style="transition-delay:0.13s; margin-bottom:1.5rem;">
+        As you continue, you will begin exploring your thoughts, emotions, Soma, behaviors, inner voices, patterns, relationships, desires, habits, and the way you experience yourself and the world around you.
+      </p>
+      <p class="cascade reveal" style="transition-delay:0.16s;">
+        You will encounter practices.<br />
+        You will encounter questions.<br />
+        You will encounter ideas carried through different wisdom traditions.
+      </p>
+      <p class="section-body reveal" style="transition-delay:0.19s; margin-bottom:0;">
+        And you will be encouraged not simply to believe them, but to explore them through your own experience.
+      </p>
+      <p class="closing-line reveal" style="transition-delay:0.23s;"><strong>The Methodology gives us the map. The Path is how we travel it.</strong></p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- METHODOLOGY MAP -->
+  <section class="map-section">
+    <div class="section-inner">
+      <p class="section-label reveal">The Map</p>
+      <h2 class="section-title reveal">The @ Bliss Methodology</h2>
+
+      <div class="path-flow reveal" style="transition-delay:0.1s;">
+        <span>Awaken</span><span class="arrow">→</span>
+        <span>Regulate</span><span class="arrow">→</span>
+        <span>Become Coherent</span><span class="arrow">→</span>
+        <span>Resonate</span><span class="arrow">→</span>
+        <span>Enjoy</span><span class="arrow">→</span>
+        <span>Remember</span>
+      </div>
+
+      <p class="section-body reveal" style="transition-delay:0.15s; margin:0 auto;">
+        These are not boxes to check. They are stages of exploration that build upon one another, overlap, deepen, and gradually become part of the way we live.
+      </p>
+
+      <div class="stage-grid">
+        <div class="stage-card reveal" style="transition-delay:0.1s;">
+          <div class="stage-num">01</div>
+          <div class="stage-name">Awaken</div>
+          <p class="stage-desc">Observe what is happening within you.</p>
+        </div>
+        <div class="stage-card reveal" style="transition-delay:0.14s;">
+          <div class="stage-num">02</div>
+          <div class="stage-name">Regulate</div>
+          <p class="stage-desc">Learn to work consciously with the Soma and your inner state.</p>
+        </div>
+        <div class="stage-card reveal" style="transition-delay:0.18s;">
+          <div class="stage-num">03</div>
+          <div class="stage-name">Become Coherent</div>
+          <p class="stage-desc">Bring heart, mind, body, and emotions into greater alignment.</p>
+        </div>
+        <div class="stage-card reveal" style="transition-delay:0.22s;">
+          <div class="stage-num">04</div>
+          <div class="stage-name">Resonate</div>
+          <p class="stage-desc">Become more conscious of what you bring into your experience of life.</p>
+        </div>
+        <div class="stage-card reveal" style="transition-delay:0.26s;">
+          <div class="stage-num">05</div>
+          <div class="stage-name">Enjoy</div>
+          <p class="stage-desc">Become free enough to fully experience the beauty of being human.</p>
+        </div>
+        <div class="stage-card reveal" style="transition-delay:0.3s;">
+          <div class="stage-num">06</div>
+          <div class="stage-name">Remember</div>
+          <p class="stage-desc">Remember who you truly are and your connection to the One.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- A PATH, NOT A DOCTRINE -->
+  <section class="doctrine-section">
+    <div class="section-inner narrow">
+      <p class="section-label reveal">Explore For Yourself</p>
+      <h2 class="section-title reveal">You are not being asked to believe.</h2>
+      <p class="section-body reveal" style="transition-delay:0.1s; margin-bottom:1.5rem;">
+        The @ Bliss Path will draw from practices, philosophies, contemplative traditions, and wisdom carried across cultures and generations.
+      </p>
+      <p class="cascade reveal" style="transition-delay:0.13s;">
+        Some ideas may resonate with you immediately.<br />
+        Others may challenge you.<br />
+        Some may take time.
+      </p>
+      <p class="section-body reveal" style="transition-delay:0.16s; margin-bottom:0;">
+        The invitation is not to accept everything you encounter as truth.
+      </p>
+      <p class="closing-line reveal" style="transition-delay:0.2s;"><strong>Observe. Experience. Question. Practice. Discover what you come to know by heart.</strong></p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- CLOSING -->
+  <section class="closing-section">
+    <div class="section-inner narrow">
+      <p class="section-label reveal">Begin</p>
+      <h2 class="section-title reveal">You do not need to know where the Path will take you.</h2>
+      <p class="section-body reveal" style="transition-delay:0.1s; margin:0 auto 1.5rem;">
+        You only need to be willing to observe what is happening within you and sincerely want to take back the helm.
+      </p>
+      <p class="section-body reveal" style="transition-delay:0.13s; margin:0 auto 1.5rem;">
+        Your first experience is free. Join us for Soma+IQ&trade; The Journey.
+      </p>
+      <p class="cascade reveal" style="transition-delay:0.16s;">
+        Breathe.<br />
+        Observe.<br />
+        Stay curious.
+      </p>
+      <p class="section-body reveal" style="transition-delay:0.19s; margin:0 auto 2.25rem;">
+        And if something within you wants to continue, stay for another 30 minutes.
+      </p>
+      <a href="/breathwork" class="btn btn-primary reveal" style="transition-delay:0.23s;">Begin with a Free Breathwork Session &rarr;</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div>
+        <span class="footer-logo"><img src="../images/AtBlissLogo.png" alt="@ Bliss Foundation" /></span>
+        <p class="footer-tagline">You are not at the mercy of how you resonate. You participate in shaping it, through every breath, every thought, every practice, every choice.</p>
+      </div>
+      <a href="/" class="footer-back">&larr; Back to atbliss.org</a>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2026 @ Bliss Foundation &nbsp;&middot;&nbsp; atbliss.org</p>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Nav shrink
+    const mainNav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      mainNav.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    // Mobile nav toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobile-nav');
+
+    hamburger.addEventListener('click', () => {
+      const open = mobileNav.classList.toggle('open');
+      hamburger.classList.toggle('open', open);
+      hamburger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+
+    function closeNav() {
+      mobileNav.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-label', 'Open menu');
+      document.body.style.overflow = '';
+    }
+  </script>
+</body>
+</html>
