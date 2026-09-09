@@ -393,6 +393,27 @@
       margin-bottom: 0.6rem;
     }
 
+    .required-mark { color: #e2635c; }
+
+    .required-legend {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    .checkbox-terms {
+      font-size: 0.8rem;
+      line-height: 1.75;
+      color: rgba(232, 228, 220, 0.7);
+      margin-bottom: 1.5rem;
+    }
+
+    .checkbox-terms p { margin-bottom: 1rem; }
+    .checkbox-terms p:last-child { margin-bottom: 0; }
+
+    .checkbox-terms a { color: var(--gold-light); text-decoration: none; border-bottom: 1px solid rgba(232,207,136,0.3); }
+    .checkbox-terms a:hover { color: var(--gold); }
+
     .field-help {
       font-size: 0.82rem;
       color: var(--muted);
@@ -402,6 +423,8 @@
 
     input[type="text"],
     input[type="email"],
+    input[type="tel"],
+    input[type="date"],
     select,
     textarea {
       width: 100%;
@@ -414,8 +437,12 @@
       transition: border-color 0.2s;
     }
 
+    input[type="date"] { color-scheme: dark; }
+
     input[type="text"]:focus,
     input[type="email"]:focus,
+    input[type="tel"]:focus,
+    input[type="date"]:focus,
     select:focus,
     textarea:focus {
       outline: none;
@@ -831,31 +858,44 @@
           <input type="hidden" name="subject" value="New Soma+IQ™ The Journey Registration" />
           <input type="hidden" name="from_name" value="@ Bliss Foundation Website" />
 
+          <p class="required-legend"><span class="required-mark">*</span> Required fields</p>
+
           <div class="form-row">
             <div class="form-group">
-              <label for="first_name">First Name</label>
+              <label for="first_name">First Name <span class="required-mark">*</span></label>
               <input type="text" id="first_name" name="first_name" required />
             </div>
             <div class="form-group">
-              <label for="last_name">Last Name</label>
+              <label for="last_name">Last Name <span class="required-mark">*</span></label>
               <input type="text" id="last_name" name="last_name" required />
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group">
-              <label for="email">Email Address</label>
+              <label for="email">Email Address <span class="required-mark">*</span></label>
               <input type="email" id="email" name="email" required />
             </div>
             <div class="form-group">
+              <label for="city">Current City <span class="required-mark">*</span></label>
+              <input type="text" id="city" name="current_city" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
               <label for="country">Country</label>
-              <input type="text" id="country" name="country" required />
+              <input type="text" id="country" name="country" />
+            </div>
+            <div class="form-group">
+              <label for="phone">Mobile Phone</label>
+              <input type="tel" id="phone" name="phone" placeholder="e.g. +1 555 123 4567" />
             </div>
           </div>
 
           <div class="form-group">
-            <label for="timezone">Time Zone</label>
-            <input type="text" id="timezone" name="timezone" placeholder="e.g. EST, CET, GMT+3" required />
+            <label for="birthday">Birthday</label>
+            <input type="date" id="birthday" name="birthday" />
           </div>
 
           <div class="form-group">
@@ -872,10 +912,19 @@
             </div>
           </div>
 
+          <div class="checkbox-terms">
+            <p>Soma+IQ&trade; Breathwork is a personal growth practice and not a substitute for psychotherapy. It is not suitable for pregnant women or individuals with serious medical conditions such as heart issues, high blood pressure, glaucoma, epilepsy, recent surgery, or major psychiatric diagnoses. If unsure, please consult your doctor. Asthma patients should bring their inhaler and seek medical advice before participating.</p>
+
+            <p class="contra-label">By signing up for a session you agree to these terms</p>
+            <p>I acknowledge that Soma+IQ&trade; Breathwork is a deep and powerful process. It involves rapid and prolonged breathing that is designed to activate intense emotional responses. I have notified the practitioner of any physical injuries, mental or psychological conditions I have. I engage in this experience willingly and take full responsibility for my own physical, mental and emotional experiences during and after the session.</p>
+
+            <p>If you have questions or concerns specifically regarding Soma+IQ&trade; Breathwork, please contact <a href="mailto:support@hantal.com">support@hantal.com</a>.</p>
+          </div>
+
           <div class="checkbox-row">
             <input type="checkbox" id="contra_ack" name="contraindications_acknowledged" value="Yes" required />
             <label for="contra_ack" style="margin:0; text-transform:none; font-size:0.88rem; letter-spacing:0; color:inherit;">
-              <span>I have read the contraindications above and understand that I must complete the required release form before participating.</span>
+              <span>I have read the information above and agree to these terms.</span>
             </label>
           </div>
 
