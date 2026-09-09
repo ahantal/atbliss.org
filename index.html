@@ -675,53 +675,6 @@
       margin: 0 auto;
     }
 
-    /* ── SUPPORT ── */
-    .support {
-      background: var(--deep);
-      text-align: center;
-    }
-
-    .support .section-inner { max-width: 700px; }
-
-    .support .section-title,
-    .support .section-label { text-align: center; }
-
-    .support .section-body {
-      max-width: none;
-      margin: 0 auto 2.5rem;
-      text-align: center;
-    }
-
-    .support-actions {
-      display: flex;
-      gap: 1.25rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    /* ── CONNECT ── */
-    .connect { background: var(--deep2); }
-
-    .connect-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.4fr;
-      gap: 6rem;
-      align-items: start;
-    }
-
-    .form-embed-wrapper {
-      border: 1px solid var(--border);
-      overflow: hidden;
-      background: rgba(255,255,255,0.02);
-    }
-
-    .form-embed-wrapper iframe {
-      width: 100%;
-      height: 1126px;
-      border: none;
-      display: block;
-    }
-
     /* ── FOOTER ── */
     footer {
       border-top: 1px solid var(--border);
@@ -833,8 +786,7 @@
       .transition { padding: 6rem 1.5rem; }
 
       .mission-grid,
-      .consciousness-grid,
-      .connect-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .consciousness-grid { grid-template-columns: 1fr; gap: 3rem; }
 
       .method-stage { gap: 1.25rem; }
       .method-node { width: 38px; height: 38px; font-size: 0.85rem; }
@@ -865,7 +817,6 @@
       <li><a href="#consciousness">Consciousness Levels</a></li>
       <li><a href="#path">The @ Bliss Path</a></li>
       <li><a href="#manifesto">Manifesto</a></li>
-      <li><a href="#connect" class="nav-cta">Get Involved</a></li>
     </ul>
     <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
       <span></span><span></span><span></span>
@@ -879,7 +830,6 @@
     <a href="#consciousness" onclick="closeNav()">Consciousness Levels</a>
     <a href="#path"          onclick="closeNav()">The @ Bliss Path</a>
     <a href="#manifesto"     onclick="closeNav()">Manifesto</a>
-    <a href="#connect"       onclick="closeNav()">Get Involved</a>
   </div>
 
   <!-- HERO -->
@@ -1226,51 +1176,6 @@
     </div>
   </section>
 
-  <div class="divider"></div>
-
-  <!-- SUPPORT -->
-  <section class="support" id="support">
-    <div class="section-inner">
-      <p class="section-label reveal">Support the Work</p>
-      <h2 class="section-title reveal">Be Part of the Foundation</h2>
-      <p class="section-body reveal" style="transition-delay:0.1s;">
-        @ Bliss Foundation is built on love, commitment, and community. Your support, financial or otherwise, helps us create more spaces, reach more people, and deepen the work.
-      </p>
-      <div class="support-actions reveal" style="transition-delay:0.2s;">
-        <a href="#connect" class="btn btn-primary">Donate</a>
-        <a href="#connect" class="btn btn-outline">Volunteer</a>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- CONNECT -->
-  <section class="connect" id="connect">
-    <div class="section-inner">
-      <div class="connect-grid">
-        <div>
-          <p class="section-label reveal">Connect</p>
-          <h2 class="section-title reveal">Be part of something greater</h2>
-          <p class="section-body reveal" style="transition-delay:0.1s;">
-            Whether you are looking to volunteer, partner, donate, attend a session, or simply learn more, we would love to hear from you. Fill out the form and a member of our team will be in touch.
-          </p>
-        </div>
-        <div class="form-embed-wrapper reveal" style="transition-delay:0.2s;">
-          <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLScWPSA1wNFi5MClaf_Vl8btcdyq4uLEG7zjgnB9Z4i0wD95rw/viewform?embedded=true"
-            width="100%"
-            height="1126"
-            frameborder="0"
-            marginheight="0"
-            marginwidth="0">
-            Loading…
-          </iframe>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- FOOTER -->
   <footer>
     <div class="footer-top">
@@ -1287,7 +1192,6 @@
           <li><a href="#path">The @ Bliss Path</a></li>
           <li><a href="#manifesto">Manifesto</a></li>
           <li><a href="#founder">Founder</a></li>
-          <li><a href="#support">Support</a></li>
         </ul>
       </div>
     </div>
