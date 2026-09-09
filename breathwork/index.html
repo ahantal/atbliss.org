@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soma+IQ™ The Journey | @ Bliss Foundation</title>
+  <meta name="description" content="Somatic Breathwork within @ Bliss. Learn about Soma+IQ™ The Journey and register for a free monthly online session." />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #c9a84c;
+      --gold-light: #e8cf88;
+      --deep: #0a0c14;
+      --deep2: #10131f;
+      --deep3: #0d0f1a;
+      --text: #e8e4dc;
+      --muted: #9a968f;
+      --border: rgba(201, 168, 76, 0.2);
+      --border-hover: rgba(201, 168, 76, 0.45);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--deep);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 3rem;
+      background: rgba(10, 12, 20, 0.9);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      transition: padding 0.3s ease;
+    }
+
+    nav.scrolled { padding: 0.85rem 3rem; }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .nav-logo img {
+      height: 36px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.73rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover { color: var(--gold-light); }
+
+    .nav-cta {
+      padding: 0.5rem 1.4rem;
+      border: 1px solid var(--gold) !important;
+      color: var(--gold-light) !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--gold) !important;
+      color: var(--deep) !important;
+    }
+
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--gold-light);
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    .nav-mobile {
+      position: fixed;
+      inset: 0;
+      padding: 5.5rem 2.5rem 3rem;
+      background: rgba(10, 12, 20, 0.97);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.35s ease, visibility 0s 0.35s;
+    }
+
+    .nav-mobile.open {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.35s ease, visibility 0s 0s;
+    }
+
+    .nav-mobile a {
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--border);
+      transition: color 0.2s;
+    }
+
+    .nav-mobile a:hover,
+    .nav-mobile a:focus { color: var(--gold-light); }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-block;
+      padding: 0.85rem 2.4rem;
+      font-size: 0.76rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.25s, color 0.25s, border-color 0.25s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--deep);
+      border: 1px solid var(--gold);
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      border-color: var(--gold-light);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: var(--gold);
+      color: var(--deep);
+    }
+
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      width: 1px;
+      height: 80px;
+      background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+      margin: 0 auto;
+    }
+
+    /* ── SECTION BASE ── */
+    section { padding: 7rem 2rem; }
+
+    .section-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+
+    .section-inner.narrow { max-width: 760px; }
+
+    .section-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 300;
+      line-height: 1.18;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-body {
+      font-size: 1rem;
+      line-height: 1.9;
+      color: rgba(232, 228, 220, 0.72);
+      max-width: 640px;
+    }
+
+    .section-body strong { color: var(--text); font-weight: 500; }
+
+    .center { text-align: center; }
+    .center .section-body { margin: 0 auto; }
+
+    /* ── HERO ── */
+    .bw-hero { background: var(--deep); padding-top: 11rem; }
+
+    .bw-hero .section-inner { max-width: 720px; text-align: center; }
+
+    .bw-hero-sub {
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: rgba(232, 228, 220, 0.72);
+      max-width: 620px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .bw-hero-sub p { margin-bottom: 1.25rem; }
+    .bw-hero-sub p:last-child { margin-bottom: 0; }
+
+    /* ── EXPERIENCE ── */
+    .experience { background: var(--deep2); text-align: center; }
+
+    .experience .section-inner { max-width: 760px; }
+
+    .experience-byline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    .experience-card {
+      border: 1px solid var(--border);
+      padding: 3rem 2.5rem;
+      margin-top: 1rem;
+    }
+
+    .experience-card p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.2rem, 2.2vw, 1.5rem);
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--gold-light);
+    }
+
+    /* ── WHY SOMA / EXPERIENCE BEFORE ── */
+    .why-soma { background: var(--deep); }
+    .experience-before { background: var(--deep3); }
+
+    .cascade {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      color: rgba(232, 228, 220, 0.8);
+      line-height: 1.9;
+      margin-bottom: 1.75rem;
+    }
+
+    .highlight-line {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: clamp(1.2rem, 2.2vw, 1.5rem);
+      color: var(--gold-light);
+      margin-top: 2rem;
+    }
+
+    .closing-line {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(1.2rem, 2.2vw, 1.5rem);
+      color: var(--gold-light);
+      margin-top: 1.75rem;
+    }
+
+    /* ── SESSIONS ── */
+    .sessions { background: var(--deep2); }
+
+    .session-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin: 3rem 0 2.5rem;
+    }
+
+    .session-card {
+      border: 1px solid var(--border);
+      padding: 2.25rem;
+    }
+
+    .session-tag {
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .session-time {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--gold-light);
+      margin-bottom: 1rem;
+    }
+
+    .session-note {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    /* ── CONTRAINDICATIONS ── */
+    .contraindications { background: var(--deep3); }
+
+    .contra-box {
+      border: 1px solid rgba(201, 168, 76, 0.35);
+      padding: 2.5rem;
+      margin-top: 2rem;
+    }
+
+    .contra-box p {
+      font-size: 0.92rem;
+      line-height: 1.85;
+      color: rgba(232, 228, 220, 0.78);
+      margin-bottom: 1.5rem;
+    }
+
+    .contra-box p:last-child { margin-bottom: 0; }
+
+    .contra-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .contra-box a { color: var(--gold-light); text-decoration: none; border-bottom: 1px solid rgba(232,207,136,0.3); }
+    .contra-box a:hover { color: var(--gold); }
+
+    /* ── FORM ── */
+    .register { background: var(--deep); }
+
+    .register .section-inner { max-width: 720px; }
+
+    .form-group { margin-bottom: 1.75rem; }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+
+    .field-help {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+      line-height: 1.6;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.85rem 1.1rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.92rem;
+      transition: border-color 0.2s;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: rgba(201,168,76,0.5);
+    }
+
+    input::placeholder, textarea::placeholder { color: var(--muted); }
+
+    textarea { resize: vertical; min-height: 90px; line-height: 1.7; }
+
+    select {
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23c9a84c'><path d='M5 7l5 6 5-6z'/></svg>");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      background-size: 14px;
+    }
+
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .radio-option {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.9rem 1.1rem;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+
+    .radio-option:hover { border-color: var(--border-hover); }
+
+    .radio-option input { margin-top: 0.2rem; accent-color: var(--gold); }
+
+    .radio-option span {
+      font-size: 0.92rem;
+      color: var(--text);
+    }
+
+    .checkbox-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      padding: 1.25rem;
+      border: 1px solid var(--border);
+      margin: 2rem 0 2.5rem;
+    }
+
+    .checkbox-row input { margin-top: 0.25rem; accent-color: var(--gold); flex-shrink: 0; }
+
+    .checkbox-row span {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: rgba(232, 228, 220, 0.78);
+    }
+
+    .reflection-intro {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--gold-light);
+      margin: 3rem 0 2rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .q-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.85rem;
+      color: rgba(201, 168, 76, 0.6);
+      margin-bottom: 0.3rem;
+    }
+
+    .form-error {
+      display: none;
+      font-size: 0.85rem;
+      color: #e0a37a;
+      margin-top: 1rem;
+    }
+
+    .form-error.visible { display: block; }
+
+    /* ── THANK YOU ── */
+    .thankyou { display: none; text-align: center; }
+    .thankyou.visible { display: block; }
+
+    .thankyou .section-title { margin-bottom: 1.25rem; }
+
+    .thankyou p {
+      font-size: 1rem;
+      line-height: 1.9;
+      color: rgba(232, 228, 220, 0.78);
+      max-width: 560px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .thankyou-note {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 1.5rem;
+    }
+
+    /* ── WHAT TO EXPECT ── */
+    .expect { background: var(--deep2); }
+
+    /* ── PATH CONNECTION ── */
+    .path-connection { background: var(--deep3); text-align: center; }
+
+    .path-connection .section-inner { max-width: 680px; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 3.5rem 3rem 2rem;
+      background: var(--deep);
+    }
+
+    .footer-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-logo { display: block; margin-bottom: 1rem; }
+    .footer-logo img { height: 44px; width: auto; display: block; }
+
+    .footer-tagline {
+      font-size: 0.82rem;
+      line-height: 1.75;
+      color: var(--muted);
+      max-width: 260px;
+    }
+
+    .footer-back {
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(232,207,136,0.3);
+    }
+
+    .footer-back:hover { color: var(--gold); }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-copy {
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+
+    /* ── ANIMATIONS ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+
+      section { padding: 5rem 1.5rem; }
+      .bw-hero { padding-top: 8rem; }
+
+      .session-grid,
+      .form-row { grid-template-columns: 1fr; gap: 1rem; }
+
+      .footer-top { flex-direction: column; }
+      footer { padding: 3rem 1.5rem 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="main-nav">
+    <a href="/" class="nav-logo"><img src="../images/AtBlissLogo.png" alt="@ Bliss Foundation" /></a>
+    <ul class="nav-links">
+      <li><a href="/#founder">About</a></li>
+      <li><a href="/#methodology">Our Methodology</a></li>
+      <li><a href="/#consciousness">Consciousness Levels</a></li>
+      <li><a href="/#path">The @ Bliss Path</a></li>
+      <li><a href="/#manifesto">Manifesto</a></li>
+      <li><a href="/#connect" class="nav-cta">Get Involved</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE NAV -->
+  <div class="nav-mobile" id="mobile-nav" role="dialog" aria-label="Navigation">
+    <a href="/#founder"       onclick="closeNav()">About</a>
+    <a href="/#methodology"   onclick="closeNav()">Our Methodology</a>
+    <a href="/#consciousness" onclick="closeNav()">Consciousness Levels</a>
+    <a href="/#path"          onclick="closeNav()">The @ Bliss Path</a>
+    <a href="/#manifesto"     onclick="closeNav()">Manifesto</a>
+    <a href="/#connect"       onclick="closeNav()">Get Involved</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="bw-hero">
+    <div class="section-inner">
+      <p class="section-label reveal">Somatic Breathwork @ Bliss</p>
+      <h1 class="section-title reveal" style="font-size:clamp(2.6rem,6vw,4rem);">Begin with the Soma.</h1>
+      <div class="bw-hero-sub reveal" style="transition-delay:0.1s;">
+        <p>Before we ask you to change the way you think, we invite you to experience what is already happening within your body.</p>
+        <p>Somatic Breathwork allows us to explore the relationship between our nervous system, emotions, thoughts, physical sensations, and the patterns we carry.</p>
+        <p>At @ Bliss, breathwork is not the destination.<br />It is one of the ways we begin to listen.</p>
+      </div>
+      <a href="#register" class="btn btn-primary reveal" style="transition-delay:0.2s;">Register for a Free Online Session</a>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- EXPERIENCE -->
+  <section class="experience">
+    <div class="section-inner">
+      <p class="section-label reveal">The Experience</p>
+      <h2 class="section-title reveal">Soma+IQ&trade; The Journey</h2>
+      <p class="experience-byline reveal" style="transition-delay:0.1s;">An independently developed practice, offered as one of the experiences within @ Bliss.</p>
+      <div class="experience-card reveal" style="transition-delay:0.15s;">
+        <p>The Journey is a full inner voyage, designed to support emotional release, awaken insight, and reconnect you with your deeper purpose and intuitive intelligence. This is where breath becomes a bridge to the subconscious, the soul, and the parts of you that long to be seen and integrated.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- WHY WE BEGIN WITH THE SOMA -->
+  <section class="why-soma">
+    <div class="section-inner narrow">
+      <p class="section-label reveal">Why We Begin With The Soma</p>
+      <h2 class="section-title reveal">Awareness does not live only in the mind.</h2>
+      <p class="cascade reveal" style="transition-delay:0.1s;">
+        We often experience a pattern before we fully understand it.<br />
+        A thought appears.<br />
+        An emotion follows.<br />
+        The breath changes.<br />
+        The chest tightens.<br />
+        The shoulders rise.<br />
+        The body prepares to react.
+      </p>
+      <p class="section-body reveal" style="transition-delay:0.15s; margin-bottom:1.25rem;">
+        At @ Bliss, we use the word Soma to describe the lived body, the body as it is experienced from within.
+      </p>
+      <p class="section-body reveal" style="transition-delay:0.18s; margin-bottom:0;">
+        Somatic Breathwork gives us a way to begin working with that experience directly. Through conscious breathing and embodied awareness, we begin learning to notice what is happening within us and to relate differently to what arises.
+      </p>
+      <p class="highlight-line reveal" style="transition-delay:0.22s;"><strong>Regulate &rarr; Release &rarr; Repattern &rarr; Integrate.</strong></p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- EXPERIENCE BEFORE EXPLANATION -->
+  <section class="experience-before">
+    <div class="section-inner narrow">
+      <p class="section-label reveal">Experience Before Explanation</p>
+      <h2 class="section-title reveal">You do not need to believe anything.</h2>
+      <p class="section-body reveal" style="transition-delay:0.1s; margin-bottom:1.25rem;">
+        The @ Bliss Path asks us to observe ourselves deeply. But before asking you to study a philosophy or understand a concept, we invite you to experience something for yourself.
+      </p>
+      <p class="section-body reveal" style="transition-delay:0.15s; margin-bottom:0;">
+        For this reason, Soma+IQ&trade; The Journey is one of the first experiences on The @ Bliss Path.
+      </p>
+      <p class="closing-line reveal" style="transition-delay:0.2s;">
+        You do not need to understand everything that happens.<br />
+        You do not need to arrive at a particular conclusion.<br />
+        <strong>Experience. Observe. Stay curious.</strong>
+      </p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- SESSIONS -->
+  <section class="sessions">
+    <div class="section-inner">
+      <p class="section-label reveal">Free Monthly Online Sessions</p>
+      <h2 class="section-title reveal">Join us online.</h2>
+      <p class="section-body reveal" style="transition-delay:0.1s;">
+        @ Bliss offers two free Soma+IQ&trade; The Journey sessions online each month.
+      </p>
+
+      <div class="session-grid">
+        <div class="session-card reveal" style="transition-delay:0.15s;">
+          <div class="session-tag">First Monday of Every Month</div>
+          <div class="session-time">1:00 PM AST</div>
+          <p class="session-note">This session is scheduled to make participation easier for seekers joining internationally, including participants in Europe.</p>
+        </div>
+        <div class="session-card reveal" style="transition-delay:0.2s;">
+          <div class="session-tag">Third Monday of Every Month</div>
+          <div class="session-time">8:00 PM ET</div>
+          <p class="session-note">This session is scheduled primarily for participants joining from the United States.</p>
+        </div>
+      </div>
+
+      <p class="section-body reveal" style="transition-delay:0.25s;">
+        Both sessions are offered online. Participants must register in advance and complete the required release form before attending.
+      </p>
+      <div class="reveal" style="transition-delay:0.3s; margin-top:2rem;">
+        <a href="#register" class="btn btn-outline">Register for a Free Session</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- CONTRAINDICATIONS -->
+  <section class="contraindications">
+    <div class="section-inner narrow">
+      <p class="section-label reveal">Before You Register</p>
+      <h2 class="section-title reveal">Contraindications</h2>
+      <div class="contra-box reveal" style="transition-delay:0.1s;">
+        <p>Soma+IQ&trade; Breathwork is a personal growth practice and not a substitute for psychotherapy. It is not suitable for pregnant women or individuals with serious medical conditions such as heart issues, high blood pressure, glaucoma, epilepsy, recent surgery, or major psychiatric diagnoses. If unsure, please consult your doctor. Asthma patients should bring their inhaler and seek medical advice before participating.</p>
+
+        <p class="contra-label">By signing up for a session you agree to these terms</p>
+        <p>I acknowledge that Soma+IQ&trade; Breathwork is a deep and powerful process. It involves rapid and prolonged breathing that is designed to activate intense emotional responses. I have notified the practitioner of any physical injuries, mental or psychological conditions I have. I engage in this experience willingly and take full responsibility for my own physical, mental and emotional experiences during and after the session.</p>
+
+        <p>If you have questions or concerns specifically regarding Soma+IQ&trade; Breathwork, please contact <a href="mailto:support@drsamirmujagic.com">support@drsamirmujagic.com</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- REGISTRATION -->
+  <section class="register" id="register">
+    <div class="section-inner">
+      <div id="register-form-wrap">
+        <p class="section-label reveal">Registration</p>
+        <h2 class="section-title reveal">Register for Soma+IQ&trade; The Journey</h2>
+        <p class="section-body reveal" style="transition-delay:0.1s; margin-bottom:2.5rem;">
+          Please complete the form below. After registering, you will be asked to complete the required release form before your session.
+        </p>
+
+        <form id="bw-form">
+          <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off" />
+          <input type="hidden" name="access_key" value="WEB3FORMS_ACCESS_KEY_PLACEHOLDER" />
+          <input type="hidden" name="subject" value="New Soma+IQ™ The Journey Registration" />
+          <input type="hidden" name="from_name" value="@ Bliss Foundation Website" />
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="first_name">First Name</label>
+              <input type="text" id="first_name" name="first_name" required />
+            </div>
+            <div class="form-group">
+              <label for="last_name">Last Name</label>
+              <input type="text" id="last_name" name="last_name" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="country">Country</label>
+              <input type="text" id="country" name="country" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="timezone">Time Zone</label>
+            <input type="text" id="timezone" name="timezone" placeholder="e.g. EST, CET, GMT+3" required />
+          </div>
+
+          <div class="form-group">
+            <label>Which session would you like to attend?</label>
+            <div class="radio-group">
+              <label class="radio-option">
+                <input type="radio" name="session" value="First Monday, 1:00 PM AST" required />
+                <span>First Monday, 1:00 PM AST</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="session" value="Third Monday, 8:00 PM ET" required />
+                <span>Third Monday, 8:00 PM ET</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="checkbox-row">
+            <input type="checkbox" id="contra_ack" name="contraindications_acknowledged" value="Yes" required />
+            <label for="contra_ack" style="margin:0; text-transform:none; font-size:0.88rem; letter-spacing:0; color:inherit;">
+              <span>I have read the contraindications above and understand that I must complete the required release form before participating.</span>
+            </label>
+          </div>
+
+          <p class="reflection-intro">Before your session, take a moment to think about something in your life you would genuinely like to change.</p>
+
+          <div class="form-group">
+            <div class="q-num">01</div>
+            <label for="q1">What is happening?</label>
+            <p class="field-help">Briefly describe a recurring situation, reaction, or pattern you would like to understand or change.</p>
+            <textarea id="q1" name="reflection_situation"></textarea>
+          </div>
+
+          <div class="form-group">
+            <div class="q-num">02</div>
+            <label for="q2">What do you tend to think when this happens?</label>
+            <p class="field-help">What thoughts or internal dialogue tend to appear?</p>
+            <textarea id="q2" name="reflection_thoughts"></textarea>
+          </div>
+
+          <div class="form-group">
+            <div class="q-num">03</div>
+            <label for="q3">What do you tend to feel?</label>
+            <p class="field-help">For example: fear, anger, anxiety, sadness, frustration, shame, jealousy, helplessness, or another emotion.</p>
+            <textarea id="q3" name="reflection_feelings"></textarea>
+          </div>
+
+          <div class="form-group">
+            <div class="q-num">04</div>
+            <label for="q4">What happens in your body, your Soma?</label>
+            <p class="field-help">For example: changes in breathing, tightness, tension, heat, heaviness, restlessness, changes in posture, or other physical sensations.</p>
+            <textarea id="q4" name="reflection_soma"></textarea>
+          </div>
+
+          <div class="form-group">
+            <div class="q-num">05</div>
+            <label for="q5">What do you usually do next?</label>
+            <p class="field-help">How does this state affect your behavior, decisions, relationships, or actions?</p>
+            <textarea id="q5" name="reflection_behavior"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" id="bw-submit" style="margin-top:1rem;">Submit Registration</button>
+          <p class="form-error" id="bw-error">Something went wrong submitting your registration. Please try again, or email us directly at atblissfoundation@gmail.com.</p>
+        </form>
+      </div>
+
+      <div id="register-thankyou" class="thankyou">
+        <p class="section-label">Registration Received</p>
+        <h2 class="section-title">You&rsquo;re registered.</h2>
+        <p>Thank you for registering for Soma+IQ&trade; The Journey.</p>
+        <p>There is one more important step before you can participate.<br />Please complete the required release form.</p>
+        <a href="https://www.jotform.com/form/262107365856058" target="_blank" rel="noopener" class="btn btn-primary">Complete the Release Form &rarr;</a>
+        <p class="thankyou-note">Your registration is not complete until the release form has been submitted.</p>
+        <p class="thankyou-note">Once your registration and release form are complete, you will receive the information you need to join your session.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- WHAT TO EXPECT -->
+  <section class="expect">
+    <div class="section-inner narrow">
+      <p class="section-label reveal">What To Expect</p>
+      <h2 class="section-title reveal">A calm container for an intense practice.</h2>
+      <p class="section-body reveal" style="transition-delay:0.1s; margin-bottom:1.25rem;">
+        An online Soma+IQ&trade; The Journey session may include a period of guided breathing, somatic awareness, and periods of more intensive breathwork, followed by integration, rest, and reflection.
+      </p>
+      <p class="section-body reveal" style="transition-delay:0.15s; margin-bottom:1.25rem;">
+        Each person&rsquo;s experience is different. We do not make promises about what any individual will experience, and this practice is not a substitute for medical or psychological care.
+      </p>
+      <p class="section-body reveal" style="transition-delay:0.2s; margin-bottom:0;">
+        Because the practice can be physically and emotionally intense, please review the contraindications above carefully and complete the required release form before your session.
+      </p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- CONNECTION TO THE PATH -->
+  <section class="path-connection">
+    <div class="section-inner">
+      <p class="section-label reveal">This Is Only The Beginning</p>
+      <h2 class="section-title reveal">Breathwork is a practice. The Path goes deeper.</h2>
+      <p class="section-body reveal" style="transition-delay:0.1s; margin: 0 auto 1.25rem;">
+        Soma+IQ&trade; The Journey is one of the practices we use within The @ Bliss Path.
+      </p>
+      <p class="section-body reveal" style="transition-delay:0.15s; margin: 0 auto 1.25rem;">
+        The Path continues through self-observation, embodied practice, contemplation, philosophy, mindful living, coherence, resonance, and the gradual process of remembering who we truly are.
+      </p>
+      <p class="section-body reveal" style="transition-delay:0.2s; margin: 0 auto 2rem;">
+        For those who choose to continue, the observations you make before and during this experience may become meaningful again later in the Path.
+      </p>
+      <a href="/#path" class="footer-back reveal" style="transition-delay:0.25s;">Explore The @ Bliss Path &rarr;</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div>
+        <span class="footer-logo"><img src="../images/AtBlissLogo.png" alt="@ Bliss Foundation" /></span>
+        <p class="footer-tagline">You are not at the mercy of how you resonate. You participate in shaping it, through every breath, every thought, every practice, every choice.</p>
+      </div>
+      <a href="/" class="footer-back">&larr; Back to atbliss.org</a>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2026 @ Bliss Foundation &nbsp;&middot;&nbsp; atbliss.org</p>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Nav shrink
+    const mainNav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      mainNav.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    // Mobile nav toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobile-nav');
+
+    hamburger.addEventListener('click', () => {
+      const open = mobileNav.classList.toggle('open');
+      hamburger.classList.toggle('open', open);
+      hamburger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+
+    function closeNav() {
+      mobileNav.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-label', 'Open menu');
+      document.body.style.overflow = '';
+    }
+
+    // Registration form submission (Web3Forms)
+    const bwForm = document.getElementById('bw-form');
+    const bwSubmit = document.getElementById('bw-submit');
+    const bwError = document.getElementById('bw-error');
+
+    bwForm.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      bwError.classList.remove('visible');
+      bwSubmit.disabled = true;
+      bwSubmit.textContent = 'Submitting…';
+
+      try {
+        const formData = new FormData(bwForm);
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { Accept: 'application/json' },
+          body: formData,
+        });
+        const result = await response.json();
+
+        if (result.success) {
+          document.getElementById('register-form-wrap').style.display = 'none';
+          const ty = document.getElementById('register-thankyou');
+          ty.classList.add('visible');
+          ty.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          throw new Error(result.message || 'Submission failed');
+        }
+      } catch (err) {
+        bwError.classList.add('visible');
+        bwSubmit.disabled = false;
+        bwSubmit.textContent = 'Submit Registration';
+      }
+    });
+  </script>
+</body>
+</html>
