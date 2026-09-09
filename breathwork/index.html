@@ -477,15 +477,67 @@
       color: rgba(232, 228, 220, 0.78);
     }
 
-    .reflection-intro {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 1.15rem;
-      color: var(--gold-light);
-      margin: 3rem 0 2rem;
+    .reflection-section {
+      margin: 3rem 0 2.5rem;
       padding-top: 2.5rem;
       border-top: 1px solid var(--border);
     }
+
+    .reflection-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(1.5rem, 2.6vw, 1.9rem);
+      line-height: 1.35;
+      color: var(--text);
+      margin: 0.75rem 0 1.5rem;
+    }
+
+    .reflection-copy p {
+      font-size: 0.92rem;
+      line-height: 1.85;
+      color: rgba(232, 228, 220, 0.75);
+      margin-bottom: 1.1rem;
+    }
+
+    .reflection-copy p:last-child { margin-bottom: 0; }
+
+    .reflection-copy em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .reflection-copy strong { color: var(--text); font-weight: 500; }
+
+    .example-list { list-style: none; margin: 0.85rem 0 0; }
+
+    .example-list li {
+      font-size: 0.85rem;
+      color: var(--muted);
+      padding-left: 1.15rem;
+      position: relative;
+      line-height: 1.75;
+      margin-bottom: 0.3rem;
+    }
+
+    .example-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.6em;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: rgba(201, 168, 76, 0.6);
+    }
+
+    .followup {
+      margin-top: 1rem;
+      padding-left: 1.1rem;
+      border-left: 1px solid var(--border);
+      display: none;
+    }
+
+    .followup.visible { display: block; }
 
     .q-num {
       font-family: 'Cormorant Garamond', serif;
@@ -828,41 +880,118 @@
             </label>
           </div>
 
-          <p class="reflection-intro">Before your session, take a moment to think about something in your life you would genuinely like to change.</p>
+          <div class="reflection-section">
+            <p class="section-label">Before Your Session</p>
+            <h3 class="reflection-heading">Think of a voice within you that sometimes takes the helm.</h3>
+            <div class="reflection-copy">
+              <p>We all have moments when a particular voice, reaction, or version of ourselves seems to take over.</p>
+              <p>Perhaps it is the angry voice. The fearful one. The jealous one. The defensive one. The controlling one. The one that needs to be right. The one that shuts down. The one that says something you later wish you had not said.</p>
+              <p>Think of a recent moment when one of these voices took the helm and led you somewhere your authentic self would not have chosen to go.</p>
+              <p>Perhaps afterward you felt regret. Perhaps you hurt someone you did not want to hurt. Perhaps you blamed yourself for something that was not really yours to carry. Perhaps you simply wondered: <em>"Why did I do that?"</em></p>
+              <p><strong>Choose one specific moment.</strong> Don&rsquo;t analyze it too much. We simply want you to remember what happened just before that voice took control.</p>
+            </div>
+          </div>
 
           <div class="form-group">
             <div class="q-num">01</div>
-            <label for="q1">What is happening?</label>
-            <p class="field-help">Briefly describe a recurring situation, reaction, or pattern you would like to understand or change.</p>
-            <textarea id="q1" name="reflection_situation"></textarea>
+            <label for="q1">Which voice took the helm?</label>
+            <p class="field-help">Don&rsquo;t worry about finding the perfect name for it. How would you describe the version of you that appeared in that moment?</p>
+            <ul class="example-list">
+              <li>The angry one</li>
+              <li>The fearful one</li>
+              <li>The jealous one</li>
+              <li>The defensive one</li>
+              <li>The controller</li>
+              <li>The critic</li>
+              <li>The one who needed approval</li>
+              <li>The one who needed to be right</li>
+              <li>The one who shut down</li>
+              <li>Something else</li>
+            </ul>
+            <p class="field-help" style="margin-top:0.85rem; margin-bottom:0.6rem;">Give that voice a name that makes sense to you.</p>
+            <input type="text" id="q1" name="voice_name" />
           </div>
 
           <div class="form-group">
             <div class="q-num">02</div>
-            <label for="q2">What do you tend to think when this happens?</label>
-            <p class="field-help">What thoughts or internal dialogue tend to appear?</p>
-            <textarea id="q2" name="reflection_thoughts"></textarea>
+            <label for="q2">What was happening just before it took over?</label>
+            <p class="field-help">Think about the moment immediately before your reaction. What happened? What was said? What did you see, hear, remember, or experience that seemed to activate this voice?</p>
+            <p class="field-help" style="margin-bottom:0.6rem;">Describe the moment as specifically as you can.</p>
+            <textarea id="q2" name="reflection_trigger"></textarea>
           </div>
 
           <div class="form-group">
             <div class="q-num">03</div>
-            <label for="q3">What do you tend to feel?</label>
-            <p class="field-help">For example: fear, anger, anxiety, sadness, frustration, shame, jealousy, helplessness, or another emotion.</p>
-            <textarea id="q3" name="reflection_feelings"></textarea>
+            <label for="q3">What was the first thought?</label>
+            <p class="field-help">Before the voice fully took the helm, there may have been a thought, even a very quick one. What went through your mind?</p>
+            <ul class="example-list">
+              <li>&ldquo;They don&rsquo;t respect me.&rdquo;</li>
+              <li>&ldquo;I&rsquo;m going to lose this.&rdquo;</li>
+              <li>&ldquo;This isn&rsquo;t fair.&rdquo;</li>
+              <li>&ldquo;I need to defend myself.&rdquo;</li>
+              <li>&ldquo;I&rsquo;m not good enough.&rdquo;</li>
+              <li>&ldquo;They are going to hurt me.&rdquo;</li>
+            </ul>
+            <p class="field-help" style="margin-top:0.85rem; margin-bottom:0.6rem;">What was your thought, in your own words?</p>
+            <textarea id="q3" name="reflection_first_thought"></textarea>
           </div>
 
           <div class="form-group">
             <div class="q-num">04</div>
-            <label for="q4">What happens in your body, your Soma?</label>
-            <p class="field-help">For example: changes in breathing, tightness, tension, heat, heaviness, restlessness, changes in posture, or other physical sensations.</p>
-            <textarea id="q4" name="reflection_soma"></textarea>
+            <label for="q4">What did you feel next?</label>
+            <p class="field-help">Before the reaction fully took over, what emotion appeared?</p>
+            <ul class="example-list">
+              <li>Fear</li>
+              <li>Anger</li>
+              <li>Shame</li>
+              <li>Jealousy</li>
+              <li>Sadness</li>
+              <li>Frustration</li>
+              <li>Rejection</li>
+              <li>Helplessness</li>
+              <li>Anxiety</li>
+              <li>Something else</li>
+            </ul>
+            <p class="field-help" style="margin-top:0.85rem; margin-bottom:0.6rem;">If there was more than one emotion, list whatever you remember.</p>
+            <textarea id="q4" name="reflection_emotion"></textarea>
           </div>
 
           <div class="form-group">
             <div class="q-num">05</div>
-            <label for="q5">What do you usually do next?</label>
-            <p class="field-help">How does this state affect your behavior, decisions, relationships, or actions?</p>
-            <textarea id="q5" name="reflection_behavior"></textarea>
+            <label for="q5">What happened in your Soma?</label>
+            <p class="field-help">Before or as the voice took control, what changed in your body? Did your breathing change? Did your chest tighten? Did you feel heat? Did your stomach contract? Did your shoulders rise? Did your heart begin beating faster? Did you become restless, heavy, numb, frozen, or tense?</p>
+            <p class="field-help" style="margin-bottom:0.6rem;">Try to remember the earliest physical signal you can.</p>
+            <textarea id="q5" name="reflection_soma"></textarea>
+          </div>
+
+          <div class="form-group">
+            <div class="q-num">06</div>
+            <label for="q6">And then what did the voice make you do?</label>
+            <p class="field-help">What happened once that voice had the helm? What did you say? What did you do? What did you avoid doing? What decision did you make? How did you treat yourself or someone else?</p>
+            <textarea id="q6" name="reflection_behavior"></textarea>
+          </div>
+
+          <div class="form-group">
+            <div class="q-num">07</div>
+            <label>Looking back, was that what you truly wanted to do?</label>
+            <div class="radio-group" id="wanted-group">
+              <label class="radio-option">
+                <input type="radio" name="reflection_wanted" value="Yes" />
+                <span>Yes</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="reflection_wanted" value="No" />
+                <span>No</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="reflection_wanted" value="I'm not sure" />
+                <span>I&rsquo;m not sure</span>
+              </label>
+            </div>
+            <div class="followup" id="wanted-followup">
+              <label for="q7b">What would you have wanted to do differently?</label>
+              <textarea id="q7b" name="reflection_wanted_different"></textarea>
+            </div>
           </div>
 
           <button type="submit" class="btn btn-primary" id="bw-submit" style="margin-top:1rem;">Submit Registration</button>
@@ -970,6 +1099,14 @@
       hamburger.setAttribute('aria-label', 'Open menu');
       document.body.style.overflow = '';
     }
+
+    // Q7 conditional follow-up
+    const wantedFollowup = document.getElementById('wanted-followup');
+    document.querySelectorAll('input[name="reflection_wanted"]').forEach(radio => {
+      radio.addEventListener('change', () => {
+        wantedFollowup.classList.toggle('visible', radio.value !== 'Yes');
+      });
+    });
 
     // Registration form submission (Web3Forms)
     const bwForm = document.getElementById('bw-form');
