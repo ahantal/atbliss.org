@@ -414,6 +414,73 @@
     .checkbox-terms a { color: var(--gold-light); text-decoration: none; border-bottom: 1px solid rgba(232,207,136,0.3); }
     .checkbox-terms a:hover { color: var(--gold); }
 
+    /* ── RELEASE AND HEALTH ── */
+    .release-section {
+      margin: 3rem 0 2.5rem;
+      padding: 2.5rem;
+      border: 1px solid rgba(201, 168, 76, 0.35);
+    }
+
+    .release-agree-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+      line-height: 1.4;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--gold-light);
+      margin-bottom: 1.75rem;
+    }
+
+    .release-section h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.2rem;
+      color: var(--text);
+      margin: 1.9rem 0 0.75rem;
+    }
+
+    .release-section h4:first-of-type { margin-top: 0; }
+
+    .release-section p {
+      font-size: 0.86rem;
+      line-height: 1.85;
+      color: rgba(232, 228, 220, 0.74);
+      margin-bottom: 1rem;
+    }
+
+    .release-section p:last-child { margin-bottom: 0; }
+
+    .release-section strong { color: var(--text); font-weight: 500; }
+
+    .release-section ul {
+      list-style: none;
+      margin: 0 0 1rem;
+    }
+
+    .release-section li {
+      font-size: 0.86rem;
+      line-height: 1.7;
+      color: rgba(232, 228, 220, 0.74);
+      padding-left: 1.15rem;
+      position: relative;
+      margin-bottom: 0.4rem;
+    }
+
+    .release-section li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.62em;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: rgba(201, 168, 76, 0.6);
+    }
+
+    .release-section a { color: var(--gold-light); text-decoration: none; border-bottom: 1px solid rgba(232,207,136,0.3); }
+    .release-section a:hover { color: var(--gold); }
+
     .field-help {
       font-size: 0.82rem;
       color: var(--muted);
@@ -912,149 +979,53 @@
             </div>
           </div>
 
-          <div class="checkbox-terms">
-            <p>Soma+IQ&trade; Breathwork is a personal growth practice and not a substitute for psychotherapy. It is not suitable for pregnant women or individuals with serious medical conditions such as heart issues, high blood pressure, glaucoma, epilepsy, recent surgery, or major psychiatric diagnoses. If unsure, please consult your doctor. Asthma patients should bring their inhaler and seek medical advice before participating.</p>
+          <div class="release-section">
+            <p class="release-agree-title">By signing up for a session, you agree to these terms</p>
 
-            <p class="contra-label">By signing up for a session you agree to these terms</p>
-            <p>I acknowledge that Soma+IQ&trade; Breathwork is a deep and powerful process. It involves rapid and prolonged breathing that is designed to activate intense emotional responses. I have notified the practitioner of any physical injuries, mental or psychological conditions I have. I engage in this experience willingly and take full responsibility for my own physical, mental and emotional experiences during and after the session.</p>
+            <h4>Release Waiver</h4>
+            <p>By participating, you confirm that you have read, understood, and agree to the following:</p>
 
-            <p>If you have questions or concerns specifically regarding Soma+IQ&trade; Breathwork, please contact <a href="mailto:support@hantal.com">support@hantal.com</a>.</p>
+            <h4>Acknowledgment of Process</h4>
+            <p>I understand that <strong>Soma+IQ&trade; Breathwork</strong> involves deep and prolonged conscious breathing, which can activate intense emotional and physical responses.</p>
+            <p>I voluntarily choose to participate and take responsibility for my physical, mental, and emotional well-being during and after the session. I agree to disclose any relevant physical injuries, medical conditions, mental health conditions, or other circumstances that may affect my ability to participate safely.</p>
+
+            <h4>Contraindications</h4>
+            <p><strong>Soma+IQ&trade; Breathwork is a personal growth practice and is not a substitute for medical care, psychotherapy, or psychological care.</strong></p>
+            <p>Participation is not advised for individuals with certain conditions, including:</p>
+            <ul>
+              <li>Pregnancy</li>
+              <li>Cardiovascular conditions, including heart conditions or high blood pressure</li>
+              <li>Glaucoma or retinal detachment</li>
+              <li>Osteoporosis</li>
+              <li>Epilepsy or a history of seizures</li>
+              <li>History of stroke</li>
+              <li>Recent surgery</li>
+              <li>Infectious disease</li>
+              <li>Serious psychiatric conditions</li>
+            </ul>
+            <p>If you have asthma, please bring your inhaler and consult your doctor before participating.</p>
+            <p><strong>If you have any doubt about whether this practice is appropriate for you, please consult your physician before participating.</strong></p>
+
+            <h4>Release of Liability</h4>
+            <p>I voluntarily choose to participate in <strong>Soma+IQ&trade; Breathwork</strong>. I understand that participation may involve physical, mental, and emotional responses and that there may be risks associated with the practice.</p>
+            <p>I agree to release <strong>Ali Cumhur Hantal, Soma+IQ&trade; and the appropriate organization or legal entity providing the session</strong> from claims, liability, or damages arising from my voluntary participation, to the extent permitted by applicable law.</p>
+
+            <h4>Health Declaration</h4>
+            <p>I confirm that I have read and understood the information above.</p>
+            <p>I affirm that, to the best of my knowledge, I am in good general health and feel fit to participate in this session.</p>
+            <p>If you have questions or concerns specifically regarding <strong>Soma+IQ&trade; Breathwork</strong>, please contact <a href="mailto:support@hantal.com">support@hantal.com</a>.</p>
           </div>
 
           <div class="checkbox-row">
             <input type="checkbox" id="contra_ack" name="contraindications_acknowledged" value="Yes" required />
             <label for="contra_ack" style="margin:0; text-transform:none; font-size:0.88rem; letter-spacing:0; color:inherit;">
-              <span>I have read the information above and agree to these terms.</span>
+              <span>I have read and understood the information above, including the contraindications, and agree to these terms.</span>
             </label>
           </div>
 
-          <div class="reflection-section">
-            <p class="section-label">Before Your Session</p>
-            <h3 class="reflection-heading">Think of a voice within you that sometimes takes the helm.</h3>
-            <div class="reflection-copy">
-              <p>We all have moments when a particular voice, reaction, or version of ourselves seems to take over.</p>
-              <p>Perhaps it is the angry voice. The fearful one. The jealous one. The defensive one. The controlling one. The one that needs to be right. The one that shuts down. The one that says something you later wish you had not said.</p>
-              <p>Think of a recent moment when one of these voices took the helm and led you somewhere your authentic self would not have chosen to go.</p>
-              <p>Perhaps afterward you felt regret. Perhaps you hurt someone you did not want to hurt. Perhaps you blamed yourself for something that was not really yours to carry. Perhaps you simply wondered: <em>"Why did I do that?"</em></p>
-              <p><strong>Choose one specific moment.</strong> Don&rsquo;t analyze it too much. We simply want you to remember what happened just before that voice took control.</p>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <div class="q-num">01</div>
-            <label for="q1">Which voice took the helm?</label>
-            <p class="field-help">Don&rsquo;t worry about finding the perfect name for it. How would you describe the version of you that appeared in that moment?</p>
-            <ul class="example-list">
-              <li>The angry one</li>
-              <li>The fearful one</li>
-              <li>The jealous one</li>
-              <li>The defensive one</li>
-              <li>The controller</li>
-              <li>The critic</li>
-              <li>The one who needed approval</li>
-              <li>The one who needed to be right</li>
-              <li>The one who shut down</li>
-              <li>Something else</li>
-            </ul>
-            <p class="field-help" style="margin-top:0.85rem; margin-bottom:0.6rem;">Give that voice a name that makes sense to you.</p>
-            <input type="text" id="q1" name="voice_name" />
-          </div>
-
-          <div class="form-group">
-            <div class="q-num">02</div>
-            <label for="q2">What was happening just before it took over?</label>
-            <p class="field-help">Think about the moment immediately before your reaction. What happened? What was said? What did you see, hear, remember, or experience that seemed to activate this voice?</p>
-            <p class="field-help" style="margin-bottom:0.6rem;">Describe the moment as specifically as you can.</p>
-            <textarea id="q2" name="reflection_trigger"></textarea>
-          </div>
-
-          <div class="form-group">
-            <div class="q-num">03</div>
-            <label for="q3">What was the first thought?</label>
-            <p class="field-help">Before the voice fully took the helm, there may have been a thought, even a very quick one. What went through your mind?</p>
-            <ul class="example-list">
-              <li>&ldquo;They don&rsquo;t respect me.&rdquo;</li>
-              <li>&ldquo;I&rsquo;m going to lose this.&rdquo;</li>
-              <li>&ldquo;This isn&rsquo;t fair.&rdquo;</li>
-              <li>&ldquo;I need to defend myself.&rdquo;</li>
-              <li>&ldquo;I&rsquo;m not good enough.&rdquo;</li>
-              <li>&ldquo;They are going to hurt me.&rdquo;</li>
-            </ul>
-            <p class="field-help" style="margin-top:0.85rem; margin-bottom:0.6rem;">What was your thought, in your own words?</p>
-            <textarea id="q3" name="reflection_first_thought"></textarea>
-          </div>
-
-          <div class="form-group">
-            <div class="q-num">04</div>
-            <label for="q4">What did you feel next?</label>
-            <p class="field-help">Before the reaction fully took over, what emotion appeared?</p>
-            <ul class="example-list">
-              <li>Fear</li>
-              <li>Anger</li>
-              <li>Shame</li>
-              <li>Jealousy</li>
-              <li>Sadness</li>
-              <li>Frustration</li>
-              <li>Rejection</li>
-              <li>Helplessness</li>
-              <li>Anxiety</li>
-              <li>Something else</li>
-            </ul>
-            <p class="field-help" style="margin-top:0.85rem; margin-bottom:0.6rem;">If there was more than one emotion, list whatever you remember.</p>
-            <textarea id="q4" name="reflection_emotion"></textarea>
-          </div>
-
-          <div class="form-group">
-            <div class="q-num">05</div>
-            <label for="q5">What happened in your Soma?</label>
-            <p class="field-help">Before or as the voice took control, what changed in your body? Did your breathing change? Did your chest tighten? Did you feel heat? Did your stomach contract? Did your shoulders rise? Did your heart begin beating faster? Did you become restless, heavy, numb, frozen, or tense?</p>
-            <p class="field-help" style="margin-bottom:0.6rem;">Try to remember the earliest physical signal you can.</p>
-            <textarea id="q5" name="reflection_soma"></textarea>
-          </div>
-
-          <div class="form-group">
-            <div class="q-num">06</div>
-            <label for="q6">And then what did the voice make you do?</label>
-            <p class="field-help">What happened once that voice had the helm? What did you say? What did you do? What did you avoid doing? What decision did you make? How did you treat yourself or someone else?</p>
-            <textarea id="q6" name="reflection_behavior"></textarea>
-          </div>
-
-          <div class="form-group">
-            <div class="q-num">07</div>
-            <label>Looking back, was that what you truly wanted to do?</label>
-            <div class="radio-group" id="wanted-group">
-              <label class="radio-option">
-                <input type="radio" name="reflection_wanted" value="Yes" />
-                <span>Yes</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="reflection_wanted" value="No" />
-                <span>No</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="reflection_wanted" value="I'm not sure" />
-                <span>I&rsquo;m not sure</span>
-              </label>
-            </div>
-            <div class="followup" id="wanted-followup">
-              <label for="q7b">What would you have wanted to do differently?</label>
-              <textarea id="q7b" name="reflection_wanted_different"></textarea>
-            </div>
-          </div>
-
-          <button type="submit" class="btn btn-primary" id="bw-submit" style="margin-top:1rem;">Submit Registration</button>
+          <button type="submit" class="btn btn-primary" id="bw-submit" style="margin-top:1rem;">Submit Form</button>
           <p class="form-error" id="bw-error">Something went wrong submitting your registration. Please try again, or email us directly at atblissfoundation@gmail.com.</p>
         </form>
-      </div>
-
-      <div id="register-thankyou" class="thankyou">
-        <p class="section-label">Registration Received</p>
-        <h2 class="section-title">You&rsquo;re registered.</h2>
-        <p>Thank you for registering for Soma+IQ&trade; The Journey.</p>
-        <p>There is one more important step before you can participate.<br />Please complete the required release form.</p>
-        <a href="https://www.jotform.com/form/262107365856058" target="_blank" rel="noopener" class="btn btn-primary">Complete the Release Form &rarr;</a>
-        <p class="thankyou-note">Your registration is not complete until the release form has been submitted.</p>
-        <p class="thankyou-note">Once your registration and release form are complete, you will receive the information you need to join your session.</p>
       </div>
     </div>
   </section>
@@ -1148,14 +1119,6 @@
       document.body.style.overflow = '';
     }
 
-    // Q7 conditional follow-up
-    const wantedFollowup = document.getElementById('wanted-followup');
-    document.querySelectorAll('input[name="reflection_wanted"]').forEach(radio => {
-      radio.addEventListener('change', () => {
-        wantedFollowup.classList.toggle('visible', radio.value !== 'Yes');
-      });
-    });
-
     // Registration form submission (Web3Forms)
     const bwForm = document.getElementById('bw-form');
     const bwSubmit = document.getElementById('bw-submit');
@@ -1177,17 +1140,14 @@
         const result = await response.json();
 
         if (result.success) {
-          document.getElementById('register-form-wrap').style.display = 'none';
-          const ty = document.getElementById('register-thankyou');
-          ty.classList.add('visible');
-          ty.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          window.location.href = '/selfmapping';
         } else {
           throw new Error(result.message || 'Submission failed');
         }
       } catch (err) {
         bwError.classList.add('visible');
         bwSubmit.disabled = false;
-        bwSubmit.textContent = 'Submit Registration';
+        bwSubmit.textContent = 'Submit Form';
       }
     });
   </script>
