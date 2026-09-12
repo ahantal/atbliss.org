@@ -188,19 +188,13 @@
     .btn-primary:hover { background: var(--gold-light); border-color: var(--gold-light); }
     .btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
-    /* ── STORY (photo) ── */
-    .story::after { content: ''; display: table; clear: both; }
-
-    .story-photo {
-      float: left;
-      width: 240px;
+    /* ── HERO PHOTO ── */
+    .hero-photo {
+      width: 180px;
       aspect-ratio: 3 / 4;
       object-fit: cover;
-      margin: 0.25rem 1.75rem 1rem 0;
-    }
-
-    @media (max-width: 640px) {
-      .story-photo { float: none; width: 100%; max-width: 280px; margin: 0 auto 1.75rem; display: block; }
+      margin: 0 auto 1.75rem;
+      display: block;
     }
 
     /* ── PREPARE LINK ── */
@@ -306,8 +300,26 @@
     /* ── FOOTER ── */
     footer {
       border-top: 1px solid var(--border);
-      padding: 3rem 1.75rem;
+      padding: 3.5rem 1.75rem 2.5rem;
       text-align: center;
+    }
+
+    .footer-wordmark {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.05rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--gold-light);
+      margin-bottom: 2rem;
     }
 
     .footer-label {
@@ -320,6 +332,13 @@
 
     footer a { display: inline-block; }
     footer img { height: 36px; width: auto; }
+
+    .footer-copy {
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      margin-top: 2rem;
+    }
 
     /* ── ANIMATIONS ── */
     .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.75s ease, transform 0.75s ease; }
@@ -336,24 +355,45 @@
 </head>
 <body>
 
+  <script>
+    // If this browser already registered and the session hasn't happened yet,
+    // skip straight to the thank-you page instead of showing the form again.
+    // SESSION_END_UTC must match the same constant in thankyou/index.html
+    // (format: YYYYMMDDTHHMMSSZ, the same ICS/Google-Calendar UTC form used there).
+    (function () {
+      var SESSION_END_UTC = '20260101T003000Z'; // TODO: replace to match thankyou/index.html
+      function icsUtcToMs(s) {
+        return Date.parse(
+          s.slice(0, 4) + '-' + s.slice(4, 6) + '-' + s.slice(6, 8) +
+          'T' + s.slice(9, 11) + ':' + s.slice(11, 13) + ':' + s.slice(13, 15) + 'Z'
+        );
+      }
+      try {
+        var registeredAt = localStorage.getItem('cbwmRegistered');
+        if (registeredAt && Date.now() <= icsUtcToMs(SESSION_END_UTC)) {
+          window.location.replace('/breathewithme/thankyou');
+        } else if (registeredAt) {
+          localStorage.removeItem('cbwmRegistered');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
   <!-- HERO -->
   <section class="hero">
     <div class="wrap">
-      <p class="eyebrow reveal">Come Breathe With Me</p>
-      <h1 class="reveal">Come breathe with me.</h1>
-      <p class="subtitle reveal" style="transition-delay:0.1s;">A free 90-minute Soma+IQ&trade; The Journey experience with friends</p>
-      <p class="tagline reveal" style="transition-delay:0.15s;">Breathe. Feel. Release. Reconnect.</p>
+      <img class="hero-photo reveal" src="../images/AH4.jpg" alt="Ali Cumhur Hantal" />
+      <p class="eyebrow reveal" style="transition-delay:0.05s;">Come Breathe With Me</p>
+      <h1 class="reveal" style="transition-delay:0.1s;">Come breathe with me.</h1>
+      <p class="subtitle reveal" style="transition-delay:0.15s;">A free 90-minute Soma+IQ&trade; The Journey experience with friends</p>
+      <p class="tagline reveal" style="transition-delay:0.2s;">Breathe. Feel. Release. Repattern. Integrate.</p>
 
-      <div class="session-info reveal" style="transition-delay:0.2s;">
+      <div class="session-info reveal" style="transition-delay:0.25s;">
         <div class="row"><span>Date</span><span>[SESSION DATE]</span></div>
         <div class="row"><span>Time</span><span>[SESSION TIME + TIME ZONE]</span></div>
         <div class="row"><span>Location</span><span>Online via Zoom</span></div>
         <div class="row"><span>Duration</span><span>Approximately 90 minutes</span></div>
         <div class="row"><span>Cost</span><span>Free</span></div>
-      </div>
-
-      <div class="reveal" style="transition-delay:0.25s;">
-        <a href="#register" class="btn btn-primary">Come Breathe With Me</a>
       </div>
     </div>
   </section>
@@ -365,7 +405,6 @@
     <div class="wrap">
       <p class="section-label reveal">My Story</p>
       <h2 class="reveal">My journey actually started with philosophy.</h2>
-      <img class="story-photo reveal" src="../images/AH4.jpg" alt="Ali Cumhur Hantal" style="transition-delay:0.1s;" />
       <p class="reveal" style="transition-delay:0.13s;">Most of you receiving this page know me personally.</p>
       <p class="reveal" style="transition-delay:0.16s;">And many of you know that I have been on a journey of questioning, exploring, and trying to understand ourselves and this strange and beautiful experience we call life for a very long time.</p>
       <p class="reveal" style="transition-delay:0.19s;">As most of you know, I started my undergraduate studies at Bo&#287;azi&ccedil;i University as a Philosophy major before transferring to Business Administration.</p>
@@ -572,8 +611,11 @@
 
   <!-- FOOTER -->
   <footer>
+    <p class="footer-wordmark">Come Breathe With Me</p>
+    <p class="footer-tagline">Breathe. Release. Repattern.</p>
     <p class="footer-label">Brought to you by</p>
     <a href="/"><img src="../images/AtBlissLogo.png" alt="@ Bliss Foundation" /></a>
+    <p class="footer-copy">&copy; 2026 Come Breathe With Me &middot; atbliss.org</p>
   </footer>
 
   <script>
@@ -607,6 +649,7 @@
         const result = await response.json();
 
         if (result.success) {
+          try { localStorage.setItem('cbwmRegistered', String(Date.now())); } catch (e) {}
           window.location.href = '/breathewithme/thankyou';
         } else {
           throw new Error(result.message || 'Submission failed');

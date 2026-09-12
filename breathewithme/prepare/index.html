@@ -88,8 +88,26 @@
 
     footer {
       border-top: 1px solid var(--border);
-      padding: 3rem 1.75rem;
+      padding: 3.5rem 1.75rem 2.5rem;
       text-align: center;
+    }
+
+    .footer-wordmark {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.05rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--gold-light);
+      margin-bottom: 2rem;
     }
 
     .footer-label {
@@ -101,6 +119,13 @@
     }
 
     footer img { height: 36px; width: auto; }
+
+    .footer-copy {
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      margin-top: 2rem;
+    }
   </style>
 </head>
 <body>
@@ -160,8 +185,11 @@
   </div>
 
   <footer>
+    <p class="footer-wordmark">Come Breathe With Me</p>
+    <p class="footer-tagline">Breathe. Release. Repattern.</p>
     <p class="footer-label">Brought to you by</p>
     <a href="/"><img src="../../images/AtBlissLogo.png" alt="@ Bliss Foundation" /></a>
+    <p class="footer-copy">&copy; 2026 Come Breathe With Me &middot; atbliss.org</p>
   </footer>
 </body>
 </html>

@@ -129,8 +129,26 @@
 
     footer {
       border-top: 1px solid var(--border);
-      padding: 3rem 1.75rem;
+      padding: 3.5rem 1.75rem 2.5rem;
       text-align: center;
+    }
+
+    .footer-wordmark {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.05rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--gold-light);
+      margin-bottom: 2rem;
     }
 
     .footer-label {
@@ -143,6 +161,15 @@
 
     footer img { height: 36px; width: auto; }
 
+    .footer-copy {
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      margin-top: 2rem;
+    }
+
+    .reset-row { margin-top: 1rem; }
+
     @media (max-width: 480px) {
       .wrap { padding-top: 4.5rem; }
     }
@@ -150,7 +177,14 @@
 </head>
 <body>
 
-  <div class="wrap">
+  <div class="wrap" id="not-registered">
+    <p class="section-label">Come Breathe With Me</p>
+    <h1>Not registered yet?</h1>
+    <p>This page, including the Zoom link, is only available after you register for <strong>Come Breathe With Me</strong>.</p>
+    <a href="/breathewithme" class="btn btn-primary">Go to Come Breathe With Me</a>
+  </div>
+
+  <div class="wrap" id="thankyou-content" hidden>
     <p class="section-label">Thank You</p>
     <h1>You&rsquo;re in.</h1>
     <p>I&rsquo;m looking forward to breathing with you.</p>
@@ -180,33 +214,69 @@
     <p><strong>Come as you are.</strong></p>
     <p>I&rsquo;ll see you there.</p>
     <p class="signoff">Ali</p>
+
+    <p class="reset-row"><a href="/breathewithme" id="reset-registration" class="inline-link">Registering for someone else? Start a new registration</a></p>
   </div>
 
   <footer>
+    <p class="footer-wordmark">Come Breathe With Me</p>
+    <p class="footer-tagline">Breathe. Release. Repattern.</p>
     <p class="footer-label">Brought to you by</p>
     <a href="/"><img src="../../images/AtBlissLogo.png" alt="@ Bliss Foundation" /></a>
+    <p class="footer-copy">&copy; 2026 Come Breathe With Me &middot; atbliss.org</p>
   </footer>
 
   <script>
     // ── EDIT THESE BEFORE SHARING THIS PAGE ──
-    // Real Zoom meeting link:
-    const ZOOM_URL = 'https://zoom.us/REPLACE_WITH_REAL_LINK';
+    // Real Zoom meeting link (base64-encoded so it isn't sitting in the page source in
+    // plain text; this is obscurity, not real security, same approach used on the
+    // Prana Party reference site's confirmation page, see breathewithmespecs.md §4):
+    const ZOOM_URL = atob('aHR0cHM6Ly91czA2d2ViLnpvb20udXMvai84NjI4MDk3NzUyMz9wd2Q9anhaRE1hdXlobFJvcmY2bVZ2U2FCUGNQSVdNaUZSLjE=');
     // Session start/end in ISO 8601 WITHOUT a timezone offset (local time of the zone below):
     const SESSION_START = '2026-01-01T18:00:00';
     const SESSION_END   = '2026-01-01T19:30:00';
     // The same start/end written with an explicit UTC offset, for Outlook's deeplink:
     const SESSION_START_LOCAL = '2026-01-01T18:00:00-05:00';
     const SESSION_END_LOCAL   = '2026-01-01T19:30:00-05:00';
-    // The same start/end converted to UTC, in YYYYMMDDTHHMMSSZ form, for Google Calendar:
+    // The same start/end converted to UTC, in YYYYMMDDTHHMMSSZ form, for Google Calendar
+    // and for the "already registered" cutoff check on index.html: SESSION_END_UTC here
+    // must match the SESSION_END_UTC constant in ../index.html's early-redirect script:
     const SESSION_START_UTC = '20260101T230000Z';
     const SESSION_END_UTC   = '20260102T003000Z';
     // IANA timezone name the local times above are written in, e.g. 'America/New_York':
     const SESSION_TZID  = 'America/New_York';
     // ── END EDIT ──
 
-    document.getElementById('zoom-btn').href = ZOOM_URL;
-
     const EVENT_TITLE = 'Come Breathe With Me';
+
+    // ── Registration gate: only reveal Zoom/calendar content to someone who has
+    // actually registered in this browser (localStorage flag set by index.html on a
+    // successful Web3Forms submit), and only until the session has passed. ──
+    function icsUtcToMs(s) {
+      return Date.parse(
+        s.slice(0, 4) + '-' + s.slice(4, 6) + '-' + s.slice(6, 8) +
+        'T' + s.slice(9, 11) + ':' + s.slice(11, 13) + ':' + s.slice(13, 15) + 'Z'
+      );
+    }
+
+    let isRegistered = false;
+    try {
+      const registeredAt = localStorage.getItem('cbwmRegistered');
+      isRegistered = !!registeredAt && Date.now() <= icsUtcToMs(SESSION_END_UTC);
+      if (registeredAt && !isRegistered) localStorage.removeItem('cbwmRegistered');
+    } catch (e) {}
+
+    if (isRegistered) {
+      document.getElementById('not-registered').hidden = true;
+      document.getElementById('thankyou-content').hidden = false;
+      document.getElementById('zoom-btn').href = ZOOM_URL;
+    }
+
+    document.getElementById('reset-registration').addEventListener('click', function (e) {
+      e.preventDefault();
+      try { localStorage.removeItem('cbwmRegistered'); } catch (err) {}
+      window.location.href = '/breathewithme';
+    });
 
     function calDescription() {
       return 'Come Breathe With Me\n\n'
@@ -235,8 +305,10 @@
         + '&location=' + encodeURIComponent('Online via Zoom');
     }
 
-    document.getElementById('cal-google').href = googleCalUrl();
-    document.getElementById('cal-outlook').href = outlookCalUrl();
+    if (isRegistered) {
+      document.getElementById('cal-google').href = googleCalUrl();
+      document.getElementById('cal-outlook').href = outlookCalUrl();
+    }
 
     function toICSDate(isoLocal) {
       return isoLocal.replace(/[-:]/g, '');
