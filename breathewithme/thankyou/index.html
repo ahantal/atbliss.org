@@ -94,6 +94,17 @@
 
     .cta-row { margin-bottom: 2.5rem; }
 
+    .eyebrow-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.85rem;
+    }
+
+    .cal-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; margin-bottom: 2.5rem; }
+    .cal-row .btn { margin: 0; padding: 0.75rem 1.6rem; }
+
     .link-row { margin-bottom: 2.5rem; }
 
     a.inline-link {
@@ -151,7 +162,13 @@
 
     <div class="cta-row">
       <a href="#" id="zoom-btn" class="btn btn-primary" target="_blank" rel="noopener">Join on Zoom</a>
-      <a href="#" id="calendar-btn" class="btn btn-outline">Add to Calendar</a>
+    </div>
+
+    <p class="eyebrow-label">Add to Calendar</p>
+    <div class="cal-row">
+      <a href="#" id="cal-google" class="btn btn-outline" target="_blank" rel="noopener">Google Calendar</a>
+      <a href="#" id="cal-apple" class="btn btn-outline">Apple Calendar</a>
+      <a href="#" id="cal-outlook" class="btn btn-outline" target="_blank" rel="noopener">Outlook</a>
     </div>
 
     <div class="link-row">
@@ -177,17 +194,55 @@
     // Session start/end in ISO 8601 WITHOUT a timezone offset (local time of the zone below):
     const SESSION_START = '2026-01-01T18:00:00';
     const SESSION_END   = '2026-01-01T19:30:00';
-    // IANA timezone name the times above are written in, e.g. 'America/New_York':
+    // The same start/end written with an explicit UTC offset, for Outlook's deeplink:
+    const SESSION_START_LOCAL = '2026-01-01T18:00:00-05:00';
+    const SESSION_END_LOCAL   = '2026-01-01T19:30:00-05:00';
+    // The same start/end converted to UTC, in YYYYMMDDTHHMMSSZ form, for Google Calendar:
+    const SESSION_START_UTC = '20260101T230000Z';
+    const SESSION_END_UTC   = '20260102T003000Z';
+    // IANA timezone name the local times above are written in, e.g. 'America/New_York':
     const SESSION_TZID  = 'America/New_York';
     // ── END EDIT ──
 
     document.getElementById('zoom-btn').href = ZOOM_URL;
 
+    const EVENT_TITLE = 'Come Breathe With Me';
+
+    function calDescription() {
+      return 'Come Breathe With Me\n\n'
+        + 'A free 90-minute Soma+IQ™ The Journey Somatic Breathwork session with Ali Cumhur Hantal.\n\n'
+        + 'Join on Zoom:\n' + ZOOM_URL + '\n\n'
+        + 'How to prepare:\nhttps://atbliss.org/breathewithme/prepare\n\n'
+        + 'Come as you are.';
+    }
+
+    function googleCalUrl() {
+      return 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+        + '&text=' + encodeURIComponent(EVENT_TITLE)
+        + '&dates=' + SESSION_START_UTC + '/' + SESSION_END_UTC
+        + '&details=' + encodeURIComponent(calDescription())
+        + '&location=' + encodeURIComponent('Online via Zoom')
+        + '&ctz=' + encodeURIComponent(SESSION_TZID);
+    }
+
+    function outlookCalUrl() {
+      return 'https://outlook.live.com/calendar/0/deeplink/compose'
+        + '?path=%2Fcalendar%2Faction%2Fcompose&rru=addevent'
+        + '&subject=' + encodeURIComponent(EVENT_TITLE)
+        + '&startdt=' + encodeURIComponent(SESSION_START_LOCAL)
+        + '&enddt=' + encodeURIComponent(SESSION_END_LOCAL)
+        + '&body=' + encodeURIComponent(calDescription())
+        + '&location=' + encodeURIComponent('Online via Zoom');
+    }
+
+    document.getElementById('cal-google').href = googleCalUrl();
+    document.getElementById('cal-outlook').href = outlookCalUrl();
+
     function toICSDate(isoLocal) {
       return isoLocal.replace(/[-:]/g, '');
     }
 
-    document.getElementById('calendar-btn').addEventListener('click', function (e) {
+    document.getElementById('cal-apple').addEventListener('click', function (e) {
       e.preventDefault();
       const ics = [
         'BEGIN:VCALENDAR',
@@ -198,7 +253,7 @@
         'DTSTAMP:' + toICSDate(new Date().toISOString().slice(0, 19)) + 'Z',
         'DTSTART;TZID=' + SESSION_TZID + ':' + toICSDate(SESSION_START),
         'DTEND;TZID=' + SESSION_TZID + ':' + toICSDate(SESSION_END),
-        'SUMMARY:Come Breathe With Me',
+        'SUMMARY:' + EVENT_TITLE,
         'DESCRIPTION:A free 90-minute Soma+IQ The Journey Somatic Breathwork session with Ali Cumhur Hantal. Join link: ' + ZOOM_URL,
         'LOCATION:Online via Zoom',
         'END:VEVENT',
