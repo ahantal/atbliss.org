@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>You're In | Come Breathe With Me</title>
+  <meta name="description" content="You're registered for Come Breathe With Me, a free Soma+IQ™ The Journey Somatic Breathwork session." />
+  <meta name="robots" content="noindex" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #c9a84c;
+      --gold-light: #e8cf88;
+      --deep: #0a0c14;
+      --text: #e8e4dc;
+      --muted: #9a968f;
+      --border: rgba(201, 168, 76, 0.2);
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--deep);
+      color: var(--text);
+    }
+
+    .wrap { max-width: 560px; margin: 0 auto; padding: 6rem 1.75rem 4rem; text-align: center; }
+
+    .section-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2.4rem, 5.5vw, 3.4rem);
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: rgba(232, 228, 220, 0.78);
+      margin-bottom: 1.5rem;
+    }
+
+    .session-info {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      text-align: left;
+      margin: 0 auto 2.5rem;
+      padding: 1.75rem 2.25rem;
+      border: 1px solid var(--border);
+    }
+
+    .session-info .row { display: flex; gap: 0.6rem; font-size: 0.92rem; }
+    .session-info .row span:first-child {
+      color: var(--gold);
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      width: 60px;
+      flex-shrink: 0;
+      padding-top: 0.15rem;
+    }
+    .session-info .row span:last-child { color: var(--text); }
+
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 2.6rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.25s, color 0.25s, border-color 0.25s;
+      cursor: pointer;
+      border: none;
+      font-family: 'DM Sans', sans-serif;
+      margin: 0.4rem;
+    }
+
+    .btn-primary { background: var(--gold); color: var(--deep); border: 1px solid var(--gold); }
+    .btn-primary:hover { background: var(--gold-light); border-color: var(--gold-light); }
+
+    .btn-outline { border: 1px solid var(--gold); color: var(--gold-light); background: transparent; }
+    .btn-outline:hover { background: var(--gold); color: var(--deep); }
+
+    .cta-row { margin-bottom: 2.5rem; }
+
+    .link-row { margin-bottom: 2.5rem; }
+
+    a.inline-link {
+      color: var(--gold-light);
+      text-decoration: none;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+      border-bottom: 1px solid rgba(232,207,136,0.3);
+      margin: 0 0.75rem;
+      display: inline-block;
+    }
+
+    a.inline-link:hover { color: var(--gold); }
+
+    .signoff {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.2rem;
+      color: var(--gold-light);
+      margin-top: 2rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 3rem 1.75rem;
+      text-align: center;
+    }
+
+    .footer-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    footer img { height: 36px; width: auto; }
+
+    @media (max-width: 480px) {
+      .wrap { padding-top: 4.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrap">
+    <p class="section-label">Thank You</p>
+    <h1>You&rsquo;re in.</h1>
+    <p>I&rsquo;m looking forward to breathing with you.</p>
+
+    <div class="session-info">
+      <div class="row"><span>Date</span><span>[SESSION DATE]</span></div>
+      <div class="row"><span>Time</span><span>[SESSION TIME + TIME ZONE]</span></div>
+    </div>
+
+    <div class="cta-row">
+      <a href="#" id="zoom-btn" class="btn btn-primary" target="_blank" rel="noopener">Join on Zoom</a>
+      <a href="#" id="calendar-btn" class="btn btn-outline">Add to Calendar</a>
+    </div>
+
+    <div class="link-row">
+      <a href="/breathewithme/prepare" class="inline-link">How to Prepare &rarr;</a>
+      <a href="/breathewithme/release" class="inline-link" target="_blank" rel="noopener">Release Waiver &rarr;</a>
+    </div>
+
+    <p>Find a quiet space where you will not be disturbed. Wear comfortable clothing and prepare a comfortable place where you can lie down.</p>
+    <p><strong>Come as you are.</strong></p>
+    <p>I&rsquo;ll see you there.</p>
+    <p class="signoff">Ali</p>
+  </div>
+
+  <footer>
+    <p class="footer-label">Brought to you by</p>
+    <a href="/"><img src="../../images/AtBlissLogo.png" alt="@ Bliss Foundation" /></a>
+  </footer>
+
+  <script>
+    // ── EDIT THESE BEFORE SHARING THIS PAGE ──
+    // Real Zoom meeting link:
+    const ZOOM_URL = 'https://zoom.us/REPLACE_WITH_REAL_LINK';
+    // Session start/end in ISO 8601 WITHOUT a timezone offset (local time of the zone below):
+    const SESSION_START = '2026-01-01T18:00:00';
+    const SESSION_END   = '2026-01-01T19:30:00';
+    // IANA timezone name the times above are written in, e.g. 'America/New_York':
+    const SESSION_TZID  = 'America/New_York';
+    // ── END EDIT ──
+
+    document.getElementById('zoom-btn').href = ZOOM_URL;
+
+    function toICSDate(isoLocal) {
+      return isoLocal.replace(/[-:]/g, '');
+    }
+
+    document.getElementById('calendar-btn').addEventListener('click', function (e) {
+      e.preventDefault();
+      const ics = [
+        'BEGIN:VCALENDAR',
+        'VERSION:2.0',
+        'PRODID:-//AtBliss//ComeBreatheWithMe//EN',
+        'BEGIN:VEVENT',
+        'UID:' + Date.now() + '@atbliss.org',
+        'DTSTAMP:' + toICSDate(new Date().toISOString().slice(0, 19)) + 'Z',
+        'DTSTART;TZID=' + SESSION_TZID + ':' + toICSDate(SESSION_START),
+        'DTEND;TZID=' + SESSION_TZID + ':' + toICSDate(SESSION_END),
+        'SUMMARY:Come Breathe With Me',
+        'DESCRIPTION:A free 90-minute Soma+IQ The Journey Somatic Breathwork session with Ali Cumhur Hantal. Join link: ' + ZOOM_URL,
+        'LOCATION:Online via Zoom',
+        'END:VEVENT',
+        'END:VCALENDAR',
+      ].join('\r\n');
+
+      const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'come-breathe-with-me.ics';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    });
+  </script>
+</body>
+</html>

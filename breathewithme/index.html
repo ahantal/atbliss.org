@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Come Breathe With Me</title>
+  <meta name="description" content="A personal invitation from Ali Cumhur Hantal: a free 90-minute Soma+IQ™ The Journey Somatic Breathwork experience with friends." />
+  <meta name="robots" content="noindex" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #c9a84c;
+      --gold-light: #e8cf88;
+      --deep: #0a0c14;
+      --text: #e8e4dc;
+      --muted: #9a968f;
+      --border: rgba(201, 168, 76, 0.2);
+      --border-hover: rgba(201, 168, 76, 0.45);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--deep);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    .wrap { max-width: 680px; margin: 0 auto; padding: 0 1.75rem; }
+
+    section { padding: 4rem 0; }
+
+    .section-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    h1, h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+      margin-bottom: 1.5rem;
+    }
+
+    .section-subhead {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+      line-height: 1.4;
+      color: var(--text);
+      margin: 2.25rem 0 1.25rem;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.9;
+      color: rgba(232, 228, 220, 0.78);
+      margin-bottom: 1.25rem;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    p strong { color: var(--text); font-weight: 500; }
+
+    .cascade {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(1.1rem, 2vw, 1.3rem);
+      color: rgba(232, 228, 220, 0.85);
+      line-height: 1.9;
+      margin-bottom: 1.5rem;
+    }
+
+    .highlight-line {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: clamp(1.2rem, 2.2vw, 1.5rem);
+      color: var(--gold-light);
+      margin: 1.75rem 0;
+    }
+
+    .closing-line {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(1.2rem, 2.2vw, 1.5rem);
+      color: var(--gold-light);
+      margin: 1.75rem 0;
+    }
+
+    .divider {
+      width: 1px;
+      height: 70px;
+      background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+      margin: 0 auto;
+    }
+
+    a.inline-link {
+      color: var(--gold-light);
+      text-decoration: none;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+      border-bottom: 1px solid rgba(232,207,136,0.3);
+    }
+
+    a.inline-link:hover { color: var(--gold); }
+
+    /* ── HERO ── */
+    .hero { padding-top: 4.5rem; text-align: center; }
+
+    .hero .eyebrow {
+      font-size: 0.68rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 6vw, 3.6rem);
+      margin-bottom: 1rem;
+    }
+
+    .hero .subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-style: italic;
+      font-size: clamp(1.2rem, 2.4vw, 1.5rem);
+      color: rgba(232, 228, 220, 0.82);
+      max-width: 520px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .hero .tagline {
+      font-size: 0.95rem;
+      letter-spacing: 0.06em;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      margin-bottom: 2.25rem;
+    }
+
+    .session-info {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      text-align: left;
+      margin: 0 auto 2.5rem;
+      padding: 1.75rem 2.25rem;
+      border: 1px solid var(--border);
+    }
+
+    .session-info .row { display: flex; gap: 0.6rem; font-size: 0.92rem; }
+    .session-info .row span:first-child {
+      color: var(--gold);
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      width: 90px;
+      flex-shrink: 0;
+      padding-top: 0.15rem;
+    }
+    .session-info .row span:last-child { color: var(--text); }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 2.6rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.25s, color 0.25s, border-color 0.25s;
+      cursor: pointer;
+      border: none;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .btn-primary { background: var(--gold); color: var(--deep); border: 1px solid var(--gold); }
+    .btn-primary:hover { background: var(--gold-light); border-color: var(--gold-light); }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    /* ── STORY (photo) ── */
+    .story::after { content: ''; display: table; clear: both; }
+
+    .story-photo {
+      float: left;
+      width: 240px;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      margin: 0.25rem 1.75rem 1rem 0;
+    }
+
+    @media (max-width: 640px) {
+      .story-photo { float: none; width: 100%; max-width: 280px; margin: 0 auto 1.75rem; display: block; }
+    }
+
+    /* ── PREPARE LINK ── */
+    .prepare-link { text-align: center; margin-top: 2rem; }
+
+    /* ── REGISTRATION ── */
+    .register .session-info { display: flex; }
+
+    .form-group { margin-bottom: 1.5rem; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+
+    label {
+      display: block;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.55rem;
+    }
+
+    .required-mark { color: #e2635c; }
+
+    .required-legend { font-size: 0.78rem; color: var(--muted); margin-bottom: 2rem; }
+
+    input[type="text"], input[type="email"], input[type="tel"] {
+      width: 100%;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.85rem 1.1rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.92rem;
+      transition: border-color 0.2s;
+    }
+
+    input:focus { outline: none; border-color: rgba(201,168,76,0.5); }
+    input::placeholder { color: var(--muted); }
+
+    .health-box {
+      margin: 2.5rem 0 2rem;
+      padding: 1.75rem 1.75rem;
+      border: 1px solid rgba(201, 168, 76, 0.3);
+    }
+
+    .health-box p, .health-box li {
+      font-size: 0.85rem;
+      line-height: 1.75;
+      color: rgba(232, 228, 220, 0.72);
+    }
+
+    .health-box p { margin-bottom: 0.9rem; }
+    .health-box ul { list-style: none; margin: 0 0 0.9rem; }
+
+    .health-box li {
+      padding-left: 1.1rem;
+      position: relative;
+      margin-bottom: 0.3rem;
+    }
+
+    .health-box li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.6em;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: rgba(201, 168, 76, 0.6);
+    }
+
+    .health-box a { color: var(--gold-light); text-decoration: none; border-bottom: 1px solid rgba(232,207,136,0.3); }
+
+    .checkbox-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      padding: 1.25rem;
+      border: 1px solid var(--border);
+      margin: 0 0 2rem;
+    }
+
+    .checkbox-row input { margin-top: 0.25rem; accent-color: var(--gold); flex-shrink: 0; }
+
+    .checkbox-row span {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: rgba(232, 228, 220, 0.82);
+    }
+
+    .checkbox-row a { color: var(--gold-light); text-decoration: none; border-bottom: 1px solid rgba(232,207,136,0.3); }
+    .checkbox-row a:hover { color: var(--gold); }
+
+    .form-error {
+      display: none;
+      font-size: 0.85rem;
+      color: #e0a37a;
+      margin-top: 1rem;
+    }
+
+    .form-error.visible { display: block; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 3rem 1.75rem;
+      text-align: center;
+    }
+
+    .footer-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    footer a { display: inline-block; }
+    footer img { height: 36px; width: auto; }
+
+    /* ── ANIMATIONS ── */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.75s ease, transform 0.75s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      section { padding: 3rem 0; }
+      .hero { padding-top: 3.5rem; }
+      .form-row { grid-template-columns: 1fr; gap: 1rem; }
+      .session-info { display: flex !important; width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow reveal">Come Breathe With Me</p>
+      <h1 class="reveal">Come breathe with me.</h1>
+      <p class="subtitle reveal" style="transition-delay:0.1s;">A free 90-minute Soma+IQ&trade; The Journey experience with friends</p>
+      <p class="tagline reveal" style="transition-delay:0.15s;">Breathe. Feel. Release. Reconnect.</p>
+
+      <div class="session-info reveal" style="transition-delay:0.2s;">
+        <div class="row"><span>Date</span><span>[SESSION DATE]</span></div>
+        <div class="row"><span>Time</span><span>[SESSION TIME + TIME ZONE]</span></div>
+        <div class="row"><span>Location</span><span>Online via Zoom</span></div>
+        <div class="row"><span>Duration</span><span>Approximately 90 minutes</span></div>
+        <div class="row"><span>Cost</span><span>Free</span></div>
+      </div>
+
+      <div class="reveal" style="transition-delay:0.25s;">
+        <a href="#register" class="btn btn-primary">Come Breathe With Me</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- MY STORY -->
+  <section class="story" id="story">
+    <div class="wrap">
+      <p class="section-label reveal">My Story</p>
+      <h2 class="reveal">My journey actually started with philosophy.</h2>
+      <img class="story-photo reveal" src="../images/AH4.jpg" alt="Ali Cumhur Hantal" style="transition-delay:0.1s;" />
+      <p class="reveal" style="transition-delay:0.13s;">Most of you receiving this page know me personally.</p>
+      <p class="reveal" style="transition-delay:0.16s;">And many of you know that I have been on a journey of questioning, exploring, and trying to understand ourselves and this strange and beautiful experience we call life for a very long time.</p>
+      <p class="reveal" style="transition-delay:0.19s;">As most of you know, I started my undergraduate studies at Bo&#287;azi&ccedil;i University as a Philosophy major before transferring to Business Administration.</p>
+      <p class="reveal" style="transition-delay:0.22s;">You may also have heard me say many times that beginning my university journey as a philosophy student was one of the finest things that ever happened to me.</p>
+      <p class="reveal" style="transition-delay:0.25s;">Something happened to my young mind during those years.</p>
+      <p class="highlight-line reveal" style="transition-delay:0.28s;"><strong>A door opened that has never closed since.</strong></p>
+      <p class="reveal" style="transition-delay:0.31s;">It was the door to questioning what I thought I knew. Questioning the things I had accepted as fact. Questioning my assumptions, beliefs, perceptions, and eventually questioning new knowledge as I encountered it.</p>
+      <p class="reveal" style="transition-delay:0.34s;">That curiosity has stayed with me throughout my life.</p>
+      <p class="reveal" style="transition-delay:0.37s;">I have meditated for more than thirty years and explored different practices, philosophies, traditions, and ways of understanding ourselves and our relationship with life.</p>
+      <p class="reveal" style="transition-delay:0.4s;">But more recently, I discovered something that affected me deeply:</p>
+      <p class="highlight-line reveal" style="transition-delay:0.43s;"><strong>Somatic Breathwork.</strong></p>
+      <p class="reveal" style="transition-delay:0.46s;">I had experienced profound states through meditation and other deeper ceremonial practices before. What surprised me about Somatic Breathwork was discovering how much could become accessible through something so fundamental and already within us:</p>
+      <p class="highlight-line reveal" style="transition-delay:0.49s;"><strong>Our own breath.</strong></p>
+      <p class="reveal" style="transition-delay:0.52s;">No substance.</p>
+      <p class="reveal" style="transition-delay:0.55s;">Just breathing.</p>
+      <p class="reveal" style="transition-delay:0.58s;">The experience made me curious enough that I wanted to understand what was happening, learn the modality properly, and experience it more deeply.</p>
+      <p class="reveal" style="transition-delay:0.61s;">That curiosity eventually led me to train and become a <strong>Soma+IQ&trade; Somatic Breathwork Practitioner.</strong></p>
+      <p class="reveal" style="transition-delay:0.64s;">And now I want to share the experience with you.</p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- WHY I'M INVITING YOU -->
+  <section id="why">
+    <div class="wrap">
+      <p class="section-label reveal">Why I&rsquo;m Inviting You</p>
+      <h2 class="reveal">Why I&rsquo;m Inviting You</h2>
+      <p class="reveal" style="transition-delay:0.1s;">I&rsquo;m not asking you to believe anything.</p>
+      <p class="reveal" style="transition-delay:0.13s;">I&rsquo;m not trying to convince you of anything.</p>
+      <p class="highlight-line reveal" style="transition-delay:0.16s;"><strong>I simply want you to experience it.</strong></p>
+      <p class="reveal" style="transition-delay:0.19s;">One of the things that fascinated me about this practice was experiencing how consciously working with our own breath can influence how we feel and how we experience our nervous system.</p>
+      <p class="reveal" style="transition-delay:0.22s;">And that brought me back to something I&rsquo;ve increasingly come to appreciate:</p>
+
+      <h3 class="section-subhead reveal" style="transition-delay:0.25s;">The mind is not the only place we carry our lives.</h3>
+
+      <p class="reveal" style="transition-delay:0.28s;">We deal with pressure every day.</p>
+      <p class="reveal" style="transition-delay:0.31s;">Work. Family. Relationships. Responsibilities. Money. Expectations. Uncertainty. Things that happened yesterday, and things we&rsquo;re already worrying about tomorrow.</p>
+      <p class="reveal" style="transition-delay:0.34s;">These experiences affect the way we think and feel.</p>
+      <p class="reveal" style="transition-delay:0.37s;"><strong>But they also affect the Soma, the body.</strong></p>
+      <p class="reveal" style="transition-delay:0.4s;">Stress can show up in our nervous system, our breathing, muscular tension, posture, and the physical sensations we carry with us.</p>
+      <p class="reveal" style="transition-delay:0.43s; margin-bottom:0.5rem;">Sometimes we move through that pressure naturally.</p>
+      <p class="reveal" style="transition-delay:0.45s;">Sometimes we don&rsquo;t.</p>
+      <p class="reveal" style="transition-delay:0.48s;">We hold it in. We tighten. We suppress what we feel. We continue functioning while the pressure continues to build.</p>
+      <p class="reveal" style="transition-delay:0.51s;">And this is where Somatic Breathwork became particularly interesting to me.</p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- SOMATIC BREATHWORK -->
+  <section id="practice">
+    <div class="wrap">
+      <p class="section-label reveal">Somatic Breathwork</p>
+      <h2 class="reveal">Sometimes We Can Let the Soma Speak</h2>
+      <p class="reveal" style="transition-delay:0.1s;">Somatic Breathwork uses conscious breathing together with movement, sound, and emotional expression to bring our attention away from constantly analyzing what is happening and toward actually experiencing what is happening within the body.</p>
+      <p class="reveal" style="transition-delay:0.13s;">We spend an extraordinary amount of our lives inside our heads.</p>
+      <p class="cascade reveal" style="transition-delay:0.16s;">
+        Thinking.<br />
+        Analyzing.<br />
+        Explaining.<br />
+        Trying to understand why we feel something.
+      </p>
+      <p class="reveal" style="transition-delay:0.19s;">During the practice, we can temporarily approach things differently.</p>
+      <p class="reveal" style="transition-delay:0.22s; margin-bottom:0.75rem;">We don&rsquo;t always have to ask:</p>
+      <p class="cascade reveal" style="transition-delay:0.25s;">
+        Why am I feeling this?<br />
+        Where did this come from?<br />
+        What does this mean?
+      </p>
+      <p class="reveal" style="transition-delay:0.28s;">Sometimes we can simply notice it.</p>
+      <p class="cascade reveal" style="transition-delay:0.31s;">
+        Feel it.<br />
+        Breathe with it.<br />
+        Allow it.<br />
+        Express it.<br />
+        And let it move.
+      </p>
+      <p class="highlight-line reveal" style="transition-delay:0.34s;"><strong>Feel it. Allow it. Express it. Let it move.</strong></p>
+      <p class="reveal" style="transition-delay:0.37s;">This is part of a process I think of as:</p>
+      <p class="highlight-line reveal" style="transition-delay:0.4s;"><strong>Regulate &rarr; Release &rarr; Repattern &rarr; Integrate.</strong></p>
+      <p class="reveal" style="transition-delay:0.43s;">And perhaps one of the most interesting things about it is how simple the fundamental tool is.</p>
+      <p class="closing-line reveal" style="transition-delay:0.46s;"><strong>Your own breath.</strong></p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- THE EXPERIENCE -->
+  <section id="experience">
+    <div class="wrap">
+      <p class="section-label reveal">The Experience</p>
+      <h2 class="reveal">Come Experience It With Me</h2>
+      <p class="reveal" style="transition-delay:0.1s;">This is why I&rsquo;m sending you this page.</p>
+      <p class="reveal" style="transition-delay:0.13s;">I would love for some of my friends to experience the modality that has become an important part of my own journey.</p>
+      <p class="reveal" style="transition-delay:0.16s;">I&rsquo;ll guide you through the full <strong>Soma+IQ&trade; The Journey</strong>, an approximately 90-minute Somatic Breathwork experience using conscious connected breathing, music, movement, sound, and emotional expression.</p>
+      <p class="reveal" style="transition-delay:0.19s;">We&rsquo;ll begin together, breathe together, and then leave some time afterward to rest, integrate, and talk.</p>
+      <p class="reveal" style="transition-delay:0.22s;">There is nothing you need to achieve.</p>
+      <p class="reveal" style="transition-delay:0.25s;">There is nothing you need to perform.</p>
+      <p class="reveal" style="transition-delay:0.28s;">And there is absolutely nothing you need to believe.</p>
+      <p class="reveal" style="transition-delay:0.31s;">Your experience may be very different from someone else&rsquo;s, and that&rsquo;s perfectly fine.</p>
+      <p class="reveal" style="transition-delay:0.34s;">My only invitation is:</p>
+      <p class="closing-line reveal" style="transition-delay:0.37s;"><strong>Experience. Observe. Stay curious.</strong></p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- COME AS YOU ARE -->
+  <section id="come-as-you-are">
+    <div class="wrap">
+      <p class="section-label reveal">Come As You Are</p>
+      <h2 class="reveal">You don&rsquo;t need to know how to do this.</h2>
+      <p class="reveal" style="transition-delay:0.1s;">You don&rsquo;t need any previous breathwork or meditation experience.</p>
+      <p class="reveal" style="transition-delay:0.13s;">You don&rsquo;t need to know what you&rsquo;re supposed to do.</p>
+      <p class="reveal" style="transition-delay:0.16s;">You don&rsquo;t need to know what you&rsquo;re supposed to feel.</p>
+      <p class="reveal" style="transition-delay:0.19s;">Wear something comfortable.</p>
+      <p class="reveal" style="transition-delay:0.22s;">Find a quiet place where you can lie down comfortably without being disturbed.</p>
+      <p class="reveal" style="transition-delay:0.25s;">Give yourself these 90 minutes.</p>
+      <p class="reveal" style="transition-delay:0.28s;">I&rsquo;ll take care of the rest.</p>
+      <p class="highlight-line reveal" style="transition-delay:0.31s;"><strong>Come as you are.</strong></p>
+      <p class="prepare-link reveal" style="transition-delay:0.34s;"><a href="/breathewithme/prepare" class="inline-link">How to Prepare &rarr;</a></p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- REGISTRATION -->
+  <section class="register" id="register">
+    <div class="wrap">
+      <div id="register-form-wrap">
+        <p class="section-label reveal">Registration</p>
+        <h2 class="reveal">Come Breathe With Me</h2>
+
+        <div class="session-info reveal" style="transition-delay:0.1s;">
+          <div class="row"><span>Date</span><span>[SESSION DATE]</span></div>
+          <div class="row"><span>Time</span><span>[SESSION TIME + TIME ZONE]</span></div>
+          <div class="row"><span>Duration</span><span>Approximately 90 minutes</span></div>
+          <div class="row"><span>Location</span><span>Online via Zoom</span></div>
+          <div class="row"><span>Cost</span><span>Free</span></div>
+        </div>
+
+        <form id="cbwm-form">
+          <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off" />
+          <input type="hidden" name="access_key" value="7d3fb876-9576-4583-8d7d-760c0eb89bab" />
+          <input type="hidden" name="subject" value="COME BREATHE WITH ME Registration" />
+          <input type="hidden" name="from_name" value="Come Breathe With Me" />
+          <input type="hidden" name="session_info" value="[SESSION DATE], [SESSION TIME + TIME ZONE]" />
+
+          <p class="required-legend"><span class="required-mark">*</span> Required fields</p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="first_name">First Name <span class="required-mark">*</span></label>
+              <input type="text" id="first_name" name="first_name" required />
+            </div>
+            <div class="form-group">
+              <label for="last_name">Last Name <span class="required-mark">*</span></label>
+              <input type="text" id="last_name" name="last_name" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email <span class="required-mark">*</span></label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Mobile Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="e.g. +1 555 123 4567" />
+          </div>
+
+          <div class="health-box">
+            <p><strong>Soma+IQ&trade; Breathwork is a personal growth practice and is not a substitute for medical care, psychotherapy, or psychological care.</strong></p>
+            <p>Participation is not advised for individuals with certain conditions, including:</p>
+            <ul>
+              <li>Pregnancy</li>
+              <li>Cardiovascular conditions, including heart conditions or high blood pressure</li>
+              <li>Glaucoma or retinal detachment</li>
+              <li>Osteoporosis</li>
+              <li>Epilepsy or a history of seizures</li>
+              <li>History of stroke</li>
+              <li>Recent surgery</li>
+              <li>Infectious disease</li>
+              <li>Serious psychiatric conditions</li>
+            </ul>
+            <p>If you have asthma, please bring your inhaler and consult your doctor before participating.</p>
+            <p>If you have any doubt about whether this practice is appropriate for you, please consult your physician before participating.</p>
+          </div>
+
+          <div class="checkbox-row">
+            <input type="checkbox" id="waiver_accepted" name="waiver_accepted" value="Yes" required />
+            <label for="waiver_accepted" style="margin:0; text-transform:none; font-size:0.88rem; letter-spacing:0; color:inherit;">
+              <span>I have read the information above and agree to the <a href="/breathewithme/release" target="_blank" rel="noopener">Release Waiver</a>.</span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary" id="cbwm-submit">Come Breathe With Me</button>
+          <p class="form-error" id="cbwm-error">Something went wrong submitting your registration. Please try again, or email us directly at atblissfoundation@gmail.com.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p class="footer-label">Brought to you by</p>
+    <a href="/"><img src="../images/AtBlissLogo.png" alt="@ Bliss Foundation" /></a>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    const cbwmForm = document.getElementById('cbwm-form');
+    const cbwmSubmit = document.getElementById('cbwm-submit');
+    const cbwmError = document.getElementById('cbwm-error');
+
+    cbwmForm.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      cbwmError.classList.remove('visible');
+      cbwmSubmit.disabled = true;
+      cbwmSubmit.textContent = 'Submitting…';
+
+      try {
+        const formData = new FormData(cbwmForm);
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { Accept: 'application/json' },
+          body: formData,
+        });
+        const result = await response.json();
+
+        if (result.success) {
+          window.location.href = '/breathewithme/thankyou';
+        } else {
+          throw new Error(result.message || 'Submission failed');
+        }
+      } catch (err) {
+        cbwmError.classList.add('visible');
+        cbwmSubmit.disabled = false;
+        cbwmSubmit.textContent = 'Come Breathe With Me';
+      }
+    });
+  </script>
+</body>
+</html>
