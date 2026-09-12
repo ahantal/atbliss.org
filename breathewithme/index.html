@@ -361,7 +361,7 @@
     // SESSION_END_UTC must match the same constant in thankyou/index.html
     // (format: YYYYMMDDTHHMMSSZ, the same ICS/Google-Calendar UTC form used there).
     (function () {
-      var SESSION_END_UTC = '20260101T003000Z'; // TODO: replace to match thankyou/index.html
+      var SESSION_END_UTC = '20260928T200000Z'; // must match thankyou/index.html
       function icsUtcToMs(s) {
         return Date.parse(
           s.slice(0, 4) + '-' + s.slice(4, 6) + '-' + s.slice(6, 8) +
@@ -389,8 +389,8 @@
       <p class="tagline reveal" style="transition-delay:0.2s;">Breathe. Feel. Release. Repattern. Integrate.</p>
 
       <div class="session-info reveal" style="transition-delay:0.25s;">
-        <div class="row"><span>Date</span><span>[SESSION DATE]</span></div>
-        <div class="row"><span>Time</span><span>[SESSION TIME + TIME ZONE]</span></div>
+        <div class="row"><span>Date</span><span>Monday, September 28, 2026</span></div>
+        <div class="row"><span>Time</span><span>9:30 PM TRT (2:30 PM ET)</span></div>
         <div class="row"><span>Location</span><span>Online via Zoom</span></div>
         <div class="row"><span>Duration</span><span>Approximately 90 minutes</span></div>
         <div class="row"><span>Cost</span><span>Free</span></div>
@@ -540,8 +540,8 @@
         <h2 class="reveal">Come Breathe With Me</h2>
 
         <div class="session-info reveal" style="transition-delay:0.1s;">
-          <div class="row"><span>Date</span><span>[SESSION DATE]</span></div>
-          <div class="row"><span>Time</span><span>[SESSION TIME + TIME ZONE]</span></div>
+          <div class="row"><span>Date</span><span>Monday, September 28, 2026</span></div>
+          <div class="row"><span>Time</span><span>9:30 PM TRT (2:30 PM ET)</span></div>
           <div class="row"><span>Duration</span><span>Approximately 90 minutes</span></div>
           <div class="row"><span>Location</span><span>Online via Zoom</span></div>
           <div class="row"><span>Cost</span><span>Free</span></div>
@@ -552,7 +552,7 @@
           <input type="hidden" name="access_key" value="7d3fb876-9576-4583-8d7d-760c0eb89bab" />
           <input type="hidden" name="subject" value="COME BREATHE WITH ME Registration" />
           <input type="hidden" name="from_name" value="Come Breathe With Me" />
-          <input type="hidden" name="session_info" value="[SESSION DATE], [SESSION TIME + TIME ZONE]" />
+          <input type="hidden" name="session_info" value="Monday, September 28, 2026, 9:30 PM TRT (2:30 PM ET)" />
 
           <p class="required-legend"><span class="required-mark">*</span> Required fields</p>
 

@@ -17,6 +17,7 @@
       --text: #e8e4dc;
       --muted: #9a968f;
       --border: rgba(201, 168, 76, 0.2);
+      --border-hover: rgba(201, 168, 76, 0.45);
     }
 
     body {
@@ -25,7 +26,10 @@
       color: var(--text);
     }
 
-    .wrap { max-width: 640px; margin: 0 auto; padding: 5rem 1.75rem 4rem; }
+    .wrap { max-width: 640px; margin: 0 auto; padding: 0 1.75rem; }
+    .wrap-wide { max-width: 920px; margin: 0 auto; padding: 0 1.75rem; }
+
+    section { padding: 3.5rem 0; }
 
     .section-label {
       font-size: 0.68rem;
@@ -35,20 +39,22 @@
       margin-bottom: 1rem;
     }
 
+    .center { text-align: center; }
+
     h1 {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 300;
       font-size: clamp(2rem, 4.5vw, 2.8rem);
       line-height: 1.2;
-      margin-bottom: 1.75rem;
+      margin-bottom: 1.5rem;
     }
 
     h2 {
       font-family: 'Cormorant Garamond', serif;
-      font-weight: 400;
-      font-size: 1.25rem;
-      color: var(--gold-light);
-      margin: 0 0 0.6rem;
+      font-weight: 300;
+      font-size: clamp(1.6rem, 3.2vw, 2.1rem);
+      line-height: 1.25;
+      margin-bottom: 0.5rem;
     }
 
     p {
@@ -58,23 +64,141 @@
       margin-bottom: 1.25rem;
     }
 
-    .prep-item {
-      padding: 1.5rem 0;
-      border-top: 1px solid var(--border);
+    p:last-child { margin-bottom: 0; }
+    p strong { color: var(--text); font-weight: 500; }
+
+    /* ── HERO ── */
+    .hero { padding-top: 5rem; text-align: center; }
+
+    .hero-meta {
+      list-style: none;
+      display: inline-flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      margin: 1.5rem 0 0;
+      padding: 0;
     }
 
-    .prep-item:last-of-type { border-bottom: 1px solid var(--border); }
-    .prep-item p:last-child { margin-bottom: 0; }
+    .hero-meta li {
+      font-size: 0.95rem;
+      color: var(--gold-light);
+      letter-spacing: 0.02em;
+    }
 
+    /* ── CARDS (What You'll Need) ── */
+    .cards {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      margin: 2.75rem 0 0;
+      padding: 0;
+    }
+
+    @media (min-width: 760px) {
+      .cards { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      padding: 1.75rem 1.5rem;
+      text-align: center;
+      transition: border-color 0.2s;
+    }
+
+    .card:hover { border-color: var(--border-hover); }
+
+    .card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.15rem;
+      color: var(--gold-light);
+      margin-bottom: 0.6rem;
+    }
+
+    .card p {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: rgba(232, 228, 220, 0.7);
+      margin: 0;
+    }
+
+    .card--wide {
+      grid-column: 1 / -1;
+      text-align: left;
+      display: grid;
+      grid-template-columns: minmax(0, 200px) 1fr;
+      gap: 1.5rem 2rem;
+      align-items: center;
+      padding: 1.75rem 2rem;
+    }
+
+    .card--wide h3 { margin: 0; }
+
+    .card--wide p {
+      font-size: 0.9rem;
+      margin: 0 0 0.6rem;
+    }
+
+    .card--wide p:last-child { margin-bottom: 0; }
+
+    @media (max-width: 640px) {
+      .cards { grid-template-columns: 1fr; max-width: 340px; margin-left: auto; margin-right: auto; }
+      .card--wide { grid-template-columns: 1fr; text-align: center; }
+    }
+
+    /* ── STAGES (What to Expect) ── */
+    .stages {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin: 2.75rem 0 0;
+      padding: 0;
+      counter-reset: stage;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      .stages { grid-template-columns: 1fr; max-width: 320px; margin-left: auto; margin-right: auto; gap: 2.25rem; }
+    }
+
+    .stage::before {
+      counter-increment: stage;
+      content: counter(stage);
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem;
+      color: var(--gold);
+      opacity: 0.6;
+      margin-bottom: 0.35rem;
+    }
+
+    .stage h3 {
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 0.5rem;
+    }
+
+    .stage p {
+      font-size: 0.9rem;
+      line-height: 1.75;
+      color: rgba(232, 228, 220, 0.72);
+      margin: 0;
+    }
+
+    /* ── CLOSING ── */
     .closing-line {
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
       font-size: clamp(1.2rem, 2.2vw, 1.5rem);
       color: var(--gold-light);
-      margin: 2.5rem 0;
+      margin: 0 0 1.5rem;
     }
 
-    .back-link { text-align: center; margin-top: 3rem; }
+    .back-link { margin-top: 1rem; }
 
     a.inline-link {
       color: var(--gold-light);
@@ -130,59 +254,80 @@
 </head>
 <body>
 
-  <div class="wrap">
-    <p class="section-label">Come Breathe With Me</p>
-    <h1>How to prepare.</h1>
-    <p>You don&rsquo;t need to know how to do this, and you don&rsquo;t need any previous experience. A little preparation just helps you settle in and get the most out of our time together.</p>
-
-    <div class="prep-item">
-      <h2>Wear something comfortable</h2>
-      <p>Loose, comfortable clothing you can breathe and move in. Nothing restrictive.</p>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="section-label">Come Breathe With Me</p>
+      <h1>How to prepare.</h1>
+      <p>You don&rsquo;t need to know how to do this, and you don&rsquo;t need any previous experience. A little preparation just helps you settle in and get the most out of our time together.</p>
+      <ul class="hero-meta">
+        <li>Monday, September 28, 2026</li>
+        <li>9:30 PM TRT (2:30 PM ET)</li>
+      </ul>
     </div>
+  </section>
 
-    <div class="prep-item">
-      <h2>Find a quiet, private space</h2>
-      <p>Somewhere you won&rsquo;t be interrupted for the full 90 minutes. Let the people you live with know you&rsquo;ll be unavailable.</p>
+  <!-- WHAT YOU'LL NEED -->
+  <section>
+    <div class="wrap-wide center">
+      <p class="section-label">What You&rsquo;ll Need</p>
+      <ul class="cards">
+        <li class="card">
+          <h3>Comfortable Clothing</h3>
+          <p>Loose, comfortable clothing you can breathe and move in. Nothing restrictive.</p>
+        </li>
+        <li class="card">
+          <h3>A Place to Lie Down</h3>
+          <p>A mat, a rug, or your bed. Give yourself enough space to stretch out and move freely.</p>
+        </li>
+        <li class="card">
+          <h3>Headphones</h3>
+          <p>Music is a big part of the experience. Headphones help you stay inward and undistracted.</p>
+        </li>
+        <li class="card">
+          <h3>A Quiet, Private Space</h3>
+          <p>Somewhere you won&rsquo;t be interrupted for the full 90 minutes.</p>
+        </li>
+        <li class="card card--wide">
+          <h3>Before You Begin</h3>
+          <div>
+            <p>Keep a glass of water nearby for after the active breathing, and try not to eat a large meal in the two to three hours beforehand. Something light is fine if you need it.</p>
+            <p>Turn off phone notifications and anything else that might interrupt you, and join Zoom a few minutes early so you have time to settle in before we begin together.</p>
+          </div>
+        </li>
+      </ul>
     </div>
+  </section>
 
-    <div class="prep-item">
-      <h2>Set up a comfortable place to lie down</h2>
-      <p>A mat, a rug, or your bed. You&rsquo;ll be lying down for most of the session, so give yourself enough space to stretch out and move freely.</p>
+  <!-- WHAT TO EXPECT -->
+  <section>
+    <div class="wrap-wide center">
+      <p class="section-label">What to Expect</p>
+      <ol class="stages">
+        <li class="stage">
+          <h3>Arrive</h3>
+          <p>We&rsquo;ll settle in together and I&rsquo;ll walk you through what the experience ahead will feel like.</p>
+        </li>
+        <li class="stage">
+          <h3>Breathe</h3>
+          <p>You&rsquo;ll lie down comfortably and be guided through the Soma+IQ&trade; breathwork itself.</p>
+        </li>
+        <li class="stage">
+          <h3>Rest &amp; Integrate</h3>
+          <p>We&rsquo;ll slow things down, come back together, and leave space to rest and share.</p>
+        </li>
+      </ol>
     </div>
+  </section>
 
-    <div class="prep-item">
-      <h2>Use headphones if you can</h2>
-      <p>Music is a big part of the experience. Headphones help you stay inward and undistracted, especially if you&rsquo;re not entirely alone in the space.</p>
+  <!-- CLOSING -->
+  <section>
+    <div class="wrap center">
+      <p class="closing-line"><strong>Come as you are.</strong></p>
+      <p>You don&rsquo;t need to know what you&rsquo;re supposed to do or what you&rsquo;re supposed to feel. I&rsquo;ll take care of the rest.</p>
+      <p class="back-link"><a href="/breathewithme" class="inline-link">&larr; Back to Come Breathe With Me</a></p>
     </div>
-
-    <div class="prep-item">
-      <h2>Have water nearby</h2>
-      <p>Keep a glass or bottle of water within reach for after the active breathing.</p>
-    </div>
-
-    <div class="prep-item">
-      <h2>Avoid a heavy meal beforehand</h2>
-      <p>Try not to eat a large meal in the two to three hours before we begin. Something light is fine if you need it.</p>
-    </div>
-
-    <div class="prep-item">
-      <h2>Turn off what might interrupt you</h2>
-      <p>Phone notifications, doorbells, other browser tabs. Give yourself permission to fully step away for this hour and a half.</p>
-    </div>
-
-    <div class="prep-item">
-      <h2>Join Zoom a few minutes early</h2>
-      <p>It gives you time to settle in, get comfortable, and arrive before we begin together as a group.</p>
-    </div>
-
-    <p class="closing-line"><strong>Come as you are.</strong></p>
-
-    <p>You don&rsquo;t need to know what you&rsquo;re supposed to do or what you&rsquo;re supposed to feel. I&rsquo;ll take care of the rest.</p>
-
-    <div class="back-link">
-      <a href="/breathewithme" class="inline-link">&larr; Back to Come Breathe With Me</a>
-    </div>
-  </div>
+  </section>
 
   <footer>
     <p class="footer-wordmark">Come Breathe With Me</p>

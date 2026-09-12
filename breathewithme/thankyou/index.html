@@ -190,8 +190,8 @@
     <p>I&rsquo;m looking forward to breathing with you.</p>
 
     <div class="session-info">
-      <div class="row"><span>Date</span><span>[SESSION DATE]</span></div>
-      <div class="row"><span>Time</span><span>[SESSION TIME + TIME ZONE]</span></div>
+      <div class="row"><span>Date</span><span>Monday, September 28, 2026</span></div>
+      <div class="row"><span>Time</span><span>9:30 PM TRT (2:30 PM ET)</span></div>
     </div>
 
     <div class="cta-row">
@@ -233,16 +233,17 @@
     // Prana Party reference site's confirmation page, see breathewithmespecs.md §4):
     const ZOOM_URL = atob('aHR0cHM6Ly91czA2d2ViLnpvb20udXMvai84NjI4MDk3NzUyMz9wd2Q9anhaRE1hdXlobFJvcmY2bVZ2U2FCUGNQSVdNaUZSLjE=');
     // Session start/end in ISO 8601 WITHOUT a timezone offset (local time of the zone below):
-    const SESSION_START = '2026-01-01T18:00:00';
-    const SESSION_END   = '2026-01-01T19:30:00';
+    // Monday, September 28, 2026, 9:30 PM TRT (UTC+3) = 2:30 PM Eastern (EDT, UTC-4) = 18:30 UTC.
+    const SESSION_START = '2026-09-28T14:30:00';
+    const SESSION_END   = '2026-09-28T16:00:00';
     // The same start/end written with an explicit UTC offset, for Outlook's deeplink:
-    const SESSION_START_LOCAL = '2026-01-01T18:00:00-05:00';
-    const SESSION_END_LOCAL   = '2026-01-01T19:30:00-05:00';
+    const SESSION_START_LOCAL = '2026-09-28T14:30:00-04:00';
+    const SESSION_END_LOCAL   = '2026-09-28T16:00:00-04:00';
     // The same start/end converted to UTC, in YYYYMMDDTHHMMSSZ form, for Google Calendar
     // and for the "already registered" cutoff check on index.html: SESSION_END_UTC here
     // must match the SESSION_END_UTC constant in ../index.html's early-redirect script:
-    const SESSION_START_UTC = '20260101T230000Z';
-    const SESSION_END_UTC   = '20260102T003000Z';
+    const SESSION_START_UTC = '20260928T183000Z';
+    const SESSION_END_UTC   = '20260928T200000Z';
     // IANA timezone name the local times above are written in, e.g. 'America/New_York':
     const SESSION_TZID  = 'America/New_York';
     // ── END EDIT ──
