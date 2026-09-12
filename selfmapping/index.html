@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Before Your Session | @ Bliss Foundation</title>
+  <title>Thank You | @ Bliss Foundation</title>
   <meta name="description" content="Your Soma+IQ™ The Journey registration is confirmed. Complete the required release form, and optionally begin preparing for the next step of The @ Bliss Path." />
   <meta name="robots" content="noindex" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -138,42 +138,10 @@
     .btn-primary { background: var(--gold); color: var(--deep); border: 1px solid var(--gold); }
     .btn-primary:hover { background: var(--gold-light); border-color: var(--gold-light); }
 
-    .btn-outline { border: 1px solid var(--gold); color: var(--gold-light); background: transparent; }
-    .btn-outline:hover { background: var(--gold); color: var(--deep); }
-
-    .btn:disabled { opacity: 0.5; cursor: not-allowed; }
-
-    /* ── SCROLL CUE (arrow between sections) ── */
-    .scroll-cue {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 0.75rem 0 0.25rem;
-    }
-
-    .scroll-cue-inset { margin-top: 2rem; margin-bottom: -1rem; }
-
-    .scroll-cue svg {
-      width: 26px;
-      height: 26px;
-      stroke: var(--gold);
-      animation: cueBounce 2.2s ease-in-out infinite;
-    }
-
-    @keyframes cueBounce {
-      0%, 100% { transform: translateY(-3px); opacity: 0.5; }
-      50% { transform: translateY(4px); opacity: 0.95; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .scroll-cue svg { animation: none; opacity: 0.7; }
-    }
-
     /* ── SECTION BASE ── */
-    section { padding: 4.2rem 2rem; }
+    section { padding: 3.5rem 2rem; }
 
-    .section-inner { max-width: 1140px; margin: 0 auto; }
-    .section-inner.narrow { max-width: 760px; }
+    .section-inner { max-width: 720px; margin: 0 auto; text-align: center; }
 
     .section-label {
       font-size: 0.68rem;
@@ -183,282 +151,52 @@
       margin-bottom: 1rem;
     }
 
-    .section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      font-weight: 300;
-      line-height: 1.18;
-      margin-bottom: 1.5rem;
-    }
-
-    .section-body {
-      font-size: 1rem;
-      line-height: 1.9;
-      color: rgba(232, 228, 220, 0.72);
-      max-width: 640px;
-    }
-
-    .section-body strong { color: var(--text); font-weight: 500; }
-
-    .center { text-align: center; }
-    .center .section-body { margin: 0 auto; }
-
-    /* ── HERO / CONFIRMATION ── */
-    .sm-hero { background: var(--deep); padding-top: 6.6rem; text-align: center; }
-    .sm-hero .section-inner { max-width: 720px; }
+    /* ── HERO ── */
+    .sm-hero { background: var(--deep); padding-top: 8.5rem; padding-bottom: 2rem; }
 
     .sm-hero h1 {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 300;
-      font-size: clamp(2.4rem, 5.5vw, 3.6rem);
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
       line-height: 1.15;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
     }
 
     .sm-hero-sub {
-      font-size: 1.05rem;
-      line-height: 1.9;
+      font-size: 1.02rem;
+      line-height: 1.85;
       color: rgba(232, 228, 220, 0.72);
-      max-width: 600px;
+      max-width: 560px;
       margin: 0 auto;
     }
 
-    .sm-hero-sub p { margin-bottom: 1.25rem; }
-    .sm-hero-sub p:last-child { margin-bottom: 0; }
+    /* ── MESSAGE CARDS ── */
+    .messages { padding-top: 1rem; padding-bottom: 3.5rem; }
 
-    /* ── RELEASE FORM CTA ── */
-    .release-cta { background: var(--deep2); text-align: center; }
-    .release-cta .section-inner { max-width: 680px; }
-
-    .release-card {
+    .message-card {
       border: 1px solid rgba(201, 168, 76, 0.35);
-      padding: 3rem 2.5rem;
+      padding: 2.5rem 2.25rem;
+      margin-bottom: 1.5rem;
     }
 
-    .release-card h2 {
+    .message-card:last-child { margin-bottom: 0; }
+
+    .message-card h2 {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 300;
-      font-size: clamp(1.6rem, 3vw, 2.1rem);
-      margin-bottom: 1rem;
+      font-size: clamp(1.4rem, 2.8vw, 1.85rem);
+      margin-bottom: 0.85rem;
     }
 
-    .release-card p {
-      font-size: 0.98rem;
-      line-height: 1.85;
+    .message-card p {
+      font-size: 0.96rem;
+      line-height: 1.8;
       color: rgba(232, 228, 220, 0.72);
-      max-width: 500px;
-      margin: 0 auto 2rem;
+      max-width: 480px;
+      margin: 0 auto 1.5rem;
     }
 
-    /* ── SEPARATION ── */
-    .path-sep {
-      background: var(--deep);
-      padding: 3rem 2rem;
-      text-align: center;
-    }
-
-    .path-sep-rule {
-      width: 100%;
-      max-width: 1140px;
-      margin: 0 auto 1.25rem;
-      height: 1px;
-      background: linear-gradient(to right, transparent, var(--border-hover), transparent);
-    }
-
-    /* ── OPTIONAL PATH PREPARATION ── */
-    .path-prep { background: var(--deep3); }
-    .path-prep .section-inner { max-width: 760px; }
-
-    .path-prep h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-size: clamp(1.9rem, 3.6vw, 2.8rem);
-      line-height: 1.2;
-      margin-bottom: 1.75rem;
-    }
-
-    .path-prep-copy p {
-      font-size: 1rem;
-      line-height: 1.9;
-      color: rgba(232, 228, 220, 0.72);
-      margin-bottom: 1.25rem;
-    }
-
-    .path-prep-copy strong { color: var(--text); font-weight: 500; }
-
-    .gift-note {
-      border-left: 2px solid var(--gold);
-      padding: 0.25rem 0 0.25rem 1.25rem;
-      margin: 1.5rem 0;
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: clamp(1.1rem, 2vw, 1.3rem);
-      line-height: 1.7;
-      color: var(--gold-light);
-    }
-
-    .optional-flag {
-      font-size: 0.9rem;
-      letter-spacing: 0.02em;
-      color: var(--muted);
-      margin-top: 1.5rem;
-    }
-
-    .optional-flag strong { color: var(--gold-light); font-weight: 400; }
-
-    /* ── REFLECTION FORM ── */
-    .reflection { background: var(--deep2); }
-    .reflection .section-inner { max-width: 720px; }
-
-    .reflection-intro-heading {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-size: clamp(1.5rem, 2.8vw, 2rem);
-      line-height: 1.35;
-      color: var(--text);
-      margin: 0.75rem 0 1.5rem;
-    }
-
-    .reflection-copy p {
-      font-size: 0.95rem;
-      line-height: 1.9;
-      color: rgba(232, 228, 220, 0.75);
-      margin-bottom: 1.2rem;
-    }
-
-    .reflection-copy p:last-child { margin-bottom: 0; }
-
-    .reflection-copy em { font-style: italic; color: var(--gold-light); }
-    .reflection-copy strong { color: var(--text); font-weight: 500; }
-
-    form { margin-top: 2rem; }
-
-    .form-group { margin-bottom: 2.25rem; }
-
-    .q-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.85rem;
-      color: rgba(201, 168, 76, 0.6);
-      margin-bottom: 0.3rem;
-    }
-
-    label {
-      display: block;
-      font-size: 0.9rem;
-      letter-spacing: 0.02em;
-      color: var(--text);
-      margin-bottom: 0.6rem;
-    }
-
-    .field-help {
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-bottom: 0.75rem;
-      line-height: 1.7;
-    }
-
-    .field-help em { font-style: italic; color: rgba(232, 207, 136, 0.75); }
-
-    input[type="text"],
-    textarea {
-      width: 100%;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--border);
-      color: var(--text);
-      padding: 0.85rem 1.1rem;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.92rem;
-      transition: border-color 0.2s;
-    }
-
-    input[type="text"]:focus,
-    textarea:focus { outline: none; border-color: rgba(201,168,76,0.5); }
-
-    input::placeholder, textarea::placeholder { color: var(--muted); }
-
-    textarea { resize: vertical; min-height: 100px; line-height: 1.7; }
-
-    .example-list { list-style: none; margin: 0.75rem 0 0.9rem; }
-
-    .example-list li {
-      font-size: 0.85rem;
-      color: var(--muted);
-      font-style: italic;
-      padding-left: 1.15rem;
-      position: relative;
-      line-height: 1.75;
-      margin-bottom: 0.3rem;
-    }
-
-    .example-list li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0.6em;
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background: rgba(201, 168, 76, 0.5);
-    }
-
-    .radio-group { display: flex; flex-direction: column; gap: 0.85rem; }
-
-    .radio-option {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-      padding: 0.9rem 1.1rem;
-      border: 1px solid var(--border);
-      cursor: pointer;
-      transition: border-color 0.2s;
-    }
-
-    .radio-option:hover { border-color: var(--border-hover); }
-    .radio-option input { margin-top: 0.2rem; accent-color: var(--gold); }
-    .radio-option span { font-size: 0.92rem; color: var(--text); }
-
-    .followup {
-      margin-top: 1.1rem;
-      padding-left: 1.1rem;
-      border-left: 1px solid var(--border);
-      display: none;
-    }
-
-    .followup.visible { display: block; }
-
-    .form-error {
-      display: none;
-      font-size: 0.85rem;
-      color: #e0a37a;
-      margin-top: 1rem;
-    }
-
-    .form-error.visible { display: block; }
-
-    /* ── REFLECTION THANK YOU ── */
-    .reflection-thankyou { display: none; }
-    .reflection-thankyou.visible { display: block; }
-
-    .reflection-thankyou h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-size: clamp(2rem, 4vw, 3rem);
-      margin-bottom: 1.25rem;
-    }
-
-    .reflection-thankyou p {
-      font-size: 1rem;
-      line-height: 1.9;
-      color: rgba(232, 228, 220, 0.78);
-      max-width: 560px;
-      margin: 0 0 1.5rem;
-    }
-
-    .reflection-thankyou .lead {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.2rem, 2.4vw, 1.5rem);
-      color: var(--gold-light);
-    }
+    .message-card p:last-of-type { margin-bottom: 1.75rem; }
 
     /* ── FOOTER ── */
     footer {
@@ -524,9 +262,9 @@
       .nav-links { display: none; }
       .nav-hamburger { display: flex; }
 
-      section { padding: 3rem 1.5rem; }
-      .sm-hero { padding-top: 5.5rem; }
-      .path-sep { padding: 2.1rem 1.5rem; }
+      section { padding: 2.5rem 1.5rem; }
+      .sm-hero { padding-top: 7rem; }
+      .message-card { padding: 2rem 1.5rem; }
 
       .footer-top { flex-direction: column; }
       footer { padding: 3rem 1.5rem 2rem; }
@@ -566,163 +304,23 @@
       <h1 class="reveal">Your place is registered.</h1>
       <div class="sm-hero-sub reveal" style="transition-delay:0.1s;">
         <p>Thank you for registering for a free <strong>Soma+IQ&trade; The Journey</strong> session with @ Bliss.</p>
-        <p>There is one more important step before your session.</p>
       </div>
     </div>
   </section>
 
-  <div class="scroll-cue" aria-hidden="true">
-    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
-  </div>
-
-  <!-- RELEASE FORM CTA -->
-  <section class="release-cta">
+  <!-- TWO MORE MESSAGES -->
+  <section class="messages">
     <div class="section-inner">
-      <div class="release-card reveal">
+      <div class="message-card reveal">
         <h2>Complete Your Release Form</h2>
         <p>Please complete the release form below before participating in the session.</p>
         <a href="https://www.jotform.com/form/262107365856058" target="_blank" rel="noopener" class="btn btn-primary">Complete Release Form &rarr;</a>
       </div>
-    </div>
-  </section>
 
-  <!-- VISUAL SEPARATION -->
-  <div class="path-sep">
-    <div class="path-sep-rule"></div>
-    <div class="scroll-cue" aria-hidden="true">
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
-    </div>
-  </div>
-
-  <!-- OPTIONAL PATH PREPARATION -->
-  <section class="path-prep">
-    <div class="section-inner">
-      <p class="section-label reveal">The @ Bliss Path</p>
-      <h2 class="reveal">Would you like to go a little deeper?</h2>
-      <div class="path-prep-copy reveal" style="transition-delay:0.1s;">
-        <p>If you would like to prepare for the next step of <strong>The @ Bliss Path</strong>, you can complete the reflection below. It is entirely optional.</p>
-        <p>The questions are designed to help you begin observing one of the inner voices or patterns that sometimes takes the helm, and what happens within you just before it does.</p>
-      </div>
-      <p class="gift-note reveal" style="transition-delay:0.13s;">As a thank you for taking the time to complete this reflection, everyone who submits it will also be eligible for a complimentary 30-minute one-on-one conversation with Mr. Hantal.</p>
-      <p class="optional-flag reveal" style="transition-delay:0.16s;"><strong>The reflection is optional. There are no required questions.</strong></p>
-      <div class="scroll-cue scroll-cue-inset" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
-      </div>
-    </div>
-  </section>
-
-  <!-- REFLECTION FORM -->
-  <section class="reflection">
-    <div class="section-inner">
-      <div id="reflection-form-wrap">
-        <p class="section-label reveal">Before Your Session</p>
-        <h2 class="reflection-intro-heading reveal">Think of a voice within you that sometimes takes the helm.</h2>
-        <div class="reflection-copy reveal" style="transition-delay:0.1s;">
-          <p>We all have moments when a particular voice, reaction, or version of ourselves seems to take over.</p>
-          <p>Perhaps it is the angry voice. The fearful one. The jealous one. The defensive one. The controlling one. The one that needs to be right. The one that shuts down. The one that says something you later wish you had not said.</p>
-          <p>Think of a recent moment when <strong>one of these voices took the helm and led you somewhere your authentic self would not have chosen to go.</strong></p>
-          <p>Perhaps afterward you felt regret. Perhaps you hurt someone you did not want to hurt. Perhaps you blamed yourself for something that was not really yours to carry. Perhaps you simply wondered:</p>
-          <p><em>&ldquo;Why did I do that?&rdquo;</em></p>
-          <p>Choose one specific moment. Don&rsquo;t analyze it too much. We simply want you to remember what happened <strong>just before that voice took control.</strong></p>
-        </div>
-
-        <form id="reflection-form">
-          <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off" />
-          <input type="hidden" name="access_key" value="3c17e05c-53cc-4f3b-a205-d34d65a224eb" />
-          <input type="hidden" name="subject" value="New Before Your Session Reflection" />
-          <input type="hidden" name="from_name" value="@ Bliss Foundation Website" />
-
-          <div class="form-group">
-            <div class="q-num">01</div>
-            <label for="q1">Which voice took the helm?</label>
-            <p class="field-help">Don&rsquo;t worry about finding the perfect name for it. How would you describe the version of you that appeared in that moment?</p>
-            <ul class="example-list">
-              <li>The angry one. The fearful one. The jealous one. The defensive one. The controller. The critic. The one who needed approval. The one who needed to be right. The one who shut down. Something else.</li>
-            </ul>
-            <p class="field-help">Give that voice a name that makes sense to you.</p>
-            <input type="text" id="q1" name="voice_name" />
-          </div>
-
-          <div class="form-group">
-            <div class="q-num">02</div>
-            <label for="q2">What was happening just before it took over?</label>
-            <p class="field-help">Think about the moment immediately before your reaction. What happened? What was said? What did you see, hear, remember, or experience that seemed to activate this voice?</p>
-            <p class="field-help">Describe the moment as specifically as you can.</p>
-            <textarea id="q2" name="reflection_trigger"></textarea>
-          </div>
-
-          <div class="form-group">
-            <div class="q-num">03</div>
-            <label for="q3">What was the first thought?</label>
-            <p class="field-help">Before the voice fully took the helm, there may have been a thought, even a very quick one. What went through your mind?</p>
-            <ul class="example-list">
-              <li>&ldquo;They don&rsquo;t respect me.&rdquo;</li>
-              <li>&ldquo;I&rsquo;m going to lose this.&rdquo;</li>
-              <li>&ldquo;This isn&rsquo;t fair.&rdquo;</li>
-              <li>&ldquo;I need to defend myself.&rdquo;</li>
-              <li>&ldquo;I&rsquo;m not good enough.&rdquo;</li>
-              <li>&ldquo;They are going to hurt me.&rdquo;</li>
-            </ul>
-            <p class="field-help">What was your thought, in your own words? We are looking for the first thought before the full reaction, not a general explanation of what you think about the situation.</p>
-            <textarea id="q3" name="reflection_first_thought"></textarea>
-          </div>
-
-          <div class="form-group">
-            <div class="q-num">04</div>
-            <label for="q4">What did you feel next?</label>
-            <p class="field-help">Before the reaction fully took over, what emotion appeared? Fear, anger, shame, jealousy, sadness, frustration, rejection, helplessness, anxiety, or something else. If there was more than one emotion, include whatever you remember.</p>
-            <textarea id="q4" name="reflection_emotion"></textarea>
-          </div>
-
-          <div class="form-group">
-            <div class="q-num">05</div>
-            <label for="q5">What happened in your Soma?</label>
-            <p class="field-help">Before or as the voice took control, what changed in your body? Did your breathing change? Did your chest tighten? Did you feel heat? Did your stomach contract? Did your shoulders rise? Did your heart begin beating faster? Did you become restless, heavy, numb, frozen, or tense?</p>
-            <p class="field-help">Try to remember the earliest physical signal you can.</p>
-            <textarea id="q5" name="reflection_soma"></textarea>
-          </div>
-
-          <div class="form-group">
-            <div class="q-num">06</div>
-            <label for="q6">And then what did the voice make you do?</label>
-            <p class="field-help">What happened once that voice had the helm? What did you say? What did you do? What did you avoid doing? What decision did you make? How did you treat yourself or someone else?</p>
-            <textarea id="q6" name="reflection_behavior"></textarea>
-          </div>
-
-          <div class="form-group">
-            <div class="q-num">07</div>
-            <label>Looking back, was that what you truly wanted to do?</label>
-            <div class="radio-group" id="wanted-group">
-              <label class="radio-option">
-                <input type="radio" name="reflection_wanted" value="Yes" />
-                <span>Yes</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="reflection_wanted" value="No" />
-                <span>No</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="reflection_wanted" value="I'm not sure" />
-                <span>I&rsquo;m not sure</span>
-              </label>
-            </div>
-            <div class="followup" id="wanted-followup">
-              <label for="q7b">What would you have wanted to do differently?</label>
-              <textarea id="q7b" name="reflection_wanted_different"></textarea>
-            </div>
-          </div>
-
-          <button type="submit" class="btn btn-primary" id="reflection-submit" style="margin-top:1rem;">Submit My Reflection</button>
-          <p class="form-error" id="reflection-error">Something went wrong submitting your reflection. Please try again, or email us directly at atblissfoundation@gmail.com.</p>
-        </form>
-      </div>
-
-      <div id="reflection-thankyou" class="reflection-thankyou">
-        <p class="section-label">Before Your Session</p>
-        <h2>Thank you.</h2>
-        <p class="lead">You have already begun to observe.</p>
-        <p>We will share more about what these observations mean when we explore <strong>The @ Bliss Path</strong> together.</p>
-        <p>Because you completed the reflection, you are eligible for a complimentary <strong>30-minute one-on-one conversation with Mr. Hantal</strong>. We will be in touch with the details.</p>
+      <div class="message-card reveal" style="transition-delay:0.08s;">
+        <h2>Would you like to go a little deeper?</h2>
+        <p>If you would like to prepare for the next step of <strong>The @ Bliss Path</strong>.</p>
+        <a href="/path/selfmapping" class="btn btn-primary">Prepare for the Next Step &rarr;</a>
       </div>
     </div>
   </section>
@@ -776,49 +374,6 @@
       hamburger.setAttribute('aria-label', 'Open menu');
       document.body.style.overflow = '';
     }
-
-    // Q7 conditional follow-up
-    const wantedFollowup = document.getElementById('wanted-followup');
-    document.querySelectorAll('input[name="reflection_wanted"]').forEach(radio => {
-      radio.addEventListener('change', () => {
-        wantedFollowup.classList.toggle('visible', radio.value !== 'Yes');
-      });
-    });
-
-    // Reflection form submission (Web3Forms) - no field is required
-    const rForm = document.getElementById('reflection-form');
-    const rSubmit = document.getElementById('reflection-submit');
-    const rError = document.getElementById('reflection-error');
-
-    rForm.addEventListener('submit', async function (e) {
-      e.preventDefault();
-      rError.classList.remove('visible');
-      rSubmit.disabled = true;
-      rSubmit.textContent = 'Submitting…';
-
-      try {
-        const formData = new FormData(rForm);
-        const response = await fetch('https://api.web3forms.com/submit', {
-          method: 'POST',
-          headers: { Accept: 'application/json' },
-          body: formData,
-        });
-        const result = await response.json();
-
-        if (result.success) {
-          document.getElementById('reflection-form-wrap').style.display = 'none';
-          const ty = document.getElementById('reflection-thankyou');
-          ty.classList.add('visible');
-          ty.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        } else {
-          throw new Error(result.message || 'Submission failed');
-        }
-      } catch (err) {
-        rError.classList.add('visible');
-        rSubmit.disabled = false;
-        rSubmit.textContent = 'Submit My Reflection';
-      }
-    });
   </script>
 </body>
 </html>
