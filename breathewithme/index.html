@@ -6,7 +6,7 @@
   <title>Come Breathe With Me</title>
   <meta name="description" content="A personal invitation from Ali Cumhur Hantal: a free 90-minute Soma+IQ™ The Journey Somatic Breathwork experience with friends." />
   <meta name="robots" content="noindex" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Sacramento&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -121,37 +121,77 @@
     a.inline-link:hover { color: var(--gold); }
 
     /* ── HERO ── */
-    .hero { padding-top: 4.5rem; text-align: center; }
-
-    .hero .eyebrow {
-      font-size: 0.68rem;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.25rem;
-    }
+    .hero { padding-top: 4.5rem; padding-bottom: 0; text-align: center; }
 
     .hero h1 {
-      font-size: clamp(2.4rem, 6vw, 3.6rem);
-      margin-bottom: 1rem;
+      font-weight: 400;
+      font-size: clamp(2.6rem, 8vw, 3.8rem);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 0.5rem;
     }
 
-    .hero .subtitle {
+    .hero-tagline {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 300;
       font-style: italic;
-      font-size: clamp(1.2rem, 2.4vw, 1.5rem);
+      font-size: clamp(1.1rem, 2.6vw, 1.4rem);
       color: rgba(232, 228, 220, 0.82);
-      max-width: 520px;
-      margin: 0 auto 1.5rem;
+      letter-spacing: 0.02em;
+      margin: 0 0 1.75rem;
     }
 
-    .hero .tagline {
-      font-size: 0.95rem;
+    .hero-meta {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.75rem;
+      font-weight: 500;
+      font-size: 1rem;
+      color: var(--text);
+    }
+
+    .hero-meta li { margin: 0.25em 0; }
+
+    .hero-meta .muted {
+      color: var(--muted);
+      font-weight: 400;
       letter-spacing: 0.06em;
-      color: var(--gold-light);
-      text-transform: uppercase;
-      margin-bottom: 2.25rem;
+      font-size: 0.88rem;
+      margin-top: 0.6em;
+    }
+
+    .hero-script {
+      font-family: 'Sacramento', cursive;
+      font-size: 2.1rem;
+      color: var(--gold);
+      line-height: 1;
+      margin: 0 0 2.25rem;
+    }
+
+    .hero-figure {
+      margin: 0 auto;
+      border: 1px solid var(--border);
+    }
+
+    .hero-figure img { width: 100%; height: auto; display: block; }
+
+    .scroll-cue { display: flex; justify-content: center; padding: 1.75rem 0 0; }
+
+    .scroll-cue svg {
+      width: 26px;
+      height: 26px;
+      stroke: var(--gold);
+      animation: cueBounce 2.2s ease-in-out infinite;
+    }
+
+    @keyframes cueBounce {
+      0%, 100% { transform: translateY(-3px); opacity: 0.5; }
+      50% { transform: translateY(4px); opacity: 0.95; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .scroll-cue svg { animation: none; opacity: 0.7; }
     }
 
     .session-info {
@@ -194,13 +234,19 @@
     .btn-primary:hover { background: var(--gold-light); border-color: var(--gold-light); }
     .btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
-    /* ── HERO PHOTO ── */
-    .hero-photo {
-      width: 234px;
+    /* ── STORY (photo) ── */
+    .story::after { content: ''; display: table; clear: both; }
+
+    .story-photo {
+      float: left;
+      width: 240px;
       aspect-ratio: 3 / 4;
       object-fit: cover;
-      margin: 0 auto 1.75rem;
-      display: block;
+      margin: 0.25rem 1.75rem 1rem 0;
+    }
+
+    @media (max-width: 640px) {
+      .story-photo { float: none; width: 100%; max-width: 280px; margin: 0 auto 1.75rem; display: block; }
     }
 
     /* ── PREPARE LINK ── */
@@ -388,19 +434,22 @@
   <!-- HERO -->
   <section class="hero">
     <div class="wrap">
-      <img class="hero-photo reveal" src="../images/AH4.jpg" alt="Ali Cumhur Hantal" />
-      <p class="eyebrow reveal" style="transition-delay:0.05s;">Come Breathe With Me</p>
-      <h1 class="reveal" style="transition-delay:0.1s;">Come breathe with me.</h1>
-      <p class="subtitle reveal" style="transition-delay:0.15s;">A free 90-minute Soma+IQ&trade; The Journey<br />experience with friends</p>
-      <p class="tagline reveal" style="transition-delay:0.2s;">Breathe. Feel. Release. Repattern. Integrate.</p>
-
-      <div class="session-info reveal" style="transition-delay:0.25s;">
-        <div class="row"><span>Date</span><span>Monday, September 28, 2026</span></div>
-        <div class="row"><span>Time</span><span>9:30 PM Turkish Time (2:30 PM ET)</span></div>
-        <div class="row"><span>Location</span><span>Online via Zoom</span></div>
-        <div class="row"><span>Duration</span><span>Approximately 90 minutes</span></div>
-        <div class="row"><span>Cost</span><span>Free</span></div>
-      </div>
+      <h1 class="reveal">Come Breathe With Me</h1>
+      <p class="hero-tagline reveal" style="transition-delay:0.05s;">A Free Virtual Soma+IQ&trade; Breathwork Journey with friends</p>
+      <ul class="hero-meta reveal" style="transition-delay:0.1s;">
+        <li>Monday, September 28, 2026</li>
+        <li>9:30 PM Turkish Time (2:30 PM ET)</li>
+        <li class="muted">Online &nbsp;&bull;&nbsp; Free &nbsp;&bull;&nbsp; All Levels Welcome</li>
+      </ul>
+      <p class="hero-script reveal" style="transition-delay:0.15s;">Breathe. Feel. Release. Repattern. Integrate.</p>
+    </div>
+    <div class="wrap">
+      <figure class="hero-figure reveal" style="transition-delay:0.2s;">
+        <img src="../images/breathewithme-experience.jpg" alt="Friends breathing together online, each from their own home, one shared breath" />
+      </figure>
+    </div>
+    <div class="scroll-cue" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
     </div>
   </section>
 
@@ -411,6 +460,7 @@
     <div class="wrap">
       <p class="section-label reveal">My Story</p>
       <h2 class="reveal">My journey actually started with philosophy.</h2>
+      <img class="story-photo reveal" src="../images/AH4.jpg" alt="Ali Cumhur Hantal" style="transition-delay:0.1s;" />
       <p class="reveal" style="transition-delay:0.13s;">Most of you receiving this page know me personally.</p>
       <p class="reveal" style="transition-delay:0.16s;">And many of you know that I have been on a journey of questioning, exploring, and trying to understand ourselves and this strange and beautiful experience we call life for a very long time.</p>
       <p class="reveal" style="transition-delay:0.19s;">As most of you know, I started my undergraduate studies at Bo&#287;azi&ccedil;i University as a Philosophy major before transferring to Business Administration.</p>
