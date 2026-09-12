@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>How to Prepare | Come Breathe With Me</title>
-  <meta name="description" content="How to prepare for Come Breathe With Me, a free 90-minute Soma+IQ™ The Journey Somatic Breathwork experience." />
+  <meta name="description" content="How to prepare for Come Breathe With Me, a free virtual Soma+IQ™ Breathwork Journey with friends." />
   <meta name="robots" content="noindex" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
@@ -147,47 +147,47 @@
       .card--wide { grid-template-columns: 1fr; text-align: center; }
     }
 
-    /* ── STAGES (What to Expect) ── */
-    .stages {
-      list-style: none;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
+    /* ── STAGE LIST (What to Expect) ── */
+    .stage-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
       margin: 2.75rem 0 0;
-      padding: 0;
-      counter-reset: stage;
-      text-align: center;
+      text-align: left;
     }
 
-    @media (max-width: 640px) {
-      .stages { grid-template-columns: 1fr; max-width: 320px; margin-left: auto; margin-right: auto; gap: 2.25rem; }
+    .stage-card {
+      border: 1px solid var(--border);
+      padding: 1.75rem 2rem;
+      transition: border-color 0.2s;
     }
 
-    .stage::before {
-      counter-increment: stage;
-      content: counter(stage);
-      display: block;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.7rem;
-      color: var(--gold);
-      opacity: 0.6;
-      margin-bottom: 0.35rem;
-    }
+    .stage-card:hover { border-color: var(--border-hover); }
 
-    .stage h3 {
-      font-size: 0.7rem;
+    .stage-card .stage-time {
+      font-size: 0.68rem;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--gold-light);
+      color: var(--gold);
       margin-bottom: 0.5rem;
     }
 
-    .stage p {
-      font-size: 0.9rem;
-      line-height: 1.75;
-      color: rgba(232, 228, 220, 0.72);
-      margin: 0;
+    .stage-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.3rem;
+      color: var(--gold-light);
+      margin-bottom: 0.85rem;
     }
+
+    .stage-card p {
+      font-size: 0.92rem;
+      line-height: 1.8;
+      color: rgba(232, 228, 220, 0.75);
+      margin: 0 0 0.9rem;
+    }
+
+    .stage-card p:last-child { margin-bottom: 0; }
 
     /* ── CLOSING ── */
     .closing-line {
@@ -301,22 +301,34 @@
 
   <!-- WHAT TO EXPECT -->
   <section>
-    <div class="wrap-wide center">
+    <div class="wrap center">
       <p class="section-label">What to Expect</p>
-      <ol class="stages">
-        <li class="stage">
+      <div class="stage-list">
+        <div class="stage-card">
+          <p class="stage-time">Approximately 15 minutes</p>
           <h3>Arrive</h3>
-          <p>We&rsquo;ll settle in together and I&rsquo;ll walk you through what the experience ahead will feel like.</p>
-        </li>
-        <li class="stage">
+          <p>We&rsquo;ll arrive together, get comfortable, go over what to expect, prepare the body and breath, and create some space to settle into the experience before we begin.</p>
+        </div>
+        <div class="stage-card">
+          <p class="stage-time">Approximately 60 minutes</p>
           <h3>Breathe</h3>
-          <p>You&rsquo;ll lie down comfortably and be guided through the Soma+IQ&trade; breathwork itself.</p>
-        </li>
-        <li class="stage">
-          <h3>Rest &amp; Integrate</h3>
-          <p>We&rsquo;ll slow things down, come back together, and leave space to rest and share.</p>
-        </li>
-      </ol>
+          <p>I&rsquo;ll guide you through the full <strong>Soma+IQ&trade; The Journey</strong>, using conscious connected breathing together with music, movement, sound, and emotional expression.</p>
+          <p>This is the active part of the experience.</p>
+          <p>The breath gradually builds activation, and rather than immediately trying to calm or control what arises, we create space to allow the experience.</p>
+          <p>Movement, sound, emotion, physical sensation, or other forms of expression may arise.</p>
+          <p><strong>Nothing needs to be forced.</strong></p>
+          <p>There is no particular experience you are supposed to have.</p>
+          <p><em>Your experience is your own.</em></p>
+        </div>
+        <div class="stage-card">
+          <p class="stage-time">Approximately 15 minutes</p>
+          <h3>Share &amp; Integrate</h3>
+          <p>We&rsquo;ll slow things down, come back together, and leave space to share.</p>
+          <p>There is no obligation to speak.</p>
+          <p>You can share what you experienced, ask a question, listen to others, or simply stay present and allow the experience to settle.</p>
+          <p>This final part gives us some space before we return to the rest of our day or, for those joining later in the evening, head toward sleep.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -331,7 +343,7 @@
 
   <footer>
     <p class="footer-wordmark">Come Breathe With Me</p>
-    <p class="footer-tagline">Breathe. Release. Repattern.</p>
+    <p class="footer-tagline">Breathe. Allow. Release. Repattern. Integrate.</p>
     <p class="footer-label">Brought to you by</p>
     <a href="/"><img src="../../images/AtBlissLogo.png" alt="@ Bliss Foundation" /></a>
     <p class="footer-copy">&copy; 2026 Come Breathe With Me &middot; atbliss.org</p>
