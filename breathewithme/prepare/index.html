@@ -11,19 +11,21 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --gold: #c9a84c;
-      --gold-light: #e8cf88;
-      --deep: #0a0c14;
-      --text: #e8e4dc;
-      --muted: #9a968f;
-      --border: rgba(201, 168, 76, 0.2);
-      --border-hover: rgba(201, 168, 76, 0.45);
+      --cream: #faf6ee;
+      --cream2: #f5ecdc;
+      --cream3: #efe4cd;
+      --ink: #2e2a22;
+      --muted: #8a7f6c;
+      --gold: #a9772f;
+      --gold-fill: #c9a84c;
+      --border: rgba(169, 119, 47, 0.22);
+      --border-hover: rgba(169, 119, 47, 0.42);
     }
 
     body {
       font-family: 'DM Sans', sans-serif;
-      background: var(--deep);
-      color: var(--text);
+      background: var(--cream);
+      color: var(--ink);
     }
 
     .wrap { max-width: 640px; margin: 0 auto; padding: 0 1.75rem; }
@@ -47,6 +49,7 @@
       font-size: clamp(2rem, 4.5vw, 2.8rem);
       line-height: 1.2;
       margin-bottom: 1.5rem;
+      color: var(--ink);
     }
 
     h2 {
@@ -55,17 +58,26 @@
       font-size: clamp(1.6rem, 3.2vw, 2.1rem);
       line-height: 1.25;
       margin-bottom: 0.5rem;
+      color: var(--ink);
     }
 
     p {
       font-size: 1rem;
       line-height: 1.85;
-      color: rgba(232, 228, 220, 0.78);
+      color: var(--ink);
+      opacity: 0.85;
       margin-bottom: 1.25rem;
     }
 
     p:last-child { margin-bottom: 0; }
-    p strong { color: var(--text); font-weight: 500; }
+    p strong { color: var(--ink); opacity: 1; font-weight: 500; }
+    p em { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--ink); opacity: 1; }
+
+    /* ── SECTION BACKGROUND RHYTHM ── */
+    .hero { background: var(--cream); }
+    .need-section { background: var(--cream2); }
+    .expect-section { background: var(--cream); }
+    .closing-section { background: var(--cream3); }
 
     /* ── HERO ── */
     .hero { padding-top: 5rem; text-align: center; }
@@ -81,7 +93,7 @@
 
     .hero-meta li {
       font-size: 0.95rem;
-      color: var(--gold-light);
+      color: var(--gold);
       letter-spacing: 0.02em;
     }
 
@@ -101,6 +113,7 @@
 
     .card {
       border: 1px solid var(--border);
+      background: var(--cream);
       padding: 1.75rem 1.5rem;
       text-align: center;
       transition: border-color 0.2s;
@@ -112,14 +125,15 @@
       font-family: 'Cormorant Garamond', serif;
       font-weight: 400;
       font-size: 1.15rem;
-      color: var(--gold-light);
+      color: var(--gold);
       margin-bottom: 0.6rem;
     }
 
     .card p {
       font-size: 0.88rem;
       line-height: 1.7;
-      color: rgba(232, 228, 220, 0.7);
+      color: var(--ink);
+      opacity: 0.78;
       margin: 0;
     }
 
@@ -158,6 +172,7 @@
 
     .stage-card {
       border: 1px solid var(--border);
+      background: var(--cream2);
       padding: 1.75rem 2rem;
       transition: border-color 0.2s;
     }
@@ -176,14 +191,15 @@
       font-family: 'Cormorant Garamond', serif;
       font-weight: 400;
       font-size: 1.3rem;
-      color: var(--gold-light);
+      color: var(--ink);
       margin-bottom: 0.85rem;
     }
 
     .stage-card p {
       font-size: 0.92rem;
       line-height: 1.8;
-      color: rgba(232, 228, 220, 0.75);
+      color: var(--ink);
+      opacity: 0.82;
       margin: 0 0 0.9rem;
     }
 
@@ -194,24 +210,25 @@
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
       font-size: clamp(1.2rem, 2.2vw, 1.5rem);
-      color: var(--gold-light);
+      color: var(--gold);
       margin: 0 0 1.5rem;
     }
 
     .back-link { margin-top: 1rem; }
 
     a.inline-link {
-      color: var(--gold-light);
+      color: var(--gold);
       text-decoration: none;
       font-size: 0.9rem;
       letter-spacing: 0.04em;
-      border-bottom: 1px solid rgba(232,207,136,0.3);
+      border-bottom: 1px solid var(--border-hover);
     }
 
-    a.inline-link:hover { color: var(--gold); }
+    a.inline-link:hover { color: var(--ink); }
 
     footer {
-      border-top: 1px solid var(--border);
+      background: #14110d;
+      border-top: 1px solid rgba(201, 168, 76, 0.2);
       padding: 3.5rem 1.75rem 2.5rem;
       text-align: center;
     }
@@ -222,7 +239,7 @@
       font-size: 1.05rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--text);
+      color: #e8e4dc;
       margin-bottom: 0.5rem;
     }
 
@@ -230,7 +247,7 @@
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
       font-size: 1.05rem;
-      color: var(--gold-light);
+      color: #e8cf88;
       margin-bottom: 2rem;
     }
 
@@ -238,7 +255,7 @@
       font-size: 0.7rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--muted);
+      color: #9a968f;
       margin-bottom: 1rem;
     }
 
@@ -246,7 +263,7 @@
 
     .footer-copy {
       font-size: 0.72rem;
-      color: var(--muted);
+      color: #9a968f;
       letter-spacing: 0.05em;
       margin-top: 2rem;
     }
@@ -268,7 +285,7 @@
   </section>
 
   <!-- WHAT YOU'LL NEED -->
-  <section>
+  <section class="need-section">
     <div class="wrap-wide center">
       <p class="section-label">What You&rsquo;ll Need</p>
       <ul class="cards">
@@ -300,7 +317,7 @@
   </section>
 
   <!-- WHAT TO EXPECT -->
-  <section>
+  <section class="expect-section">
     <div class="wrap center">
       <p class="section-label">What to Expect</p>
       <div class="stage-list">
@@ -333,7 +350,7 @@
   </section>
 
   <!-- CLOSING -->
-  <section>
+  <section class="closing-section">
     <div class="wrap center">
       <p class="closing-line"><strong>Come as you are.</strong></p>
       <p>You don&rsquo;t need to know what you&rsquo;re supposed to do or what you&rsquo;re supposed to feel. I&rsquo;ll take care of the rest.</p>

@@ -11,21 +11,25 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --gold: #c9a84c;
-      --gold-light: #e8cf88;
-      --deep: #0a0c14;
-      --text: #e8e4dc;
-      --muted: #9a968f;
-      --border: rgba(201, 168, 76, 0.2);
-      --border-hover: rgba(201, 168, 76, 0.45);
+      --cream: #faf6ee;
+      --cream2: #f5ecdc;
+      --cream3: #efe4cd;
+      --ink: #2e2a22;
+      --muted: #8a7f6c;
+      --gold: #a9772f;
+      --gold-fill: #c9a84c;
+      --gold-hover: #b8903f;
+      --border: rgba(169, 119, 47, 0.22);
+      --border-hover: rgba(169, 119, 47, 0.42);
+      --btn-text: #211d16;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
       font-family: 'DM Sans', sans-serif;
-      background: var(--deep);
-      color: var(--text);
+      background: var(--cream);
+      color: var(--ink);
       overflow-x: hidden;
     }
 
@@ -45,6 +49,7 @@
       font-family: 'Cormorant Garamond', serif;
       font-weight: 300;
       line-height: 1.2;
+      color: var(--ink);
     }
 
     h2 {
@@ -57,32 +62,34 @@
       font-weight: 400;
       font-size: clamp(1.3rem, 2.4vw, 1.7rem);
       line-height: 1.4;
-      color: var(--text);
+      color: var(--ink);
       margin: 2.25rem 0 1.25rem;
     }
 
     p {
       font-size: 1rem;
       line-height: 1.9;
-      color: rgba(232, 228, 220, 0.78);
+      color: var(--ink);
+      opacity: 0.85;
       margin-bottom: 1.25rem;
     }
 
     p:last-child { margin-bottom: 0; }
 
-    p strong { color: var(--text); font-weight: 500; }
+    p strong { color: var(--ink); opacity: 1; font-weight: 500; }
 
     p em {
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
-      color: rgba(232, 228, 220, 0.92);
+      color: var(--ink);
+      opacity: 1;
     }
 
     .cascade {
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
       font-size: clamp(1.1rem, 2vw, 1.3rem);
-      color: rgba(232, 228, 220, 0.85);
+      color: var(--ink);
       line-height: 1.9;
       margin-bottom: 1.5rem;
     }
@@ -91,7 +98,7 @@
       font-family: 'Cormorant Garamond', serif;
       font-weight: 400;
       font-size: clamp(1.2rem, 2.2vw, 1.5rem);
-      color: var(--gold-light);
+      color: var(--gold);
       margin: 1.75rem 0;
     }
 
@@ -99,26 +106,31 @@
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
       font-size: clamp(1.2rem, 2.2vw, 1.5rem);
-      color: var(--gold-light);
+      color: var(--gold);
       margin: 1.75rem 0;
     }
 
     .divider {
       width: 1px;
-      height: 70px;
-      background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+      height: 60px;
+      background: linear-gradient(to bottom, transparent, var(--gold-fill), transparent);
       margin: 0 auto;
     }
 
     a.inline-link {
-      color: var(--gold-light);
+      color: var(--gold);
       text-decoration: none;
       font-size: 0.9rem;
       letter-spacing: 0.04em;
-      border-bottom: 1px solid rgba(232,207,136,0.3);
+      border-bottom: 1px solid var(--border-hover);
     }
 
-    a.inline-link:hover { color: var(--gold); }
+    a.inline-link:hover { color: var(--gold-hover); }
+
+    /* ── SECTION BACKGROUND RHYTHM ── */
+    .hero, #why, #practice, #come-as-you-are { background: var(--cream); }
+    .story, #experience, .register { background: var(--cream2); }
+    #soma, #turkiye { background: var(--cream3); }
 
     /* ── HERO ── */
     .hero { padding-top: 4.5rem; padding-bottom: 0; text-align: center; }
@@ -128,7 +140,7 @@
       font-size: clamp(2.6rem, 8vw, 3.8rem);
       letter-spacing: 0.05em;
       text-transform: uppercase;
-      color: var(--gold-light);
+      color: var(--ink);
       margin-bottom: 0.5rem;
     }
 
@@ -137,7 +149,8 @@
       font-weight: 300;
       font-style: italic;
       font-size: clamp(1.1rem, 2.6vw, 1.4rem);
-      color: rgba(232, 228, 220, 0.82);
+      color: var(--ink);
+      opacity: 0.82;
       letter-spacing: 0.02em;
       margin: 0 0 1.75rem;
     }
@@ -148,7 +161,7 @@
       margin: 0 0 1.75rem;
       font-weight: 500;
       font-size: 1rem;
-      color: var(--text);
+      color: var(--ink);
     }
 
     .hero-meta li { margin: 0.25em 0; }
@@ -194,28 +207,6 @@
       .scroll-cue svg { animation: none; opacity: 0.7; }
     }
 
-    .session-info {
-      display: inline-flex;
-      flex-direction: column;
-      gap: 0.6rem;
-      text-align: left;
-      margin: 0 auto 2.5rem;
-      padding: 1.75rem 2.25rem;
-      border: 1px solid var(--border);
-    }
-
-    .session-info .row { display: flex; gap: 0.6rem; font-size: 0.92rem; }
-    .session-info .row span:first-child {
-      color: var(--gold);
-      font-size: 0.68rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      width: 90px;
-      flex-shrink: 0;
-      padding-top: 0.15rem;
-    }
-    .session-info .row span:last-child { color: var(--text); }
-
     /* ── BUTTONS ── */
     .btn {
       display: inline-block;
@@ -230,8 +221,8 @@
       font-family: 'DM Sans', sans-serif;
     }
 
-    .btn-primary { background: var(--gold); color: var(--deep); border: 1px solid var(--gold); }
-    .btn-primary:hover { background: var(--gold-light); border-color: var(--gold-light); }
+    .btn-primary { background: var(--gold-fill); color: var(--btn-text); border: 1px solid var(--gold-fill); }
+    .btn-primary:hover { background: var(--gold-hover); border-color: var(--gold-hover); }
     .btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
     /* ── STORY (photo) ── */
@@ -243,6 +234,7 @@
       aspect-ratio: 3 / 4;
       object-fit: cover;
       margin: 0.25rem 1.75rem 1rem 0;
+      border: 1px solid var(--border);
     }
 
     @media (max-width: 640px) {
@@ -252,8 +244,83 @@
     /* ── PREPARE LINK ── */
     .prepare-link { text-align: center; margin-top: 2rem; }
 
+    /* ── GATHERING INFO (registration) ── */
+    .gathering { margin: 2rem auto 2.5rem; text-align: center; }
+
+    .gathering-primary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.75rem;
+    }
+
+    .gathering-date, .gathering-time { text-align: center; }
+
+    .gathering-day {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: clamp(1.5rem, 3vw, 1.9rem);
+      color: var(--ink);
+      line-height: 1.2;
+    }
+
+    .gathering-full {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--gold);
+      margin-top: 0.2rem;
+    }
+
+    .gathering-sep { width: 1px; height: 44px; background: var(--border-hover); }
+
+    .gathering-details {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.75rem;
+      flex-wrap: wrap;
+      padding: 0;
+      font-size: 0.9rem;
+      color: var(--ink);
+      opacity: 0.85;
+    }
+
+    .gathering-details li { display: flex; align-items: center; gap: 0.4rem; }
+
+    .gathering-label {
+      font-size: 0.66rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 1;
+    }
+
+    @media (max-width: 640px) {
+      .gathering-primary { flex-direction: column; gap: 1.25rem; }
+      .gathering-sep { width: 44px; height: 1px; }
+      .gathering-details { flex-direction: column; gap: 0.6rem; }
+    }
+
     /* ── REGISTRATION ── */
-    .register .session-info { display: flex; }
+    .register-intro {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(1.3rem, 2.6vw, 1.6rem);
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+
+    .form-container {
+      background: var(--cream);
+      padding: 2.5rem 2rem;
+      margin-top: 2.5rem;
+    }
 
     .form-group { margin-bottom: 1.5rem; }
 
@@ -268,34 +335,36 @@
       margin-bottom: 0.55rem;
     }
 
-    .required-mark { color: #e2635c; }
+    .required-mark { color: #b5432f; }
 
-    .required-legend { font-size: 0.78rem; color: var(--muted); margin-bottom: 2rem; }
+    .required-legend { font-size: 0.78rem; color: var(--muted); margin-bottom: 1.25rem; }
 
     input[type="text"], input[type="email"], input[type="tel"] {
       width: 100%;
-      background: rgba(255,255,255,0.04);
+      background: #ffffff;
       border: 1px solid var(--border);
-      color: var(--text);
+      color: var(--ink);
       padding: 0.85rem 1.1rem;
       font-family: 'DM Sans', sans-serif;
       font-size: 0.92rem;
       transition: border-color 0.2s;
     }
 
-    input:focus { outline: none; border-color: rgba(201,168,76,0.5); }
+    input:focus { outline: none; border-color: var(--gold-fill); }
     input::placeholder { color: var(--muted); }
 
     .health-box {
       margin: 2.5rem 0 2rem;
       padding: 1.75rem 1.75rem;
-      border: 1px solid rgba(201, 168, 76, 0.3);
+      border: 1px solid var(--border);
+      background: #ffffff;
     }
 
     .health-box p, .health-box li {
       font-size: 0.85rem;
       line-height: 1.75;
-      color: rgba(232, 228, 220, 0.72);
+      color: var(--ink);
+      opacity: 0.8;
     }
 
     .health-box p { margin-bottom: 0.9rem; }
@@ -315,10 +384,10 @@
       width: 4px;
       height: 4px;
       border-radius: 50%;
-      background: rgba(201, 168, 76, 0.6);
+      background: var(--gold);
     }
 
-    .health-box a { color: var(--gold-light); text-decoration: none; border-bottom: 1px solid rgba(232,207,136,0.3); }
+    .health-box a { color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--border-hover); }
 
     .checkbox-row {
       display: flex;
@@ -327,31 +396,34 @@
       padding: 1.25rem;
       border: 1px solid var(--border);
       margin: 0 0 2rem;
+      background: #ffffff;
     }
 
-    .checkbox-row input { margin-top: 0.25rem; accent-color: var(--gold); flex-shrink: 0; }
+    .checkbox-row input { margin-top: 0.25rem; accent-color: var(--gold-fill); flex-shrink: 0; }
 
     .checkbox-row span {
       font-size: 0.88rem;
       line-height: 1.7;
-      color: rgba(232, 228, 220, 0.82);
+      color: var(--ink);
+      opacity: 0.88;
     }
 
-    .checkbox-row a { color: var(--gold-light); text-decoration: none; border-bottom: 1px solid rgba(232,207,136,0.3); }
-    .checkbox-row a:hover { color: var(--gold); }
+    .checkbox-row a { color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--border-hover); }
+    .checkbox-row a:hover { color: var(--gold-hover); }
 
     .form-error {
       display: none;
       font-size: 0.85rem;
-      color: #e0a37a;
+      color: #b3502a;
       margin-top: 1rem;
     }
 
     .form-error.visible { display: block; }
 
-    /* ── FOOTER ── */
+    /* ── FOOTER (kept dark, per design brief) ── */
     footer {
-      border-top: 1px solid var(--border);
+      background: #14110d;
+      border-top: 1px solid rgba(201, 168, 76, 0.2);
       padding: 3.5rem 1.75rem 2.5rem;
       text-align: center;
     }
@@ -362,7 +434,7 @@
       font-size: 1.05rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--text);
+      color: #e8e4dc;
       margin-bottom: 0.5rem;
     }
 
@@ -370,7 +442,7 @@
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
       font-size: 1.05rem;
-      color: var(--gold-light);
+      color: #e8cf88;
       margin-bottom: 2rem;
     }
 
@@ -378,7 +450,7 @@
       font-size: 0.7rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--muted);
+      color: #9a968f;
       margin-bottom: 1rem;
     }
 
@@ -387,7 +459,7 @@
 
     .footer-copy {
       font-size: 0.72rem;
-      color: var(--muted);
+      color: #9a968f;
       letter-spacing: 0.05em;
       margin-top: 2rem;
     }
@@ -401,7 +473,7 @@
       section { padding: 3rem 0; }
       .hero { padding-top: 3.5rem; }
       .form-row { grid-template-columns: 1fr; gap: 1rem; }
-      .session-info { display: flex !important; width: 100%; }
+      .form-container { padding: 2rem 1.25rem; }
     }
   </style>
 </head>
@@ -724,14 +796,29 @@
         <p class="section-label reveal">Registration</p>
         <h2 class="reveal">Come Breathe With Me</h2>
 
-        <div class="session-info reveal" style="transition-delay:0.1s;">
-          <div class="row"><span>Date</span><span>Monday, September 28, 2026</span></div>
-          <div class="row"><span>Time</span><span>9:30 PM Turkish Time (2:30 PM ET)</span></div>
-          <div class="row"><span>Duration</span><span>Approximately 90 minutes</span></div>
-          <div class="row"><span>Location</span><span>Online via Zoom</span></div>
-          <div class="row"><span>Cost</span><span>Free</span></div>
+        <div class="gathering reveal" style="transition-delay:0.1s;">
+          <div class="gathering-primary">
+            <div class="gathering-date">
+              <span class="gathering-day">Monday</span>
+              <span class="gathering-full">September 28, 2026</span>
+            </div>
+            <div class="gathering-sep" aria-hidden="true"></div>
+            <div class="gathering-time">
+              <span class="gathering-day">9:30 PM T&uuml;rkiye</span>
+              <span class="gathering-full">2:30 PM ET</span>
+            </div>
+          </div>
+          <ul class="gathering-details">
+            <li><span class="gathering-label">Together</span> Approximately 90 min</li>
+            <li><span class="gathering-label">Where</span> Online via Zoom</li>
+            <li><span class="gathering-label">Cost</span> Free</li>
+          </ul>
         </div>
 
+        <p class="register-intro reveal" style="transition-delay:0.15s;">I&rsquo;d love to breathe with you.</p>
+        <p class="reveal" style="transition-delay:0.18s;">Register below and I&rsquo;ll send you everything you need to join.</p>
+
+        <div class="form-container">
         <form id="cbwm-form">
           <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off" />
           <input type="hidden" name="access_key" value="7d3fb876-9576-4583-8d7d-760c0eb89bab" />
@@ -790,6 +877,7 @@
           <button type="submit" class="btn btn-primary" id="cbwm-submit">Come Breathe With Me</button>
           <p class="form-error" id="cbwm-error">Something went wrong submitting your registration. Please try again, or email us directly at atblissfoundation@gmail.com.</p>
         </form>
+        </div>
       </div>
     </div>
   </section>

@@ -11,18 +11,17 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --gold: #c9a84c;
-      --gold-light: #e8cf88;
-      --deep: #0a0c14;
-      --text: #e8e4dc;
-      --muted: #9a968f;
-      --border: rgba(201, 168, 76, 0.2);
+      --cream: #faf6ee;
+      --ink: #2e2a22;
+      --muted: #8a7f6c;
+      --gold: #a9772f;
+      --border: rgba(169, 119, 47, 0.22);
     }
 
     body {
       font-family: 'DM Sans', sans-serif;
-      background: var(--deep);
-      color: var(--text);
+      background: var(--cream);
+      color: var(--ink);
     }
 
     .wrap { max-width: 640px; margin: 0 auto; padding: 5rem 1.75rem 4rem; }
@@ -41,13 +40,14 @@
       font-size: clamp(2rem, 4.5vw, 2.8rem);
       line-height: 1.2;
       margin-bottom: 2rem;
+      color: var(--ink);
     }
 
     h2 {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 400;
       font-size: 1.3rem;
-      color: var(--text);
+      color: var(--ink);
       margin: 2.25rem 0 0.9rem;
     }
 
@@ -56,18 +56,20 @@
     p {
       font-size: 0.94rem;
       line-height: 1.85;
-      color: rgba(232, 228, 220, 0.78);
+      color: var(--ink);
+      opacity: 0.85;
       margin-bottom: 1.1rem;
     }
 
-    p strong { color: var(--text); font-weight: 500; }
+    p strong { color: var(--ink); opacity: 1; font-weight: 500; }
 
     ul { list-style: none; margin: 0 0 1.1rem; }
 
     li {
       font-size: 0.94rem;
       line-height: 1.75;
-      color: rgba(232, 228, 220, 0.78);
+      color: var(--ink);
+      opacity: 0.85;
       padding-left: 1.15rem;
       position: relative;
       margin-bottom: 0.4rem;
@@ -81,11 +83,11 @@
       width: 4px;
       height: 4px;
       border-radius: 50%;
-      background: rgba(201, 168, 76, 0.6);
+      background: var(--gold);
     }
 
-    a { color: var(--gold-light); text-decoration: none; border-bottom: 1px solid rgba(232,207,136,0.3); }
-    a:hover { color: var(--gold); }
+    a { color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--border); }
+    a:hover { color: var(--ink); }
 
     .back-link { text-align: center; margin-top: 3rem; }
 
@@ -95,7 +97,8 @@
     }
 
     footer {
-      border-top: 1px solid var(--border);
+      background: #14110d;
+      border-top: 1px solid rgba(201, 168, 76, 0.2);
       padding: 3.5rem 1.75rem 2.5rem;
       text-align: center;
     }
@@ -106,7 +109,7 @@
       font-size: 1.05rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--text);
+      color: #e8e4dc;
       margin-bottom: 0.5rem;
     }
 
@@ -114,7 +117,7 @@
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
       font-size: 1.05rem;
-      color: var(--gold-light);
+      color: #e8cf88;
       margin-bottom: 2rem;
     }
 
@@ -122,13 +125,13 @@
       font-size: 0.7rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--muted);
+      color: #9a968f;
       margin-bottom: 1rem;
     }
 
     .footer-copy {
       font-size: 0.72rem;
-      color: var(--muted);
+      color: #9a968f;
       letter-spacing: 0.05em;
       margin-top: 2rem;
     }
