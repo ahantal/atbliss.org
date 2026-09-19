@@ -506,31 +506,6 @@
       background: rgba(201, 168, 76, 0.5);
     }
 
-    .radio-group { display: flex; flex-direction: column; gap: 0.85rem; }
-
-    .radio-option {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-      padding: 0.9rem 1.1rem;
-      border: 1px solid var(--border);
-      cursor: pointer;
-      transition: border-color 0.2s;
-    }
-
-    .radio-option:hover { border-color: var(--border-hover); }
-    .radio-option input { margin-top: 0.2rem; accent-color: var(--gold); }
-    .radio-option span { font-size: 0.92rem; color: var(--text); }
-
-    .followup {
-      margin-top: 1.1rem;
-      padding-left: 1.1rem;
-      border-left: 1px solid var(--border);
-      display: none;
-    }
-
-    .followup.visible { display: block; }
-
     .form-error {
       display: none;
       font-size: 0.85rem;
@@ -1038,25 +1013,8 @@
 
           <div class="form-group">
             <div class="q-num">07</div>
-            <label>Looking back, was that what you truly wanted to do?</label>
-            <div class="radio-group" id="wanted-group">
-              <label class="radio-option">
-                <input type="radio" name="reflection_wanted" value="Yes" />
-                <span>Yes</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="reflection_wanted" value="No" />
-                <span>No</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="reflection_wanted" value="I'm not sure" />
-                <span>I&rsquo;m not sure</span>
-              </label>
-            </div>
-            <div class="followup" id="wanted-followup">
-              <label for="q7b">What would you have wanted to do differently?</label>
-              <textarea id="q7b" name="reflection_wanted_different"></textarea>
-            </div>
+            <label for="q7">If you had recognized this voice before it took the helm, what would you have chosen to do?</label>
+            <textarea id="q7" name="reflection_recognized_earlier"></textarea>
           </div>
 
           <button type="submit" class="btn btn-primary" id="reflection-submit" style="margin-top:1rem;">Submit My Reflection</button>
@@ -1123,14 +1081,6 @@
       hamburger.setAttribute('aria-label', 'Open menu');
       document.body.style.overflow = '';
     }
-
-    // Q7 conditional follow-up
-    const wantedFollowup = document.getElementById('wanted-followup');
-    document.querySelectorAll('input[name="reflection_wanted"]').forEach(radio => {
-      radio.addEventListener('change', () => {
-        wantedFollowup.classList.toggle('visible', radio.value !== 'Yes');
-      });
-    });
 
     // Reflection form submission (Web3Forms) - no field is required
     const rForm = document.getElementById('reflection-form');
