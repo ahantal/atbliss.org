@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thank You | @ Bliss Foundation</title>
-  <meta name="description" content="Your Soma+IQ™ The Journey registration is confirmed. Complete the required release form, and optionally begin preparing for the next step of The @ Bliss Path." />
+  <title>Prepare for Your Session | @ Bliss Foundation</title>
+  <meta name="description" content="A few simple things to know before we breathe together: what you'll need, how to set up your space and camera, and what to expect." />
   <meta name="robots" content="noindex" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
@@ -139,64 +139,30 @@
     .btn-primary:hover { background: var(--gold-light); border-color: var(--gold-light); }
 
     /* ── SECTION BASE ── */
-    section { padding: 3.5rem 2rem; }
+    section { padding: 5rem 2rem; }
 
-    .section-inner { max-width: 720px; margin: 0 auto; text-align: center; }
+    .section-inner { max-width: 960px; margin: 0 auto; text-align: center; }
 
     .section-label {
       font-size: 0.68rem;
       letter-spacing: 0.28em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
     }
 
     /* ── HERO ── */
-    .sm-hero { background: var(--deep); padding-top: 8.5rem; padding-bottom: 2rem; }
+    .prep-hero { background: var(--deep); padding-top: 9.5rem; padding-bottom: 4rem; }
+    .prep-hero .section-label { margin-bottom: 1rem; }
 
-    .sm-hero h1 {
+    .prep-hero h1 {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 300;
       font-size: clamp(2.2rem, 5vw, 3.2rem);
       line-height: 1.15;
-      margin-bottom: 1.25rem;
-    }
-
-    .sm-hero-sub {
-      font-size: 1.02rem;
-      line-height: 1.85;
-      color: rgba(232, 228, 220, 0.72);
-      max-width: 560px;
+      max-width: 720px;
       margin: 0 auto;
     }
-
-    /* ── MESSAGE CARDS ── */
-    .messages { padding-top: 1rem; padding-bottom: 3.5rem; }
-
-    .message-card {
-      border: 1px solid rgba(201, 168, 76, 0.35);
-      padding: 2.5rem 2.25rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .message-card:last-child { margin-bottom: 0; }
-
-    .message-card h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-size: clamp(1.4rem, 2.8vw, 1.85rem);
-      margin-bottom: 0.85rem;
-    }
-
-    .message-card p {
-      font-size: 0.96rem;
-      line-height: 1.8;
-      color: rgba(232, 228, 220, 0.72);
-      max-width: 480px;
-      margin: 0 auto 1.5rem;
-    }
-
-    .message-card p:last-of-type { margin-bottom: 1.75rem; }
 
     /* ── PREPARATION CONTENT (same block is used on /thankyou) ── */
     .prep-script {
@@ -339,27 +305,20 @@
 
     .prep-link:hover { color: var(--gold); }
 
-    .prep-block .section-inner { max-width: 960px; }
-    .prep-block .section-label { margin-bottom: 2rem; }
-    .prep-block { padding: 4.5rem 2rem; }
+    /* ── READY / QUESTIONS (this page only) ── */
+    .prep-ready { background: var(--deep); }
 
-    .prep-intro h2 {
+    .prep-ready h2 {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 300;
-      font-size: clamp(1.8rem, 3.6vw, 2.5rem);
-      line-height: 1.2;
-      max-width: 640px;
-      margin: 0 auto;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      margin-bottom: 1rem;
     }
 
-    .prep-intro .prep-script { margin-bottom: 3rem; }
-    .prep-intro .section-label { margin-bottom: 1rem; }
+    .prep-ready p { font-size: 0.96rem; line-height: 1.85; color: rgba(232, 228, 220, 0.72); margin-bottom: 1.75rem; }
 
-    @media (max-width: 768px) {
-      .prep-block { padding: 3rem 1.5rem; }
-      .prep-cards, .prep-stages { grid-template-columns: 1fr; }
-      .prep-notice { padding: 2rem 1.5rem; }
-    }
+    .prep-questions { background: var(--deep2); }
+    .prep-questions a { color: var(--gold-light); text-decoration: none; border-bottom: 1px solid rgba(232, 207, 136, 0.3); }
 
     /* ── FOOTER ── */
     footer {
@@ -425,9 +384,11 @@
       .nav-links { display: none; }
       .nav-hamburger { display: flex; }
 
-      section { padding: 2.5rem 1.5rem; }
-      .sm-hero { padding-top: 7rem; }
-      .message-card { padding: 2rem 1.5rem; }
+      section { padding: 3.5rem 1.5rem; }
+      .prep-hero { padding-top: 7.5rem; padding-bottom: 3rem; }
+
+      .prep-cards, .prep-stages { grid-template-columns: 1fr; }
+      .prep-notice { padding: 2rem 1.5rem; }
 
       .footer-top { flex-direction: column; }
       footer { padding: 3rem 1.5rem 2rem; }
@@ -460,26 +421,18 @@
     <a href="/#manifesto"     onclick="closeNav()">Manifesto</a>
   </div>
 
-  <!-- CONFIRMATION -->
-  <section class="sm-hero">
+  <!-- HERO -->
+  <section class="prep-hero">
     <div class="section-inner">
-      <p class="section-label reveal">Thank You</p>
-      <h1 class="reveal">Your place is registered.</h1>
-      <div class="sm-hero-sub reveal" style="transition-delay:0.1s;">
-        <p>Thank you for registering for a free <strong>Soma+IQ&trade; The Journey</strong> session with @ Bliss.</p>
-      </div>
+      <p class="section-label reveal">Prepare for Your Session</p>
+      <h1 class="reveal">A few simple things to know before we breathe together.</h1>
+      <p class="prep-script reveal" style="transition-delay:0.1s;">Find a comfortable space. Bring your headphones. And come as you are.</p>
     </div>
   </section>
 
-  <!-- PREPARATION (same content as /prepare, no date) -->
   <!-- WHAT YOU'LL NEED -->
-  <section class="prep-block prep-need">
+  <section class="prep-need">
     <div class="section-inner">
-      <div class="prep-intro">
-        <p class="section-label reveal">Prepare for Your Session</p>
-        <h2 class="reveal">A few simple things to know before we breathe together.</h2>
-        <p class="prep-script reveal" style="transition-delay:0.1s;">Find a comfortable space. Bring your headphones. And come as you are.</p>
-      </div>
       <p class="section-label reveal">What you&rsquo;ll need</p>
       <ul class="prep-cards">
         <li class="prep-card reveal">
@@ -508,7 +461,7 @@
   </section>
 
   <!-- GIVE YOUR BODY SOME SPACE -->
-  <section class="prep-block prep-space">
+  <section class="prep-space">
     <div class="section-inner">
       <p class="section-label reveal">Give your body some space</p>
       <div class="prep-notice reveal">
@@ -519,7 +472,7 @@
   </section>
 
   <!-- WHAT TO EXPECT -->
-  <section class="prep-block prep-expect">
+  <section class="prep-expect">
     <div class="section-inner">
       <p class="section-label reveal">What to expect</p>
       <ol class="prep-stages">
@@ -543,7 +496,7 @@
   </section>
 
   <!-- A FEW MINUTES BEFORE -->
-  <section class="prep-block prep-before">
+  <section class="prep-before">
     <div class="section-inner">
       <p class="section-label reveal">A few minutes before</p>
       <ul class="prep-checklist reveal">
@@ -560,7 +513,7 @@
   </section>
 
   <!-- LISTEN TO YOUR BODY -->
-  <section class="prep-block prep-listen">
+  <section class="prep-listen">
     <div class="section-inner">
       <p class="section-label reveal">Listen to your body</p>
       <div class="prep-prose reveal">
@@ -570,19 +523,21 @@
     </div>
   </section>
 
-  <!-- TWO MORE MESSAGES -->
-  <section class="messages">
+  <!-- READY TO BREATHE? -->
+  <section class="prep-ready">
     <div class="section-inner">
-      <div class="message-card reveal">
-        <h2>Complete Your Release Form</h2>
-        <p>Please complete the release form below before participating in the session.</p>
-        <a href="https://www.jotform.com/form/262107365856058" target="_blank" rel="noopener" class="btn btn-primary">Complete Release Form &rarr;</a>
-      </div>
+      <h2 class="reveal">Ready to breathe?</h2>
+      <p class="reveal">Register for the next free session and we&rsquo;ll send you the Zoom link.</p>
+      <a href="/breathwork#register" class="btn btn-primary reveal">Register for a Session &rarr;</a>
+    </div>
+  </section>
 
-      <div class="message-card reveal" style="transition-delay:0.08s;">
-        <h2>Would you like to go a little deeper?</h2>
-        <p>If you would like to prepare for the next step of <strong>The @ Bliss Path</strong>.</p>
-        <a href="/path/selfmapping" class="btn btn-primary">Prepare for the Next Step &rarr;</a>
+  <!-- QUESTIONS -->
+  <section class="prep-questions">
+    <div class="section-inner">
+      <p class="section-label reveal">Questions before we begin?</p>
+      <div class="prep-prose reveal">
+        <p>If you&rsquo;re unsure about anything or have questions about preparing for the session, just reach out at <a href="mailto:atblissfoundation@gmail.com">atblissfoundation@gmail.com</a>.</p>
       </div>
     </div>
   </section>
