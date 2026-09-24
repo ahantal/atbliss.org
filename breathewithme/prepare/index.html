@@ -75,135 +75,135 @@
 
     /* ── SECTION BACKGROUND RHYTHM ── */
     .hero { background: var(--cream); }
-    .need-section { background: var(--cream2); }
-    .expect-section { background: var(--cream); }
     .closing-section { background: var(--cream3); }
 
     /* ── HERO ── */
     .hero { padding-top: 5rem; text-align: center; }
 
-    .hero-meta {
-      list-style: none;
-      display: inline-flex;
-      flex-direction: column;
-      gap: 0.35rem;
-      margin: 1.5rem 0 0;
-      padding: 0;
-    }
 
-    .hero-meta li {
-      font-size: 0.95rem;
+    /* ── PREPARATION (same block on /breathewithme/prepare and /breathewithme/thankyou;
+       same content as atbliss.org/prepare, in this site's light design and first-person voice) ── */
+    .prep { text-align: center; }
+    .prep-part { padding: 3rem 0; }
+    .prep-inner { max-width: 880px; margin: 0 auto; padding: 0 1.75rem; }
+
+    .prep-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
       color: var(--gold);
-      letter-spacing: 0.02em;
+      opacity: 1;
+      margin: 0 0 1.75rem;
     }
 
-    /* ── CARDS (What You'll Need) ── */
-    .cards {
+    .prep-cards {
       list-style: none;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 1.25rem;
-      margin: 2.75rem 0 0;
-      padding: 0;
-    }
-
-    @media (min-width: 760px) {
-      .cards { grid-template-columns: repeat(4, 1fr); }
-    }
-
-    .card {
-      border: 1px solid var(--border);
-      background: var(--cream);
-      padding: 1.75rem 1.5rem;
-      text-align: center;
-      transition: border-color 0.2s;
-    }
-
-    .card:hover { border-color: var(--border-hover); }
-
-    .card h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 400;
-      font-size: 1.15rem;
-      color: var(--gold);
-      margin-bottom: 0.6rem;
-    }
-
-    .card p {
-      font-size: 0.88rem;
-      line-height: 1.7;
-      color: var(--ink);
-      opacity: 0.78;
       margin: 0;
-    }
-
-    .card--wide {
-      grid-column: 1 / -1;
-      text-align: left;
-      display: grid;
-      grid-template-columns: minmax(0, 200px) 1fr;
-      gap: 1.5rem 2rem;
-      align-items: center;
-      padding: 1.75rem 2rem;
-    }
-
-    .card--wide h3 { margin: 0; }
-
-    .card--wide p {
-      font-size: 0.9rem;
-      margin: 0 0 0.6rem;
-    }
-
-    .card--wide p:last-child { margin-bottom: 0; }
-
-    @media (max-width: 640px) {
-      .cards { grid-template-columns: 1fr; max-width: 340px; margin-left: auto; margin-right: auto; }
-      .card--wide { grid-template-columns: 1fr; text-align: center; }
-    }
-
-    /* ── STAGE LIST (What to Expect) ── */
-    .stage-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      margin: 2.75rem 0 0;
+      padding: 0;
       text-align: left;
     }
 
-    .stage-card {
-      border: 1px solid var(--border);
-      background: var(--cream2);
-      padding: 1.75rem 2rem;
-      transition: border-color 0.2s;
-    }
+    .prep-card { border: 1px solid var(--border); background: var(--cream); padding: 1.6rem 1.6rem 1.75rem; }
+    .prep-card--wide { grid-column: 1 / -1; }
 
-    .stage-card:hover { border-color: var(--border-hover); }
-
-    .stage-card .stage-time {
-      font-size: 0.68rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.5rem;
-    }
-
-    .stage-card h3 {
+    .prep-card h3, .prep-stage h3 {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 400;
-      font-size: 1.3rem;
-      color: var(--ink);
-      margin-bottom: 0.85rem;
+      font-size: 1.25rem;
+      color: var(--gold);
+      margin: 0 0 0.5rem;
     }
 
-    .stage-card p {
+    .prep-card p, .prep-stage p, .prep-notice p, .prep-prose p {
       font-size: 0.92rem;
       line-height: 1.8;
       color: var(--ink);
       opacity: 0.82;
-      margin: 0 0 0.9rem;
+      margin: 0;
     }
 
-    .stage-card p:last-child { margin-bottom: 0; }
+    .prep-card p + p { margin-top: 0.85rem; }
+
+    .prep-card .prep-note {
+      font-size: 0.86rem;
+      opacity: 0.7;
+      padding-top: 0.85rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .prep-notice { max-width: 600px; margin: 0 auto; border: 1px solid var(--border-hover); background: var(--cream); padding: 2.25rem 2rem; }
+
+    .prep-notice .prep-notice-big {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.3rem, 2.5vw, 1.65rem);
+      line-height: 1.35;
+      color: var(--gold);
+      opacity: 1;
+      margin-bottom: 0.85rem;
+    }
+
+    .prep-stages { list-style: none; display: flex; flex-direction: column; gap: 1.25rem; margin: 0; padding: 0; text-align: left; }
+    .prep-stage { border: 1px solid var(--border); background: var(--cream); padding: 1.6rem 1.9rem; }
+
+    .prep-stage .prep-stage-time {
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .prep-checklist { list-style: none; max-width: 540px; margin: 0 auto; padding: 0; text-align: left; }
+
+    .prep-checklist li {
+      position: relative;
+      padding: 0.8rem 0 0.8rem 1.6rem;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--ink);
+    }
+
+    .prep-checklist li:last-child { border-bottom: none; }
+
+    .prep-checklist li::before {
+      content: "";
+      position: absolute;
+      left: 0.2rem;
+      top: 1.3rem;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold-fill);
+    }
+
+    .prep-come {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(1.25rem, 2.3vw, 1.55rem);
+      color: var(--gold);
+      margin: 2rem 0 0.75rem;
+    }
+
+    .prep-prose { max-width: 600px; margin: 0 auto; }
+    .prep-prose strong { font-weight: 500; }
+    .prep-link-row { margin-top: 1.5rem; }
+
+    @media (max-width: 640px) {
+      .prep-cards { grid-template-columns: 1fr; }
+      .prep-notice, .prep-stage { padding: 1.6rem 1.4rem; }
+    }
+
+    /* Bands on this page only (the thank-you page shows the block without bands) */
+    .prep .prep-part:nth-child(odd) { background: var(--cream2); }
+    .prep .prep-part:nth-child(even) { background: var(--cream); }
+    .prep .prep-part:nth-child(even) .prep-card,
+    .prep .prep-part:nth-child(even) .prep-stage,
+    .prep .prep-part:nth-child(even) .prep-notice { background: var(--cream2); }
 
     /* ── CLOSING ── */
     .closing-line {
@@ -277,83 +277,105 @@
       <p class="section-label">Come Breathe With Me</p>
       <h1>How to prepare.</h1>
       <p>You don&rsquo;t need to know how to do this, and you don&rsquo;t need any previous experience. A little preparation just helps you settle in and get the most out of our time together.</p>
-      <ul class="hero-meta">
-        <li>Monday, September 28, 2026</li>
-        <li>9:00 PM Turkish Time (2:00 PM ET)</li>
-      </ul>
     </div>
   </section>
 
-  <!-- WHAT YOU'LL NEED -->
-  <section class="need-section">
-    <div class="wrap-wide center">
-      <p class="section-label">What You&rsquo;ll Need</p>
-      <ul class="cards">
-        <li class="card">
+  <!-- PREPARATION (shared block, see the CSS note) -->
+  <div class="prep">
+  <section class="prep-part">
+    <div class="prep-inner">
+      <p class="prep-label">What You&rsquo;ll Need</p>
+      <ul class="prep-cards">
+        <li class="prep-card">
           <h3>Comfortable Clothing</h3>
           <p>Loose, comfortable clothing you can breathe and move in. Nothing restrictive.</p>
         </li>
-        <li class="card">
-          <h3>A Place to Lie Down</h3>
-          <p>A mat, a rug, or your bed. Give yourself enough space to stretch out and move freely.</p>
+        <li class="prep-card">
+          <h3>A Comfortable Place to Lie Down</h3>
+          <p>A mat, yoga mat, rug, or another comfortable surface where you can lie on your back and stretch out freely.</p>
         </li>
-        <li class="card">
-          <h3>Headphones</h3>
-          <p>Music is a big part of the experience. Headphones help you stay inward and undistracted.</p>
+        <li class="prep-card">
+          <h3>Headphones or Earbuds</h3>
+          <p>Music is a big part of the experience. Headphones or earbuds help you stay inward and undistracted, and hear the guidance clearly.</p>
         </li>
-        <li class="card">
+        <li class="prep-card">
           <h3>A Quiet, Private Space</h3>
-          <p>Somewhere you won&rsquo;t be interrupted for the full 90 minutes.</p>
+          <p>Somewhere you can breathe comfortably without being interrupted for the full 90 minutes.</p>
         </li>
-        <li class="card card--wide">
-          <h3>Before You Begin</h3>
-          <div>
-            <p>Try not to eat a large meal 1 hour before the session.</p>
-            <p>Turn off phone notifications and anything else that might interrupt you, and join Zoom a few minutes early so you have time to settle in before we begin together.</p>
-          </div>
+        <li class="prep-card prep-card--wide">
+          <h3>Zoom &amp; Your Camera</h3>
+          <p>Make sure you have access to Zoom and that your camera and audio are working before we begin. During the breathwork you&rsquo;ll be lying on your back, so position your camera so your upper body, including your chest and belly, can be seen comfortably. This allows me to observe your breathing and somatic response and guide the session live.</p>
+          <p class="prep-note">Please turn off Zoom background blur, virtual backgrounds, and other camera background effects before we begin.</p>
         </li>
       </ul>
     </div>
   </section>
 
-  <!-- WHAT TO EXPECT -->
-  <section class="expect-section">
-    <div class="wrap center">
-      <p class="section-label">What to Expect</p>
-      <div class="stage-list">
-        <div class="stage-card">
-          <p class="stage-time">Approximately 15 minutes</p>
-          <h3>Arrive</h3>
-          <p>We&rsquo;ll arrive together, get comfortable, go over what to expect, prepare the body and breath, and create some space to settle into the experience before we begin.</p>
-        </div>
-        <div class="stage-card">
-          <p class="stage-time">Approximately 60 minutes</p>
-          <h3>Breathe</h3>
-          <p>I&rsquo;ll guide you through the full <strong>Soma+IQ&trade; The Journey</strong>, using conscious connected breathing together with music, movement, sound, and emotional expression.</p>
-          <p>This is the active part of the experience.</p>
-          <p>The breath gradually builds activation, and rather than immediately trying to calm or control what arises, we create space to allow the experience.</p>
-          <p>Movement, sound, emotion, physical sensation, or other forms of expression may arise.</p>
-          <p><strong>Nothing needs to be forced.</strong></p>
-          <p>There is no particular experience you are supposed to have.</p>
-          <p><em>Your experience is your own.</em></p>
-        </div>
-        <div class="stage-card">
-          <p class="stage-time">Approximately 15 minutes</p>
-          <h3>Share &amp; Integrate</h3>
-          <p>We&rsquo;ll slow things down, come back together, and leave space to share.</p>
-          <p>There is no obligation to speak.</p>
-          <p>You can share what you experienced, ask a question, listen to others, or simply stay present and allow the experience to settle.</p>
-          <p>This final part gives us some space before we return to the rest of our day or, for those joining later in the evening, head toward sleep.</p>
-        </div>
+  <section class="prep-part">
+    <div class="prep-inner">
+      <p class="prep-label">Give Your Body Some Space</p>
+      <div class="prep-notice">
+        <p class="prep-notice-big">Try not to eat a large meal 1 hour before the session.</p>
+        <p>A little space in the body helps the breath move freely and keeps you comfortable throughout the practice.</p>
       </div>
     </div>
   </section>
 
+  <section class="prep-part">
+    <div class="prep-inner">
+      <p class="prep-label">What to Expect</p>
+      <ol class="prep-stages">
+        <li class="prep-stage">
+          <p class="prep-stage-time">Approximately 15 minutes</p>
+          <h3>Arrive</h3>
+          <p>We&rsquo;ll arrive together, get comfortable, go over what to expect, prepare the body and breath, and settle into the experience before we begin.</p>
+        </li>
+        <li class="prep-stage">
+          <p class="prep-stage-time">Approximately 60 minutes</p>
+          <h3>Breathe</h3>
+          <p>You&rsquo;ll lie comfortably on your back while I guide you through <strong>Soma+IQ&trade; The Journey</strong>, using conscious connected breathing together with music, movement, sound, and emotional expression. The breath gradually builds activation, and rather than trying to calm or control what arises, we create space to allow it. Nothing needs to be forced. <em>Your experience is your own.</em></p>
+        </li>
+        <li class="prep-stage">
+          <p class="prep-stage-time">Approximately 15 minutes</p>
+          <h3>Share &amp; Integrate</h3>
+          <p>We&rsquo;ll slow things down, come back together, and leave space to share. There is no obligation to speak. You can share, ask a question, listen, or simply stay present and let the experience settle. This final part gives us some space before we return to the rest of our day or, for those joining later in the evening, head toward sleep.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="prep-part">
+    <div class="prep-inner">
+      <p class="prep-label">A Few Minutes Before</p>
+      <ul class="prep-checklist">
+        <li>Find your quiet space</li>
+        <li>Have your mat or comfortable surface ready</li>
+        <li>Put your headphones or earbuds nearby</li>
+        <li>Turn off phone notifications and anything else that might interrupt you</li>
+        <li>Open Zoom and check your camera and audio</li>
+        <li>Turn off background blur and virtual backgrounds</li>
+        <li>Position your device so your upper body can be seen while lying down</li>
+        <li>Join a few minutes early and give yourself time to arrive without rushing</li>
+      </ul>
+      <p class="prep-come">Come as you are.</p>
+      <div class="prep-prose"><p>You don&rsquo;t need to know what you&rsquo;re supposed to do or what you&rsquo;re supposed to feel. I&rsquo;ll take care of the rest.</p></div>
+    </div>
+  </section>
+
+  <section class="prep-part">
+    <div class="prep-inner">
+      <p class="prep-label">Listen to Your Body</p>
+      <div class="prep-prose">
+        <p><strong>Breathwork can create strong physical and emotional experiences.</strong> If you are pregnant or have a medical condition that could be affected by intensive breathwork, please consult a qualified healthcare professional before participating.</p>
+      </div>
+      <p class="prep-link-row"><a href="/breathewithme/release" class="inline-link">Read the Release Waiver &rarr;</a></p>
+    </div>
+  </section>
+  </div>
+
   <!-- CLOSING -->
   <section class="closing-section">
     <div class="wrap center">
-      <p class="closing-line"><strong>Come as you are.</strong></p>
-      <p>You don&rsquo;t need to know what you&rsquo;re supposed to do or what you&rsquo;re supposed to feel. I&rsquo;ll take care of the rest.</p>
       <p class="back-link"><a href="/breathewithme" class="inline-link">&larr; Back to Come Breathe With Me</a></p>
     </div>
   </section>
