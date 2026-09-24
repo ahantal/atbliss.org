@@ -276,14 +276,19 @@
     .fb-scale--big .fb-choice span { min-height: 112px; }
     .fb-scale--big b { font-size: 2.4rem; }
 
+    fieldset.fb-framed { padding: 2.25rem 2rem; margin: 1rem 0 0.5rem; border: 1px solid rgba(201, 168, 76, 0.35); }
+    .fb-permission { margin-top: 0; padding-top: 0; border-top: none; }
+    .fb-scale--words .fb-choice span { min-height: 76px; }
+    .fb-scale--words small { font-size: 0.86rem; color: rgba(232, 228, 220, 0.85); }
+    .fb-scale--4 { grid-template-columns: repeat(4, 1fr); }
+    .fb-choices--extra { margin-top: 0.6rem; }
     fieldset.fb-overall { padding: 2.5rem 2rem; margin: 2.25rem 0; border: 1px solid rgba(201, 168, 76, 0.35); }
     /* no double rule above the framed overall rating or the permission section */
-    .fb-q:has(+ .fb-overall), .fb-q:has(+ .fb-permission) { border-bottom: none; }
+    .fb-q:has(+ .fb-overall) { border-bottom: none; }
 
     .fb-other { margin-top: 1rem; }
 
     /* testimonial permission: clearly separated from the feedback itself */
-    .fb-permission { margin-top: 3.5rem; padding-top: 3rem; border-top: 1px solid rgba(201, 168, 76, 0.35); }
     .fb-permission p.fb-perm-copy { font-size: 0.98rem; line-height: 1.8; color: rgba(232, 228, 220, 0.78); margin-bottom: 0.9rem; }
 
     /* inline errors */
@@ -383,6 +388,7 @@
       .fb-scale .fb-choice span { min-height: 84px; padding: 0.7rem 0.2rem; }
       .fb-scale small { font-size: 0.68rem; }
       .fb-choices:not(.fb-scale) { flex-direction: column; align-items: stretch; }
+      .fb-scale--4 { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
@@ -434,24 +440,39 @@
         <p class="fb-required-note"><span class="req">*</span> Required fields</p>
         <input type="checkbox" name="botcheck" class="fb-honeypot" tabindex="-1" autocomplete="off" />
 
+        <p class="fb-part-label">Before we begin</p>
+        <!-- Testimonial permission, asked first so participants can answer the rest freely; any answer, including No, submits normally. Nothing is published automatically. -->
+        <fieldset class="fb-q fb-permission fb-framed" data-required="radio" data-field="permission">
+          <legend><span class="fb-num">1.</span>May we share your feedback? <span class="req">*</span></legend>
+          <p class="fb-perm-copy">Sometimes participant reflections can help others understand what a Soma+IQ&trade; experience can be like.</p>
+          <p class="fb-perm-copy">If there is something you share below that we would like to use as a testimonial, may we have your permission to share it?</p>
+      <div class="fb-choices fb-choices--stack">
+        <label class="fb-choice"><input type="radio" name="permission" value="Yes, you may use my feedback with my first name." /><span>Yes, you may use my feedback with my first name.</span></label>
+        <label class="fb-choice"><input type="radio" name="permission" value="Yes, but please keep my feedback anonymous." /><span>Yes, but please keep my feedback anonymous.</span></label>
+        <label class="fb-choice"><input type="radio" name="permission" value="No, please keep my feedback private." /><span>No, please keep my feedback private.</span></label>
+      </div>
+          <p class="fb-help" style="margin:1rem 0 0;">Your name and email are never shared publicly.</p>
+          <p class="fb-error">Please choose one option. Any answer is fine, including No.</p>
+        </fieldset>
+
         <p class="fb-part-label">About you</p>
 
         <div class="fb-q" data-required="text" data-field="name">
-          <label class="fb-label" for="fb-name"><span class="fb-num">1.</span>Your Name <span class="req">*</span></label>
+          <label class="fb-label" for="fb-name"><span class="fb-num">2.</span>Your Name <span class="req">*</span></label>
           <p class="fb-help">Please share your name.</p>
           <input class="fb-input" type="text" id="fb-name" autocomplete="name" />
           <p class="fb-error">Please share your name.</p>
         </div>
 
         <div class="fb-q" data-required="email" data-field="email">
-          <label class="fb-label" for="fb-email"><span class="fb-num">2.</span>Your Email <span class="req">*</span></label>
+          <label class="fb-label" for="fb-email"><span class="fb-num">3.</span>Your Email <span class="req">*</span></label>
           <p class="fb-help">Please enter the email address you used to register for the session.</p>
           <input class="fb-input" type="email" id="fb-email" autocomplete="email" inputmode="email" />
           <p class="fb-error">Please enter a valid email address, for example name@example.com.</p>
         </div>
 
         <div class="fb-q" data-required="text" data-field="date">
-          <label class="fb-label" for="fb-date"><span class="fb-num">3.</span>Session Date <span class="req">*</span></label>
+          <label class="fb-label" for="fb-date"><span class="fb-num">4.</span>Session Date <span class="req">*</span></label>
           <p class="fb-help">When did you attend the session?</p>
           <input class="fb-input" type="date" id="fb-date" />
           <p class="fb-error">Please choose the date you attended.</p>
@@ -460,7 +481,7 @@
         <p class="fb-part-label">Your session</p>
 
         <fieldset class="fb-q" data-required="radio" data-field="setting">
-          <legend><span class="fb-num">4.</span>How did you join the session? <span class="req">*</span></legend>
+          <legend><span class="fb-num">5.</span>How did you join the session? <span class="req">*</span></legend>
       <div class="fb-choices">
         <label class="fb-choice"><input type="radio" name="setting" value="Online" /><span>Online</span></label>
         <label class="fb-choice"><input type="radio" name="setting" value="In person" /><span>In person</span></label>
@@ -469,7 +490,7 @@
         </fieldset>
 
         <fieldset class="fb-q" data-required="radio" data-field="type">
-          <legend><span class="fb-num">5.</span>Which type of session did you attend? <span class="req">*</span></legend>
+          <legend><span class="fb-num">6.</span>Which type of session did you attend? <span class="req">*</span></legend>
           <!-- To add a session type later, copy one <label class="fb-choice"> line; keep "Other" last. -->
       <div class="fb-choices">
         <label class="fb-choice"><input type="radio" name="type" value="Soma+IQ&trade; The Journey" /><span>Soma+IQ&trade; The Journey</span></label>
@@ -485,7 +506,7 @@
         <p class="fb-part-label">Your experience</p>
 
         <fieldset class="fb-q" data-required="radio" data-field="intro">
-          <legend><span class="fb-num">6.</span>How clear and confident did the facilitator&rsquo;s introduction and guidance feel? <span class="req">*</span></legend>
+          <legend><span class="fb-num">7.</span>How clear and confident did the facilitator&rsquo;s introduction and guidance feel? <span class="req">*</span></legend>
       <div class="fb-choices fb-scale" id="fb-intro-scale">
         <label class="fb-choice"><input type="radio" name="intro" value="1 = Needs Improvement" /><span><b>1</b><small>Needs Improvement</small></span></label>
         <label class="fb-choice"><input type="radio" name="intro" value="2 = Could Be Better" /><span><b>2</b><small>Could Be Better</small></span></label>
@@ -497,27 +518,27 @@
         </fieldset>
 
         <div class="fb-q" data-required="text" data-field="best">
-          <label class="fb-label" for="fb-best"><span class="fb-num">7.</span>What were the best parts of the experience for you? <span class="req">*</span></label>
+          <label class="fb-label" for="fb-best"><span class="fb-num">8.</span>What were the best parts of the experience for you? <span class="req">*</span></label>
           <p class="fb-help">This could be something you experienced during the breathing, music, movement, emotional expression, moments of stillness, sharing, or anything else that stood out to you.</p>
           <textarea class="fb-textarea" id="fb-best" rows="7"></textarea>
           <p class="fb-error">Please share a few words about the best parts for you.</p>
         </div>
 
         <div class="fb-q" data-required="text" data-field="improve">
-          <label class="fb-label" for="fb-improve"><span class="fb-num">8.</span>Is there anything we could have done differently to make your experience better? <span class="req">*</span></label>
+          <label class="fb-label" for="fb-improve"><span class="fb-num">9.</span>Is there anything we could have done differently to make your experience better? <span class="req">*</span></label>
           <p class="fb-help">This could relate to the guidance, pacing, music, explanation, environment, facilitation, or anything else you would like us to know.</p>
           <textarea class="fb-textarea" id="fb-improve" rows="7"></textarea>
           <p class="fb-error">Please share your thoughts, even if the answer is simply &ldquo;Nothing.&rdquo;</p>
         </div>
 
         <fieldset class="fb-q" data-required="radio" data-field="voice">
-          <legend><span class="fb-num">9.</span>How was the balance between the facilitator&rsquo;s voice and the music? <span class="req">*</span></legend>
-      <div class="fb-choices">
-        <label class="fb-choice"><input type="radio" name="voice" value="Excellent" /><span>Excellent</span></label>
-        <label class="fb-choice"><input type="radio" name="voice" value="Very Good" /><span>Very Good</span></label>
-        <label class="fb-choice"><input type="radio" name="voice" value="Good" /><span>Good</span></label>
-        <label class="fb-choice"><input type="radio" name="voice" value="Could Be Better" /><span>Could Be Better</span></label>
-        <label class="fb-choice"><input type="radio" name="voice" value="Needs Improvement" /><span>Needs Improvement</span></label>
+          <legend><span class="fb-num">10.</span>How was the balance between the facilitator&rsquo;s voice and the music? <span class="req">*</span></legend>
+      <div class="fb-choices fb-scale">
+        <label class="fb-choice"><input type="radio" name="voice" value="1 = Needs Improvement" /><span><b>1</b><small>Needs Improvement</small></span></label>
+        <label class="fb-choice"><input type="radio" name="voice" value="2 = Could Be Better" /><span><b>2</b><small>Could Be Better</small></span></label>
+        <label class="fb-choice"><input type="radio" name="voice" value="3 = Good" /><span><b>3</b><small>Good</small></span></label>
+        <label class="fb-choice"><input type="radio" name="voice" value="4 = Very Good" /><span><b>4</b><small>Very Good</small></span></label>
+        <label class="fb-choice"><input type="radio" name="voice" value="5 = Excellent" /><span><b>5</b><small>Excellent</small></span></label>
       </div>
           <p class="fb-error">Please choose one option.</p>
           <div class="fb-follow">
@@ -527,13 +548,13 @@
         </fieldset>
 
         <fieldset class="fb-q" data-required="radio" data-field="support">
-          <legend><span class="fb-num">10.</span>How supported did you feel by the facilitator throughout the experience? <span class="req">*</span></legend>
-      <div class="fb-choices">
-        <label class="fb-choice"><input type="radio" name="support" value="Very Supported" /><span>Very Supported</span></label>
-        <label class="fb-choice"><input type="radio" name="support" value="Supported" /><span>Supported</span></label>
-        <label class="fb-choice"><input type="radio" name="support" value="Somewhat Supported" /><span>Somewhat Supported</span></label>
-        <label class="fb-choice"><input type="radio" name="support" value="Not Very Supported" /><span>Not Very Supported</span></label>
-        <label class="fb-choice"><input type="radio" name="support" value="Not Supported" /><span>Not Supported</span></label>
+          <legend><span class="fb-num">11.</span>How supported did you feel by the facilitator throughout the experience? <span class="req">*</span></legend>
+      <div class="fb-choices fb-scale">
+        <label class="fb-choice"><input type="radio" name="support" value="1 = Not Supported" /><span><b>1</b><small>Not Supported</small></span></label>
+        <label class="fb-choice"><input type="radio" name="support" value="2 = Not Very Supported" /><span><b>2</b><small>Not Very Supported</small></span></label>
+        <label class="fb-choice"><input type="radio" name="support" value="3 = Somewhat Supported" /><span><b>3</b><small>Somewhat Supported</small></span></label>
+        <label class="fb-choice"><input type="radio" name="support" value="4 = Supported" /><span><b>4</b><small>Supported</small></span></label>
+        <label class="fb-choice"><input type="radio" name="support" value="5 = Very Supported" /><span><b>5</b><small>Very Supported</small></span></label>
       </div>
           <p class="fb-error">Please choose one option.</p>
           <div class="fb-follow">
@@ -543,13 +564,15 @@
         </fieldset>
 
         <fieldset class="fb-q" data-required="radio" data-field="sharing">
-          <legend><span class="fb-num">11.</span>During the sharing and integration at the end, did you feel heard and seen? <span class="req">*</span></legend>
-      <div class="fb-choices">
-        <label class="fb-choice"><input type="radio" name="sharing" value="Yes, very much" /><span>Yes, very much</span></label>
-        <label class="fb-choice"><input type="radio" name="sharing" value="Yes" /><span>Yes</span></label>
-        <label class="fb-choice"><input type="radio" name="sharing" value="Somewhat" /><span>Somewhat</span></label>
-        <label class="fb-choice"><input type="radio" name="sharing" value="Not really" /><span>Not really</span></label>
-        <label class="fb-choice"><input type="radio" name="sharing" value="No" /><span>No</span></label>
+          <legend><span class="fb-num">12.</span>During the sharing and integration at the end, did you feel heard and seen? <span class="req">*</span></legend>
+      <div class="fb-choices fb-scale">
+        <label class="fb-choice"><input type="radio" name="sharing" value="1 = No" /><span><b>1</b><small>No</small></span></label>
+        <label class="fb-choice"><input type="radio" name="sharing" value="2 = Not really" /><span><b>2</b><small>Not really</small></span></label>
+        <label class="fb-choice"><input type="radio" name="sharing" value="3 = Somewhat" /><span><b>3</b><small>Somewhat</small></span></label>
+        <label class="fb-choice"><input type="radio" name="sharing" value="4 = Yes" /><span><b>4</b><small>Yes</small></span></label>
+        <label class="fb-choice"><input type="radio" name="sharing" value="5 = Yes, very much" /><span><b>5</b><small>Yes, very much</small></span></label>
+      </div>
+      <div class="fb-choices fb-choices--extra">
         <label class="fb-choice"><input type="radio" name="sharing" value="I did not participate in the sharing" /><span>I did not participate in the sharing</span></label>
       </div>
           <p class="fb-error">Please choose one option.</p>
@@ -560,13 +583,13 @@
         </fieldset>
 
         <div class="fb-q" data-field="more">
-          <label class="fb-label" for="fb-more"><span class="fb-num">12.</span>Is there anything else you would like us to know? <span class="fb-optional">(optional)</span></label>
+          <label class="fb-label" for="fb-more"><span class="fb-num">13.</span>Is there anything else you would like us to know? <span class="fb-optional">(optional)</span></label>
           <p class="fb-help">Anything about your experience that we haven&rsquo;t asked about is welcome here.</p>
           <textarea class="fb-textarea" id="fb-more" rows="6"></textarea>
         </div>
 
         <fieldset class="fb-q fb-overall" data-required="radio" data-field="overall">
-          <legend><span class="fb-num">13.</span>Overall, how would you rate your Soma+IQ&trade; The Journey experience? <span class="req">*</span></legend>
+          <legend><span class="fb-num">14.</span>Overall, how would you rate your Soma+IQ&trade; The Journey experience? <span class="req">*</span></legend>
       <div class="fb-choices fb-scale fb-scale--big" id="fb-overall-scale">
         <label class="fb-choice"><input type="radio" name="overall" value="1 = Needs Improvement" /><span><b>1</b><small>Needs Improvement</small></span></label>
         <label class="fb-choice"><input type="radio" name="overall" value="2 = Could Be Better" /><span><b>2</b><small>Could Be Better</small></span></label>
@@ -578,12 +601,14 @@
         </fieldset>
 
         <fieldset class="fb-q" data-required="radio" data-field="change">
-          <legend><span class="fb-num">14.</span>After the session, did you notice any change in how you felt? <span class="req">*</span></legend>
-      <div class="fb-choices">
-        <label class="fb-choice"><input type="radio" name="change" value="A significant change" /><span>A significant change</span></label>
-        <label class="fb-choice"><input type="radio" name="change" value="A noticeable change" /><span>A noticeable change</span></label>
-        <label class="fb-choice"><input type="radio" name="change" value="A subtle change" /><span>A subtle change</span></label>
-        <label class="fb-choice"><input type="radio" name="change" value="No noticeable change" /><span>No noticeable change</span></label>
+          <legend><span class="fb-num">15.</span>After the session, did you notice any change in how you felt? <span class="req">*</span></legend>
+      <div class="fb-choices fb-scale fb-scale--words fb-scale--4">
+        <label class="fb-choice"><input type="radio" name="change" value="No noticeable change" /><span><small>No noticeable change</small></span></label>
+        <label class="fb-choice"><input type="radio" name="change" value="A subtle change" /><span><small>A subtle change</small></span></label>
+        <label class="fb-choice"><input type="radio" name="change" value="A noticeable change" /><span><small>A noticeable change</small></span></label>
+        <label class="fb-choice"><input type="radio" name="change" value="A significant change" /><span><small>A significant change</small></span></label>
+      </div>
+      <div class="fb-choices fb-choices--extra">
         <label class="fb-choice"><input type="radio" name="change" value="I&rsquo;m not sure" /><span>I&rsquo;m not sure</span></label>
       </div>
           <p class="fb-error">Please choose one option.</p>
@@ -594,18 +619,6 @@
           </div>
         </fieldset>
 
-        <!-- Testimonial permission: separate from the feedback; any answer, including No, submits normally. Nothing is published automatically. -->
-        <fieldset class="fb-q fb-permission" data-required="radio" data-field="permission">
-          <legend>May we share your feedback? <span class="req">*</span></legend>
-          <p class="fb-perm-copy">Sometimes participant reflections can help others understand what a Soma+IQ&trade; experience can be like.</p>
-          <p class="fb-perm-copy">If there is something you shared above that we would like to use as a testimonial, may we have your permission to share it?</p>
-      <div class="fb-choices fb-choices--stack">
-        <label class="fb-choice"><input type="radio" name="permission" value="Yes, you may use my feedback with my first name." /><span>Yes, you may use my feedback with my first name.</span></label>
-        <label class="fb-choice"><input type="radio" name="permission" value="Yes, but please keep my feedback anonymous." /><span>Yes, but please keep my feedback anonymous.</span></label>
-        <label class="fb-choice"><input type="radio" name="permission" value="No, please keep my feedback private." /><span>No, please keep my feedback private.</span></label>
-      </div>
-          <p class="fb-error">Please choose one option. Any answer is fine, including No.</p>
-        </fieldset>
 
         <div class="fb-submit-row">
           <button type="submit" class="btn btn-primary fb-submit" id="fb-submit">Submit My Feedback</button>
@@ -767,6 +780,7 @@
           'Participant Email': val('fb-email'),
           'Session Date': date,
           'Overall Session Rating': overall,
+          'Testimonial Permission': radio('permission'),
           'Session Setting': radio('setting'),
           'Session Type': sessionType(),
           'Introduction and Guidance Rating': radio('intro'),
@@ -780,8 +794,7 @@
           'Sharing and Integration Comments': val('fb-sharing-c') || '(none)',
           'Additional Comments': val('fb-more') || '(none)',
           'Change After Session': radio('change').replace('&rsquo;', '’'),
-          'Change After Session Comments': val('fb-change-c') || '(none)',
-          'Testimonial Permission': radio('permission')
+          'Change After Session Comments': val('fb-change-c') || '(none)'
         };
 
         submitting = true;
