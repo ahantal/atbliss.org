@@ -141,6 +141,15 @@
     .btn-outline { border: 1px solid var(--gold); color: var(--gold-light); background: transparent; }
     .btn-outline:hover { background: var(--gold); color: var(--deep); }
 
+    .come-top {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(1.4rem, 2.6vw, 1.75rem);
+      color: var(--gold-light);
+      margin-top: 1.25rem;
+    }
+
     /* ── ADD TO CALENDAR ── */
     .calendar { padding-top: 0.5rem; padding-bottom: 3.5rem; }
     .cal-when { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; color: var(--gold-light); margin-bottom: 1.5rem; }
@@ -343,7 +352,8 @@
       background: var(--gold);
     }
 
-    .prep-prose { max-width: 640px; margin: 0 auto; }
+    .prep-prose { max-width: 660px; margin: 0 auto; }
+    .prep-prose p { font-size: 1.1rem !important; line-height: 1.8 !important; color: rgba(232, 228, 220, 0.88) !important; }
     .prep-prose strong { color: var(--text); font-weight: 500; }
 
     .prep-link {
@@ -488,6 +498,7 @@
       <div class="sm-hero-sub reveal" style="transition-delay:0.1s;">
         <p>Thank you for registering for the <strong>@ Bliss | Somatic Breathwork Session</strong>. We&rsquo;re looking forward to breathing with you.</p>
       </div>
+      <p class="come-top reveal" style="transition-delay:0.15s;">Come as you are.</p>
     </div>
   </section>
 
