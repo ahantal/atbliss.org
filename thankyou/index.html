@@ -138,6 +138,16 @@
     .btn-primary { background: var(--gold); color: var(--deep); border: 1px solid var(--gold); }
     .btn-primary:hover { background: var(--gold-light); border-color: var(--gold-light); }
 
+    .btn-outline { border: 1px solid var(--gold); color: var(--gold-light); background: transparent; }
+    .btn-outline:hover { background: var(--gold); color: var(--deep); }
+
+    /* ── ADD TO CALENDAR ── */
+    .calendar { padding-top: 0.5rem; padding-bottom: 3.5rem; }
+    .cal-when { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; color: var(--gold-light); margin-bottom: 1.5rem; }
+    .cal-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; }
+    .cal-row .btn { padding: 0.75rem 1.6rem; }
+    .cal-hint { font-size: 0.86rem; color: var(--muted); margin-top: 1.25rem; }
+
     /* ── SECTION BASE ── */
     section { padding: 3.5rem 2rem; }
 
@@ -471,6 +481,20 @@
     </div>
   </section>
 
+  <!-- ADD TO CALENDAR (update the SESSION_* constants below for each new session) -->
+  <section class="calendar">
+    <div class="section-inner">
+      <p class="section-label reveal">Add to Your Calendar</p>
+      <p class="cal-when reveal">Tuesday, November 17, 2026 &middot; 6:30 PM ET</p>
+      <div class="cal-row reveal">
+        <a href="#" id="cal-google" class="btn btn-outline" target="_blank" rel="noopener">Google Calendar</a>
+        <a href="#" id="cal-apple" class="btn btn-outline">Apple Calendar</a>
+        <a href="#" id="cal-outlook" class="btn btn-outline" target="_blank" rel="noopener">Outlook</a>
+      </div>
+      <p class="cal-hint reveal">The Zoom link is in your confirmation email.</p>
+    </div>
+  </section>
+
   <!-- PREPARATION (same content as /prepare, no date) -->
   <!-- WHAT YOU'LL NEED -->
   <section class="prep-block prep-need">
@@ -603,6 +627,61 @@
   </footer>
 
   <script>
+    // ── Add to Calendar: @ Bliss | Somatic Breathwork Session ──
+    // Tuesday, November 17, 2026, 6:30 to 8:00 PM Eastern (EST, UTC-5) = 23:30 to 01:00 UTC.
+    // Update all four values (and the date line in the Add to Calendar section) for each new session.
+    // The Zoom link is deliberately left out: this page is not gated, so anyone with the URL can open it.
+    const SESSION_START_UTC   = '20261117T233000Z';
+    const SESSION_END_UTC     = '20261118T010000Z';
+    const SESSION_START_LOCAL = '2026-11-17T18:30:00-05:00';
+    const SESSION_END_LOCAL   = '2026-11-17T20:00:00-05:00';
+    const EVENT_TITLE = '@ Bliss | Somatic Breathwork Session';
+    const EVENT_DESC = 'A free online Soma+IQ™ The Journey breathwork session, offered through @ Bliss Foundation.\n\n'
+      + 'The Zoom link is in your confirmation email.\n\n'
+      + 'How to prepare:\nhttps://www.atbliss.org/prepare\n\n'
+      + 'Questions: atblissfoundation@gmail.com';
+
+    document.getElementById('cal-google').href = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+      + '&text=' + encodeURIComponent(EVENT_TITLE)
+      + '&dates=' + SESSION_START_UTC + '/' + SESSION_END_UTC
+      + '&details=' + encodeURIComponent(EVENT_DESC)
+      + '&location=' + encodeURIComponent('Online via Zoom');
+
+    document.getElementById('cal-outlook').href = 'https://outlook.live.com/calendar/0/deeplink/compose'
+      + '?path=%2Fcalendar%2Faction%2Fcompose&rru=addevent'
+      + '&subject=' + encodeURIComponent(EVENT_TITLE)
+      + '&startdt=' + encodeURIComponent(SESSION_START_LOCAL)
+      + '&enddt=' + encodeURIComponent(SESSION_END_LOCAL)
+      + '&body=' + encodeURIComponent(EVENT_DESC)
+      + '&location=' + encodeURIComponent('Online via Zoom');
+
+    document.getElementById('cal-apple').addEventListener('click', function (e) {
+      e.preventDefault();
+      const ics = [
+        'BEGIN:VCALENDAR',
+        'VERSION:2.0',
+        'PRODID:-//AtBliss//SomaticBreathworkSession//EN',
+        'BEGIN:VEVENT',
+        'UID:' + Date.now() + '@atbliss.org',
+        'DTSTAMP:' + new Date().toISOString().replace(/[-:]/g, '').slice(0, 15) + 'Z',
+        'DTSTART:' + SESSION_START_UTC,
+        'DTEND:' + SESSION_END_UTC,
+        'SUMMARY:' + EVENT_TITLE,
+        'DESCRIPTION:' + EVENT_DESC.replace(/\n/g, '\\n'),
+        'LOCATION:Online via Zoom',
+        'END:VEVENT',
+        'END:VCALENDAR',
+      ].join('\r\n');
+      const url = URL.createObjectURL(new Blob([ics], { type: 'text/calendar;charset=utf-8' }));
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'atbliss-somatic-breathwork-session.ics';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    });
+
     // Scroll reveal
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => {
