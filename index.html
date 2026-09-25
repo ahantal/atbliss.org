@@ -632,6 +632,15 @@
     }
 
     .manifesto-block:hover { border-color: var(--border-hover); }
+
+    /* thin gold rule between two themes inside one manifesto card */
+    .manifesto-rule {
+      width: 48px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.6;
+      margin: 1.75rem 0;
+    }
     .manifesto-block:hover::after { transform: scaleX(1); }
 
     .manifesto-text {
@@ -906,12 +915,14 @@
           <p class="manifesto-text" style="margin-top:1rem;">Thoughts arise. Fears arise. Judgments, memories, desires, and reactions arise. We experience them, but we are also able to observe them.</p>
           <p class="manifesto-text" style="margin-top:1rem;">This simple realization creates a space between the voice and the one who is listening.</p>
           <p class="manifesto-text" style="margin-top:1rem;">And this is where awakening begins.</p>
-          <p class="manifesto-text" style="margin-top:1rem;">But awakening is not enough.</p>
+        </div>
+        <div class="manifesto-block reveal" style="transition-delay:0.1s;">
+          <!-- Continues card 1 ("But awakening..."), then a gold rule separates the universal-love theme -->
+          <p class="manifesto-text">But awakening is not enough.</p>
           <p class="manifesto-text" style="margin-top:1rem;">To keep from forgetting that awakening, we need a Path, practice through which to live what the Path asks of us, and Attention to observe the ceaseless mechanism of association within us.</p>
           <p class="manifesto-text" style="margin-top:1rem;">Working through our fears, desires, habits, and conditioning, this mechanism can convince us once again that we are the voice and make us forget, again and again, the Truth we know by heart.</p>
           <p class="manifesto-text" style="margin-top:1rem;">Attention is the guardian of remembering.</p>
-        </div>
-        <div class="manifesto-block reveal" style="transition-delay:0.1s;">
+          <div class="manifesto-rule" aria-hidden="true"></div>
           <p class="manifesto-text">Universal unconditional love is the ground of all being, not as an idea, but as a living frequency.</p>
           <p class="manifesto-text" style="margin-top:1rem;">We are all expressions of the One.</p>
           <p class="manifesto-text" style="margin-top:1rem;">When we resonate in Light, we remember what we know by heart: beneath every difference of name, belief, tradition, or nation, we are one.</p>
