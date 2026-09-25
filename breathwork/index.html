@@ -745,6 +745,9 @@
       footer { padding: 3rem 1.5rem 2rem; }
     }
   </style>
+  <!-- Session date and time live only in /assets/events.js -->
+  <script src="/assets/events.js"></script>
+  <script src="/assets/event-utils.js"></script>
 </head>
 <body>
 
@@ -859,8 +862,8 @@
 
       <div class="session-grid">
         <div class="session-card reveal" style="transition-delay:0.15s;">
-          <div class="session-tag">Tuesday, November 17, 2026</div>
-          <div class="session-time">6:30 PM ET</div>
+          <div class="session-tag" data-event="breathwork-en" data-tpl="{date-en}"></div>
+          <div class="session-time" data-event="breathwork-en" data-tpl="{time-et} ET"></div>
           <p class="session-note">Online via Zoom. Free.</p>
         </div>
       </div>
@@ -931,7 +934,7 @@
             <input type="date" id="birthday" name="birthday" />
           </div>
 
-          <input type="hidden" name="session" value="@ Bliss | Somatic Breathwork Session, Tuesday, November 17, 2026, 6:30 PM ET" />
+          <input type="hidden" name="session" data-event="breathwork-en" data-tpl="@ Bliss | Somatic Breathwork Session, {date-en}, {time-et} ET" />
 
           <div class="release-section">
             <p class="release-agree-title">By signing up for a session, you agree to these terms</p>

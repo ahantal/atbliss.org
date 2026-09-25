@@ -347,6 +347,9 @@
       font-size: 1rem !important;
     }
   </style>
+  <!-- Session date, time, and Zoom live only in /assets/events.js -->
+  <script src="/assets/events.js"></script>
+  <script src="/assets/event-utils.js"></script>
 </head>
 <body>
 
@@ -365,13 +368,13 @@
     <div class="gathering">
       <div class="gathering-primary">
         <div class="gathering-date">
-          <span class="gathering-day">Monday</span>
-          <span class="gathering-full">September 28, 2026</span>
+          <span class="gathering-day" data-event="cbwm" data-tpl="{weekday-en}"></span>
+          <span class="gathering-full" data-event="cbwm" data-tpl="{monthday-en}"></span>
         </div>
         <div class="gathering-sep" aria-hidden="true"></div>
         <div class="gathering-time">
-          <span class="gathering-day">9:00 PM T&uuml;rkiye</span>
-          <span class="gathering-full">2:00 PM ET</span>
+          <span class="gathering-day" data-event="cbwm" data-tpl="{time-tr-en} Türkiye"></span>
+          <span class="gathering-full" data-event="cbwm" data-tpl="{time-et} ET"></span>
         </div>
       </div>
     </div>
@@ -497,43 +500,16 @@
   </footer>
 
   <script>
-    // ── EDIT THESE BEFORE SHARING THIS PAGE ──
-    // Real Zoom meeting link (base64-encoded so it isn't sitting in the page source in
-    // plain text; this is obscurity, not real security, same approach used on the
-    // Prana Party reference site's confirmation page, see breathewithmespecs.md §4):
-    const ZOOM_URL = atob('aHR0cHM6Ly91czA2d2ViLnpvb20udXMvai84NzI4NTQ1MjAyOT9wd2Q9R1FrMlBPaXpUc2Z4MHVuaDNDZjRRa1dvcTdkUUJMLjE=');
-    // Session start/end in ISO 8601 WITHOUT a timezone offset (local time of the zone below):
-    // Monday, September 28, 2026, 9:00 PM Turkish Time (UTC+3) = 2:00 PM Eastern (EDT, UTC-4) = 18:00 UTC.
-    const SESSION_START = '2026-09-28T14:00:00';
-    const SESSION_END   = '2026-09-28T15:30:00';
-    // The same start/end written with an explicit UTC offset, for Outlook's deeplink:
-    const SESSION_START_LOCAL = '2026-09-28T14:00:00-04:00';
-    const SESSION_END_LOCAL   = '2026-09-28T15:30:00-04:00';
-    // The same start/end converted to UTC, in YYYYMMDDTHHMMSSZ form, for Google Calendar
-    // and for the "already registered" cutoff check on index.html: SESSION_END_UTC here
-    // must match the SESSION_END_UTC constant in ../index.html's early-redirect script:
-    const SESSION_START_UTC = '20260928T180000Z';
-    const SESSION_END_UTC   = '20260928T193000Z';
-    // IANA timezone name the local times above are written in, e.g. 'America/New_York':
-    const SESSION_TZID  = 'America/New_York';
-    // ── END EDIT ──
-
-    const EVENT_TITLE = 'Come Breathe With Me';
+    // Date, time, and Zoom come from /assets/events.js ('cbwm').
+    const ev = AtBlissEvent.get('cbwm');
 
     // ── Registration gate: only reveal Zoom/calendar content to someone who has
     // actually registered in this browser (localStorage flag set by index.html on a
     // successful Web3Forms submit), and only until the session has passed. ──
-    function icsUtcToMs(s) {
-      return Date.parse(
-        s.slice(0, 4) + '-' + s.slice(4, 6) + '-' + s.slice(6, 8) +
-        'T' + s.slice(9, 11) + ':' + s.slice(11, 13) + ':' + s.slice(13, 15) + 'Z'
-      );
-    }
-
     let isRegistered = false;
     try {
       const registeredAt = localStorage.getItem('cbwmRegistered');
-      isRegistered = !!registeredAt && Date.now() <= icsUtcToMs(SESSION_END_UTC);
+      isRegistered = !!registeredAt && Date.now() <= ev.endMs;
       if (registeredAt && !isRegistered) localStorage.removeItem('cbwmRegistered');
     } catch (e) {}
 
@@ -548,70 +524,24 @@
       window.location.href = '/breathewithme';
     });
 
-    function calDescription() {
-      return 'Come Breathe With Me\n\n'
+    const cal = {
+      title: 'Come Breathe With Me',
+      details: 'Come Breathe With Me\n\n'
         + 'A free virtual Soma+IQ™ The Journey experience with Ali Cumhur Hantal. Approximately 60 minutes of Somatic Breathwork, about 90 minutes total together.\n\n'
-        + 'Join on Zoom:\n' + ZOOM_URL + '\n\n'
+        + 'Join on Zoom:\n' + ev.zoomUrl + '\n\n'
         + 'How to prepare:\nhttps://atbliss.org/breathewithme/prepare\n\n'
-        + 'Come as you are.';
-    }
-
-    function googleCalUrl() {
-      return 'https://calendar.google.com/calendar/render?action=TEMPLATE'
-        + '&text=' + encodeURIComponent(EVENT_TITLE)
-        + '&dates=' + SESSION_START_UTC + '/' + SESSION_END_UTC
-        + '&details=' + encodeURIComponent(calDescription())
-        + '&location=' + encodeURIComponent('Online via Zoom')
-        + '&ctz=' + encodeURIComponent(SESSION_TZID);
-    }
-
-    function outlookCalUrl() {
-      return 'https://outlook.live.com/calendar/0/deeplink/compose'
-        + '?path=%2Fcalendar%2Faction%2Fcompose&rru=addevent'
-        + '&subject=' + encodeURIComponent(EVENT_TITLE)
-        + '&startdt=' + encodeURIComponent(SESSION_START_LOCAL)
-        + '&enddt=' + encodeURIComponent(SESSION_END_LOCAL)
-        + '&body=' + encodeURIComponent(calDescription())
-        + '&location=' + encodeURIComponent('Online via Zoom');
-    }
+        + 'Come as you are.',
+      filename: 'come-breathe-with-me.ics'
+    };
 
     if (isRegistered) {
-      document.getElementById('cal-google').href = googleCalUrl();
-      document.getElementById('cal-outlook').href = outlookCalUrl();
+      document.getElementById('cal-google').href = AtBlissEvent.googleUrl(ev, cal);
+      document.getElementById('cal-outlook').href = AtBlissEvent.outlookUrl(ev, cal);
+      document.getElementById('cal-apple').addEventListener('click', function (e) {
+        e.preventDefault();
+        AtBlissEvent.downloadIcs(ev, cal);
+      });
     }
-
-    function toICSDate(isoLocal) {
-      return isoLocal.replace(/[-:]/g, '');
-    }
-
-    document.getElementById('cal-apple').addEventListener('click', function (e) {
-      e.preventDefault();
-      const ics = [
-        'BEGIN:VCALENDAR',
-        'VERSION:2.0',
-        'PRODID:-//AtBliss//ComeBreatheWithMe//EN',
-        'BEGIN:VEVENT',
-        'UID:' + Date.now() + '@atbliss.org',
-        'DTSTAMP:' + toICSDate(new Date().toISOString().slice(0, 19)) + 'Z',
-        'DTSTART;TZID=' + SESSION_TZID + ':' + toICSDate(SESSION_START),
-        'DTEND;TZID=' + SESSION_TZID + ':' + toICSDate(SESSION_END),
-        'SUMMARY:' + EVENT_TITLE,
-        'DESCRIPTION:A free virtual Soma+IQ™ The Journey Somatic Breathwork session with Ali Cumhur Hantal. Approximately 60 minutes of breathwork, about 90 minutes total together. Join link: ' + ZOOM_URL,
-        'LOCATION:Online via Zoom',
-        'END:VEVENT',
-        'END:VCALENDAR',
-      ].join('\r\n');
-
-      const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'come-breathe-with-me.ics';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-    });
   </script>
 </body>
 </html>

@@ -488,25 +488,20 @@
       .form-container { padding: 2rem 1.25rem; }
     }
   </style>
+  <!-- Session date, time, and Zoom live only in /assets/events.js -->
+  <script src="/assets/events.js"></script>
+  <script src="/assets/event-utils.js"></script>
 </head>
 <body>
 
   <script>
     // If this browser already registered and the session hasn't happened yet,
     // skip straight to the thank-you page instead of showing the form again.
-    // SESSION_END_UTC must match the same constant in thankyou/index.html
-    // (format: YYYYMMDDTHHMMSSZ, the same ICS/Google-Calendar UTC form used there).
     (function () {
-      var SESSION_END_UTC = '20260928T193000Z'; // must match thankyou/index.html
-      function icsUtcToMs(s) {
-        return Date.parse(
-          s.slice(0, 4) + '-' + s.slice(4, 6) + '-' + s.slice(6, 8) +
-          'T' + s.slice(9, 11) + ':' + s.slice(11, 13) + ':' + s.slice(13, 15) + 'Z'
-        );
-      }
+      var ev = AtBlissEvent.get('cbwm');
       try {
         var registeredAt = localStorage.getItem('cbwmRegistered');
-        if (registeredAt && Date.now() <= icsUtcToMs(SESSION_END_UTC)) {
+        if (registeredAt && Date.now() <= ev.endMs) {
           window.location.replace('/breathewithme/thankyou');
         } else if (registeredAt) {
           localStorage.removeItem('cbwmRegistered');
@@ -521,8 +516,8 @@
       <h1 class="reveal">Come Breathe With Me</h1>
       <p class="hero-tagline reveal" style="transition-delay:0.05s;">A Free Virtual Soma+IQ&trade; The Journey Experience with friends</p>
       <ul class="hero-meta reveal" style="transition-delay:0.1s;">
-        <li>Monday, September 28, 2026</li>
-        <li>9:00 PM Turkish Time (2:00 PM ET)</li>
+        <li data-event="cbwm" data-tpl="{date-en}"></li>
+        <li data-event="cbwm" data-tpl="{time-tr-en} Turkish Time ({time-et} ET)"></li>
         <li class="muted">Online &nbsp;&bull;&nbsp; Free &nbsp;&bull;&nbsp; All Levels Welcome</li>
       </ul>
       <p class="hero-script reveal" style="transition-delay:0.15s;">Breathe. Allow. Release. Repattern. Integrate.</p>
@@ -785,10 +780,10 @@
     <div class="wrap">
       <p class="section-label reveal">Joining from T&uuml;rkiye?</p>
       <h2 class="reveal">Joining from T&uuml;rkiye?</h2>
-      <p class="reveal" style="transition-delay:0.1s;">I know <strong>9:00 PM</strong> is a little late for those of you joining from T&uuml;rkiye.</p>
+      <p class="reveal" style="transition-delay:0.1s;">I know <strong data-event="cbwm" data-tpl="{time-tr-en}"></strong> is a little late for those of you joining from T&uuml;rkiye.</p>
       <p class="reveal" style="transition-delay:0.13s;">There is actually a reason I&rsquo;m comfortable with that timing.</p>
       <p class="reveal" style="transition-delay:0.16s;">I also know that for some of you with kids, getting an uninterrupted 90 minutes earlier in the evening is almost impossible.</p>
-      <p class="reveal" style="transition-delay:0.19s;">By 9:00, hopefully the kids are settled, the day is winding down, and you can finally give yourself a little uninterrupted time.</p>
+      <p class="reveal" style="transition-delay:0.19s;">By <span data-event="cbwm" data-tpl="{clock-tr-en}"></span>, hopefully the kids are settled, the day is winding down, and you can finally give yourself a little uninterrupted time.</p>
       <p class="reveal" style="transition-delay:0.22s;">And the timing may actually work nicely with the journey itself.</p>
       <p class="reveal" style="transition-delay:0.25s;">After the active breathing and release portion, we&rsquo;ll slow things down, allow the body to settle, and leave some space to share and integrate.</p>
       <p class="reveal" style="transition-delay:0.28s;">So when we&rsquo;re finished, you won&rsquo;t need to rush back into your day.</p>
@@ -810,13 +805,13 @@
         <div class="gathering reveal" style="transition-delay:0.1s;">
           <div class="gathering-primary">
             <div class="gathering-date">
-              <span class="gathering-day">Monday</span>
-              <span class="gathering-full">September 28, 2026</span>
+              <span class="gathering-day" data-event="cbwm" data-tpl="{weekday-en}"></span>
+              <span class="gathering-full" data-event="cbwm" data-tpl="{monthday-en}"></span>
             </div>
             <div class="gathering-sep" aria-hidden="true"></div>
             <div class="gathering-time">
-              <span class="gathering-day">9:00 PM T&uuml;rkiye</span>
-              <span class="gathering-full">2:00 PM ET</span>
+              <span class="gathering-day" data-event="cbwm" data-tpl="{time-tr-en} Türkiye"></span>
+              <span class="gathering-full" data-event="cbwm" data-tpl="{time-et} ET"></span>
             </div>
           </div>
           <ul class="gathering-details">
@@ -835,7 +830,7 @@
           <input type="hidden" name="access_key" value="7d3fb876-9576-4583-8d7d-760c0eb89bab" />
           <input type="hidden" name="subject" value="COME BREATHE WITH ME Registration" />
           <input type="hidden" name="from_name" value="Come Breathe With Me" />
-          <input type="hidden" name="session_info" value="Monday, September 28, 2026, 9:00 PM Turkish Time (2:00 PM ET)" />
+          <input type="hidden" name="session_info" data-event="cbwm" data-tpl="{date-en}, {time-tr-en} Turkish Time ({time-et} ET)" />
 
           <p class="required-legend"><span class="required-mark">*</span> Required fields</p>
 
