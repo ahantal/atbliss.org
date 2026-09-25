@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Session Feedback | @ Bliss Foundation</title>
-  <link rel="canonical" href="https://atbliss.org/feedbackform/" />
+  <title>Geri Bildirim | @ Bliss Foundation</title>
+  <link rel="canonical" href="https://atbliss.org/tr/feedbackform/" />
   <link rel="alternate" hreflang="en" href="https://atbliss.org/feedbackform/" />
   <link rel="alternate" hreflang="tr" href="https://atbliss.org/tr/feedbackform/" />
   <link rel="alternate" hreflang="x-default" href="https://atbliss.org/feedbackform/" />
-  <meta name="description" content="Share your experience of Soma+IQ™ The Journey with @ Bliss." />
+  <meta name="description" content="Soma+IQ™ The Journey deneyimini @ Bliss ile paylaş." />
   <meta name="robots" content="noindex" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
@@ -397,6 +397,12 @@
 
 
 
+    /* Turkish labels are longer: let the five rating tiles shrink and break long words on narrow phones */
+    .fb-scale { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+    .fb-scale small { overflow-wrap: anywhere; hyphens: auto; }
+    .fb-scale--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    @media (max-width: 560px) { .fb-scale--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
     /* ── EN / TR language switch (same page in the other language) ── */
     .lang-switch { display: flex; align-items: center; gap: 0.45rem; margin-left: 1.75rem; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; }
     .lang-switch a, .lang-switch span[aria-current] { padding: 0.45rem 0.15rem; text-decoration: none; }
@@ -411,39 +417,39 @@
 
   <!-- NAV -->
   <nav id="main-nav">
-    <a href="/" class="nav-logo"><img src="../images/AtBlissLogo.png" alt="@ Bliss Foundation" /></a>
+    <a href="/tr/" class="nav-logo"><img src="/images/AtBlissLogo.png" alt="@ Bliss Foundation" /></a>
     <ul class="nav-links">
-      <li><a href="/#founder">About</a></li>
-      <li><a href="/#methodology">Our Methodology</a></li>
-      <li><a href="/#consciousness">Consciousness Levels</a></li>
-      <li><a href="/path">The @ Bliss Path</a></li>
-      <li><a href="/#manifesto">Manifesto</a></li>
+      <li><a href="/tr/#founder">Hakkımızda</a></li>
+      <li><a href="/tr/#methodology">Metodolojimiz</a></li>
+      <li><a href="/tr/#consciousness">Farkındalık Seviyeleri</a></li>
+      <li><a href="/tr/path/">@ Bliss Yolu</a></li>
+      <li><a href="/tr/#manifesto">Manifesto</a></li>
     </ul>
-    <div class="lang-switch" role="navigation" aria-label="Language"><span aria-current="true" lang="en">EN</span><span class="lang-sep" aria-hidden="true">/</span><a href="/tr/feedbackform/" lang="tr" hreflang="tr" aria-label="Türkçe">TR</a></div>
-    <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+    <div class="lang-switch" role="navigation" aria-label="Dil"><a href="/feedbackform/" lang="en" hreflang="en" aria-label="English">EN</a><span class="lang-sep" aria-hidden="true">/</span><span aria-current="true" lang="tr">TR</span></div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menüyü aç">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
   <!-- MOBILE NAV -->
-  <div class="nav-mobile" id="mobile-nav" role="dialog" aria-label="Navigation">
-    <a href="/#founder"       onclick="closeNav()">About</a>
-    <a href="/#methodology"   onclick="closeNav()">Our Methodology</a>
-    <a href="/#consciousness" onclick="closeNav()">Consciousness Levels</a>
-    <a href="/path"           onclick="closeNav()">The @ Bliss Path</a>
-    <a href="/#manifesto"     onclick="closeNav()">Manifesto</a>
+  <div class="nav-mobile" id="mobile-nav" role="dialog" aria-label="Menü">
+    <a href="/tr/#founder"       onclick="closeNav()">Hakkımızda</a>
+    <a href="/tr/#methodology"   onclick="closeNav()">Metodolojimiz</a>
+    <a href="/tr/#consciousness" onclick="closeNav()">Farkındalık Seviyeleri</a>
+    <a href="/tr/path/"          onclick="closeNav()">@ Bliss Yolu</a>
+    <a href="/tr/#manifesto"     onclick="closeNav()">Manifesto</a>
   </div>
 
   <!-- HERO -->
   <section class="fb-hero">
     <div class="section-inner">
       <p class="section-label">Soma+IQ&trade; The Journey</p>
-      <h1>How was your experience?</h1>
+      <h1>Deneyimin nasıldı?</h1>
       <div class="fb-intro">
-        <p>Thank you for joining us for Soma+IQ&trade; The Journey.</p>
-        <p>We would love to hear about your experience.</p>
-        <p>Your feedback helps us understand what supported you during the session, what we can improve, and how we can continue creating meaningful experiences for everyone who joins us.</p>
-        <p class="fb-intro-soft">There are no right or wrong answers.<br />Please simply share your experience as openly as you feel comfortable.</p>
+        <p>Soma+IQ&trade; The Journey'a katıldığın için teşekkür ederiz.</p>
+        <p>Deneyimini dinlemek isteriz.</p>
+        <p>Geri bildirimin, seans sırasında sana nelerin destek olduğunu, neleri geliştirebileceğimizi ve katılan herkes için daha anlamlı deneyimler yaratmayı nasıl sürdürebileceğimizi anlamamıza yardımcı olur.</p>
+        <p class="fb-intro-soft">Doğru veya yanlış cevap yok.<br />Lütfen deneyimini kendini rahat hissettiğin ölçüde açıkça paylaş.</p>
       </div>
     </div>
   </section>
@@ -453,191 +459,191 @@
     <div class="fb-wrap">
 
       <form id="fb-form" novalidate>
-        <p class="fb-required-note"><span class="req">*</span> Required fields</p>
+        <p class="fb-required-note"><span class="req">*</span> Zorunlu alanlar</p>
         <input type="checkbox" name="botcheck" class="fb-honeypot" tabindex="-1" autocomplete="off" />
 
-        <p class="fb-part-label">Before we begin</p>
+        <p class="fb-part-label">Başlamadan Önce</p>
         <!-- Testimonial permission, asked first so participants can answer the rest freely; any answer, including No, submits normally. Nothing is published automatically. -->
         <fieldset class="fb-q fb-permission fb-framed" data-required="radio" data-field="permission">
-          <legend><span class="fb-num">1.</span>May we share your feedback? <span class="req">*</span></legend>
-          <p class="fb-perm-copy">Sometimes participant reflections can help others understand what a Soma+IQ&trade; experience can be like.</p>
-          <p class="fb-perm-copy">If there is something you share below that we would like to use as a testimonial, may we have your permission to share it?</p>
+          <legend><span class="fb-num">1.</span>Geri bildirimini paylaşabilir miyiz? <span class="req">*</span></legend>
+          <p class="fb-perm-copy">Bazen katılımcıların paylaşımları, başkalarının bir Soma+IQ&trade; deneyiminin nasıl olabileceğini anlamasına yardımcı olabilir.</p>
+          <p class="fb-perm-copy">Aşağıda paylaştığın bir ifadeyi referans olarak kullanmak istersek, bunu paylaşmamıza izin verir misin?</p>
       <div class="fb-choices fb-choices--stack">
-        <label class="fb-choice"><input type="radio" name="permission" value="Yes, you may use my feedback with my first name." /><span>Yes, you may use my feedback with my first name.</span></label>
-        <label class="fb-choice"><input type="radio" name="permission" value="Yes, but please keep my feedback anonymous." /><span>Yes, but please keep my feedback anonymous.</span></label>
-        <label class="fb-choice"><input type="radio" name="permission" value="No, please keep my feedback private." /><span>No, please keep my feedback private.</span></label>
+        <label class="fb-choice"><input type="radio" name="permission" value="Evet, geri bildirimimi adımla birlikte kullanabilirsiniz." /><span>Evet, geri bildirimimi adımla birlikte kullanabilirsiniz.</span></label>
+        <label class="fb-choice"><input type="radio" name="permission" value="Evet, ancak geri bildirimimi anonim tutun." /><span>Evet, ancak geri bildirimimi anonim tutun.</span></label>
+        <label class="fb-choice"><input type="radio" name="permission" value="Hayır, geri bildirimimi özel tutun." /><span>Hayır, geri bildirimimi özel tutun.</span></label>
       </div>
-          <p class="fb-help" style="margin:1rem 0 0;">Your name and email are never shared publicly.</p>
-          <p class="fb-error">Please choose one option. Any answer is fine, including No.</p>
+          <p class="fb-help" style="margin:1rem 0 0;">Adın ve e-posta adresin hiçbir zaman kamuya açık biçimde paylaşılmaz.</p>
+          <p class="fb-error">Lütfen bir seçenek seç. &ldquo;Hayır&rdquo; dâhil bütün cevaplar kabul edilir.</p>
         </fieldset>
 
-        <p class="fb-part-label">About you</p>
+        <p class="fb-part-label">Hakkında</p>
 
         <div class="fb-q" data-required="text" data-field="name">
-          <label class="fb-label" for="fb-name"><span class="fb-num">2.</span>Your Name <span class="req">*</span></label>
-          <p class="fb-help">Please share your name.</p>
+          <label class="fb-label" for="fb-name"><span class="fb-num">2.</span>Adın <span class="req">*</span></label>
+          <p class="fb-help">Lütfen adını paylaş.</p>
           <input class="fb-input" type="text" id="fb-name" autocomplete="name" />
-          <p class="fb-error">Please share your name.</p>
+          <p class="fb-error">Lütfen adını paylaş.</p>
         </div>
 
         <div class="fb-q" data-required="email" data-field="email">
-          <label class="fb-label" for="fb-email"><span class="fb-num">3.</span>Your Email <span class="req">*</span></label>
-          <p class="fb-help">Please enter the email address you used to register for the session.</p>
+          <label class="fb-label" for="fb-email"><span class="fb-num">3.</span>E-posta Adresin <span class="req">*</span></label>
+          <p class="fb-help">Lütfen seansa kaydolurken kullandığın e-posta adresini gir.</p>
           <input class="fb-input" type="email" id="fb-email" autocomplete="email" inputmode="email" />
-          <p class="fb-error">Please enter a valid email address, for example name@example.com.</p>
+          <p class="fb-error">Lütfen geçerli bir e-posta adresi gir, örneğin ad@ornek.com.</p>
         </div>
 
         <div class="fb-q" data-required="text" data-field="date">
-          <label class="fb-label" for="fb-date"><span class="fb-num">4.</span>Session Date <span class="req">*</span></label>
-          <p class="fb-help">When did you attend the session?</p>
+          <label class="fb-label" for="fb-date"><span class="fb-num">4.</span>Seans Tarihi <span class="req">*</span></label>
+          <p class="fb-help">Seansa ne zaman katıldın?</p>
           <input class="fb-input" type="date" id="fb-date" />
-          <p class="fb-error">Please choose the date you attended.</p>
+          <p class="fb-error">Lütfen seansa katıldığın tarihi seç.</p>
         </div>
 
-        <p class="fb-part-label">Your session</p>
+        <p class="fb-part-label">Seansın</p>
 
         <fieldset class="fb-q" data-required="radio" data-field="setting">
-          <legend><span class="fb-num">5.</span>How did you join the session? <span class="req">*</span></legend>
+          <legend><span class="fb-num">5.</span>Seansa nasıl katıldın? <span class="req">*</span></legend>
       <div class="fb-choices">
-        <label class="fb-choice"><input type="radio" name="setting" value="Online" /><span>Online</span></label>
-        <label class="fb-choice"><input type="radio" name="setting" value="In person" /><span>In person</span></label>
+        <label class="fb-choice"><input type="radio" name="setting" value="Çevrim içi" /><span>Çevrim içi</span></label>
+        <label class="fb-choice"><input type="radio" name="setting" value="Yüz yüze" /><span>Yüz yüze</span></label>
       </div>
-          <p class="fb-error">Please choose how you joined.</p>
+          <p class="fb-error">Lütfen seansa nasıl katıldığını seç.</p>
         </fieldset>
 
         <fieldset class="fb-q" data-required="radio" data-field="type">
-          <legend><span class="fb-num">6.</span>Which type of session did you attend? <span class="req">*</span></legend>
+          <legend><span class="fb-num">6.</span>Hangi tür seansa katıldın? <span class="req">*</span></legend>
           <!-- To add a session type later, copy one <label class="fb-choice"> line; keep "Other" last. -->
       <div class="fb-choices">
         <label class="fb-choice"><input type="radio" name="type" value="Soma+IQ&trade; The Journey" /><span>Soma+IQ&trade; The Journey</span></label>
-        <label class="fb-choice"><input type="radio" name="type" value="Other" /><span>Other</span></label>
+        <label class="fb-choice"><input type="radio" name="type" value="Diğer" /><span>Diğer</span></label>
       </div>
           <div class="fb-other" id="fb-other-wrap" hidden>
-            <label class="fb-follow-label" for="fb-other">Please tell us which session you attended. <span class="req">*</span></label>
+            <label class="fb-follow-label" for="fb-other">Lütfen katıldığın seansı belirt. <span class="req">*</span></label>
             <input class="fb-input" type="text" id="fb-other" />
           </div>
-          <p class="fb-error" id="fb-type-error">Please choose the type of session.</p>
+          <p class="fb-error" id="fb-type-error">Lütfen seans türünü seç.</p>
         </fieldset>
 
-        <p class="fb-part-label">Your experience</p>
+        <p class="fb-part-label">Deneyimin</p>
 
         <fieldset class="fb-q" data-required="radio" data-field="intro">
-          <legend><span class="fb-num">7.</span>How clear and confident did the facilitator&rsquo;s introduction and guidance feel? <span class="req">*</span></legend>
+          <legend><span class="fb-num">7.</span>Kolaylaştırıcının giriş açıklaması ve yönlendirmesi sana ne kadar açık ve güven verici geldi? <span class="req">*</span></legend>
       <div class="fb-choices fb-scale" id="fb-intro-scale">
-        <label class="fb-choice"><input type="radio" name="intro" value="1 = Needs Improvement" /><span><b>1</b><small>Needs Improvement</small></span></label>
-        <label class="fb-choice"><input type="radio" name="intro" value="2 = Could Be Better" /><span><b>2</b><small>Could Be Better</small></span></label>
-        <label class="fb-choice"><input type="radio" name="intro" value="3 = Good" /><span><b>3</b><small>Good</small></span></label>
-        <label class="fb-choice"><input type="radio" name="intro" value="4 = Very Good" /><span><b>4</b><small>Very Good</small></span></label>
-        <label class="fb-choice"><input type="radio" name="intro" value="5 = Excellent" /><span><b>5</b><small>Excellent</small></span></label>
+        <label class="fb-choice"><input type="radio" name="intro" value="1 = Geliştirilmesi Gerekiyor" /><span><b>1</b><small>Geliştirilmesi Gerekiyor</small></span></label>
+        <label class="fb-choice"><input type="radio" name="intro" value="2 = Daha İyi Olabilirdi" /><span><b>2</b><small>Daha İyi Olabilirdi</small></span></label>
+        <label class="fb-choice"><input type="radio" name="intro" value="3 = İyi" /><span><b>3</b><small>İyi</small></span></label>
+        <label class="fb-choice"><input type="radio" name="intro" value="4 = Çok İyi" /><span><b>4</b><small>Çok İyi</small></span></label>
+        <label class="fb-choice"><input type="radio" name="intro" value="5 = Mükemmel" /><span><b>5</b><small>Mükemmel</small></span></label>
       </div>
-          <p class="fb-error">Please choose a rating from 1 to 5.</p>
+          <p class="fb-error">Lütfen 1 ile 5 arasında bir değerlendirme seç.</p>
         </fieldset>
 
         <div class="fb-q" data-required="text" data-field="best">
-          <label class="fb-label" for="fb-best"><span class="fb-num">8.</span>What were the best parts of the experience for you? <span class="req">*</span></label>
-          <p class="fb-help">This could be something you experienced during the breathing, music, movement, emotional expression, moments of stillness, sharing, or anything else that stood out to you.</p>
+          <label class="fb-label" for="fb-best"><span class="fb-num">8.</span>Deneyimin senin için en iyi bölümleri nelerdi? <span class="req">*</span></label>
+          <p class="fb-help">Nefes, müzik, hareket, duygusal ifade, sessizlik anları, paylaşım veya sende iz bırakan başka bir şey olabilir.</p>
           <textarea class="fb-textarea" id="fb-best" rows="7"></textarea>
-          <p class="fb-error">Please share a few words about the best parts for you.</p>
+          <p class="fb-error">Lütfen senin için en iyi bölümler hakkında birkaç kelime paylaş.</p>
         </div>
 
         <div class="fb-q" data-required="text" data-field="improve">
-          <label class="fb-label" for="fb-improve"><span class="fb-num">9.</span>Is there anything we could have done differently to make your experience better? <span class="req">*</span></label>
-          <p class="fb-help">This could relate to the guidance, pacing, music, explanation, environment, facilitation, or anything else you would like us to know.</p>
+          <label class="fb-label" for="fb-improve"><span class="fb-num">9.</span>Deneyimini daha iyi hâle getirmek için farklı yapabileceğimiz bir şey var mıydı? <span class="req">*</span></label>
+          <p class="fb-help">Yönlendirme, tempo, müzik, açıklama, ortam, kolaylaştırma veya bizimle paylaşmak istediğin başka bir konuyla ilgili olabilir. Cevabın yalnızca &ldquo;Yok&rdquo; da olabilir.</p>
           <textarea class="fb-textarea" id="fb-improve" rows="7"></textarea>
-          <p class="fb-error">Please share your thoughts, even if the answer is simply &ldquo;Nothing.&rdquo;</p>
+          <p class="fb-error">Lütfen düşünceni paylaş; cevabın yalnızca &ldquo;Yok&rdquo; da olabilir.</p>
         </div>
 
         <fieldset class="fb-q" data-required="radio" data-field="voice">
-          <legend><span class="fb-num">10.</span>How was the balance between the facilitator&rsquo;s voice and the music? <span class="req">*</span></legend>
+          <legend><span class="fb-num">10.</span>Kolaylaştırıcının sesi ile müzik arasındaki denge nasıldı? <span class="req">*</span></legend>
       <div class="fb-choices fb-scale">
-        <label class="fb-choice"><input type="radio" name="voice" value="1 = Needs Improvement" /><span><b>1</b><small>Needs Improvement</small></span></label>
-        <label class="fb-choice"><input type="radio" name="voice" value="2 = Could Be Better" /><span><b>2</b><small>Could Be Better</small></span></label>
-        <label class="fb-choice"><input type="radio" name="voice" value="3 = Good" /><span><b>3</b><small>Good</small></span></label>
-        <label class="fb-choice"><input type="radio" name="voice" value="4 = Very Good" /><span><b>4</b><small>Very Good</small></span></label>
-        <label class="fb-choice"><input type="radio" name="voice" value="5 = Excellent" /><span><b>5</b><small>Excellent</small></span></label>
+        <label class="fb-choice"><input type="radio" name="voice" value="1 = Geliştirilmesi Gerekiyor" /><span><b>1</b><small>Geliştirilmesi Gerekiyor</small></span></label>
+        <label class="fb-choice"><input type="radio" name="voice" value="2 = Daha İyi Olabilirdi" /><span><b>2</b><small>Daha İyi Olabilirdi</small></span></label>
+        <label class="fb-choice"><input type="radio" name="voice" value="3 = İyi" /><span><b>3</b><small>İyi</small></span></label>
+        <label class="fb-choice"><input type="radio" name="voice" value="4 = Çok İyi" /><span><b>4</b><small>Çok İyi</small></span></label>
+        <label class="fb-choice"><input type="radio" name="voice" value="5 = Mükemmel" /><span><b>5</b><small>Mükemmel</small></span></label>
       </div>
-          <p class="fb-error">Please choose one option.</p>
+          <p class="fb-error">Lütfen bir seçenek seç.</p>
           <div class="fb-follow">
-            <label class="fb-follow-label" for="fb-voice-c">Anything you would like us to know about the voice or music levels? <span class="fb-optional">(optional)</span></label>
+            <label class="fb-follow-label" for="fb-voice-c">Ses veya müzik seviyeleri hakkında bizimle paylaşmak istediğin bir şey var mı? <span class="fb-optional">(isteğe bağlı)</span></label>
             <textarea class="fb-textarea fb-textarea--small" id="fb-voice-c" rows="4"></textarea>
           </div>
         </fieldset>
 
         <fieldset class="fb-q" data-required="radio" data-field="support">
-          <legend><span class="fb-num">11.</span>How supported did you feel by the facilitator throughout the experience? <span class="req">*</span></legend>
+          <legend><span class="fb-num">11.</span>Deneyim boyunca kolaylaştırıcı tarafından ne kadar desteklendiğini hissettin? <span class="req">*</span></legend>
       <div class="fb-choices fb-scale">
-        <label class="fb-choice"><input type="radio" name="support" value="1 = Not Supported" /><span><b>1</b><small>Not Supported</small></span></label>
-        <label class="fb-choice"><input type="radio" name="support" value="2 = Not Very Supported" /><span><b>2</b><small>Not Very Supported</small></span></label>
-        <label class="fb-choice"><input type="radio" name="support" value="3 = Somewhat Supported" /><span><b>3</b><small>Somewhat Supported</small></span></label>
-        <label class="fb-choice"><input type="radio" name="support" value="4 = Supported" /><span><b>4</b><small>Supported</small></span></label>
-        <label class="fb-choice"><input type="radio" name="support" value="5 = Very Supported" /><span><b>5</b><small>Very Supported</small></span></label>
+        <label class="fb-choice"><input type="radio" name="support" value="1 = Desteklenmedim" /><span><b>1</b><small>Desteklenmedim</small></span></label>
+        <label class="fb-choice"><input type="radio" name="support" value="2 = Pek Desteklenmedim" /><span><b>2</b><small>Pek Desteklenmedim</small></span></label>
+        <label class="fb-choice"><input type="radio" name="support" value="3 = Kısmen Desteklendim" /><span><b>3</b><small>Kısmen Desteklendim</small></span></label>
+        <label class="fb-choice"><input type="radio" name="support" value="4 = Desteklendim" /><span><b>4</b><small>Desteklendim</small></span></label>
+        <label class="fb-choice"><input type="radio" name="support" value="5 = Çok Desteklendim" /><span><b>5</b><small>Çok Desteklendim</small></span></label>
       </div>
-          <p class="fb-error">Please choose one option.</p>
+          <p class="fb-error">Lütfen bir seçenek seç.</p>
           <div class="fb-follow">
-            <label class="fb-follow-label" for="fb-support-c">If you would like, tell us more about what made you feel supported or what could have helped you feel more supported. <span class="fb-optional">(optional)</span></label>
+            <label class="fb-follow-label" for="fb-support-c">Sana neyin destek olduğunu veya daha fazla desteklenmene neyin yardımcı olabileceğini paylaşmak ister misin? <span class="fb-optional">(isteğe bağlı)</span></label>
             <textarea class="fb-textarea fb-textarea--small" id="fb-support-c" rows="4"></textarea>
           </div>
         </fieldset>
 
         <fieldset class="fb-q" data-required="radio" data-field="sharing">
-          <legend><span class="fb-num">12.</span>During the sharing and integration at the end, did you feel heard and seen? <span class="req">*</span></legend>
+          <legend><span class="fb-num">12.</span>Sondaki paylaşım ve bütünleştirme sırasında duyulduğunu ve görüldüğünü hissettin mi? <span class="req">*</span></legend>
       <div class="fb-choices fb-scale">
-        <label class="fb-choice"><input type="radio" name="sharing" value="1 = No" /><span><b>1</b><small>No</small></span></label>
-        <label class="fb-choice"><input type="radio" name="sharing" value="2 = Not really" /><span><b>2</b><small>Not really</small></span></label>
-        <label class="fb-choice"><input type="radio" name="sharing" value="3 = Somewhat" /><span><b>3</b><small>Somewhat</small></span></label>
-        <label class="fb-choice"><input type="radio" name="sharing" value="4 = Yes" /><span><b>4</b><small>Yes</small></span></label>
-        <label class="fb-choice"><input type="radio" name="sharing" value="5 = Yes, very much" /><span><b>5</b><small>Yes, very much</small></span></label>
+        <label class="fb-choice"><input type="radio" name="sharing" value="1 = Hayır" /><span><b>1</b><small>Hayır</small></span></label>
+        <label class="fb-choice"><input type="radio" name="sharing" value="2 = Pek değil" /><span><b>2</b><small>Pek değil</small></span></label>
+        <label class="fb-choice"><input type="radio" name="sharing" value="3 = Kısmen" /><span><b>3</b><small>Kısmen</small></span></label>
+        <label class="fb-choice"><input type="radio" name="sharing" value="4 = Evet" /><span><b>4</b><small>Evet</small></span></label>
+        <label class="fb-choice"><input type="radio" name="sharing" value="5 = Evet, kesinlikle" /><span><b>5</b><small>Evet, kesinlikle</small></span></label>
       </div>
       <div class="fb-choices fb-choices--extra">
-        <label class="fb-choice"><input type="radio" name="sharing" value="I did not participate in the sharing" /><span>I did not participate in the sharing</span></label>
+        <label class="fb-choice"><input type="radio" name="sharing" value="Paylaşıma katılmadım" /><span>Paylaşıma katılmadım</span></label>
       </div>
-          <p class="fb-error">Please choose one option.</p>
+          <p class="fb-error">Lütfen bir seçenek seç.</p>
           <div class="fb-follow">
-            <label class="fb-follow-label" for="fb-sharing-c">Is there anything you would like to share about the integration or sharing experience? <span class="fb-optional">(optional)</span></label>
+            <label class="fb-follow-label" for="fb-sharing-c">Bütünleştirme veya paylaşım deneyimi hakkında eklemek istediğin bir şey var mı? <span class="fb-optional">(isteğe bağlı)</span></label>
             <textarea class="fb-textarea fb-textarea--small" id="fb-sharing-c" rows="4"></textarea>
           </div>
         </fieldset>
 
         <div class="fb-q" data-field="more">
-          <label class="fb-label" for="fb-more"><span class="fb-num">13.</span>Is there anything else you would like us to know? <span class="fb-optional">(optional)</span></label>
-          <p class="fb-help">Anything about your experience that we haven&rsquo;t asked about is welcome here.</p>
+          <label class="fb-label" for="fb-more"><span class="fb-num">13.</span>Bilmemizi istediğin başka bir şey var mı? <span class="fb-optional">(isteğe bağlı)</span></label>
+          <p class="fb-help">Deneyiminle ilgili sormadığımız her şeyi paylaşabilirsin.</p>
           <textarea class="fb-textarea" id="fb-more" rows="6"></textarea>
         </div>
 
         <fieldset class="fb-q fb-overall" data-required="radio" data-field="overall">
-          <legend><span class="fb-num">14.</span>Overall, how would you rate your Soma+IQ&trade; The Journey experience? <span class="req">*</span></legend>
+          <legend><span class="fb-num">14.</span>Soma+IQ&trade; The Journey deneyimini genel olarak nasıl değerlendirirsin? <span class="req">*</span></legend>
       <div class="fb-choices fb-scale fb-scale--big" id="fb-overall-scale">
-        <label class="fb-choice"><input type="radio" name="overall" value="1 = Needs Improvement" /><span><b>1</b><small>Needs Improvement</small></span></label>
-        <label class="fb-choice"><input type="radio" name="overall" value="2 = Could Be Better" /><span><b>2</b><small>Could Be Better</small></span></label>
-        <label class="fb-choice"><input type="radio" name="overall" value="3 = Good" /><span><b>3</b><small>Good</small></span></label>
-        <label class="fb-choice"><input type="radio" name="overall" value="4 = Very Good" /><span><b>4</b><small>Very Good</small></span></label>
-        <label class="fb-choice"><input type="radio" name="overall" value="5 = Excellent" /><span><b>5</b><small>Excellent</small></span></label>
+        <label class="fb-choice"><input type="radio" name="overall" value="1 = Geliştirilmesi Gerekiyor" /><span><b>1</b><small>Geliştirilmesi Gerekiyor</small></span></label>
+        <label class="fb-choice"><input type="radio" name="overall" value="2 = Daha İyi Olabilirdi" /><span><b>2</b><small>Daha İyi Olabilirdi</small></span></label>
+        <label class="fb-choice"><input type="radio" name="overall" value="3 = İyi" /><span><b>3</b><small>İyi</small></span></label>
+        <label class="fb-choice"><input type="radio" name="overall" value="4 = Çok İyi" /><span><b>4</b><small>Çok İyi</small></span></label>
+        <label class="fb-choice"><input type="radio" name="overall" value="5 = Mükemmel" /><span><b>5</b><small>Mükemmel</small></span></label>
       </div>
-          <p class="fb-error">Please choose an overall rating from 1 to 5.</p>
+          <p class="fb-error">Lütfen 1 ile 5 arasında genel bir değerlendirme seç.</p>
         </fieldset>
 
         <fieldset class="fb-q" data-required="radio" data-field="change">
-          <legend><span class="fb-num">15.</span>After the session, did you notice any change in how you felt? <span class="req">*</span></legend>
+          <legend><span class="fb-num">15.</span>Seanstan sonra nasıl hissettiğinde bir değişiklik fark ettin mi? <span class="req">*</span></legend>
       <div class="fb-choices fb-scale fb-scale--words fb-scale--4">
-        <label class="fb-choice"><input type="radio" name="change" value="No noticeable change" /><span><small>No noticeable change</small></span></label>
-        <label class="fb-choice"><input type="radio" name="change" value="A subtle change" /><span><small>A subtle change</small></span></label>
-        <label class="fb-choice"><input type="radio" name="change" value="A noticeable change" /><span><small>A noticeable change</small></span></label>
-        <label class="fb-choice"><input type="radio" name="change" value="A significant change" /><span><small>A significant change</small></span></label>
+        <label class="fb-choice"><input type="radio" name="change" value="Fark edilir bir değişiklik olmadı" /><span><small>Fark edilir bir değişiklik olmadı</small></span></label>
+        <label class="fb-choice"><input type="radio" name="change" value="Hafif bir değişiklik" /><span><small>Hafif bir değişiklik</small></span></label>
+        <label class="fb-choice"><input type="radio" name="change" value="Fark edilir bir değişiklik" /><span><small>Fark edilir bir değişiklik</small></span></label>
+        <label class="fb-choice"><input type="radio" name="change" value="Belirgin bir değişiklik" /><span><small>Belirgin bir değişiklik</small></span></label>
       </div>
       <div class="fb-choices fb-choices--extra">
-        <label class="fb-choice"><input type="radio" name="change" value="I&rsquo;m not sure" /><span>I&rsquo;m not sure</span></label>
+        <label class="fb-choice"><input type="radio" name="change" value="Emin değilim" /><span>Emin değilim</span></label>
       </div>
-          <p class="fb-error">Please choose one option.</p>
+          <p class="fb-error">Lütfen bir seçenek seç.</p>
           <div class="fb-follow">
-            <label class="fb-follow-label" for="fb-change-c">If you would like, tell us what you noticed. <span class="fb-optional">(optional)</span></label>
-            <p class="fb-help" style="margin:0.35rem 0 0;">This might include changes in your body, emotions, energy, sense of clarity, calmness, awareness, or anything else you experienced.</p>
+            <label class="fb-follow-label" for="fb-change-c">Fark ettiğin şeyi paylaşmak ister misin? <span class="fb-optional">(isteğe bağlı)</span></label>
+            <p class="fb-help" style="margin:0.35rem 0 0;">Bedeninde, duygularında, enerjinde, berraklık, sakinlik veya farkındalık hissinde ya da deneyimlediğin başka bir şeyde ortaya çıkan değişiklikleri içerebilir.</p>
             <textarea class="fb-textarea fb-textarea--small" id="fb-change-c" rows="4"></textarea>
           </div>
         </fieldset>
 
 
         <div class="fb-submit-row">
-          <button type="submit" class="btn btn-primary fb-submit" id="fb-submit">Submit My Feedback</button>
+          <button type="submit" class="btn btn-primary fb-submit" id="fb-submit">Geri Bildirimimi Gönder</button>
           <p class="fb-status" id="fb-status" hidden></p>
         </div>
       </form>
@@ -645,11 +651,11 @@
       <!-- SUCCESS (replaces the form; no redirect) -->
       <div class="fb-success" id="fb-success" hidden tabindex="-1">
         <p class="section-label">Soma+IQ&trade; The Journey</p>
-        <h2>Thank you.</h2>
-        <p>Thank you for sharing your experience with us.</p>
-        <p>Your feedback helps us learn, improve, and continue creating experiences with greater care and awareness.</p>
-        <p class="fb-success-soft">We appreciate you being part of this journey.</p>
-        <a href="/" class="fb-home-link">Return to @ Bliss &rarr;</a>
+        <h2>Teşekkür ederiz.</h2>
+        <p>Deneyimini bizimle paylaştığın için teşekkür ederiz.</p>
+        <p>Geri bildirimin öğrenmemize, gelişmemize ve deneyimleri daha fazla özen ve farkındalıkla sunmayı sürdürmemize yardımcı oluyor.</p>
+        <p class="fb-success-soft">Bu yolculuğun bir parçası olduğun için teşekkür ederiz.</p>
+        <a href="/tr/" class="fb-home-link">@ Bliss'e Dön &rarr;</a>
       </div>
 
     </div>
@@ -659,10 +665,10 @@
   <footer>
     <div class="footer-top">
       <div>
-        <span class="footer-logo"><img src="../images/AtBlissLogo.png" alt="@ Bliss Foundation" /></span>
-        <p class="footer-tagline">You are not at the mercy of how you resonate. You participate in shaping it, through every breath, every thought, every practice, every choice.</p>
+        <span class="footer-logo"><img src="/images/AtBlissLogo.png" alt="@ Bliss Foundation" /></span>
+        <p class="footer-tagline">Nasıl titreştiğinin esiri değilsin. Her nefesin, her düşüncen, her pratiğin ve her seçiminle titreşimini şekillendirme vasfına sahipsin.</p>
       </div>
-      <a href="/" class="footer-back">&larr; Back to atbliss.org</a>
+      <a href="/tr/" class="footer-back">&larr; atbliss.org'a dön</a>
     </div>
     <div class="footer-bottom">
       <p class="footer-copy">&copy; 2026 @ Bliss Foundation &nbsp;&middot;&nbsp; atbliss.org</p>
@@ -694,20 +700,20 @@
     hamburger.addEventListener('click', () => {
       const open = mobileNav.classList.toggle('open');
       hamburger.classList.toggle('open', open);
-      hamburger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      hamburger.setAttribute('aria-label', open ? 'Menüyü kapat' : 'Menüyü aç');
       document.body.style.overflow = open ? 'hidden' : '';
     });
 
     function closeNav() {
       mobileNav.classList.remove('open');
       hamburger.classList.remove('open');
-      hamburger.setAttribute('aria-label', 'Open menu');
+      hamburger.setAttribute('aria-label', 'Menüyü aç');
       document.body.style.overflow = '';
     }
 
     // ── Feedback form (Web3Forms) ──
     (function () {
-      const ACCESS_KEY = '67f64ed3-8c55-4dc0-b6d5-55506e0ea9cb'; // feedback form only
+      const ACCESS_KEY = 'ced18860-b6b5-435e-8fe5-659c88a890cb'; // Turkish feedback form only
       const form = document.getElementById('fb-form');
       const btn = document.getElementById('fb-submit');
       const statusEl = document.getElementById('fb-status');
@@ -720,19 +726,19 @@
       // "Other" session type reveals its own text field
       const otherWrap = document.getElementById('fb-other-wrap');
       form.querySelectorAll('input[name="type"]').forEach(r => r.addEventListener('change', () => {
-        otherWrap.hidden = radio('type') !== 'Other';
+        otherWrap.hidden = radio('type') !== 'Diğer';
         if (!otherWrap.hidden) document.getElementById('fb-other').focus();
       }));
 
       function sessionType() {
         const t = radio('type');
-        return t === 'Other' ? 'Other: ' + val('fb-other') : t.replace('&trade;', '™');
+        return t === 'Diğer' ? 'Diğer: ' + val('fb-other') : t.replace('&trade;', '™');
       }
 
       function prettyDate(iso) {
         if (!iso) return '';
         const [y, m, d] = iso.split('-').map(Number);
-        return new Date(Date.UTC(y, m - 1, d)).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+        return new Date(Date.UTC(y, m - 1, d)).toLocaleDateString('tr-TR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
       }
 
       function checkQuestion(q) {
@@ -746,11 +752,11 @@
           ok = emailRe.test(q.querySelector('input').value.trim());
         } else if (kind === 'radio') {
           ok = !!q.querySelector('input[type="radio"]:checked');
-          if (ok && q.dataset.field === 'type' && radio('type') === 'Other') {
+          if (ok && q.dataset.field === 'type' && radio('type') === 'Diğer') {
             ok = val('fb-other') !== '';
-            document.getElementById('fb-type-error').textContent = ok ? '' : 'Please tell us which session you attended.';
+            document.getElementById('fb-type-error').textContent = ok ? '' : 'Lütfen katıldığın seansı belirt.';
           } else if (q.dataset.field === 'type') {
-            document.getElementById('fb-type-error').textContent = 'Please choose the type of session.';
+            document.getElementById('fb-type-error').textContent = 'Lütfen seans türünü seç.';
           }
         }
         q.classList.toggle('has-error', !ok);
@@ -776,7 +782,7 @@
           firstBad.scrollIntoView({ behavior: 'smooth', block: 'center' });
           const focusable = firstBad.querySelector('input:not([type="radio"]), textarea, input[type="radio"]');
           if (focusable) setTimeout(() => focusable.focus({ preventScroll: true }), 400);
-          statusEl.textContent = 'A few answers are still needed. They are marked above.';
+          statusEl.textContent = 'Birkaç cevap eksik. Yukarıda işaretlendiler.';
           statusEl.hidden = false;
           return; // nothing is cleared: all answers stay in place
         }
@@ -789,8 +795,8 @@
         // Field order and labels as they should appear in the email
         const payload = {
           access_key: ACCESS_KEY,
-          subject: 'Session Feedback: ' + name + ', ' + date + ', Overall ' + overall.replace(' = ', '/5 '),
-          from_name: '@ Bliss Session Feedback',
+          subject: 'Session Feedback (TR): ' + name + ', ' + date + ', Overall ' + overall.replace(' = ', '/5 '),
+          from_name: '@ Bliss Session Feedback (TR)',
           replyto: val('fb-email'),
           'Participant Name': name,
           'Participant Email': val('fb-email'),
@@ -816,7 +822,7 @@
         submitting = true;
         btn.disabled = true;
         const label = btn.textContent;
-        btn.textContent = 'Sending…';
+        btn.textContent = 'Gönderiliyor…';
         try {
           const res = await fetch('https://api.web3forms.com/submit', {
             method: 'POST',
@@ -833,7 +839,7 @@
           }
           throw new Error('not ok');
         } catch (err) {
-          statusEl.textContent = 'Something went wrong while sending your feedback. Your answers are still here; please try again.';
+          statusEl.textContent = 'Geri bildirimin gönderilirken bir sorun oluştu. Cevapların duruyor; lütfen yeniden dene.';
           statusEl.hidden = false;
           btn.disabled = false;
           btn.textContent = label;

@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Thank You | @ Bliss Foundation</title>
+  <link rel="canonical" href="https://atbliss.org/thankyou/" />
+  <link rel="alternate" hreflang="en" href="https://atbliss.org/thankyou/" />
+  <link rel="alternate" hreflang="tr" href="https://atbliss.org/tr/thankyou/" />
+  <link rel="alternate" hreflang="x-default" href="https://atbliss.org/thankyou/" />
   <meta name="description" content="You're in: your @ Bliss | Somatic Breathwork Session registration is confirmed. Complete the required release form, and optionally begin preparing for the next step of The @ Bliss Path." />
   <meta name="robots" content="noindex" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -462,6 +466,17 @@
       .footer-top { flex-direction: column; }
       footer { padding: 3rem 1.5rem 2rem; }
     }
+
+
+
+    /* ── EN / TR language switch (same page in the other language) ── */
+    .lang-switch { display: flex; align-items: center; gap: 0.45rem; margin-left: 1.75rem; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; }
+    .lang-switch a, .lang-switch span[aria-current] { padding: 0.45rem 0.15rem; text-decoration: none; }
+    .lang-switch a { color: var(--muted); transition: color 0.2s; }
+    .lang-switch a:hover, .lang-switch a:focus-visible { color: var(--gold-light); }
+    .lang-switch span[aria-current] { color: var(--gold-light); }
+    .lang-switch .lang-sep { color: var(--border-hover); }
+    @media (max-width: 768px) { .lang-switch { margin-left: auto; margin-right: 1.25rem; } }
   </style>
   <!-- Session date and time live only in /assets/events.js -->
   <script src="/assets/events.js"></script>
@@ -479,6 +494,7 @@
       <li><a href="/path">The @ Bliss Path</a></li>
       <li><a href="/#manifesto">Manifesto</a></li>
     </ul>
+    <div class="lang-switch" role="navigation" aria-label="Language"><span aria-current="true" lang="en">EN</span><span class="lang-sep" aria-hidden="true">/</span><a href="/tr/thankyou/" lang="tr" hreflang="tr" aria-label="Türkçe">TR</a></div>
     <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>

@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>@ Bliss Foundation</title>
+  <link rel="canonical" href="https://atbliss.org/" />
+  <link rel="alternate" hreflang="en" href="https://atbliss.org/" />
+  <link rel="alternate" hreflang="tr" href="https://atbliss.org/tr/" />
+  <link rel="alternate" hreflang="x-default" href="https://atbliss.org/" />
   <meta name="description" content="@ Bliss Foundation. Safe, playful, and inclusive spaces where people of all ages remember their pure inner essence, heal in community, and explore the shared wisdom of diverse traditions." />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
@@ -803,6 +807,17 @@
     @media (max-width: 480px) {
       .footer-top { grid-template-columns: 1fr; }
     }
+
+
+
+    /* ── EN / TR language switch (same page in the other language) ── */
+    .lang-switch { display: flex; align-items: center; gap: 0.45rem; margin-left: 1.75rem; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; }
+    .lang-switch a, .lang-switch span[aria-current] { padding: 0.45rem 0.15rem; text-decoration: none; }
+    .lang-switch a { color: var(--muted); transition: color 0.2s; }
+    .lang-switch a:hover, .lang-switch a:focus-visible { color: var(--gold-light); }
+    .lang-switch span[aria-current] { color: var(--gold-light); }
+    .lang-switch .lang-sep { color: var(--border-hover); }
+    @media (max-width: 768px) { .lang-switch { margin-left: auto; margin-right: 1.25rem; } }
   </style>
 </head>
 <body>
@@ -817,6 +832,7 @@
       <li><a href="/path">The @ Bliss Path</a></li>
       <li><a href="#manifesto">Manifesto</a></li>
     </ul>
+    <div class="lang-switch" role="navigation" aria-label="Language"><span aria-current="true" lang="en">EN</span><span class="lang-sep" aria-hidden="true">/</span><a href="/tr/" lang="tr" hreflang="tr" aria-label="Türkçe">TR</a></div>
     <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>

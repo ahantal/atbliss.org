@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prepare for Your Session | @ Bliss Foundation</title>
-  <link rel="canonical" href="https://atbliss.org/prepare/" />
-  <link rel="alternate" hreflang="en" href="https://atbliss.org/prepare/" />
-  <link rel="alternate" hreflang="tr" href="https://atbliss.org/tr/prepare/" />
-  <link rel="alternate" hreflang="x-default" href="https://atbliss.org/prepare/" />
-  <meta name="description" content="A few simple things to know before we breathe together: what you'll need, how to set up your space and camera, and what to expect." />
+  <title>Kaydın tamamlandı | @ Bliss Foundation</title>
+  <link rel="canonical" href="https://atbliss.org/tr/thankyou/" />
+  <link rel="alternate" hreflang="en" href="https://atbliss.org/thankyou/" />
+  <link rel="alternate" hreflang="tr" href="https://atbliss.org/tr/thankyou/" />
+  <link rel="alternate" hreflang="x-default" href="https://atbliss.org/thankyou/" />
+  <meta name="description" content="Kaydın tamamlandı: seansını takvimine ekle, nasıl hazırlanacağını gör ve feragatnameni tamamla." />
   <meta name="robots" content="noindex" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
@@ -142,31 +142,94 @@
     .btn-primary { background: var(--gold); color: var(--deep); border: 1px solid var(--gold); }
     .btn-primary:hover { background: var(--gold-light); border-color: var(--gold-light); }
 
-    /* ── SECTION BASE ── */
-    section { padding: 5rem 2rem; }
+    .btn-outline { border: 1px solid var(--gold); color: var(--gold-light); background: transparent; }
+    .btn-outline:hover { background: var(--gold); color: var(--deep); }
 
-    .section-inner { max-width: 960px; margin: 0 auto; text-align: center; }
+    .come-top {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(1.4rem, 2.6vw, 1.75rem);
+      color: var(--gold-light);
+      margin-top: 1.25rem;
+    }
+
+    /* ── ADD TO CALENDAR ── */
+    .calendar { padding-top: 0.5rem; padding-bottom: 3.5rem; }
+    .cal-when { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; color: var(--gold-light); margin-bottom: 1.5rem; }
+    .cal-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; }
+    .cal-row .btn { padding: 0.75rem 1.6rem; }
+    .cal-hint { font-size: 1.02rem; line-height: 1.7; color: var(--text); opacity: 0.85; margin-top: 1.5rem; }
+    .cal-hint strong { color: var(--gold-light); font-weight: 500; }
+    .prep-emailed {
+      max-width: 560px;
+      margin: 2.5rem auto 0;
+      padding-top: 1.75rem;
+      border-top: 1px solid var(--border);
+      font-size: 1rem;
+      line-height: 1.7;
+      color: rgba(232, 228, 220, 0.85);
+    }
+
+    /* ── SECTION BASE ── */
+    section { padding: 3.5rem 2rem; }
+
+    .section-inner { max-width: 720px; margin: 0 auto; text-align: center; }
 
     .section-label {
       font-size: 0.68rem;
       letter-spacing: 0.28em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
     }
 
     /* ── HERO ── */
-    .prep-hero { background: var(--deep); padding-top: 9.5rem; padding-bottom: 4rem; }
-    .prep-hero .section-label { margin-bottom: 1rem; }
+    .sm-hero { background: var(--deep); padding-top: 8.5rem; padding-bottom: 2rem; }
 
-    .prep-hero h1 {
+    .sm-hero h1 {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 300;
       font-size: clamp(2.2rem, 5vw, 3.2rem);
       line-height: 1.15;
-      max-width: 720px;
+      margin-bottom: 1.25rem;
+    }
+
+    .sm-hero-sub {
+      font-size: 1.02rem;
+      line-height: 1.85;
+      color: rgba(232, 228, 220, 0.72);
+      max-width: 560px;
       margin: 0 auto;
     }
+
+    /* ── MESSAGE CARDS ── */
+    .messages { padding-top: 1rem; padding-bottom: 3.5rem; }
+
+    .message-card {
+      border: 1px solid rgba(201, 168, 76, 0.35);
+      padding: 2.5rem 2.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .message-card:last-child { margin-bottom: 0; }
+
+    .message-card h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(1.4rem, 2.8vw, 1.85rem);
+      margin-bottom: 0.85rem;
+    }
+
+    .message-card p {
+      font-size: 0.96rem;
+      line-height: 1.8;
+      color: rgba(232, 228, 220, 0.72);
+      max-width: 480px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .message-card p:last-of-type { margin-bottom: 1.75rem; }
 
     /* ── PREPARATION CONTENT (same block is used on /thankyou) ── */
     .prep-script {
@@ -310,20 +373,27 @@
 
     .prep-link:hover { color: var(--gold); }
 
-    /* ── READY / QUESTIONS (this page only) ── */
-    .prep-ready { background: var(--deep); }
+    .prep-block .section-inner { max-width: 960px; }
+    .prep-block .section-label { margin-bottom: 2rem; }
+    .prep-block { padding: 4.5rem 2rem; }
 
-    .prep-ready h2 {
+    .prep-intro h2 {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 300;
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      margin-bottom: 1rem;
+      font-size: clamp(1.8rem, 3.6vw, 2.5rem);
+      line-height: 1.2;
+      max-width: 640px;
+      margin: 0 auto;
     }
 
-    .prep-ready p { font-size: 0.96rem; line-height: 1.85; color: rgba(232, 228, 220, 0.72); margin-bottom: 1.75rem; }
+    .prep-intro .prep-script { margin-bottom: 3rem; }
+    .prep-intro .section-label { margin-bottom: 1rem; }
 
-    .prep-questions { background: var(--deep2); }
-    .prep-questions a { color: var(--gold-light); text-decoration: none; border-bottom: 1px solid rgba(232, 207, 136, 0.3); }
+    @media (max-width: 768px) {
+      .prep-block { padding: 3rem 1.5rem; }
+      .prep-cards, .prep-stages { grid-template-columns: 1fr; }
+      .prep-notice { padding: 2rem 1.5rem; }
+    }
 
     /* ── FOOTER ── */
     footer {
@@ -389,11 +459,9 @@
       .nav-links { display: none; }
       .nav-hamburger { display: flex; }
 
-      section { padding: 3.5rem 1.5rem; }
-      .prep-hero { padding-top: 7.5rem; padding-bottom: 3rem; }
-
-      .prep-cards, .prep-stages { grid-template-columns: 1fr; }
-      .prep-notice { padding: 2rem 1.5rem; }
+      section { padding: 2.5rem 1.5rem; }
+      .sm-hero { padding-top: 7rem; }
+      .message-card { padding: 2rem 1.5rem; }
 
       .footer-top { flex-direction: column; }
       footer { padding: 3rem 1.5rem 2rem; }
@@ -410,152 +478,177 @@
     .lang-switch .lang-sep { color: var(--border-hover); }
     @media (max-width: 768px) { .lang-switch { margin-left: auto; margin-right: 1.25rem; } }
   </style>
+  <!-- Session date and time live only in /assets/events.js -->
+  <script src="/assets/events.js"></script>
+  <script src="/assets/event-utils.js"></script>
 </head>
 <body>
 
   <!-- NAV -->
   <nav id="main-nav">
-    <a href="/" class="nav-logo"><img src="../images/AtBlissLogo.png" alt="@ Bliss Foundation" /></a>
+    <a href="/tr/" class="nav-logo"><img src="/images/AtBlissLogo.png" alt="@ Bliss Foundation" /></a>
     <ul class="nav-links">
-      <li><a href="/#founder">About</a></li>
-      <li><a href="/#methodology">Our Methodology</a></li>
-      <li><a href="/#consciousness">Consciousness Levels</a></li>
-      <li><a href="/path">The @ Bliss Path</a></li>
-      <li><a href="/#manifesto">Manifesto</a></li>
+      <li><a href="/tr/#founder">Hakkımızda</a></li>
+      <li><a href="/tr/#methodology">Metodolojimiz</a></li>
+      <li><a href="/tr/#consciousness">Farkındalık Seviyeleri</a></li>
+      <li><a href="/tr/path/">@ Bliss Yolu</a></li>
+      <li><a href="/tr/#manifesto">Manifesto</a></li>
     </ul>
-    <div class="lang-switch" role="navigation" aria-label="Language"><span aria-current="true" lang="en">EN</span><span class="lang-sep" aria-hidden="true">/</span><a href="/tr/prepare/" lang="tr" hreflang="tr" aria-label="Türkçe">TR</a></div>
-    <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+    <div class="lang-switch" role="navigation" aria-label="Dil"><a href="/thankyou/" lang="en" hreflang="en" aria-label="English">EN</a><span class="lang-sep" aria-hidden="true">/</span><span aria-current="true" lang="tr">TR</span></div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menüyü aç">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
   <!-- MOBILE NAV -->
-  <div class="nav-mobile" id="mobile-nav" role="dialog" aria-label="Navigation">
-    <a href="/#founder"       onclick="closeNav()">About</a>
-    <a href="/#methodology"   onclick="closeNav()">Our Methodology</a>
-    <a href="/#consciousness" onclick="closeNav()">Consciousness Levels</a>
-    <a href="/path"           onclick="closeNav()">The @ Bliss Path</a>
-    <a href="/#manifesto"     onclick="closeNav()">Manifesto</a>
+  <div class="nav-mobile" id="mobile-nav" role="dialog" aria-label="Menü">
+    <a href="/tr/#founder"       onclick="closeNav()">Hakkımızda</a>
+    <a href="/tr/#methodology"   onclick="closeNav()">Metodolojimiz</a>
+    <a href="/tr/#consciousness" onclick="closeNav()">Farkındalık Seviyeleri</a>
+    <a href="/tr/path/"          onclick="closeNav()">@ Bliss Yolu</a>
+    <a href="/tr/#manifesto"     onclick="closeNav()">Manifesto</a>
   </div>
 
-  <!-- HERO -->
-  <section class="prep-hero">
+  <!-- CONFIRMATION -->
+  <section class="sm-hero">
     <div class="section-inner">
-      <p class="section-label reveal">Prepare for Your Session</p>
-      <h1 class="reveal">A few simple things to know before we breathe together.</h1>
-      <p class="prep-script reveal" style="transition-delay:0.1s;">Find a comfortable space. Bring your headphones. And come as you are.</p>
+      <p class="section-label reveal">Teşekkürler</p>
+      <h1 class="reveal">Kaydın tamamlandı.</h1>
+      <div class="sm-hero-sub reveal" style="transition-delay:0.1s;">
+        <p><strong>@ Bliss | Somatik Nefes Çalışması Seansı</strong> için kaydolduğun için teşekkür ederiz. Seninle birlikte nefes almayı sabırsızlıkla bekliyoruz.</p>
+      </div>
+      <p class="come-top reveal" style="transition-delay:0.15s;">Olduğun gibi gel.</p>
     </div>
   </section>
 
-  <!-- WHAT YOU'LL NEED -->
-  <section class="prep-need">
+  <!-- ADD TO CALENDAR (date and time come from /assets/events.js, 'breathwork-tr') -->
+  <section class="calendar">
     <div class="section-inner">
-      <p class="section-label reveal">What you&rsquo;ll need</p>
+      <p class="section-label reveal">Takvimine Ekle</p>
+      <p class="cal-when reveal" data-event="breathwork-tr" data-tpl="{date-tr} · {time-tr} TSİ"></p>
+      <div class="cal-row reveal">
+        <a href="#" id="cal-google" class="btn btn-outline" target="_blank" rel="noopener">Google Takvim</a>
+        <a href="#" id="cal-apple" class="btn btn-outline">Apple Takvim</a>
+        <a href="#" id="cal-outlook" class="btn btn-outline" target="_blank" rel="noopener">Outlook</a>
+      </div>
+      <p class="cal-hint reveal"><strong>Zoom bağlantısı</strong> onay e-postanda yer alıyor.</p>
+    </div>
+  </section>
+
+  <!-- PREPARATION (same content as /tr/prepare/, no date) -->
+  <!-- WHAT YOU'LL NEED -->
+  <section class="prep-block prep-need">
+    <div class="section-inner">
+      <div class="prep-intro">
+        <p class="section-label reveal">Seansına Hazırlan</p>
+        <h2 class="reveal">Birlikte nefes almadan önce bilmen gereken birkaç basit şey.</h2>
+        <p class="prep-script reveal" style="transition-delay:0.1s;">Rahat bir alan bul. Kulaklığını hazırla. Ve olduğun gibi gel.</p>
+      </div>
+      <p class="section-label reveal">İhtiyacın Olanlar</p>
       <ul class="prep-cards">
         <li class="prep-card reveal">
-          <h3>Comfortable Clothing</h3>
-          <p>Loose, comfortable clothing you can breathe and move in. Nothing restrictive.</p>
+          <h3>Rahat Kıyafetler</h3>
+          <p>İçinde rahatça nefes alıp hareket edebileceğin bol ve rahat kıyafetler giy. Kısıtlayıcı bir şey seçme.</p>
         </li>
         <li class="prep-card reveal" style="transition-delay:0.05s;">
-          <h3>A Comfortable Place to Lie Down</h3>
-          <p>A mat, yoga mat, rug, or another comfortable surface where you can lie on your back and stretch out freely.</p>
+          <h3>Uzanabileceğin Rahat Bir Yer</h3>
+          <p>Sırtüstü uzanıp rahatça esneyebileceğin bir mat, yoga matı, halı veya başka bir rahat yüzey hazırla.</p>
         </li>
         <li class="prep-card reveal" style="transition-delay:0.1s;">
-          <h3>Headphones or Earbuds</h3>
-          <p>Music is a big part of the experience. Headphones or earbuds help you stay inward and undistracted, and hear the guidance clearly.</p>
+          <h3>Kulaklık</h3>
+          <p>Müzik deneyimin önemli bir parçasıdır. Kulaklık kullanmak, dikkatinin içeride kalmasına, dış uyaranlardan uzaklaşmana ve yönlendirmeyi net biçimde duymana yardımcı olur.</p>
         </li>
         <li class="prep-card reveal" style="transition-delay:0.15s;">
-          <h3>A Quiet, Private Space</h3>
-          <p>Somewhere you can breathe comfortably without being interrupted for the full 90 minutes.</p>
+          <h3>Sessiz ve Özel Bir Alan</h3>
+          <p>90 dakika boyunca rahatsız edilmeden rahatça nefes alabileceğin bir yer seç.</p>
         </li>
         <li class="prep-card prep-card--wide reveal" style="transition-delay:0.2s;">
-          <h3>Zoom &amp; Your Camera</h3>
-          <p>Make sure you have access to Zoom and that your camera and audio are working before we begin. During the breathwork you&rsquo;ll be lying on your back, so position your camera so your upper body, including your chest and belly, can be seen comfortably. This allows the facilitator to observe your breathing and somatic response and guide the session live.</p>
-          <p class="prep-note">Please turn off Zoom background blur, virtual backgrounds, and other camera background effects before we begin.</p>
+          <h3>Zoom ve Kameran</h3>
+          <p>Başlamadan önce Zoom'a erişebildiğinden, kameranın ve sesinin çalıştığından emin ol. Nefes çalışması sırasında sırtüstü uzanacağın için kameranı göğsün ve karnın dâhil üst bedenin rahatça görülebilecek biçimde konumlandır. Bu, kolaylaştırıcının nefesini ve somatik tepkilerini gözlemleyerek seansı canlı biçimde yönlendirebilmesini sağlar.</p>
+          <p class="prep-note">Başlamadan önce Zoom arka plan bulanıklığını, sanal arka planları ve diğer kamera efektlerini kapat.</p>
         </li>
       </ul>
     </div>
   </section>
 
   <!-- GIVE YOUR BODY SOME SPACE -->
-  <section class="prep-space">
+  <section class="prep-block prep-space">
     <div class="section-inner">
-      <p class="section-label reveal">Give your body some space</p>
+      <p class="section-label reveal">Bedenine Biraz Alan Aç</p>
       <div class="prep-notice reveal">
-        <p class="prep-notice-big">Try not to eat a large meal 1 hour before the session.</p>
-        <p>A little space in the body helps the breath move freely and keeps you comfortable throughout the practice.</p>
+        <p class="prep-notice-big">Seanstan bir saat önce ağır bir öğün yememeye çalış.</p>
+        <p>Bedende biraz alan olması nefesin daha özgür hareket etmesine ve pratik boyunca rahat kalmana yardımcı olur.</p>
       </div>
     </div>
   </section>
 
   <!-- WHAT TO EXPECT -->
-  <section class="prep-expect">
+  <section class="prep-block prep-expect">
     <div class="section-inner">
-      <p class="section-label reveal">What to expect</p>
+      <p class="section-label reveal">Ne Beklemelisin?</p>
       <ol class="prep-stages">
         <li class="prep-stage reveal">
-          <h3>Arrive</h3>
-          <p class="prep-stage-sub">Approximately 15 minutes</p>
-          <p>We&rsquo;ll arrive together, get comfortable, go over what to expect, prepare the body and breath, and settle into the experience before we begin.</p>
+          <h3>Varış</h3>
+          <p class="prep-stage-sub">Yaklaşık 15 Dakika</p>
+          <p>Birlikte buluşacak, rahatlayacak, ne bekleyebileceğimizi konuşacak, bedeni ve nefesi hazırlayacak ve başlamadan önce deneyime yerleşeceğiz.</p>
         </li>
         <li class="prep-stage reveal" style="transition-delay:0.08s;">
-          <h3>Breathe</h3>
-          <p class="prep-stage-sub">Approximately 60 minutes</p>
-          <p>You&rsquo;ll lie comfortably on your back while being guided through Soma+IQ&trade; The Journey, using conscious connected breathing together with music, movement, sound, and emotional expression. The breath gradually builds activation, and rather than trying to calm or control what arises, we create space to allow it. Nothing needs to be forced. Your experience is your own.</p>
+          <h3>Nefes</h3>
+          <p class="prep-stage-sub">Yaklaşık 60 Dakika</p>
+          <p>Sırtüstü rahatça uzanırken bilinçli bağlantılı nefesin yanı sıra müzik, hareket, ses ve duygusal ifadenin kullanıldığı Soma+IQ&trade; The Journey boyunca yönlendirileceksin. Nefes aktivasyonu kademeli olarak artırır. Ortaya çıkanları sakinleştirmeye veya kontrol etmeye çalışmak yerine onlara alan açarız. Hiçbir şeyi zorlamak gerekmez. Deneyimin sana aittir.</p>
         </li>
         <li class="prep-stage reveal" style="transition-delay:0.16s;">
-          <h3>Share &amp; Integrate</h3>
-          <p class="prep-stage-sub">Approximately 15 minutes</p>
-          <p>We&rsquo;ll slow things down, come back together, and leave space to share. There is no obligation to speak. You can share, ask a question, listen, or simply stay present and let the experience settle. This final part gives us some space before we return to the rest of our day or, for those joining later in the evening, head toward sleep.</p>
+          <h3>Paylaşım ve Bütünleştirme</h3>
+          <p class="prep-stage-sub">Yaklaşık 15 Dakika</p>
+          <p>Yavaşlayacak, yeniden bir araya gelecek ve paylaşıma alan açacağız. Konuşmak zorunda değilsin. Paylaşabilir, soru sorabilir, dinleyebilir veya yalnızca anda kalıp deneyimin yerleşmesine izin verebilirsin.</p>
         </li>
       </ol>
     </div>
   </section>
 
   <!-- A FEW MINUTES BEFORE -->
-  <section class="prep-before">
+  <section class="prep-block prep-before">
     <div class="section-inner">
-      <p class="section-label reveal">A few minutes before</p>
+      <p class="section-label reveal">Başlamadan Birkaç Dakika Önce</p>
       <ul class="prep-checklist reveal">
-        <li>Find your quiet space</li>
-        <li>Have your mat or comfortable surface ready</li>
-        <li>Put your headphones or earbuds nearby</li>
-        <li>Turn off phone notifications and anything else that might interrupt you</li>
-        <li>Open Zoom and check your camera and audio</li>
-        <li>Turn off background blur and virtual backgrounds</li>
-        <li>Position your device so your upper body can be seen while lying down</li>
-        <li>Join a few minutes early and give yourself time to arrive without rushing</li>
+        <li>Sessiz alanına geç.</li>
+        <li>Matını veya rahat yüzeyini hazırla.</li>
+        <li>Kulaklığını yakınına koy.</li>
+        <li>Telefon bildirimlerini ve seni bölebilecek diğer şeyleri kapat.</li>
+        <li>Zoom'u açıp kameranı ve sesini kontrol et.</li>
+        <li>Arka plan bulanıklığını ve sanal arka planları kapat.</li>
+        <li>Cihazını, uzanırken üst bedenin görülebilecek biçimde konumlandır.</li>
+        <li>Birkaç dakika erken katıl ve acele etmeden varmak için kendine zaman tanı.</li>
       </ul>
-      <p class="prep-script reveal">Come as you are.</p>
+      <p class="prep-script reveal">Olduğun gibi gel.</p>
     </div>
   </section>
 
   <!-- LISTEN TO YOUR BODY -->
-  <section class="prep-listen">
+  <section class="prep-block prep-listen">
     <div class="section-inner">
-      <p class="section-label reveal">Listen to your body</p>
+      <p class="section-label reveal">Bedenini Dinle</p>
       <div class="prep-prose reveal">
-        <p><strong>Breathwork can create strong physical and emotional experiences.</strong> If you are pregnant or have a medical condition that could be affected by intensive breathwork, please consult a qualified healthcare professional before participating.</p>
+        <p><strong>Nefes çalışması güçlü fiziksel ve duygusal deneyimler yaratabilir.</strong> Hamileysen veya yoğun nefes çalışmasından etkilenebilecek bir sağlık durumun varsa katılmadan önce nitelikli bir sağlık uzmanına danış.</p>
       </div>
-      <a class="prep-link reveal" href="/breathwork#register">Review the Contraindications &amp; Release Terms &rarr;</a>
+      <a class="prep-link reveal" href="/tr/breathwork/#register">Kontrendikasyonları ve Feragatname Koşullarını İncele &rarr;</a>
+      <p class="prep-emailed reveal">Bu hazırlık rehberi onay e-postanda da yer alıyor.</p>
     </div>
   </section>
 
-  <!-- READY TO BREATHE? -->
-  <section class="prep-ready">
+  <!-- TWO MORE MESSAGES -->
+  <section class="messages">
     <div class="section-inner">
-      <h2 class="reveal">Ready to breathe?</h2>
-      <p class="reveal">Register for the next free session and we&rsquo;ll send you the Zoom link.</p>
-      <a href="/breathwork#register" class="btn btn-primary reveal">Register for a Session &rarr;</a>
-    </div>
-  </section>
+      <div class="message-card reveal">
+        <h2>Feragatnameni Tamamla</h2>
+        <p>Seansa katılmadan önce lütfen aşağıdaki feragatnameyi tamamla.</p>
+        <a href="https://www.jotform.com/form/262107365856058" target="_blank" rel="noopener" class="btn btn-primary">Feragatnameyi Tamamla &rarr;</a>
+      </div>
 
-  <!-- QUESTIONS -->
-  <section class="prep-questions">
-    <div class="section-inner">
-      <p class="section-label reveal">Questions before we begin?</p>
-      <div class="prep-prose reveal">
-        <p>If you&rsquo;re unsure about anything or have questions about preparing for the session, just reach out at <a href="mailto:atblissfoundation@gmail.com">atblissfoundation@gmail.com</a>.</p>
+      <div class="message-card reveal" style="transition-delay:0.08s;">
+        <h2>Biraz daha derine inmek ister misin?</h2>
+        <p>@ Bliss Yolu'nun bir sonraki adımına hazırlanmak istersen:</p>
+        <a href="/tr/path/selfmapping/" class="btn btn-primary">Bir Sonraki Adıma Hazırlan &rarr;</a>
       </div>
     </div>
   </section>
@@ -564,10 +657,10 @@
   <footer>
     <div class="footer-top">
       <div>
-        <span class="footer-logo"><img src="../images/AtBlissLogo.png" alt="@ Bliss Foundation" /></span>
-        <p class="footer-tagline">You are not at the mercy of how you resonate. You participate in shaping it, through every breath, every thought, every practice, every choice.</p>
+        <span class="footer-logo"><img src="/images/AtBlissLogo.png" alt="@ Bliss Foundation" /></span>
+        <p class="footer-tagline">Nasıl titreştiğinin esiri değilsin. Her nefesin, her düşüncen, her pratiğin ve her seçiminle titreşimini şekillendirme vasfına sahipsin.</p>
       </div>
-      <a href="/" class="footer-back">&larr; Back to atbliss.org</a>
+      <a href="/tr/" class="footer-back">&larr; atbliss.org'a dön</a>
     </div>
     <div class="footer-bottom">
       <p class="footer-copy">&copy; 2026 @ Bliss Foundation &nbsp;&middot;&nbsp; atbliss.org</p>
@@ -575,6 +668,27 @@
   </footer>
 
   <script>
+    // ── Add to Calendar: date and time come from /assets/events.js ('breathwork-tr').
+    // The Zoom link is deliberately left out: this page is not gated, so anyone with the URL can open it.
+    (function () {
+      const ev = AtBlissEvent.get('breathwork-tr');
+      const cal = {
+        title: ev.title,
+        details: '@ Bliss aracılığıyla sunulan ücretsiz, çevrim içi Soma+IQ™ The Journey nefes çalışması seansı.\n\n'
+          + 'Zoom bağlantısı onay e-postanda yer alıyor.\n\n'
+          + 'Seansına hazırlan:\nhttps://www.atbliss.org/tr/prepare/\n\n'
+          + 'Sorular: atblissfoundation@gmail.com',
+        location: 'Çevrim içi (Zoom)',
+        filename: 'atbliss-somatik-nefes-calismasi.ics'
+      };
+      document.getElementById('cal-google').href = AtBlissEvent.googleUrl(ev, cal);
+      document.getElementById('cal-outlook').href = AtBlissEvent.outlookUrl(ev, cal);
+      document.getElementById('cal-apple').addEventListener('click', function (e) {
+        e.preventDefault();
+        AtBlissEvent.downloadIcs(ev, cal);
+      });
+    })();
+
     // Scroll reveal
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => {
@@ -599,14 +713,14 @@
     hamburger.addEventListener('click', () => {
       const open = mobileNav.classList.toggle('open');
       hamburger.classList.toggle('open', open);
-      hamburger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      hamburger.setAttribute('aria-label', open ? 'Menüyü kapat' : 'Menüyü aç');
       document.body.style.overflow = open ? 'hidden' : '';
     });
 
     function closeNav() {
       mobileNav.classList.remove('open');
       hamburger.classList.remove('open');
-      hamburger.setAttribute('aria-label', 'Open menu');
+      hamburger.setAttribute('aria-label', 'Menüyü aç');
       document.body.style.overflow = '';
     }
   </script>

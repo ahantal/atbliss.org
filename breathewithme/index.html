@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Come Breathe With Me</title>
+  <link rel="canonical" href="https://atbliss.org/breathewithme/" />
+  <link rel="alternate" hreflang="en" href="https://atbliss.org/breathewithme/" />
+  <link rel="alternate" hreflang="tr" href="https://atbliss.org/tr/breathewithme/" />
+  <link rel="alternate" hreflang="x-default" href="https://atbliss.org/breathewithme/" />
   <meta name="description" content="A personal invitation from Ali Cumhur Hantal: a free virtual Soma+IQ™ The Journey experience with friends." />
   <meta name="robots" content="noindex" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Sacramento&display=swap" rel="stylesheet" />
@@ -487,12 +491,23 @@
       .form-row { grid-template-columns: 1fr; gap: 1rem; }
       .form-container { padding: 2rem 1.25rem; }
     }
+
+
+
+    /* ── EN / TR language switch (small, top right; this microsite has no nav) ── */
+    .lang-switch { position: absolute; top: 1rem; right: 1.25rem; z-index: 20; display: flex; align-items: center; gap: 0.4rem; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; }
+    .lang-switch a, .lang-switch span[aria-current] { padding: 0.4rem 0.15rem; text-decoration: none; }
+    .lang-switch a { color: var(--muted); }
+    .lang-switch a:hover, .lang-switch a:focus-visible { color: var(--gold); }
+    .lang-switch span[aria-current] { color: var(--gold); }
+    .lang-switch .lang-sep { color: var(--border-hover); }
   </style>
   <!-- Session date, time, and Zoom live only in /assets/events.js -->
   <script src="/assets/events.js"></script>
   <script src="/assets/event-utils.js"></script>
 </head>
 <body>
+  <div class="lang-switch" role="navigation" aria-label="Language"><span aria-current="true" lang="en">EN</span><span class="lang-sep" aria-hidden="true">/</span><a href="/tr/breathewithme/" lang="tr" hreflang="tr" aria-label="Türkçe">TR</a></div>
 
   <script>
     // If this browser already registered and the session hasn't happened yet,
