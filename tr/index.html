@@ -822,6 +822,18 @@
       .nav-hamburger { display: flex; }
       .lang-switch { margin-left: auto; margin-right: 1.25rem; }
     }
+    /* ── WHERE DO I BEGIN (2026-09-26) ── */
+    .begin-where { background: var(--deep2); }
+    .begin-where .section-body { max-width: 720px; margin-bottom: 1.5rem; }
+    .begin-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 1.5rem; margin: 2.5rem 0 2.5rem; }
+    .begin-card { border: 1px solid var(--border); padding: 2.25rem 2rem; }
+    .begin-card--primary { border-color: var(--border-hover); background: rgba(201, 168, 76, 0.05); }
+    .begin-card p { font-size: 0.95rem; line-height: 1.85; color: rgba(232, 228, 220, 0.78); margin-bottom: 1.5rem; }
+    .begin-card p strong { color: var(--text); font-weight: 500; }
+    .begin-title { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 1.7rem; color: var(--text); margin-bottom: 1rem; }
+    .begin-card .begin-num { font-size: 0.68rem; letter-spacing: 0.24em; color: var(--gold); margin-bottom: 0.9rem; }
+    .begin-closing { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(1.2rem, 2.2vw, 1.5rem); color: var(--gold-light); }
+    @media (max-width: 768px) { .begin-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -832,8 +844,8 @@
     <ul class="nav-links">
       <li><a href="/tr/kurucu/">Hakkımızda</a></li>
       <li><a href="#methodology">Metodolojimiz</a></li>
-      <li><a href="#consciousness">Farkındalık Seviyeleri</a></li>
       <li><a href="/tr/path/">@ <span lang="en">Bliss</span> Yolu</a></li>
+      <li><a href="/tr/path/selfmapping/">Eşgal Çalışması</a></li>
       <li><a href="#manifesto">Manifesto</a></li>
     </ul>
     <div class="lang-switch" role="navigation" aria-label="Dil"><a href="/" lang="en" hreflang="en" aria-label="English">EN</a><span class="lang-sep" aria-hidden="true">/</span><span aria-current="true" lang="tr">TR</span></div>
@@ -846,8 +858,8 @@
   <div class="nav-mobile" id="mobile-nav" role="dialog" aria-label="Menü">
     <a href="/tr/kurucu/"       onclick="closeNav()">Hakkımızda</a>
     <a href="#methodology"   onclick="closeNav()">Metodolojimiz</a>
-    <a href="#consciousness" onclick="closeNav()">Farkındalık Seviyeleri</a>
     <a href="/tr/path/"      onclick="closeNav()">@ <span lang="en">Bliss</span> Yolu</a>
+    <a href="/tr/path/selfmapping/"      onclick="closeNav()">Eşgal Çalışması</a>
     <a href="#manifesto"     onclick="closeNav()">Manifesto</a>
   </div>
 
@@ -1193,6 +1205,36 @@
 
   <div class="divider"></div>
 
+  <!-- WHERE DO I BEGIN -->
+  <section class="begin-where" id="begin">
+    <div class="section-inner">
+      <p class="section-label reveal">Nereden Başlamalıyım?</p>
+      <h2 class="section-title reveal">Fark ederek başla.</h2>
+      <p class="section-body reveal" style="transition-delay:0.1s;">@ <span lang="en">Bliss</span> Yolu yeni bir inançla ya da yeni bir rutinle başlamaz. Dikkatini içeriye çevirmekle başlar.</p>
+      <div class="begin-grid">
+        <div class="begin-card begin-card--primary reveal" style="transition-delay:0.15s;">
+          <p class="begin-num">01</p>
+          <h3 class="begin-title">Eşgal Çalışması</h3>
+          <p>İçinde tekrar tekrar ortaya çıkan sesleri, kalıpları ve zaman zaman dümene geçen Ben hâllerini fark ederek başla.</p>
+          <p>Onları yargılamadan gözlemlemeyi, erken sinyallerini tanımayı ve tepki ile seçim arasında biraz daha fazla alan açmayı öğren.</p>
+          <a href="/tr/path/selfmapping/" class="btn btn-primary">Eşgal Çalışmasına Başla &rarr;</a>
+        </div>
+        <div class="begin-card reveal" style="transition-delay:0.2s;">
+          <p class="begin-num">02</p>
+          <h3 class="begin-title">Somatik Nefes Çalışması</h3>
+          <p>Somatik Nefes Çalışması, içimizde olup biteni bu kez Soma üzerinden araştırmanın başka bir yolunu sunar.</p>
+          <p>Bilinçli nefes ve bedensel farkındalık yoluyla, bedende neler olduğunu ve ortaya çıkanlara nasıl karşılık verdiğimizi daha yakından fark etmeye başlarız.</p>
+          <a href="/tr/breathwork/" class="method-link">Somatik Nefes Çalışmasını Keşfet &rarr;</a>
+        </div>
+      </div>
+      <p class="section-body reveal" style="transition-delay:0.25s;">Sana iyi gelen bir pratiğin varsa, meditasyon, yoga, hareket veya tefekkür gibi, onu sürdür.</p>
+      <p class="section-body reveal" style="transition-delay:0.28s;">@ <span lang="en">Bliss</span> onun yerine geçmeye çalışmaz. Fark etmek, düzenlemek ve hatırlamak için bir metodoloji sunar.</p>
+      <p class="begin-closing reveal" style="transition-delay:0.3s;">Bu katı bir program değil. Tekrar tekrar dönebileceğin bir Yol.</p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
   <!-- THE AT BLISS PATH -->
   <section class="path-section" id="path">
     <div class="section-inner">
@@ -1224,7 +1266,7 @@
         Bu sözleri söyleyebiliyorsan ve içtenlikle araştırmaya hazırsan, <strong>başlayabiliriz.</strong><br />
         @ <span lang="en">Bliss</span>'e hoş geldin.
       </p>
-      <a href="/tr/breathwork/" class="btn btn-primary reveal" style="transition-delay:0.35s;">Hazırım, Başlayalım →</a>
+      <a href="/tr/path/selfmapping/" class="btn btn-primary reveal" style="transition-delay:0.35s;">Hazırım, Başlayalım →</a>
     </div>
   </section>
 
