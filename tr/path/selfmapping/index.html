@@ -8,7 +8,7 @@
   <link rel="alternate" hreflang="en" href="https://atbliss.org/path/selfmapping/" />
   <link rel="alternate" hreflang="tr" href="https://atbliss.org/tr/path/selfmapping/" />
   <link rel="alternate" hreflang="x-default" href="https://atbliss.org/path/selfmapping/" />
-  <meta name="description" content="Eşgal Çalışması: Eşgal kontrolü ele geçirmeden onu fark etmeyi öğren. Bir @ Bliss içsel gözlem pratiği." />
+  <meta name="description" content="Eşgal Çalışması: içindeki sesin tekrar tekrar ortaya çıkan Ben hâllerini gözlemlemek, onlara isim vermek ve onları daha erken fark etmek için kişisel bir çalışma alanı." />
   <meta name="robots" content="noindex" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
@@ -630,6 +630,72 @@
       .nav-hamburger { display: flex; }
       .lang-switch { margin-left: auto; margin-right: 1.25rem; }
     }
+
+    /* ── EŞGAL PAGE REWORK (brief 2026-09-26) ── */
+    .es-c-thought { --sig: #c9a84c; } .es-c-emotion { --sig: #c98a78; } .es-c-soma { --sig: #86ae9f; }
+    .flow-chip.es-c-thought, .flow-chip.es-c-emotion, .flow-chip.es-c-soma { border-color: var(--sig); color: var(--sig); }
+    .es-cascade { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(1.15rem, 2vw, 1.4rem); line-height: 1.8; color: rgba(232, 228, 220, 0.88); margin: 0.75rem auto 1.75rem; }
+    .es-turn { margin: 2.75rem auto 0; padding: 2.25rem 1.5rem; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .es-turn p { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.4rem, 2.8vw, 1.9rem); color: rgba(232, 228, 220, 0.8); line-height: 1.4; }
+    .es-turn .es-turn-strong { color: var(--gold-light); font-size: clamp(1.8rem, 3.8vw, 2.6rem); margin-top: 0.5rem; }
+    .es-pairs { margin: 1.5rem auto 2rem; display: grid; gap: 1.25rem; max-width: 560px; }
+    .es-pair { border: 1px solid var(--border); padding: 1.25rem 1.5rem; }
+    .es-pair span { display: block; }
+    .es-from { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: rgba(232, 228, 220, 0.5); }
+    .es-word { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin: 0.3rem 0; }
+    .es-to { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--gold-light); }
+    .es-big { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(2.2rem, 5.5vw, 3.6rem); line-height: 1.15; letter-spacing: 0.08em; color: var(--gold-light); margin: 2.5rem auto; }
+    .es-quiet { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.2rem; color: var(--muted); margin-top: 1.5rem; }
+    .es-sig { border-top: 3px solid var(--sig); }
+    .es-sig--thought { --sig: #c9a84c; } .es-sig--emotion { --sig: #c98a78; } .es-sig--soma { --sig: #86ae9f; }
+    .es-sig h3 { color: var(--sig); }
+    .es-soma-list { font-size: 0.85rem; color: var(--muted); font-style: italic; line-height: 1.7; }
+    .es-steps { display: flex; flex-direction: column; align-items: center; gap: 1rem; margin: 2.25rem auto; }
+    .es-step { display: flex; flex-direction: column; align-items: center; }
+    #ws-done .es-cascade { font-size: clamp(1.15rem, 2vw, 1.4rem); color: rgba(232, 228, 220, 0.88); margin: 0.5rem 0 1.5rem; }
+    #ws-done .mod-quote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(1.4rem, 2.8vw, 1.9rem); line-height: 1.5; color: var(--gold-light); max-width: 620px; }
+    .es-step p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.15rem; color: rgba(232, 228, 220, 0.8); margin-top: 0.4rem; }
+    .es-down { color: rgba(201, 168, 76, 0.5); font-size: 1.1rem; }
+    .es-link { color: var(--gold-light); text-decoration: none; border-bottom: 1px solid rgba(232, 207, 136, 0.35); }
+    /* workspace */
+    .ws-rail { position: relative; margin: 2.5rem 0 2rem; }
+    .ws-rail::before { content: ''; position: absolute; left: 21px; top: 10px; bottom: 10px; width: 1px; background: linear-gradient(var(--border), rgba(201, 168, 76, 0.35), var(--border)); }
+    .ws-step { --sig: #c9a84c; position: relative; display: grid; grid-template-columns: 44px 1fr; gap: 1.25rem; margin-bottom: 2.25rem; }
+    .ws-step--thought, .ws-sig--thought { --sig: #c9a84c; }
+    .ws-step--emotion, .ws-sig--emotion { --sig: #c98a78; }
+    .ws-step--soma, .ws-sig--soma { --sig: #86ae9f; }
+    .ws-node { position: relative; z-index: 1; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--sig); background: var(--deep2); color: var(--sig); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 1rem; transition: background 0.3s, color 0.3s; }
+    .ws-step.is-done .ws-node { background: var(--sig); color: var(--deep); }
+    .ws-body { border-left: 3px solid var(--sig); padding: 0.2rem 0 0.2rem 1.25rem; }
+    .ws-title { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 1.55rem; color: var(--text); margin-bottom: 0.4rem; }
+    .ws-prompt { font-size: 0.95rem; line-height: 1.75; color: rgba(232, 228, 220, 0.82); margin-bottom: 0.75rem; }
+    .ws-help, .ws-ex { font-size: 0.85rem; line-height: 1.7; color: var(--muted); margin: 0.5rem 0 0.75rem; }
+    .ws-ex { font-style: italic; }
+    .ws-sep { font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; color: var(--gold-light); margin-bottom: 0.4rem; }
+    .ws-input { width: 100%; background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border); color: var(--text); padding: 0.85rem 1.1rem; font-family: 'DM Sans', sans-serif; font-size: 0.92rem; line-height: 1.7; transition: border-color 0.2s; }
+    .ws-input:focus { outline: none; border-color: var(--sig); }
+    textarea.ws-input { resize: vertical; min-height: 90px; }
+    textarea.ws-input--big { min-height: 150px; }
+    .ws-sigs { display: grid; gap: 1rem; }
+    .ws-sig { border: 1px solid var(--border); border-top: 3px solid var(--sig); padding: 1rem 1.1rem; }
+    .ws-sig-tag { font-size: 0.66rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--sig); margin-bottom: 0.4rem; }
+    .ws-sig .ws-input:focus { border-color: var(--sig); }
+    #ws-anchors .ws-input { margin-bottom: 0.6rem; }
+    .ws-add { background: none; border: 1px dashed var(--border-hover); color: var(--gold-light); padding: 0.55rem 1rem; font-family: 'DM Sans', sans-serif; font-size: 0.82rem; letter-spacing: 0.04em; cursor: pointer; }
+    .ws-add:hover { border-color: var(--gold); }
+    .ws-flow { justify-content: flex-start; margin: 1rem 0; gap: 0.4rem 0.6rem; }
+    .ws-flow .flow-chip { font-size: 0.72rem; padding: 0.4rem 0.75rem; }
+    .ws-privacy { border: 1px solid var(--border-hover); padding: 1.75rem 1.75rem 1.25rem; margin: 1rem 0 2rem; background: rgba(201, 168, 76, 0.04); }
+    .ws-privacy-title { font-size: 0.8rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.9rem; }
+    .ws-privacy p { font-size: 0.92rem; line-height: 1.8; color: rgba(232, 228, 220, 0.82); margin-bottom: 0.6rem; }
+    .ws-privacy .ws-privacy-note { font-size: 0.82rem; color: var(--muted); }
+    @media (max-width: 768px) {
+      .ws-step { grid-template-columns: 36px 1fr; gap: 0.9rem; }
+      .ws-node { width: 36px; height: 36px; font-size: 0.9rem; }
+      .ws-rail::before { left: 17px; }
+      .ws-body { padding-left: 0.9rem; }
+      .ws-flow { flex-direction: column; align-items: flex-start; }
+    }
   </style>
 </head>
 <body>
@@ -659,34 +725,104 @@
     <a href="/tr/#manifesto"     onclick="closeNav()">Manifesto</a>
   </div>
 
-  <!-- HERO -->
+  <!-- HERO: THE VOICE -->
   <section class="sm-hero">
     <div class="section-inner">
       <p class="section-label reveal">@ <span lang="en">Bliss</span> Yolu | Eşgal Çalışması</p>
       <h1 class="reveal">Eşgal Çalışması</h1>
-      <p class="sm-subtitle reveal" style="transition-delay:0.1s;">Eşgal kontrolü ele geçirmeden onu fark etmeyi öğren.</p>
-      <p class="section-body reveal" style="transition-delay:0.13s; margin:0 auto 1.25rem;">Eşgal Çalışması, farklı tefekkür geleneklerinde ve düşünce, farkındalık, koşullanma ve gözlemleyen Öz arasındaki ilişkiyi araştıran düşünürlerin çalışmalarında karşılaştığımız fikirlerden beslenen bir <strong>@ <span lang="en">Bliss</span> içsel gözlem pratiğidir.</strong></p>
-      <p class="section-body reveal" style="transition-delay:0.16s; margin:0 auto 1.25rem;">Farklı gelenekler bu sorulara farklı biçimlerde yaklaşır, fakat tekrar tekrar benzer bir davete dönerler:</p>
-      <p class="highlight-line reveal" style="transition-delay:0.19s;"><strong>İçimizde ortaya çıkanlarla otomatik olarak özdeşleşmeden onları gözlemleyebilir miyiz?</strong></p>
-      <p class="section-body reveal" style="transition-delay:0.22s; margin:0 auto;">Eşgal Çalışması; içimizde ortaya çıkan Eşgalleri, düşünceleri, duyguları, bedensel duyumları ve tepkileri gözlemlemeyi, ardından bunları kontrolü otomatik olarak ele geçirmeden önce fark etmeyi öğrenme sürecidir.</p>
+      <p class="section-body reveal" style="transition-delay:0.1s; margin:0 auto 1.25rem;">İçinde konuşan sesi fark etmeye başladığında, önemli bir şey daha fark edebilirsin.</p>
+      <p class="section-body reveal" style="transition-delay:0.13s; margin:0 auto 1.25rem;"><strong>Bu ses her zaman aynı değildir.</strong></p>
+      <p class="section-body reveal" style="transition-delay:0.16s; margin:0 auto 0.5rem;">Bazen şöyle konuşur:</p>
+      <p class="es-cascade reveal" style="transition-delay:0.19s;">&ldquo;Bunu yapamam.&rdquo;<br />&ldquo;Beni anlamıyorlar.&rdquo;<br />&ldquo;Yine başarısız olacağım.&rdquo;<br />&ldquo;Bana bunu nasıl yapar?&rdquo;<br />&ldquo;Kontrolü kaybetmemeliyim.&rdquo;<br />&ldquo;Haklı olduğumu göstermeliyim.&rdquo;<br />&ldquo;Kimseye güvenemem.&rdquo;<br />&ldquo;Beni beğenmiyorlar.&rdquo;</p>
+      <p class="section-body reveal" style="transition-delay:0.22s; margin:0 auto 1.25rem;">Bu düşünceler gelip geçebilir.</p>
+      <p class="section-body reveal" style="transition-delay:0.25s; margin:0 auto 0.5rem;">Fakat dikkat etmeye başladığında bazı seslerin belirli durumlarda tekrar tekrar ortaya çıktığını fark edebilirsin.</p>
+      <p class="es-cascade reveal" style="transition-delay:0.28s;">Aynı düşünceleri getirirler.<br />Benzer duyguları uyandırırlar.<br />Soma'da benzer değişimlere neden olurlar.<br />Ve çoğu zaman bizi benzer tepkilere doğru götürürler.</p>
       <div class="scroll-cue" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
       </div>
     </div>
   </section>
 
+  <!-- FARK ET -->
+  <section class="bg-deep2">
+    <div class="section-inner narrow center">
+      <p class="section-label reveal">Fark Et</p>
+      <h2 class="section-title reveal">Fark etmediğimiz şeyi değiştiremeyiz.</h2>
+      <div class="flow-row reveal" style="transition-delay:0.1s;">
+        <span class="flow-chip es-c-thought">Düşünce</span><span class="flow-arrow">&rarr;</span>
+        <span class="flow-chip es-c-emotion">Duygu</span><span class="flow-arrow">&rarr;</span>
+        <span class="flow-chip es-c-soma">Soma</span><span class="flow-arrow">&rarr;</span>
+        <span class="flow-chip">Tepki</span>
+      </div>
+      <p class="section-body reveal" style="transition-delay:0.14s; margin:0 auto;">Tekrar tekrar ortaya çıkan bir ses, bu zincirin herhangi bir noktasında kendini göstermeye başlayabilir.</p>
+    </div>
+  </section>
+
+  <div class="divider" style="background:var(--deep2);height:1px;"></div>
+
+  <!-- DİKKAT -->
+  <section class="bg-deep3">
+    <div class="section-inner narrow center">
+      <p class="section-label reveal">Dikkat</p>
+      <h2 class="section-title reveal">Fark etmek için Dikkat gerekir.</h2>
+      <p class="es-cascade reveal" style="transition-delay:0.1s;">Ne düşünüyorum?<br />Ne hissediyorum?<br />Soma'mda ne oluyor?<br />Şu anda nasıl tepki veriyorum?<br />Dümende kim var?</p>
+      <p class="section-body reveal" style="transition-delay:0.13s; margin:0 auto;"><strong>Bütün bunların farkında olan kim?</strong></p>
+      <p class="highlight-line reveal" style="transition-delay:0.16s;"><strong>Dikkat neredeyse, farkındalık oraya gider.</strong></p>
+    </div>
+  </section>
+
+  <div class="divider" style="background:var(--deep3);height:1px;"></div>
+
+  <!-- NOT ME / EŞGAL -->
+  <section class="bg-deep2">
+    <div class="section-inner narrow center">
+      <p class="section-label reveal">Eşgal</p>
+      <p class="section-body reveal" style="transition-delay:0.1s; margin:0 auto 1.25rem;">@ <span lang="en">Bliss</span>'te, tekrar tekrar ortaya çıkan bu &ldquo;Ben&rdquo; hâllerini gözlemlemek ve haritalamak için kullandığımız çalışmaya <strong>Eşgal Çalışması</strong> diyoruz.</p>
+      <p class="section-body reveal" style="transition-delay:0.13s; margin:0 auto;">Eşgal Çalışması; içimizde ortaya çıkan Eşgalleri, düşünceleri, duyguları, bedensel duyumları ve tepkileri gözlemlemeyi, ardından bunları kontrolü otomatik olarak ele geçirmeden önce fark etmeyi öğrenme sürecidir.</p>
+      <div class="es-turn reveal" style="transition-delay:0.16s;">
+        <p>O ses senin içinde ortaya çıkıyor.</p>
+        <p class="es-turn-strong">Ama o ses sen değilsin.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" style="background:var(--deep2);height:1px;"></div>
+
+  <!-- AYIR -->
+  <section class="bg-deep3">
+    <div class="section-inner narrow center">
+      <p class="section-label reveal">Ayır ve Adını Koy</p>
+      <h2 class="section-title reveal">Ortaya çıkan Ben hâlini kendinden ayırmayı öğren.</h2>
+      <p class="section-body reveal" style="transition-delay:0.1s; margin:0 auto 1.25rem;">Eşgal Çalışması'nın ilk adımlarından biri, ortaya çıkan bu Ben hâliyle kendimizi ayırmayı öğrenmektir.</p>
+      <div class="es-pairs reveal" style="transition-delay:0.13s;">
+        <div class="es-pair"><span class="es-from">&ldquo;Ben bunu yapamam.&rdquo;</span><span class="es-word">yerine:</span><span class="es-to">&ldquo;Şüpheci Ben bana bunu yapamayacağımı söylüyor.&rdquo;</span></div>
+        <div class="es-pair"><span class="es-from">&ldquo;Ben öfkeliyim.&rdquo;</span><span class="es-word">yerine:</span><span class="es-to">&ldquo;Öfkeli Ben ortaya çıktı.&rdquo;</span></div>
+        <div class="es-pair"><span class="es-from">&ldquo;Ben kontrolü kaybediyorum.&rdquo;</span><span class="es-word">yerine:</span><span class="es-to">&ldquo;Kontrol Eden Ben dümene geçmeye çalışıyor.&rdquo;</span></div>
+      </div>
+      <p class="section-body reveal" style="transition-delay:0.16s; margin:0 auto 0.4rem;">Buradaki amaç kendimizden bir parçayı reddetmek, bastırmak veya onunla savaşmak değildir.</p>
+      <p class="section-body reveal" style="transition-delay:0.18s; margin:0 auto 1.25rem;"><strong>Amaç onu görebilecek kadar mesafe yaratmaktır.</strong></p>
+      <p class="es-big reveal" style="transition-delay:0.21s;">BEN DEĞİL.<br />O.<br />BİR EŞGAL.</p>
+      <p class="section-body reveal" style="transition-delay:0.24s; margin:0 auto 0.75rem;">Bir Eşgal'e isim verdikten sonra ondan mümkün olduğunca &ldquo;Ben&rdquo; diye değil, gözlemlediğin bir hâl olarak söz etmeye başla.</p>
+      <p class="voice-list reveal" style="transition-delay:0.27s;"><strong>Korkan Ben.</strong><br /><strong>Öfkeli Ben.</strong><br /><strong>Şüpheci Ben.</strong><br /><strong>Kontrol Eden Ben.</strong><br /><strong>Eleştiren Ben.</strong><br /><strong>Onay Arayan Ben.</strong><br /><strong>Haklı Olmak İsteyen Ben.</strong><br /><strong>İçine Kapanan Ben.</strong></p>
+      <p class="highlight-line reveal" style="transition-delay:0.3s;"><strong>Adını koyduğumuz şeyi daha kolay fark etmeye başlarız.</strong></p>
+    </div>
+  </section>
+
+  <div class="divider" style="background:var(--deep3);height:1px;"></div>
+
   <!-- MANY PATHS -->
   <section class="bg-deep2">
     <div class="section-inner narrow center">
-      <p class="section-label reveal">Eşgal Çalışması</p>
+      <p class="section-label reveal">Farklı Yollar</p>
       <h2 class="section-title reveal">Farklı yollar, aynı kadim arayış.</h2>
-      <p class="section-body reveal" style="transition-delay:0.1s; margin:0 auto 1.25rem;">Zihni gözlemleme pratiği tek bir öğretmenle başlamadı.</p>
-      <p class="section-body reveal" style="transition-delay:0.13s; margin:0 auto 1.25rem;">Tefekkür ve mistisizm gelenekleri boyunca insanlar düşünce ile farkındalık, tepki ile gözlem, koşullanma ile bilinçli seçim arasındaki farkı araştırdı.</p>
-      <p class="section-body reveal" style="transition-delay:0.16s; margin:0 auto 1.25rem;">Farklı gelenekler bu deneyimlere farklı isimler verdi. Farklı öğretmenler farklı yaklaşım yolları geliştirdi.</p>
-      <p class="highlight-line reveal" style="transition-delay:0.19s;"><strong>@ <span lang="en">Bliss</span> senden bu sistemlerden herhangi birini benimsemeni istemez.</strong></p>
-      <p class="section-body reveal" style="transition-delay:0.22s; margin:0 auto 1.25rem;">Bunun yerine, farklı gözlemlerin nerede buluştuğunu ve kendi deneyimimiz aracılığıyla neyi keşfedebileceğimizi merak ederiz.</p>
-      <p class="section-body reveal" style="transition-delay:0.25s; margin:0 auto 1.25rem;">Eşgal Çalışması bu geniş araştırma alanını pratik bir soruda buluşturur:</p>
-      <p class="highlight-line reveal" style="transition-delay:0.28s;"><strong>İçimde olup biteni, bir Eşgal dümene geçmeden önce fark edebilir miyim?</strong></p>
+      <p class="section-body reveal" style="transition-delay:0.1s; margin:0 auto 1.25rem;">Eşgal Çalışması, farklı tefekkür geleneklerinde ve düşünce, farkındalık, koşullanma ve gözlemleyen Öz arasındaki ilişkiyi araştıran düşünürlerin çalışmalarında karşılaştığımız fikirlerden beslenen bir <strong>@ <span lang="en">Bliss</span> içsel gözlem pratiğidir.</strong></p>
+      <p class="section-body reveal" style="transition-delay:0.13s; margin:0 auto 1.25rem;">Zihni gözlemleme pratiği tek bir öğretmenle başlamadı.</p>
+      <p class="section-body reveal" style="transition-delay:0.16s; margin:0 auto 1.25rem;">Tefekkür ve mistisizm gelenekleri boyunca insanlar düşünce ile farkındalık, tepki ile gözlem, koşullanma ile bilinçli seçim arasındaki farkı araştırdı.</p>
+      <p class="section-body reveal" style="transition-delay:0.19s; margin:0 auto 1.25rem;">Farklı gelenekler bu deneyimlere farklı isimler verdi. Farklı öğretmenler farklı yaklaşım yolları geliştirdi.</p>
+      <p class="highlight-line reveal" style="transition-delay:0.22s;"><strong>@ <span lang="en">Bliss</span> senden bu sistemlerden herhangi birini benimsemeni istemez.</strong></p>
+      <p class="section-body reveal" style="transition-delay:0.25s; margin:1.25rem auto 1.25rem;">Bunun yerine, aynı insan deneyimini gözlemlememize yardımcı olan farklı bakışların nerede buluştuğunu ve kendi deneyimimiz aracılığıyla neyi keşfedebileceğimizi merak ederiz.</p>
+      <p class="section-body reveal" style="transition-delay:0.28s; margin:0 auto;">Eşgal Çalışması bu geniş araştırma alanını pratik bir soruda buluşturur:</p>
+      <p class="highlight-line reveal" style="transition-delay:0.31s;"><strong>İçimde olup biteni, bir Eşgal dümene geçmeden önce fark edebilir miyim?</strong></p>
     </div>
   </section>
 
@@ -697,7 +833,6 @@
     <div class="section-inner center">
       <p class="section-label reveal">Üç Bakış</p>
       <h2 class="section-title reveal">İçsel gözleme üç bakış</h2>
-
       <div class="card-grid">
         <div class="info-card reveal" style="transition-delay:0.12s;">
           <p class="card-num"><span lang="en">Gurdjieff</span></p>
@@ -732,38 +867,14 @@
       <p class="section-label reveal">Eşgal Çalışması</p>
       <h2 class="section-title reveal">Üç bakış, tek bir pratik.</h2>
       <div class="flow-row reveal" style="transition-delay:0.1s;">
-        <span class="flow-chip"><span lang="en">Gurdjieff</span></span>
-        <span class="flow-arrow">&darr;</span>
-        <span class="flow-chip">Osho</span>
-        <span class="flow-arrow">&darr;</span>
-        <span class="flow-chip">Tolle</span>
-        <span class="flow-arrow">&darr;</span>
+        <span class="flow-chip"><span lang="en">Gurdjieff</span></span><span class="flow-arrow">&darr;</span>
+        <span class="flow-chip">Osho</span><span class="flow-arrow">&darr;</span>
+        <span class="flow-chip">Tolle</span><span class="flow-arrow">&darr;</span>
         <span class="flow-chip">Eşgal Çalışması</span>
       </div>
-      <p class="highlight-line reveal" style="transition-delay:0.14s;"><strong>Eşgaller konuşur. Öz bilir.</strong></p>
-    </div>
-  </section>
-
-  <!-- FROM OBSERVATION TO ESGAL -->
-  <section class="bg-deep2">
-    <div class="section-inner narrow center">
-      <p class="section-label reveal">Eşgal Çalışması</p>
-      <h2 class="section-title reveal">Gözlemden Eşgal Çalışmasına</h2>
-      <p class="section-body reveal" style="transition-delay:0.1s; margin:0 auto 0.5rem;">&ldquo;Öfkelendim&rdquo; demek yerine şunu sormaya başlarız:</p>
-      <h3 class="section-title reveal" style="transition-delay:0.13s; font-size:clamp(1.5rem,2.8vw,2rem);">Dümende hangi Eşgal var?</h3>
-      <p class="section-body reveal" style="transition-delay:0.16s; margin:0 auto 0.75rem;">Belki:</p>
-      <p class="voice-list reveal" style="transition-delay:0.19s;">
-        <strong>Korkan Ben.</strong><br />
-        <strong>Öfkeli Ben.</strong><br />
-        <strong>Kıskanç Ben.</strong><br />
-        <strong>Kontrol Eden Ben.</strong><br />
-        <strong>Eleştiren Ben.</strong><br />
-        <strong>Onay Arayan Ben.</strong><br />
-        <strong>Haklı Olmak İsteyen Ben.</strong><br />
-        <strong>İçine Kapanan Ben.</strong>
-      </p>
-      <p class="section-body reveal" style="transition-delay:0.22s; margin:0 auto;">Eşgalleri yargılamaya, onlarla savaşmaya veya onları yok etmeye çalışmıyoruz.</p>
-      <p class="highlight-line reveal" style="transition-delay:0.25s;"><strong>Önce onları tanımayı öğreniyoruz.</strong></p>
+      <p class="es-cascade reveal" style="transition-delay:0.13s;">Farklı diller.<br />Farklı bakışlar.<br />Benzer bir davet:</p>
+      <p class="highlight-line reveal" style="transition-delay:0.16s;"><strong>İçimizde ortaya çıkan şeyi, &ldquo;Ben buyum&rdquo; demeden gözlemleyebilir miyiz?</strong></p>
+      <p class="es-quiet reveal" style="transition-delay:0.19s;">Eşgaller konuşur. Öz bilir.</p>
     </div>
   </section>
 
@@ -775,22 +886,25 @@
       <p class="section-label reveal">Eşgal Çalışması</p>
       <h2 class="section-title reveal">Üç Erken Sinyal</h2>
       <div class="card-grid">
-        <div class="info-card reveal" style="transition-delay:0.2s;">
+        <div class="info-card es-sig es-sig--thought reveal" style="transition-delay:0.20s;">
           <p class="card-num">01</p>
           <h3>Düşünce</h3>
-          <p><strong>Aklından ne geçti? İlk düşüncen neydi?</strong></p>
+          <p><strong>Ne düşündüm?</strong></p>
         </div>
-        <div class="info-card reveal" style="transition-delay:0.23s;">
+        <div class="info-card es-sig es-sig--emotion reveal" style="transition-delay:0.23s;">
           <p class="card-num">02</p>
           <h3>Duygu</h3>
-          <p><strong>Hangi duygu ortaya çıktı? Ne hissettin?</strong></p>
+          <p><strong>Ne hissettim?</strong></p>
         </div>
-        <div class="info-card reveal" style="transition-delay:0.26s;">
+        <div class="info-card es-sig es-sig--soma reveal" style="transition-delay:0.26s;">
           <p class="card-num">03</p>
           <h3>Soma</h3>
-          <p><strong>Soma'nda hangi duyumları fark ettin? Vücudunda ne değişti?</strong></p>
+          <p><strong>Bedenimde ne değişti?</strong></p>
+          <p class="es-soma-list">nefes &middot; kas gerginliği &middot; duruş &middot; göğüs &middot; karın &middot; çene &middot; omuzlar &middot; sıcaklık &middot; hareket etme isteği</p>
         </div>
       </div>
+      <p class="section-body reveal" style="transition-delay:0.3s; margin:2rem auto 0.4rem;">Her Eşgal bu üç sinyalin hepsini birden göstermeyebilir.</p>
+      <p class="section-body reveal" style="transition-delay:0.32s; margin:0 auto;"><strong>Fark etmeye başlamak için tek bir sinyal bile yeterli olabilir.</strong></p>
     </div>
   </section>
 
@@ -799,19 +913,20 @@
   <!-- CATCH IT BEFORE IT TAKES THE HELM -->
   <section class="bg-deep2">
     <div class="section-inner narrow center">
-      <p class="section-label reveal">Eşgal Çalışması</p>
+      <p class="section-label reveal">Daha Erken Fark Et</p>
       <h2 class="section-title reveal">Kontrolü Ele Geçirmeden Onu Fark Et</h2>
       <p class="section-body reveal" style="transition-delay:0.1s; margin:0 auto;">İlk başta Eşgal'i genellikle kontrolü ele geçirdikten sonra fark ederiz.</p>
-      <div class="flow-row reveal" style="transition-delay:0.2s;">
-        <span class="flow-chip">Olaydan Sonra</span>
-        <span class="flow-arrow">&rarr;</span>
-        <span class="flow-chip">Olay Sırasında</span>
-        <span class="flow-arrow">&rarr;</span>
-        <span class="flow-chip">Olaydan Önce</span>
+      <div class="es-steps reveal" style="transition-delay:0.14s;">
+        <div class="es-step"><span class="flow-chip">Olaydan Sonra</span><p>&ldquo;Yine yaptıktan sonra fark ettim.&rdquo;</p></div>
+        <span class="es-down">&darr;</span>
+        <div class="es-step"><span class="flow-chip">Olay Sırasında</span><p>&ldquo;Şu anda bunun olduğunu fark ediyorum.&rdquo;</p></div>
+        <span class="es-down">&darr;</span>
+        <div class="es-step"><span class="flow-chip">Olaydan Önce</span><p>&ldquo;Geliyor.&rdquo;</p></div>
       </div>
-      <p class="section-body reveal" style="transition-delay:0.23s; margin:0 auto 1.25rem;">Düşünceyi, duyguyu veya bedensel duyumu ne kadar erken fark edersek otomatik tepkiyi kesintiye uğratmak ve bilinçli bir seçim yapmak için o kadar fazla alanımız olur.</p>
-      <p class="section-body reveal" style="transition-delay:0.26s; margin:0 auto;">Amaç Eşgal'le savaşmak değildir.</p>
-      <p class="highlight-line reveal" style="transition-delay:0.29s;"><strong>İlk amaç yalnızca onun geldiğini fark etmektir.</strong></p>
+      <p class="section-body reveal" style="transition-delay:0.18s; margin:0 auto 1.25rem;">Düşünceyi, duyguyu veya bedensel duyumu ne kadar erken fark edersek otomatik tepkiyi kesintiye uğratmak ve bilinçli bir seçim yapmak için o kadar fazla alanımız olur.</p>
+      <p class="section-body reveal" style="transition-delay:0.21s; margin:0 auto 1.25rem;">Bu bir puan ya da sınav değildir. Pratik, aynı Eşgal'i biraz daha erken tanımayı öğrenmekten ibarettir.</p>
+      <p class="section-body reveal" style="transition-delay:0.24s; margin:0 auto;">İlk amaç Eşgal'i yok etmek değildir.</p>
+      <p class="highlight-line reveal" style="transition-delay:0.27s;"><strong>İlk amaç onun geldiğini fark etmektir.</strong></p>
     </div>
   </section>
 
@@ -820,7 +935,7 @@
   <!-- WHEN YOU RECOGNIZE THE SIGNAL -->
   <section class="bg-deep3">
     <div class="section-inner center">
-      <p class="section-label reveal">Eşgal Çalışması</p>
+      <p class="section-label reveal">Çıpa</p>
       <h2 class="section-title reveal">Sinyali Fark Ettiğinde</h2>
       <div class="card-grid">
         <div class="info-card reveal" style="transition-delay:0.17s;">
@@ -830,12 +945,12 @@
           <h3>İki veya daha fazla bilinçli nefes al.</h3>
         </div>
         <div class="info-card reveal" style="transition-delay:0.23s;">
-          <h3>Önceden belirlediğin kişisel bir çıpayı kullan.</h3>
-          <p>Çıpa kısa bir hatırlatma, olumlama, görselleştirme, fiziksel işaret, mantra veya sana anlamlı gelen başka bir sinyal olabilir.</p>
+          <h3>Önceden belirlediğin kişisel bir çıpayı hatırla.</h3>
+          <p>Çıpa; bir cümle, bir anı, bir nefes, bir beden hareketi, bir görüntü, bir sembol, bir mantra veya sana anlamlı gelen başka bir hatırlatıcı olabilir.</p>
         </div>
       </div>
-      <p class="section-body reveal" style="transition-delay:0.27s; margin:2rem auto 0.5rem;">Amacı hissettiğini bastırmak değil, şunu hatırlamana yardımcı olmaktır:</p>
-      <p class="highlight-line reveal" style="transition-delay:0.3s;"><strong>Eşgal burada. Dümeni ona otomatik olarak bırakmak zorunda değilim.</strong></p>
+      <p class="section-body reveal" style="transition-delay:0.27s; margin:2rem auto 0.5rem;">Çıpa, Eşgal'i bastırmak ya da yenmek için değildir. Otomatik tepkiyi kesintiye uğratıp farklı bir seçim yapabileceğin bir alan açar.</p>
+      <p class="highlight-line reveal" style="transition-delay:0.3s;"><strong>Eşgal burada.<br />Dümeni ona otomatik olarak bırakmak zorunda değilim.</strong></p>
     </div>
   </section>
 
@@ -851,70 +966,136 @@
     <div class="path-sep-rule"></div>
   </div>
 
-  <!-- REFLECTION FORM (Turkish form key; field names identical to the English form) -->
-  <section class="reflection">
+  <!-- PRIVATE WORKSPACE (answers stay in the browser; only an anonymous completion notice is sent) -->
+  <section class="reflection" id="calisma">
     <div class="section-inner">
-      <div id="reflection-form-wrap">
+      <div id="ws-wrap">
         <p class="section-label reveal">Pratiğe Başla</p>
         <h2 class="reflection-intro-heading reveal">İlk Eşgal Çalışman</h2>
         <div class="reflection-copy reveal" style="transition-delay:0.1s;">
-          <p>Yakın zamanda belirli bir Eşgal'in, tepkinin veya Ben hâlinin dümene geçtiği tek bir anı seç. Fazla analiz etme. Kontrolü ele geçirmesinden hemen önce neler olduğunu geriye doğru gözlemle.</p>
+          <p>Yakın zamanda belirli bir Eşgal'in veya Ben hâlinin dümene geçtiği tek bir anı seç.</p>
+          <p>Fazla analiz etmeye çalışma.</p>
+          <p>O ana geri dön ve olanları mümkün olduğunca yargılamadan gözlemle.</p>
         </div>
-
-        <form id="reflection-form">
-          <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off" />
-          <input type="hidden" name="access_key" value="d6149b26-b6c0-4270-979c-9d9bc70940e5" />
-          <input type="hidden" name="subject" value="Yeni Eşgal Çalışması (TR)" />
-          <input type="hidden" name="from_name" value="@ Bliss Foundation Website" />
-
-          <div class="form-group">
-            <div class="q-num">01</div>
-            <label for="q1">Dümende hangi Eşgal var?</label>
-            <input type="text" id="q1" name="voice_name" />
+        <div class="ws-rail">
+        <div class="ws-step ws-step--name" data-step="1">
+          <div class="ws-node">01</div>
+          <div class="ws-body">
+            <h3 class="ws-title">Eşgal'e bir isim ver.</h3>
+            <p class="ws-prompt">Bu hâle senden ayrı bir isim verecek olsaydın ona ne derdin?</p>
+            <p class="ws-ex">Şüpheci Ben &middot; Korkan Ben &middot; Kontrol Eden Ben &middot; Onay Arayan Ben &middot; Öfkeli Ben</p>
+            <input type="text" class="ws-input" id="ws-name" placeholder="ör. Şüpheci Ben" />
           </div>
-          <div class="form-group">
-            <div class="q-num">02</div>
-            <label for="q2">O Eşgal kontrolü ele geçirmeden hemen önce ne oldu?</label>
-            <p class="field-help">Yalnızca yaşanan olayı tarif et.</p>
-            <textarea id="q2" name="reflection_trigger"></textarea>
+        </div>
+        <div class="ws-step ws-step--what" data-step="2">
+          <div class="ws-node">02</div>
+          <div class="ws-body">
+            <h3 class="ws-title">Ne oldu?</h3>
+            <p class="ws-prompt">Bu Eşgal ortaya çıkmadan hemen önce ne olmuştu?</p>
+            <textarea class="ws-input ws-input--big" id="ws-what"></textarea>
           </div>
-          <div class="form-group">
-            <div class="q-num">03</div>
-            <label for="q3">Sonra aklından ne geçti?</label>
-            <textarea id="q3" name="reflection_first_thought"></textarea>
+        </div>
+        <div class="ws-step ws-step--thought" data-step="3">
+          <div class="ws-node">03</div>
+          <div class="ws-body">
+            <h3 class="ws-title">Düşünce</h3>
+            <p class="ws-prompt">Aklından ne geçti?</p>
+            <textarea class="ws-input" id="ws-thought" placeholder="ör. &ldquo;Bunu yapamam.&rdquo;"></textarea>
           </div>
-          <div class="form-group">
-            <div class="q-num">04</div>
-            <label for="q4">Ardından hangi duygu ortaya çıktı?</label>
-            <textarea id="q4" name="reflection_emotion"></textarea>
+        </div>
+        <div class="ws-step ws-step--emotion" data-step="4">
+          <div class="ws-node">04</div>
+          <div class="ws-body">
+            <h3 class="ws-title">Duygu</h3>
+            <p class="ws-prompt">Ne hissettin?</p>
+            <textarea class="ws-input" id="ws-emotion"></textarea>
           </div>
-          <div class="form-group">
-            <div class="q-num">05</div>
-            <label for="q5">Soma'nda hangi duyumları fark ettin? Vücudunda ne değişti?</label>
-            <textarea id="q5" name="reflection_soma"></textarea>
+        </div>
+        <div class="ws-step ws-step--soma" data-step="5">
+          <div class="ws-node">05</div>
+          <div class="ws-body">
+            <h3 class="ws-title">Soma</h3>
+            <p class="ws-prompt">Bedeninde ne değişti?</p>
+            <p class="ws-help">Nefesini, kas gerginliğini, duruşunu, göğsünü, karnını, çeneni, omuzlarını, sıcaklığı veya başka bir bedensel duyumu fark etmeye çalış.</p>
+            <textarea class="ws-input" id="ws-soma"></textarea>
           </div>
-          <div class="form-group">
-            <div class="q-num">06</div>
-            <label for="q6">Bu Eşgal sana ne yaptırdı?</label>
-            <textarea id="q6" name="reflection_behavior"></textarea>
+        </div>
+        <div class="ws-step ws-step--react" data-step="6">
+          <div class="ws-node">06</div>
+          <div class="ws-body">
+            <h3 class="ws-title">Tepki</h3>
+            <p class="ws-prompt">Bu Eşgal dümene geçtiğinde sana ne yaptırdı veya seni ne yapmaya yöneltti?</p>
+            <textarea class="ws-input" id="ws-react"></textarea>
           </div>
-          <div class="form-group">
-            <div class="q-num">07</div>
-            <label for="q7">Bu Eşgal kontrolü ele geçirmeden onu fark etseydin, ne yapmayı seçerdin?</label>
-            <textarea id="q7" name="reflection_recognized_earlier"></textarea>
+        </div>
+        <div class="ws-step ws-step--separate" data-step="7">
+          <div class="ws-node">07</div>
+          <div class="ws-body">
+            <h3 class="ws-title">Ayır</h3>
+            <p class="ws-sep"><strong>&ldquo;<span class="ws-name-out">Bu Eşgal</span>&rdquo; sen değilsin.</strong></p>
+            <p class="ws-prompt">O, içinde ortaya çıkan ve artık gözlemlemeye başladığın bir Eşgal.</p>
+            <p class="ws-prompt"><strong>Bu Eşgal sana ne söylüyor?</strong></p>
+            <p class="ws-help">Ondan &ldquo;Ben&rdquo; diye değil, üçüncü kişi olarak söz et. &ldquo;Ben yapamam.&rdquo; yerine: &ldquo;Şüpheci Ben bana bunu yapamayacağımı söylüyor.&rdquo;</p>
+            <textarea class="ws-input" id="ws-says" placeholder="ör. &ldquo;Şüpheci Ben bana bunu yapamayacağımı söylüyor.&rdquo;"></textarea>
           </div>
-
-          <button type="submit" class="btn btn-primary" id="reflection-submit" style="margin-top:1rem;">Çalışmamı Gönder</button>
-          <p class="form-error" id="reflection-error">Çalışman gönderilirken bir sorun oluştu. Lütfen yeniden dene veya doğrudan atblissfoundation@gmail.com adresine yaz.</p>
-        </form>
+        </div>
+        <div class="ws-step ws-step--signals" data-step="8">
+          <div class="ws-node">08</div>
+          <div class="ws-body">
+            <h3 class="ws-title">Üç Erken Sinyal</h3>
+            <p class="ws-prompt">Bu aynı Eşgal&rsquo;i bir dahaki sefere tanımana yardımcı olabilecek sinyalleri özetle.</p>
+            <p class="ws-help">Üçünü birden bilmek zorunda değilsin. Bir tanesi bile yeterli.</p>
+            <div class="ws-sigs">
+              <div class="ws-sig ws-sig--thought"><p class="ws-sig-tag">Düşünce</p><p class="ws-prompt">Onun tipik düşüncesi nedir?</p><textarea class="ws-input" id="ws-sig-thought"></textarea></div>
+              <div class="ws-sig ws-sig--emotion"><p class="ws-sig-tag">Duygu</p><p class="ws-prompt">Onunla birlikte gelen duygu nedir?</p><textarea class="ws-input" id="ws-sig-emotion"></textarea></div>
+              <div class="ws-sig ws-sig--soma"><p class="ws-sig-tag">Soma</p><p class="ws-prompt">Soma&rsquo;daki erken işareti nedir?</p><textarea class="ws-input" id="ws-sig-soma"></textarea></div>
+            </div>
+          </div>
+        </div>
+        <div class="ws-step ws-step--anchor" data-step="9">
+          <div class="ws-node">09</div>
+          <div class="ws-body">
+            <h3 class="ws-title">Çıpanı Oluştur</h3>
+            <p class="ws-prompt">Bu Eşgal'i fark ettiğinde sana merkezini hatırlatabilecek ne var?</p>
+            <p class="ws-ex">bir cümle &middot; bir anı &middot; bir nefes &middot; bir hareket &middot; bir görüntü &middot; bir sembol &middot; bir mantra</p>
+            <div id="ws-anchors">
+              <input type="text" class="ws-input" id="ws-anchor-1" placeholder="Çıpa 1" />
+            </div>
+            <button type="button" class="ws-add" id="ws-add-anchor">+ Bir çıpa daha ekle</button>
+          </div>
+        </div>
+        <div class="ws-step ws-step--next" data-step="10">
+          <div class="ws-node">10</div>
+          <div class="ws-body">
+            <h3 class="ws-title">Bir Sonraki Karşılaşma</h3>
+            <p class="ws-prompt">Bu Eşgal tekrar ortaya çıktığında neyi daha erken fark etmek istersin?</p>
+            <textarea class="ws-input" id="ws-next"></textarea>
+            <div class="flow-row ws-flow"><span class="flow-chip">Olaydan Sonra</span><span class="flow-arrow">&rarr;</span><span class="flow-chip">Olay Sırasında</span><span class="flow-arrow">&rarr;</span><span class="flow-chip">Olaydan Önce</span></div>
+            <p class="ws-prompt">Amaç kusursuzluk değil.<br /><strong>Amaç fark etmek.</strong></p>
+          </div>
+        </div>
+        </div>
+        <div class="ws-privacy">
+          <p class="ws-privacy-title">Bu çalışma sana ait.</p>
+          <p>Yazdığın hiçbir cevap, Eşgal adı, düşünce, duygu, Soma deneyimi, tetikleyici veya çıpa @ <span lang="en">Bliss</span>'e gönderilmez veya kaydedilmez.</p>
+          <p>Çalışmayı tamamladığında yalnızca anonim olarak bir Eşgal Çalışması'nın tamamlandığı bilgisi iletilir.</p>
+          <p class="ws-privacy-note">Yazdıkların yalnızca bu tarayıcı penceresinde durur. Sayfayı yenilersen veya kapatırsan silinir.</p>
+        </div>
+        <button type="button" class="btn btn-primary" id="ws-complete">Çalışmayı Tamamla</button>
+        <p class="form-error" id="ws-error">Bir sorun oluştu. Lütfen yeniden dene. Yazdıkların hâlâ bu sayfada.</p>
       </div>
 
-      <div id="reflection-thankyou" class="reflection-thankyou">
+      <div id="ws-done" class="reflection-thankyou">
         <p class="section-label">Pratiğe Başla</p>
-        <h2>Teşekkür ederiz.</h2>
-        <p class="lead">Gözlemlemeye çoktan başladın.</p>
-        <p>@ <span lang="en">Bliss</span> Yolu'nu birlikte araştırırken bu gözlemlerin ne anlama geldiği hakkında daha fazlasını paylaşacağız.</p>
-        <p>Bu çalışmayı tamamladığın için <strong>Bay Hantal ile ücretsiz 30 dakikalık bire bir görüşme</strong> yapmaya hak kazandın. Ayrıntılar için seninle iletişime geçeceğiz.</p>
+        <h2>İlk Eşgal Çalışmanı tamamladın.</h2>
+        <p class="lead">Şimdilik onu değiştirmeye çalışma.</p>
+        <p>Önümüzdeki günlerde aynı Eşgal'in yeniden ortaya çıktığı anları fark etmeye çalış.</p>
+        <p>Özellikle üç erken sinyale dikkat et:</p>
+        <p class="es-cascade">Düşünce.<br />Duygu.<br />Soma.</p>
+        <p>Amaç onu hiç yaşamamak değil.</p>
+        <p><strong>Amaç onu biraz daha erken görebilmek.</strong></p>
+        <p>Bir sonraki <a href="/tr/breathwork/" class="es-link">Somatik Nefes Çalışmamıza</a> katılırsan ve bu Eşgal üzerine konuşmak istersen, seansın ardından 30 dakika daha kalabilirsin. Bu süreyi birlikte gözlemlediklerine bakmak için kullanabiliriz.</p>
+        <p class="mod-quote" style="margin-top:2.5rem;">&ldquo;Ne olmadığını bilmek, Öz'ünü hatırlamanın başlangıcıdır.&rdquo;</p>
       </div>
     </div>
   </section>
@@ -969,40 +1150,59 @@
       document.body.style.overflow = '';
     }
 
-    // Reflection form submission (Web3Forms) - no field is required
-    const rForm = document.getElementById('reflection-form');
-    const rSubmit = document.getElementById('reflection-submit');
-    const rError = document.getElementById('reflection-error');
+    // Eşgal workspace: answers stay only in this page (no storage, never sent).
+    // "Çalışmayı Tamamla" sends a separate anonymous completion notice to Web3Forms.
+    (function () {
+      const nameIn = document.getElementById('ws-name');
+      const nameOut = document.querySelector('.ws-name-out');
+      function syncName() { nameOut.textContent = nameIn.value.trim() || 'Bu Eşgal'; }
+      nameIn.addEventListener('input', syncName);
 
-    rForm.addEventListener('submit', async function (e) {
-      e.preventDefault();
-      rError.classList.remove('visible');
-      rSubmit.disabled = true;
-      rSubmit.textContent = 'Gönderiliyor…';
-
-      try {
-        const formData = new FormData(rForm);
-        const response = await fetch('https://api.web3forms.com/submit', {
-          method: 'POST',
-          headers: { Accept: 'application/json' },
-          body: formData,
+      function markSteps() {
+        document.querySelectorAll('.ws-step').forEach(function (st) {
+          const filled = [...st.querySelectorAll('.ws-input')].some(function (i) { return i.value.trim() !== ''; });
+          st.classList.toggle('is-done', filled);
         });
-        const result = await response.json();
-
-        if (result.success) {
-          document.getElementById('reflection-form-wrap').style.display = 'none';
-          const ty = document.getElementById('reflection-thankyou');
-          ty.classList.add('visible');
-          ty.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        } else {
-          throw new Error(result.message || 'Submission failed');
-        }
-      } catch (err) {
-        rError.classList.add('visible');
-        rSubmit.disabled = false;
-        rSubmit.textContent = 'Çalışmamı Gönder';
       }
-    });
+      document.getElementById('ws-wrap').addEventListener('input', markSteps);
+
+      let anchorCount = 1;
+      const addBtn = document.getElementById('ws-add-anchor');
+      addBtn.addEventListener('click', function () {
+        anchorCount += 1;
+        const inp = document.createElement('input');
+        inp.type = 'text'; inp.className = 'ws-input'; inp.id = 'ws-anchor-' + anchorCount; inp.placeholder = 'Çıpa ' + anchorCount;
+        document.getElementById('ws-anchors').appendChild(inp);
+        inp.focus();
+        if (anchorCount >= 5) addBtn.style.display = 'none';
+      });
+
+      const btn = document.getElementById('ws-complete');
+      const err = document.getElementById('ws-error');
+      const label = btn.textContent;
+      btn.addEventListener('click', async function () {
+        err.classList.remove('visible');
+        btn.disabled = true; btn.textContent = 'Tamamlanıyor…';
+        // Built from fixed values only: no workspace field is read here.
+        const payload = new FormData();
+        payload.append('access_key', 'd6149b26-b6c0-4270-979c-9d9bc70940e5');
+        payload.append('subject', 'Yeni bir Eşgal Çalışması tamamlandı (TR)');
+        payload.append('from_name', '@ Bliss Foundation Website');
+        payload.append('message', 'Yeni Bir Eşgal Çalışması tamamlandı.');
+        try {
+          const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { Accept: 'application/json' }, body: payload });
+          const out = await res.json();
+          if (!out.success) throw new Error(out.message || 'failed');
+          document.getElementById('ws-wrap').style.display = 'none';
+          const done = document.getElementById('ws-done');
+          done.classList.add('visible');
+          document.getElementById('calisma').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } catch (e) {
+          err.classList.add('visible');
+          btn.disabled = false; btn.textContent = label;
+        }
+      });
+    })();
   </script>
 </body>
 </html>
