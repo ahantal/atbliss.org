@@ -690,6 +690,8 @@
     .ws-flow .flow-chip { font-size: 0.72rem; padding: 0.4rem 0.75rem; }
     .ws-privacy { border: 1px solid var(--border-hover); border-left: 3px solid var(--gold); padding: 1.75rem 1.75rem 1.25rem; margin: 1rem 0 2rem; background: rgba(201, 168, 76, 0.04); }
     .ws-privacy--start { margin: 2rem 0 0.5rem; }
+    .required-mark { color: #e2635c; }
+    .required-legend { font-size: 0.78rem; color: var(--muted); margin: 1.5rem 0 0.5rem; }
     .ws-req-msg { font-size: 0.82rem; color: #e0a37a; margin: 0.45rem 0 0; }
     .ws-input[aria-invalid="true"] { border-color: #e0a37a; }
     .ws-timing { margin-top: 1.75rem; padding-top: 1.25rem; border-top: 1px solid var(--border); }
@@ -1034,12 +1036,13 @@
           <p>None of the answers you write, Self names, thoughts, emotions, Soma experiences, triggers, or anchors are sent to or stored by @ Bliss.</p>
           <p>What you write stays only in this browser window.</p>
         </div>
+        <p class="required-legend"><span class="required-mark">*</span> Required fields</p>
         <div class="ws-rail">
         <div class="ws-step ws-step--name" data-step="1">
           <div class="ws-node">01</div>
           <div class="ws-body">
             <h3 class="ws-title">Name the Self.</h3>
-            <p class="ws-prompt">What would you call this state if you gave it a name separate from yourself?</p>
+            <p class="ws-prompt">What would you call this state if you gave it a name separate from yourself? <span class="required-mark">*</span></p>
             <p class="ws-ex">The Doubter &middot; The Fearful Self &middot; The Controlling Self &middot; The Approval-Seeking Self &middot; The Angry Self</p>
             <input type="text" class="ws-input" id="ws-name" placeholder="e.g. The Doubter" />
           </div>
@@ -1048,7 +1051,7 @@
           <div class="ws-node">02</div>
           <div class="ws-body">
             <h3 class="ws-title">What happened?</h3>
-            <p class="ws-prompt">What happened immediately before this Self appeared?</p>
+            <p class="ws-prompt">What happened immediately before this Self appeared? <span class="required-mark">*</span></p>
             <textarea class="ws-input ws-input--big" id="ws-what"></textarea>
           </div>
         </div>
@@ -1056,7 +1059,7 @@
           <div class="ws-node">03</div>
           <div class="ws-body">
             <h3 class="ws-title">Thought</h3>
-            <p class="ws-prompt">What went through your mind?</p>
+            <p class="ws-prompt">What went through your mind? <span class="required-mark">*</span></p>
             <textarea class="ws-input" id="ws-thought" placeholder="e.g. &ldquo;I can&rsquo;t do this.&rdquo;"></textarea>
           </div>
         </div>
@@ -1064,7 +1067,7 @@
           <div class="ws-node">04</div>
           <div class="ws-body">
             <h3 class="ws-title">Emotion</h3>
-            <p class="ws-prompt">What did you feel?</p>
+            <p class="ws-prompt">What did you feel? <span class="required-mark">*</span></p>
             <textarea class="ws-input" id="ws-emotion"></textarea>
           </div>
         </div>
@@ -1072,7 +1075,7 @@
           <div class="ws-node">05</div>
           <div class="ws-body">
             <h3 class="ws-title">Soma</h3>
-            <p class="ws-prompt">What changed in your body?</p>
+            <p class="ws-prompt">What changed in your body? <span class="required-mark">*</span></p>
             <p class="ws-help">Try to notice your breath, muscle tension, posture, chest, stomach, jaw, shoulders, temperature, or any other bodily sensation.</p>
             <textarea class="ws-input" id="ws-soma"></textarea>
           </div>
@@ -1081,7 +1084,7 @@
           <div class="ws-node">06</div>
           <div class="ws-body">
             <h3 class="ws-title">Reaction</h3>
-            <p class="ws-prompt">When this Self took the helm, what did it lead you to do?</p>
+            <p class="ws-prompt">When this Self took the helm, what did it lead you to do? <span class="required-mark">*</span></p>
             <textarea class="ws-input" id="ws-react"></textarea>
           </div>
         </div>
@@ -1091,7 +1094,7 @@
             <h3 class="ws-title">Separate</h3>
             <p class="ws-sep"><strong>&ldquo;<span class="ws-name-out">This Self</span>&rdquo; is not you.</strong></p>
             <p class="ws-prompt">It is a Self arising within you that you are beginning to observe.</p>
-            <p class="ws-prompt"><strong>What is this Self telling you?</strong></p>
+            <p class="ws-prompt"><strong>What is this Self telling you?</strong> <span class="required-mark">*</span></p>
             <p class="ws-help">Speak about it in the third person. Instead of &ldquo;I can&rsquo;t do this.&rdquo; use: &ldquo;The Doubter is telling me I can&rsquo;t do this.&rdquo;</p>
             <textarea class="ws-input" id="ws-says" placeholder="e.g. &ldquo;The Doubter is telling me I can&rsquo;t do this.&rdquo;"></textarea>
           </div>
@@ -1103,9 +1106,9 @@
             <p class="ws-prompt">Summarize the signals that could help you recognize this same Self next time.</p>
             <p class="ws-help">You do not have to know all three. Even one is enough.</p>
             <div class="ws-sigs">
-              <div class="ws-sig ws-sig--thought"><p class="ws-sig-tag">Thought</p><p class="ws-prompt">What is its familiar thought?</p><textarea class="ws-input" id="ws-sig-thought"></textarea></div>
-              <div class="ws-sig ws-sig--emotion"><p class="ws-sig-tag">Emotion</p><p class="ws-prompt">What emotion tends to come with it?</p><textarea class="ws-input" id="ws-sig-emotion"></textarea></div>
-              <div class="ws-sig ws-sig--soma"><p class="ws-sig-tag">Soma</p><p class="ws-prompt">What is its early signal in the Soma?</p><textarea class="ws-input" id="ws-sig-soma"></textarea></div>
+              <div class="ws-sig ws-sig--thought"><p class="ws-sig-tag">Thought</p><p class="ws-prompt">What is its familiar thought? <span class="required-mark">*</span></p><textarea class="ws-input" id="ws-sig-thought"></textarea></div>
+              <div class="ws-sig ws-sig--emotion"><p class="ws-sig-tag">Emotion</p><p class="ws-prompt">What emotion tends to come with it? <span class="required-mark">*</span></p><textarea class="ws-input" id="ws-sig-emotion"></textarea></div>
+              <div class="ws-sig ws-sig--soma"><p class="ws-sig-tag">Soma</p><p class="ws-prompt">What is its early signal in the Soma? <span class="required-mark">*</span></p><textarea class="ws-input" id="ws-sig-soma"></textarea></div>
             </div>
           </div>
         </div>
@@ -1113,7 +1116,7 @@
           <div class="ws-node">09</div>
           <div class="ws-body">
             <h3 class="ws-title">Create Your Anchor</h3>
-            <p class="ws-prompt">What could help remind you of your center when you notice this Self?</p>
+            <p class="ws-prompt">What could help remind you of your center when you notice this Self? <span class="required-mark">*</span></p>
             <p class="ws-ex">a phrase &middot; a memory &middot; a breath &middot; a movement &middot; an image &middot; a symbol &middot; a mantra</p>
             <div id="ws-anchors">
               <input type="text" class="ws-input" id="ws-anchor-1" placeholder="Anchor 1" />
@@ -1125,7 +1128,7 @@
           <div class="ws-node">10</div>
           <div class="ws-body">
             <h3 class="ws-title">The Next Encounter</h3>
-            <p class="ws-prompt">When this Self appears again, what would you like to notice earlier?</p>
+            <p class="ws-prompt">When this Self appears again, what would you like to notice earlier? <span class="required-mark">*</span></p>
             <textarea class="ws-input" id="ws-next"></textarea>
             <div class="ws-timing">
               <p class="ws-timing-title">Noticing can happen earlier over time</p>

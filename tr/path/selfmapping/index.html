@@ -691,6 +691,8 @@
     .ws-flow .flow-chip { font-size: 0.72rem; padding: 0.4rem 0.75rem; }
     .ws-privacy { border: 1px solid var(--border-hover); border-left: 3px solid var(--gold); padding: 1.75rem 1.75rem 1.25rem; margin: 1rem 0 2rem; background: rgba(201, 168, 76, 0.04); }
     .ws-privacy--start { margin: 2rem 0 0.5rem; }
+    .required-mark { color: #e2635c; }
+    .required-legend { font-size: 0.78rem; color: var(--muted); margin: 1.5rem 0 0.5rem; }
     .ws-req-msg { font-size: 0.82rem; color: #e0a37a; margin: 0.45rem 0 0; }
     .ws-input[aria-invalid="true"] { border-color: #e0a37a; }
     .ws-timing { margin-top: 1.75rem; padding-top: 1.25rem; border-top: 1px solid var(--border); }
@@ -998,12 +1000,13 @@
           <p>Yazdığın hiçbir cevap, Eşgal adı, düşünce, duygu, Soma deneyimi, tetikleyici veya çıpa @ <span lang="en">Bliss</span>'e gönderilmez veya kaydedilmez.</p>
           <p>Yazdıkların yalnızca bu tarayıcı penceresinde kalır.</p>
         </div>
+        <p class="required-legend"><span class="required-mark">*</span> Zorunlu alanlar</p>
         <div class="ws-rail">
         <div class="ws-step ws-step--name" data-step="1">
           <div class="ws-node">01</div>
           <div class="ws-body">
             <h3 class="ws-title">Eşgal'e bir isim ver.</h3>
-            <p class="ws-prompt">Bu hâle senden ayrı bir isim verecek olsaydın ona ne derdin?</p>
+            <p class="ws-prompt">Bu hâle senden ayrı bir isim verecek olsaydın ona ne derdin? <span class="required-mark">*</span></p>
             <p class="ws-ex">Şüpheci Ben &middot; Korkan Ben &middot; Kontrol Eden Ben &middot; Onay Arayan Ben &middot; Öfkeli Ben</p>
             <input type="text" class="ws-input" id="ws-name" placeholder="ör. Şüpheci Ben" />
           </div>
@@ -1012,7 +1015,7 @@
           <div class="ws-node">02</div>
           <div class="ws-body">
             <h3 class="ws-title">Ne oldu?</h3>
-            <p class="ws-prompt">Bu Eşgal ortaya çıkmadan hemen önce ne olmuştu?</p>
+            <p class="ws-prompt">Bu Eşgal ortaya çıkmadan hemen önce ne olmuştu? <span class="required-mark">*</span></p>
             <textarea class="ws-input ws-input--big" id="ws-what"></textarea>
           </div>
         </div>
@@ -1020,7 +1023,7 @@
           <div class="ws-node">03</div>
           <div class="ws-body">
             <h3 class="ws-title">Düşünce</h3>
-            <p class="ws-prompt">Aklından ne geçti?</p>
+            <p class="ws-prompt">Aklından ne geçti? <span class="required-mark">*</span></p>
             <textarea class="ws-input" id="ws-thought" placeholder="ör. &ldquo;Bunu yapamam.&rdquo;"></textarea>
           </div>
         </div>
@@ -1028,7 +1031,7 @@
           <div class="ws-node">04</div>
           <div class="ws-body">
             <h3 class="ws-title">Duygu</h3>
-            <p class="ws-prompt">Ne hissettin?</p>
+            <p class="ws-prompt">Ne hissettin? <span class="required-mark">*</span></p>
             <textarea class="ws-input" id="ws-emotion"></textarea>
           </div>
         </div>
@@ -1036,7 +1039,7 @@
           <div class="ws-node">05</div>
           <div class="ws-body">
             <h3 class="ws-title">Soma</h3>
-            <p class="ws-prompt">Bedeninde ne değişti?</p>
+            <p class="ws-prompt">Bedeninde ne değişti? <span class="required-mark">*</span></p>
             <p class="ws-help">Nefesini, kas gerginliğini, duruşunu, göğsünü, karnını, çeneni, omuzlarını, sıcaklığı veya başka bir bedensel duyumu fark etmeye çalış.</p>
             <textarea class="ws-input" id="ws-soma"></textarea>
           </div>
@@ -1045,7 +1048,7 @@
           <div class="ws-node">06</div>
           <div class="ws-body">
             <h3 class="ws-title">Tepki</h3>
-            <p class="ws-prompt">Bu Eşgal dümene geçtiğinde sana ne yaptırdı veya seni ne yapmaya yöneltti?</p>
+            <p class="ws-prompt">Bu Eşgal dümene geçtiğinde sana ne yaptırdı veya seni ne yapmaya yöneltti? <span class="required-mark">*</span></p>
             <textarea class="ws-input" id="ws-react"></textarea>
           </div>
         </div>
@@ -1055,7 +1058,7 @@
             <h3 class="ws-title">Ayır</h3>
             <p class="ws-sep"><strong>&ldquo;<span class="ws-name-out">Bu Eşgal</span>&rdquo; sen değilsin.</strong></p>
             <p class="ws-prompt">O, içinde ortaya çıkan ve artık gözlemlemeye başladığın bir Eşgal.</p>
-            <p class="ws-prompt"><strong>Bu Eşgal sana ne söylüyor?</strong></p>
+            <p class="ws-prompt"><strong>Bu Eşgal sana ne söylüyor?</strong> <span class="required-mark">*</span></p>
             <p class="ws-help">Ondan &ldquo;Ben&rdquo; diye değil, üçüncü kişi olarak söz et. &ldquo;Ben yapamam.&rdquo; yerine: &ldquo;Şüpheci Ben bana bunu yapamayacağımı söylüyor.&rdquo;</p>
             <textarea class="ws-input" id="ws-says" placeholder="ör. &ldquo;Şüpheci Ben bana bunu yapamayacağımı söylüyor.&rdquo;"></textarea>
           </div>
@@ -1067,9 +1070,9 @@
             <p class="ws-prompt">Bu aynı Eşgal&rsquo;i bir dahaki sefere tanımana yardımcı olabilecek sinyalleri özetle.</p>
             <p class="ws-help">Üçünü birden bilmek zorunda değilsin. Bir tanesi bile yeterli.</p>
             <div class="ws-sigs">
-              <div class="ws-sig ws-sig--thought"><p class="ws-sig-tag">Düşünce</p><p class="ws-prompt">Onun tipik düşüncesi nedir?</p><textarea class="ws-input" id="ws-sig-thought"></textarea></div>
-              <div class="ws-sig ws-sig--emotion"><p class="ws-sig-tag">Duygu</p><p class="ws-prompt">Onunla birlikte gelen duygu nedir?</p><textarea class="ws-input" id="ws-sig-emotion"></textarea></div>
-              <div class="ws-sig ws-sig--soma"><p class="ws-sig-tag">Soma</p><p class="ws-prompt">Soma&rsquo;daki erken işareti nedir?</p><textarea class="ws-input" id="ws-sig-soma"></textarea></div>
+              <div class="ws-sig ws-sig--thought"><p class="ws-sig-tag">Düşünce</p><p class="ws-prompt">Onun tipik düşüncesi nedir? <span class="required-mark">*</span></p><textarea class="ws-input" id="ws-sig-thought"></textarea></div>
+              <div class="ws-sig ws-sig--emotion"><p class="ws-sig-tag">Duygu</p><p class="ws-prompt">Onunla birlikte gelen duygu nedir? <span class="required-mark">*</span></p><textarea class="ws-input" id="ws-sig-emotion"></textarea></div>
+              <div class="ws-sig ws-sig--soma"><p class="ws-sig-tag">Soma</p><p class="ws-prompt">Soma&rsquo;daki erken işareti nedir? <span class="required-mark">*</span></p><textarea class="ws-input" id="ws-sig-soma"></textarea></div>
             </div>
           </div>
         </div>
@@ -1077,7 +1080,7 @@
           <div class="ws-node">09</div>
           <div class="ws-body">
             <h3 class="ws-title">Çıpanı Oluştur</h3>
-            <p class="ws-prompt">Bu Eşgal'i fark ettiğinde sana merkezini hatırlatabilecek ne var?</p>
+            <p class="ws-prompt">Bu Eşgal'i fark ettiğinde sana merkezini hatırlatabilecek ne var? <span class="required-mark">*</span></p>
             <p class="ws-ex">bir cümle &middot; bir anı &middot; bir nefes &middot; bir hareket &middot; bir görüntü &middot; bir sembol &middot; bir mantra</p>
             <div id="ws-anchors">
               <input type="text" class="ws-input" id="ws-anchor-1" placeholder="Çıpa 1" />
@@ -1089,7 +1092,7 @@
           <div class="ws-node">10</div>
           <div class="ws-body">
             <h3 class="ws-title">Bir Sonraki Karşılaşma</h3>
-            <p class="ws-prompt">Bu Eşgal tekrar ortaya çıktığında neyi daha erken fark etmek istersin?</p>
+            <p class="ws-prompt">Bu Eşgal tekrar ortaya çıktığında neyi daha erken fark etmek istersin? <span class="required-mark">*</span></p>
             <textarea class="ws-input" id="ws-next"></textarea>
             <div class="ws-timing">
               <p class="ws-timing-title">Fark ediş zamanla daha erkene gelebilir</p>
