@@ -687,6 +687,13 @@
     .ws-flow .flow-chip { font-size: 0.72rem; padding: 0.4rem 0.75rem; }
     .ws-privacy { border: 1px solid var(--border-hover); border-left: 3px solid var(--gold); padding: 1.75rem 1.75rem 1.25rem; margin: 1rem 0 2rem; background: rgba(201, 168, 76, 0.04); }
     .ws-privacy--start { margin: 2rem 0 0.5rem; }
+    .ws-keep { border: 1px solid var(--border-hover); border-left: 3px solid var(--gold); background: rgba(201, 168, 76, 0.04); padding: 1.5rem 1.75rem; margin: 0.5rem 0 2rem; max-width: 620px; }
+    .ws-keep p { margin-bottom: 1rem; }
+    .ws-copy-btn { background: none; border: 1px solid var(--gold); color: var(--gold-light); cursor: pointer; font-family: 'DM Sans', sans-serif; }
+    .ws-copy-btn:hover { background: rgba(201, 168, 76, 0.1); }
+    .ws-copy-fail { display: none; font-size: 0.85rem !important; color: #e0a37a !important; margin: 0.75rem 0 0 !important; }
+    .ws-copy-fail.visible { display: block; }
+    .ws-again-wrap { margin-top: 1.5rem !important; }
     .ws-privacy-title { font-size: 0.8rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.9rem; }
     .ws-privacy p { font-size: 0.92rem; line-height: 1.8; color: rgba(232, 228, 220, 0.82); margin-bottom: 0.6rem; }
     .ws-privacy .ws-privacy-note { font-size: 0.82rem; color: var(--muted); }
@@ -1100,8 +1107,15 @@
         <p class="es-cascade">Düşünce.<br />Duygu.<br />Soma.</p>
         <p>Amaç onu hiç yaşamamak değil.</p>
         <p><strong>Amaç onu biraz daha erken görebilmek.</strong></p>
+        <div class="ws-keep">
+          <p class="ws-privacy-title">Çalışmanı kendin için sakla</p>
+          <p>Bu çalışmada yazdığın cevapların tamamını kopyalayabilir, daha sonra notlarına, günlüğüne veya istediğin başka bir yere kaydedebilirsin.</p>
+          <button type="button" class="btn ws-copy-btn" id="ws-copy">Çalışmamı Kopyala</button>
+          <p class="ws-copy-fail" id="ws-copy-fail">Kopyalama bu tarayıcıda çalışmadı. Lütfen tekrar dene.</p>
+        </div>
         <p>Bir sonraki <a href="/tr/breathwork/" class="es-link">Somatik Nefes Çalışmamıza</a> katılırsan ve bu Eşgal üzerine konuşmak istersen, seansın ardından 30 dakika daha kalabilirsin. Bu süreyi birlikte gözlemlediklerine bakmak için kullanabiliriz.</p>
         <p class="mod-quote" style="margin-top:2.5rem;">&ldquo;Ne olmadığını bilmek, Öz'ünü hatırlamanın başlangıcıdır.&rdquo;</p>
+        <p class="ws-again-wrap"><a href="#calisma" class="es-link" id="ws-again">Bir Eşgal Çalışması daha yap</a></p>
       </div>
     </div>
   </section>
@@ -1183,6 +1197,29 @@
         if (anchorCount >= 5) addBtn.style.display = 'none';
       });
 
+      // In-memory copy of the finished exercise, only for "Çalışmamı Kopyala". Never stored, never sent.
+      let lastWork = null;
+      function val(id) { const el = document.getElementById(id); return el ? el.value.trim() : ''; }
+      function snapshot() {
+        return {
+          name: val('ws-name'), what: val('ws-what'), thought: val('ws-thought'), emotion: val('ws-emotion'),
+          soma: val('ws-soma'), react: val('ws-react'), says: val('ws-says'),
+          sigThought: val('ws-sig-thought'), sigEmotion: val('ws-sig-emotion'), sigSoma: val('ws-sig-soma'),
+          anchors: [...document.querySelectorAll('#ws-anchors .ws-input')].map(function (i) { return i.value.trim(); }).filter(Boolean),
+          next: val('ws-next')
+        };
+      }
+      function asText(w) {
+        const block = function (t, v) { return t + '\n' + (v || '') + '\n'; };
+        return ['EŞGAL ÇALIŞMAM', '',
+          block('Eşgal:', w.name), block('Ne oldu?', w.what), block('Düşünce:', w.thought), block('Duygu:', w.emotion),
+          block('Soma:', w.soma), block('Tepki:', w.react), block('Eşgal bana ne söylüyor?', w.says),
+          'ÜÇ ERKEN SİNYALİM', '',
+          block('Düşünce:', w.sigThought), block('Duygu:', w.sigEmotion), block('Soma:', w.sigSoma),
+          block('Çıpalarım:', w.anchors.join('\n')), block('Bir sonraki karşılaşmada:', w.next),
+          "Ne olmadığını bilmek, Öz'ünü hatırlamanın başlangıcıdır."].join('\n');
+      }
+
       const btn = document.getElementById('ws-complete');
       const err = document.getElementById('ws-error');
       const label = btn.textContent;
@@ -1199,6 +1236,7 @@
           const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { Accept: 'application/json' }, body: payload });
           const out = await res.json();
           if (!out.success) throw new Error(out.message || 'failed');
+          lastWork = snapshot();
           document.getElementById('ws-wrap').style.display = 'none';
           const done = document.getElementById('ws-done');
           done.classList.add('visible');
@@ -1207,6 +1245,44 @@
           err.classList.add('visible');
           btn.disabled = false; btn.textContent = label;
         }
+      });
+
+      // "Çalışmamı Kopyala": clipboard only, nothing is sent anywhere.
+      const copyBtn = document.getElementById('ws-copy');
+      const copyFail = document.getElementById('ws-copy-fail');
+      const copyLabel = copyBtn.textContent;
+      async function writeClipboard(text) {
+        if (navigator.clipboard && window.isSecureContext) { await navigator.clipboard.writeText(text); return; }
+        const t = document.createElement('textarea');
+        t.value = text; t.setAttribute('readonly', ''); t.style.position = 'fixed'; t.style.opacity = '0';
+        document.body.appendChild(t); t.select();
+        const ok = document.execCommand('copy');
+        document.body.removeChild(t);
+        if (!ok) throw new Error('copy failed');
+      }
+      copyBtn.addEventListener('click', async function () {
+        copyFail.classList.remove('visible');
+        if (!lastWork) return;
+        try {
+          await writeClipboard(asText(lastWork));
+          copyBtn.textContent = 'Kopyalandı ✓';
+          setTimeout(function () { copyBtn.textContent = copyLabel; }, 2200);
+        } catch (e) { copyFail.classList.add('visible'); }
+      });
+
+      // "Bir Eşgal Çalışması daha yap": blank workspace on the same page, no notification sent.
+      document.getElementById('ws-again').addEventListener('click', function (e) {
+        e.preventDefault();
+        lastWork = null;
+        document.querySelectorAll('#ws-wrap .ws-input').forEach(function (i) { i.value = ''; });
+        document.querySelectorAll('#ws-anchors .ws-input').forEach(function (i, k) { if (k > 0) i.remove(); });
+        anchorCount = 1; addBtn.style.display = '';
+        syncName(); markSteps();
+        err.classList.remove('visible'); copyFail.classList.remove('visible');
+        btn.disabled = false; btn.textContent = label; copyBtn.textContent = copyLabel;
+        document.getElementById('ws-done').classList.remove('visible');
+        document.getElementById('ws-wrap').style.display = '';
+        document.getElementById('calisma').scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     })();
   </script>
