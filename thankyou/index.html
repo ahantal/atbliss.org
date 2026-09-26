@@ -475,6 +475,12 @@
     .lang-switch span[aria-current] { color: var(--gold-light); }
     .lang-switch .lang-sep { color: var(--border-hover); }
     @media (max-width: 768px) { .lang-switch { margin-left: auto; margin-right: 1.25rem; } }
+    /* Hamburger menu up to 1024px: the five menu items plus EN/TR do not fit beside the logo below ~1000px */
+    @media (max-width: 1024px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .lang-switch { margin-left: auto; margin-right: 1.25rem; }
+    }
   </style>
   <!-- Session date and time live only in /assets/events.js -->
   <script src="/assets/events.js"></script>
@@ -486,9 +492,9 @@
   <nav id="main-nav">
     <a href="/" class="nav-logo"><img src="../images/AtBlissLogo.png" alt="@ Bliss Foundation" /></a>
     <ul class="nav-links">
-      <li><a href="/#founder">About</a></li>
+      <li><a href="/founder/">About</a></li>
       <li><a href="/#methodology">Our Methodology</a></li>
-      <li><a href="/#consciousness">Consciousness Levels</a></li>
+      <li><a href="/#consciousness">Levels of Awareness</a></li>
       <li><a href="/path">The @ Bliss Path</a></li>
       <li><a href="/#manifesto">Manifesto</a></li>
     </ul>
@@ -500,9 +506,9 @@
 
   <!-- MOBILE NAV -->
   <div class="nav-mobile" id="mobile-nav" role="dialog" aria-label="Navigation">
-    <a href="/#founder"       onclick="closeNav()">About</a>
+    <a href="/founder/"       onclick="closeNav()">About</a>
     <a href="/#methodology"   onclick="closeNav()">Our Methodology</a>
-    <a href="/#consciousness" onclick="closeNav()">Consciousness Levels</a>
+    <a href="/#consciousness" onclick="closeNav()">Levels of Awareness</a>
     <a href="/path"           onclick="closeNav()">The @ Bliss Path</a>
     <a href="/#manifesto"     onclick="closeNav()">Manifesto</a>
   </div>
@@ -656,7 +662,7 @@
     <div class="footer-top">
       <div>
         <span class="footer-logo"><img src="../images/AtBlissLogo.png" alt="@ Bliss Foundation" /></span>
-        <p class="footer-tagline">You are not at the mercy of how you resonate. You participate in shaping it, through every breath, every thought, every practice, every choice.</p>
+        <p class="footer-tagline">You are not a prisoner of what you think and feel. With every breath, every moment of awareness, and every choice, you have the capacity to reshape your inner state.</p>
       </div>
       <a href="/" class="footer-back">&larr; Back to atbliss.org</a>
     </div>

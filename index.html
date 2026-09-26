@@ -612,7 +612,7 @@
 
     .manifesto-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
       margin-top: 3.5rem;
       margin-bottom: 0;
@@ -816,6 +816,12 @@
     .lang-switch span[aria-current] { color: var(--gold-light); }
     .lang-switch .lang-sep { color: var(--border-hover); }
     @media (max-width: 768px) { .lang-switch { margin-left: auto; margin-right: 1.25rem; } }
+    /* Hamburger menu up to 1024px: the five menu items plus EN/TR do not fit beside the logo below ~1000px */
+    @media (max-width: 1024px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .lang-switch { margin-left: auto; margin-right: 1.25rem; }
+    }
   </style>
 </head>
 <body>
@@ -824,9 +830,9 @@
   <nav id="main-nav">
     <a href="#" class="nav-logo"><img src="images/AtBlissLogo.png" alt="@ Bliss Foundation" /></a>
     <ul class="nav-links">
-      <li><a href="#founder">About</a></li>
+      <li><a href="/founder/">About</a></li>
       <li><a href="#methodology">Our Methodology</a></li>
-      <li><a href="#consciousness">Consciousness Levels</a></li>
+      <li><a href="#consciousness">Levels of Awareness</a></li>
       <li><a href="/path">The @ Bliss Path</a></li>
       <li><a href="#manifesto">Manifesto</a></li>
     </ul>
@@ -838,9 +844,9 @@
 
   <!-- MOBILE NAV -->
   <div class="nav-mobile" id="mobile-nav" role="dialog" aria-label="Navigation">
-    <a href="#founder"       onclick="closeNav()">About</a>
+    <a href="/founder/"       onclick="closeNav()">About</a>
     <a href="#methodology"   onclick="closeNav()">Our Methodology</a>
-    <a href="#consciousness" onclick="closeNav()">Consciousness Levels</a>
+    <a href="#consciousness" onclick="closeNav()">Levels of Awareness</a>
     <a href="/path"          onclick="closeNav()">The @ Bliss Path</a>
     <a href="#manifesto"     onclick="closeNav()">Manifesto</a>
   </div>
@@ -931,8 +937,10 @@
           <div class="manifesto-columns">
           <p class="manifesto-text">If there is a voice within you that speaks to you, that tells you things, that voice cannot be the real you. It cannot be your true Self.</p>
           <p class="manifesto-text" style="margin-top:1rem;">Thoughts arise. Fears arise. Judgments, memories, desires, and reactions arise. We experience them, but we are also able to observe them.</p>
-          <p class="manifesto-text" style="margin-top:1rem;">This simple realization creates a space between the voice and the one who is listening.</p>
-          <p class="manifesto-text" style="margin-top:1rem;">And this is where awakening begins.</p>
+          <p class="manifesto-text" style="margin-top:1rem;">This simple realization creates space between the voice that speaks and the one who hears it.</p>
+          <p class="manifesto-text" style="margin-top:1rem;">As we begin to notice our thoughts, emotions, and the changes within our Soma, we also begin to recognize our automatic reactions earlier.</p>
+          <p class="manifesto-text" style="margin-top:1rem;">The moment we notice, a space opens between reaction and choice.</p>
+          <p class="manifesto-text" style="margin-top:1rem;">Awakening begins here.</p>
           <p class="manifesto-text" style="margin-top:1rem;">But awakening is not enough.</p>
           <p class="manifesto-text" style="margin-top:1rem;">To keep from forgetting that awakening, we need a Path, practice through which to live what the Path asks of us, and Attention to observe the ceaseless mechanism of association within us.</p>
           <p class="manifesto-text" style="margin-top:1rem;">Working through our fears, desires, habits, and conditioning, this mechanism can convince us once again that we are the voice and make us forget, again and again, the Truth we know by heart.</p>
@@ -955,16 +963,12 @@
           <p class="manifesto-text" style="margin-top:1rem;">@ Bliss does not seek to replace any of them.</p>
           <p class="manifesto-text" style="margin-top:1rem;">It exists to make visible the consciousness of Oneness and the universal compassion that lives at the heart of them all.</p>
         </div>
-        <div class="manifesto-block reveal" style="transition-delay:0.32s;">
-          <p class="manifesto-text">@ Bliss is a space of re-membering together, where children, parents, and all seekers can show up exactly as they are, without judgment, and allow heart, mind, body, and spirit to grow in greater awareness and coherence.</p>
-          <p class="manifesto-text" style="margin-top:1rem;">A space where intuition is welcomed, inner knowing is cultivated, and each person is encouraged to listen more deeply to what they already carry within.</p>
-        </div>
       </div>
 
       <div class="manifesto-question reveal" style="transition-delay:0.38s;">
-        <p class="manifesto-q-label">In every practice, every conversation, every gathering, we return to the same question:</p>
+        <p class="manifesto-q-label">@ Bliss is a space created for remembering together. The question we ask here is:</p>
         <blockquote class="manifesto-q-text">
-          "What do I not know, or not remember, that could bring me, and us, a little closer to the One, to love, and to truth? To Bliss?"
+          "What is it that I do not know or have forgotten that could bring me, and all of us, a little closer to the One, to Love, and to Truth?"
         </blockquote>
       </div>
     </div>
@@ -975,9 +979,9 @@
   <!-- TRANSITION -->
   <section class="transition" id="transition">
     <div class="section-inner">
-      <h2 class="section-title reveal">Calibrate your frequency.<br />Invite light into your life.</h2>
+      <h2 class="section-title reveal">Tune your frequency.<br />Invite the light into your life.</h2>
       <blockquote class="transition-quote reveal" style="transition-delay:0.15s;">
-        "You are not at the mercy of how you resonate. You participate in shaping it, through every breath, every thought, every practice, every choice."
+        "You are not a prisoner of what you think and feel. With every breath, every moment of awareness, and every choice, you have the capacity to reshape your inner state."
       </blockquote>
     </div>
   </section>
@@ -990,7 +994,7 @@
       <p class="section-label reveal">How It Works</p>
       <h2 class="section-title reveal">The @ Bliss Methodology</h2>
       <p class="section-body reveal" style="transition-delay:0.1s;">
-        The @ Bliss Path unfolds across six sequential stages, a progression, not a checklist. Each stage builds on the one before it.
+        The @ Bliss Path unfolds through six interconnected stages. This is not a checklist, but an ongoing journey. Each stage builds upon the one before it.
       </p>
 
       <div class="method-flow reveal" style="transition-delay:0.15s;">
@@ -1011,8 +1015,8 @@
             <div class="method-name">Awaken</div>
             <p class="method-text"><strong>If there is a voice inside you telling you what to do, that voice cannot be you.</strong></p>
             <p class="method-text" style="margin-top:1rem;">Awakening begins when you learn to observe your thoughts, patterns, reactions, and inner voices instead of automatically identifying with them.</p>
-            <p class="method-text" style="margin-top:1rem;">You begin to recognize what is happening within you before it takes the helm.</p>
-            <p class="method-text" style="margin-top:1rem;">To know what you are not is the beginning of remembering what you are.</p>
+            <p class="method-text" style="margin-top:1rem;">As you begin to notice the first signs appearing in your thoughts, emotions, and Soma, you begin to recognize an automatic reaction before it takes control.</p>
+            <p class="method-text" style="margin-top:1rem;">Knowing what you are not is the beginning of remembering your Essence.</p>
           </div>
         </div>
 
@@ -1023,6 +1027,7 @@
             <p class="method-text">Awareness alone is not enough. The patterns we recognize in the mind also live in the body, the Soma.</p>
             <p class="method-text" style="margin-top:1rem;">Awareness shows us what is happening. Attention allows us to stay with it.</p>
             <p class="method-text" style="margin-top:1rem;">To begin regulating, we learn to direct our Attention toward the Soma. We notice the early signals that appear in the breath, posture, muscular tension, and physical sensations.</p>
+            <p class="method-text" style="margin-top:1rem;">When we notice these early signals, we learn to pause instead of reacting automatically, to breathe, and to create a small space between stimulus and response.</p>
             <p class="method-text" style="margin-top:1rem;">Through Somatic Breathwork and other embodied practices, including mindful eating, mindful sleeping, and conscious movement, we learn to work with the nervous system.</p>
             <p class="method-text" style="margin-top:1rem;">We create the conditions in which old patterns can begin to release and new patterns can emerge.</p>
             <p class="method-text" style="margin-top:1rem;">We begin to experience that regulating our nervous system can change how we think, feel, and respond.</p>
@@ -1038,7 +1043,9 @@
             <div class="method-name">Become Coherent</div>
             <p class="method-text">Regulation creates space. Coherence brings us into alignment.</p>
             <p class="method-text" style="margin-top:1rem;">Through meditation, breath, focused attention, and heart-centered practices, we learn to bring the heart, mind, body, and emotions into greater coherence.</p>
-            <p class="method-text" style="margin-top:1rem;">As the practice deepens, we also begin exploring the relationship between the brain, heart, nervous system, and pineal gland, and how different states of consciousness may shape the way we experience ourselves and the world around us.</p>
+            <p class="method-text" style="margin-top:1rem;">As the practice deepens, we begin to explore different states of consciousness through breath, meditation, heart-centered practices, and practices intended to support pineal activation.</p>
+            <p class="method-text" style="margin-top:1rem;">We explore how to direct our Attention more consciously, move beyond inner noise, and cultivate deeper alignment between heart, mind, and body.</p>
+            <p class="method-text" style="margin-top:1rem;">As greater coherence begins to emerge within us, we may also experience changes in how we relate to ourselves, to others, and to life.</p>
             <p class="method-text" style="margin-top:1rem;">Over time, coherence becomes more than something we practice.</p>
             <p class="method-text" style="margin-top:1rem;">It becomes a way we live.</p>
           </div>
@@ -1050,12 +1057,15 @@
             <div class="method-name">Resonate</div>
             <p class="method-text">As we become more coherent, we become more aware of how we resonate.</p>
             <p class="method-text" style="margin-top:1rem;">Through meditation, visualization, conscious intention, and other contemplative practices, we explore the relationship between our inner state and the reality we experience.</p>
+            <p class="method-text" style="margin-top:1rem;">From the deeper inner states cultivated through coherence, we begin to understand more deeply the importance of where we direct our Attention. What we give our Attention to is also what we feed.</p>
+            <p class="method-text" style="margin-top:1rem;">We begin to explore creation not merely as a mental wish or thought, but as a process in which our Attention, intention, emotions, and actions begin moving in the same direction.</p>
             <p class="method-text" style="margin-top:1rem;">We begin to recognize that how we resonate is shaped not only by meditation or intention, but also by how we eat, sleep, move, consume, relate, think, and direct our Attention.</p>
             <p class="method-text" style="margin-top:1rem;">The question gradually shifts from:</p>
             <p class="method-text" style="margin-top:0.5rem;"><strong>&ldquo;How can I make this happen?&rdquo;</strong></p>
             <p class="method-text" style="margin-top:0.5rem;">to:</p>
             <p class="method-text" style="margin-top:0.5rem;"><strong>&ldquo;What do I need to become coherent with?&rdquo;</strong></p>
             <p class="method-text" style="margin-top:1rem;">We begin to consciously shape how we resonate, not by trying to control life, but by becoming more aware of what we are bringing into it.</p>
+            <p class="method-text" style="margin-top:1rem;"><strong>Creation is not only about what we want. It is also about where we direct our Attention and the inner state from which we direct it.</strong></p>
           </div>
         </div>
 
@@ -1066,7 +1076,8 @@
             <p class="method-text">The Path is not an escape from the human experience. It is an invitation to experience it more fully.</p>
             <p class="method-text" style="margin-top:1rem;">Life offers us extraordinary beauty, tastes, sensations, relationships, creativity, laughter, love, and joy. We do not need to reject these things in order to awaken.</p>
             <p class="method-text" style="margin-top:1rem;">What is needed here is to recognize whether we are being consumed by our desires.</p>
-            <p class="method-text" style="margin-top:1rem;">If we remember to live not seduced by our desires, but observing ourselves while experiencing all of life&rsquo;s pleasures, we may enjoy life much more.</p>
+            <p class="method-text" style="margin-top:1rem;"><em>While I am enjoying life, am I losing my Attention, or can I remain both the one who is living and the one who is watching the experience unfold?</em></p>
+            <p class="method-text" style="margin-top:1rem;">When we can remain both the one who is living and the one who is watching, without completely losing ourselves inside an experience, we do not have to give up what life offers us. On the contrary, we may experience it more fully.</p>
             <p class="method-text" style="margin-top:1rem;">This Journey can be enjoyable too.</p>
             <p class="method-text" style="margin-top:1rem;">When we live an experience not by forgetting ourselves, but by remembering our Self, we become free.</p>
             <p class="method-text" style="margin-top:1rem;">Responsibility, discipline, pain, and challenge still exist. But the Path itself does not need to become another struggle.</p>
@@ -1082,6 +1093,10 @@
             <p class="method-text" style="margin-top:1rem;"><strong>It is about remembering who you truly are.</strong></p>
             <p class="method-text" style="margin-top:1rem;">As the voices, patterns, fears, identities, and conditioning that once seemed to define you begin to lose their hold, it becomes easier to recognize what lies deeper.</p>
             <p class="method-text" style="margin-top:1rem;">You begin to remember your connection to others, to life, and ultimately to the One.</p>
+            <p class="method-text" style="margin-top:1rem;">Remembering is not a state we reach once and never lose again. It is the act of returning to ourselves again and again within life.</p>
+            <p class="method-text" style="margin-top:1rem;">As the light of our Attention touches thoughts, emotions, fears, and patterns that we once lived without seeing, what was invisible begins to become visible.</p>
+            <p class="method-text" style="margin-top:1rem;"><strong>What was unnoticed becomes noticed. What is noticed enters Consciousness.</strong></p>
+            <p class="method-text" style="margin-top:1rem;">When our Attention wanders, we may forget. When we return our Attention to ourselves, to the present moment, and to what lies deeper, we can remember again.</p>
             <p class="method-text" style="margin-top:1rem;">Perhaps the Path does not end when you remember.</p>
             <p class="method-text" style="margin-top:1rem;">Perhaps it continues when you accompany another as they remember their own Self.</p>
             <p class="method-text" style="margin-top:1rem;"><strong>Attention is the guardian of remembering.</strong></p>
@@ -1097,9 +1112,9 @@
   <section class="consciousness" id="consciousness">
     <div class="section-inner">
       <p class="section-label reveal">The Realizations</p>
-      <h2 class="section-title reveal">The Four Consciousness Levels</h2>
+      <h2 class="section-title reveal">Levels of Awareness</h2>
       <p class="section-body reveal" style="transition-delay:0.1s;">
-        These are not ranks, achievements, or labels. They are realizations that move from something we understand intellectually to something we know by heart and embody in the way we live.
+        These are not ranks, achievements, or labels. Along the Path, there are things we first understand with the mind. Then we begin to notice them within our own experience. What is noticed enters Consciousness. Over time, something we once knew intellectually can become something we know by heart and begin to live as a realization.
       </p>
 
       <div class="consciousness-grid">
@@ -1107,30 +1122,32 @@
           <div class="consciousness-num">01</div>
           <div class="depth-bar"><div class="depth-fill" style="width:25%;"></div></div>
           <div class="consciousness-title">Truth</div>
-          <p class="consciousness-text"><strong>There is a voice inside you that speaks to you, and that voice is not who you truly are.</strong></p>
-          <p class="consciousness-text" style="margin-top:1rem;">Much of the time, that voice is shaped by your experiences, fears, habits, expectations, conditioning, and emotional patterns.</p>
-          <p class="consciousness-text" style="margin-top:1rem;">Imagine yourself as the captain of a ship. You are still the captain, but the ship is often running on autopilot.</p>
-          <p class="consciousness-text" style="margin-top:1rem;">And that autopilot does not necessarily take you where you truly want to go.</p>
-          <p class="consciousness-text" style="margin-top:1rem;">Recognizing this is Truth.</p>
-          <p class="consciousness-text" style="margin-top:1rem;">There is another truth to discover:</p>
-          <p class="consciousness-text" style="margin-top:1rem;">It is possible to take back the helm.</p>
-          <p class="consciousness-text" style="margin-top:1rem;">We call the process of learning how to do this <a href="/path" style="color:var(--gold-light); text-decoration:none; border-bottom:1px solid rgba(232,207,136,0.3);">The @ Bliss Path</a>.</p>
+          <p class="consciousness-text"><strong>There is a voice inside you speaking to you, and that voice is not the real you.</strong></p>
+          <p class="consciousness-text" style="margin-top:1rem;">This voice is shaped by your experiences, fears, habits, conditioning, and emotional patterns.</p>
+          <p class="consciousness-text" style="margin-top:1rem;">If you can hear the voice inside you, who is the one hearing it?</p>
+          <p class="consciousness-text" style="margin-top:1rem;">You are still the captain of the ship. But the ship may often be moving on autopilot. Until we notice it, we may believe that we are the ones choosing the direction.</p>
+          <p class="consciousness-text" style="margin-top:1rem;">Realizing this is Truth.</p>
+          <p class="consciousness-text" style="margin-top:1rem;">And there is another Truth waiting to be discovered:</p>
+          <p class="consciousness-text" style="margin-top:1rem;"><strong>You can take the helm again.</strong></p>
+          <p class="consciousness-text" style="margin-top:1rem;">This is why the <a href="/path" style="color:var(--gold-light); text-decoration:none; border-bottom:1px solid rgba(232,207,136,0.3);">@ Bliss Path</a> exists.</p>
         </div>
         <div class="consciousness-card reveal" style="transition-delay:0.1s;">
           <div class="consciousness-num">02</div>
           <div class="depth-bar"><div class="depth-fill" style="width:50%;"></div></div>
           <div class="consciousness-title">Ability</div>
           <p class="consciousness-text">Ability is knowing by heart that you have the capacity to shape your life.</p>
-          <p class="consciousness-text" style="margin-top:1rem;">You begin to recognize that your inner state, and what you draw toward yourself through how you resonate, matter. You can change patterns, make conscious choices, set intentions, and transform how you resonate.</p>
+          <p class="consciousness-text" style="margin-top:1rem;">You cannot control everything that happens in your life. But you have more Ability than you may realize in where you direct your Attention, how you respond, the intention with which you act, and the choices you make.</p>
+          <p class="consciousness-text" style="margin-top:1rem;">You can change patterns, make conscious and wise choices, set intentions with inner knowing, and use your own agency to transform how you resonate.</p>
           <p class="consciousness-text" style="margin-top:1rem;">Bringing something into your life is no longer simply about wishing for it.</p>
-          <p class="consciousness-text" style="margin-top:1rem;">It is <strong>your awareness, intention, emotions, beliefs, and actions flowing with the Universe.</strong></p>
-          <p class="consciousness-text" style="margin-top:1rem;">You move from simply reacting to life to consciously participating in it.</p>
+          <p class="consciousness-text" style="margin-top:1rem;"><strong>Your Attention, Awareness, intention, emotions, beliefs, and actions begin to flow together with the Universe.</strong></p>
+          <p class="consciousness-text" style="margin-top:1rem;">You move from merely reacting to life toward consciously participating in it.</p>
         </div>
         <div class="consciousness-card reveal" style="transition-delay:0.2s;">
           <div class="consciousness-num">03</div>
           <div class="depth-bar"><div class="depth-fill" style="width:75%;"></div></div>
           <div class="consciousness-title">Oneness</div>
           <p class="consciousness-text">Oneness is reached when you know by heart that beneath our apparent differences, we all come from the same Source and are deeply interconnected.</p>
+          <p class="consciousness-text" style="margin-top:1rem;">Oneness is not only knowing that we are all connected. It is reaching the Consciousness through which you can recognize in another the same life you recognize within yourself.</p>
           <p class="consciousness-text" style="margin-top:1rem;">From this understanding comes the Golden Rule:</p>
           <p class="consciousness-text" style="margin-top:1rem;"><strong>Do not do to another what you would not have done to you.<br>Do not harm what does not harm you.<br>Do not destroy what does not threaten your life.</strong></p>
           <p class="consciousness-text" style="margin-top:1rem;">At this level, compassion is no longer simply something we are taught. It becomes the natural expression of knowing our oneness.</p>
@@ -1141,7 +1158,7 @@
           <div class="consciousness-title">Unity</div>
           <p class="consciousness-text">Unity is reached when you know by heart that the consciousness within you is not separate from the consciousness of the Creator, or from the consciousness within anyone else.</p>
           <p class="consciousness-text" style="margin-top:1rem;">Those who lived before us, those who are alive today, and those who will be born in the future are expressions of the same greater consciousness.</p>
-          <p class="consciousness-text" style="margin-top:1rem;">There is the individual experience of being you.<br>And there is the greater consciousness of which you are a part.</p>
+          <p class="consciousness-text" style="margin-top:1rem;">There is the individual experience of being you.<br>But the Consciousness experiencing it is not limited to you alone.</p>
           <p class="consciousness-text" style="margin-top:1rem;">To know this by heart is Unity.</p>
         </div>
       </div>
@@ -1171,8 +1188,8 @@
       </blockquote>
 
       <p class="path-ready reveal" style="transition-delay:0.3s;">
-        If you can say this, <strong>you are ready to begin.</strong><br />
-        Welcome to The @ Bliss Path.
+        If you can not only say these words, but are sincerely ready to explore them, <strong>the Path can begin.</strong><br />
+        Welcome to @ Bliss.
       </p>
 
       <a href="https://www.atbliss.org/breathwork" class="btn btn-primary reveal" style="transition-delay:0.35s;">I Understand &amp; I Am Ready →</a>
@@ -1190,28 +1207,20 @@
           <div class="founder-name">Ali C. Hantal</div>
           <div class="founder-role">Founder, @ Bliss Foundation</div>
           <div class="founder-bio">
-            <p>Ali C. Hantal is a serial entrepreneur, technologist, truth seeker, certified somatic breathwork practitioner, and Red Cross certified lifeguard, a soul walking the intersection of innovation and inner transformation.</p>
-            <p>He was born in Arnavutköy, then a quiet village along the Bosphorus shores of Istanbul. After high school, he earned his place in the Philosophy Department at Boğaziçi University, one of Türkiye's most prestigious institutions. He remembers his first philosophy class with extraordinary clarity. His professor, the late Arda Denkel, walked into the room and introduced the skeptical philosophy of René Descartes, and in doing so, dismantled the dogmatic, memorized certainties that had shaped everything Ali had been taught until that moment. A door opened in his young mind that has never closed since: the door to questioning every piece of knowledge he had once accepted as fact, and every piece he would encounter from that day forward.</p>
-            <p>He has said many times that beginning his journey as a philosophy student was one of the finest things that ever happened to him. He later transferred to Business Administration before earning his MBA at the University of Baltimore, and stepping fully into the world of entrepreneurship.</p>
-            <p>In his professional life, Ali is the Founder of XR Masters, Co-President of the Open AR Cloud Association, Adoption Officer for the GeoPose Standards Working Group at the Open Geospatial Consortium, and Leader of the Forum Labs Initiative at the Metaverse Standards Forum. He believes humanity stands at a genuine civilizational inflection point, not merely technological, but existential. The way we experience space, place, and one another is being fundamentally rewritten. His work is about ensuring that rewrite happens on open, shared foundations rather than inside walled gardens, so that human agency and free will can survive, and prosper. Through MyGeoVerse, he bridges the physical and digital worlds through AR Cloud technology and AI, enabling spatially aware agents with precise, real-world grounding.</p>
-            <p>He is also the Founder of @ Bliss Foundation, where he guides both one-on-one and group somatic breathwork sessions weekly, holding space for those finding their way back to themselves.</p>
-            <p>From his first year at university, he began reading across the full terrain of ancient and sacred texts: the Qur'an, the Bible, the Torah, the Zohar, the Bhagavad Gita, the Masnavi, the Tao Te Ching. He then moved into Tantra, Theology, Hermetic philosophy, Kabbalah, Christian Mysticism, Shamanism, and Sufism, and arrived, slowly and unmistakably, at a single realization: they are all pointing at the same thing. Beneath the different names, symbols, and languages, one simple and radical truth emerges: that we are all one, that this atomic realm of duality is not the whole story, and that at the heart of every great tradition lives the same golden thread: do not do to another what you would not have done to you; do not harm what does not harm you. This golden rule, ancient, universal, and quietly revolutionary, is not a moral instruction. It is a description of reality: when you truly know that we are one, harming another becomes as senseless as harming yourself. And flowing from that same source is what he understands as universal, unconditional compassion, not sentiment, but a fundamental orientation toward all living beings, born not from effort but from remembering.</p>
-            <p>Since childhood, Ali had wondered about the sixth sense, why school taught five and seemed incurious about the rest. The answer, when it finally came, was both simple and vast: every human being carries this sense. It does not arise from the mind. It comes from the heart, from the true Self. And as contemplative and mystical traditions have pointed toward time and again, it can be heard only when the mind becomes completely still.</p>
-            <p>The spiritual path, as he has come to understand it, is not a pursuit. It is a remembering, a return to the true nature of Self that ends, always, at oneness, at the source. And the way there is not through more knowledge. It is through the heart. Through connecting to light, to chi, to the force, to Allah, to God, by learning to still the mind enough to hear what has always been speaking.</p>
-            <p>His path draws from Sufism, Shamanism, Taoism, Kabbalah, and Christian Mysticism, guided above all by the principle of wu wei: the art of not doing. Not passivity, but the profound intelligence of non-resistance. The surfer does not fight the ocean. They do not command the wave or demand it arrive on their schedule. They read it, feel it, and move with it, and in that surrender, something extraordinary becomes possible. Wu wei is that surrender applied to life itself: knowing when to act and when to yield, trusting the current beneath all things, letting the universe express itself through you rather than against you.</p>
-            <p>His daily practice, what he calls Daily Light Work, includes somatic breathwork, fitness, meditation, intention and manifestation work, shadow work, and mindful living, tending his inner field with the same care and precision he brings to his professional work.</p>
-            <p>Ali has meditated for over thirty years. But the real turning point came when he discovered somatic breathwork, and it changed everything. What had previously required deep ceremonial work to access became directly, repeatably, and profoundly available through the breath alone. He now facilitates guided somatic breathwork sessions weekly, and that consistency has made the practice a true cornerstone of his path and his life.</p>
-            <p>He believes humanity is at a crossroads unlike any in known history.</p>
-            <p>Advances in Artificial Intelligence and Artificial General Intelligence are rapidly increasing our technological power. Yet the uncontrolled development of AI, without sufficient reflection or alignment with the common good of humanity, presents a profound risk in itself.</p>
-            <p>War, global authoritarianism, and the gradual destruction of our planet&rsquo;s ecosystems are converging at this same crossroads in ways that cannot be ignored.</p>
-            <p>And yet, those with even a slightly open heart can sense that something sacred is waiting beyond all of this.</p>
-            <p>Ali believes that <em>&ldquo;May we be with the Force.&rdquo;</em> is more accurate than <em>&ldquo;May the Force be with you.&rdquo;</em></p>
-            <p>The Force has always been here. We are the ones who drift from it.</p>
-            <p>He sees countless souls searching for a way back, to themselves, to their bodies, to the divine within, to the unity they have always been part of. He came to understand that somatic breathwork is one of the most profound, accessible, and deeply underestimated bridges available to humanity right now. That understanding is what led him to become a certified somatic breathwork practitioner and to found @ Bliss Foundation.</p>
-            <p>He is also co-founding the <a href="https://prosperfoundation.net" target="_blank" rel="noopener" style="color:var(--gold-light); text-decoration:none; border-bottom: 1px solid rgba(232,207,136,0.3);">Prosper Foundation</a>, built on the conviction that humanity will first survive, and then it will prosper.</p>
-            <p>Ali spends most of his time between St. Thomas, U.S. Virgin Islands, Türkiye and Washington, D.C.</p>
-            <p>And as he always says:</p>
-            <p><em>Live Long and Prosper!</em></p>
+            <p>Serial entrepreneur, technology expert, seeker of Truth, former national skier, Certified Somatic Breathwork Practitioner, and certified Lifeguard. Ali's journey has unfolded at the intersection of technological innovation and inner transformation.</p>
+            <p>Born in Istanbul, Ali's journey of questioning began in the Philosophy Department at Boğaziçi University. He later transferred to Business Administration, completed his MBA at the University of Baltimore, and entered the world of entrepreneurship.</p>
+            <p>Throughout his professional life, he has worked on technologies that bridge the physical and digital worlds. He founded XR Masters and has contributed to the development of open and shared technological foundations through international organizations including the Open AR Cloud Association, Open Geospatial Consortium, and Metaverse Standards Forum.</p>
+            <p>But his curiosity about understanding and transforming the outer world has always evolved alongside another exploration: the inner world.</p>
+            <p>Since his university years, he has explored different philosophical, ancient, and mystical traditions. He has practiced meditation for more than thirty years. Over time, he began to see that despite using different languages and symbols, many traditions point toward the same fundamental questions:</p>
+            <p>Who am I?<br>What connects us to one another?<br>And how can we know what we think we know, not only intellectually, but by heart and through lived experience?</p>
+            <p>Encountering Somatic Breathwork became an important turning point in this journey.</p>
+            <p>He began to discover that many things he had understood intellectually and known by heart could also have a counterpart within the Soma. Breath opened a new bridge between intellectual understanding and embodied experience.</p>
+            <p>@ Bliss Foundation emerged where technology, philosophy, more than thirty years of inner exploration, and this new exploration of the Soma began to meet.</p>
+            <p>Today, Ali facilitates individual and group Somatic Breathwork sessions and holds space for people exploring their own path back to Self.</p>
+            <p>But @ Bliss is not only about breathwork.</p>
+            <p>It is concerned with a larger question:</p>
+            <p><em>What is it that we do not know or have forgotten that could bring us a little closer to the One, to Love, and to Truth?</em></p>
+            <a href="/founder/" class="method-link">Discover Ali's Journey →</a>
           </div>
       </div>
     </div>
@@ -1222,14 +1231,14 @@
     <div class="footer-top">
       <div>
         <span class="footer-logo"><img src="images/AtBlissLogo.png" alt="@ Bliss Foundation" /></span>
-        <p class="footer-tagline">You are not at the mercy of how you resonate. You participate in shaping it, through every breath, every thought, every practice, every choice.</p>
+        <p class="footer-tagline">You are not a prisoner of what you think and feel. With every breath, every moment of awareness, and every choice, you have the capacity to reshape your inner state.</p>
       </div>
       <div>
         <div class="footer-col-title">Foundation</div>
         <ul class="footer-links">
           <li><a href="#mission">Mission &amp; Vision</a></li>
           <li><a href="#methodology">Our Methodology</a></li>
-          <li><a href="#consciousness">Consciousness Levels</a></li>
+          <li><a href="#consciousness">Levels of Awareness</a></li>
           <li><a href="/path">The @ Bliss Path</a></li>
           <li><a href="#manifesto">Manifesto</a></li>
           <li><a href="#founder">Founder</a></li>

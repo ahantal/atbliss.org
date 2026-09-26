@@ -816,6 +816,12 @@
     .lang-switch span[aria-current] { color: var(--gold-light); }
     .lang-switch .lang-sep { color: var(--border-hover); }
     @media (max-width: 768px) { .lang-switch { margin-left: auto; margin-right: 1.25rem; } }
+    /* Hamburger menu up to 1024px: the five menu items plus EN/TR do not fit beside the logo below ~1000px */
+    @media (max-width: 1024px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .lang-switch { margin-left: auto; margin-right: 1.25rem; }
+    }
   </style>
 </head>
 <body>
