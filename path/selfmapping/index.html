@@ -690,6 +690,10 @@
     .ws-flow .flow-chip { font-size: 0.72rem; padding: 0.4rem 0.75rem; }
     .ws-privacy { border: 1px solid var(--border-hover); border-left: 3px solid var(--gold); padding: 1.75rem 1.75rem 1.25rem; margin: 1rem 0 2rem; background: rgba(201, 168, 76, 0.04); }
     .ws-privacy--start { margin: 2rem 0 0.5rem; }
+    .ws-req-msg { font-size: 0.82rem; color: #e0a37a; margin: 0.45rem 0 0; }
+    .ws-input[aria-invalid="true"] { border-color: #e0a37a; }
+    .ws-timing { margin-top: 1.75rem; padding-top: 1.25rem; border-top: 1px solid var(--border); }
+    .ws-timing-title { font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; }
     .ws-keep { border: 1px solid var(--border-hover); border-left: 3px solid var(--gold); background: rgba(201, 168, 76, 0.04); padding: 1.5rem 1.75rem; margin: 0.5rem 0 2rem; max-width: 620px; }
     .ws-keep p { margin-bottom: 1rem; }
     .ws-copy-btn { background: none; border: 1px solid var(--gold); color: var(--gold-light); cursor: pointer; font-family: 'DM Sans', sans-serif; }
@@ -1123,8 +1127,11 @@
             <h3 class="ws-title">The Next Encounter</h3>
             <p class="ws-prompt">When this Self appears again, what would you like to notice earlier?</p>
             <textarea class="ws-input" id="ws-next"></textarea>
-            <div class="flow-row ws-flow"><span class="flow-chip">After</span><span class="flow-arrow">&rarr;</span><span class="flow-chip">During</span><span class="flow-arrow">&rarr;</span><span class="flow-chip">Before</span></div>
-            <p class="ws-prompt">The goal is not perfection.<br /><strong>The goal is noticing.</strong></p>
+            <div class="ws-timing">
+              <p class="ws-timing-title">Noticing can happen earlier over time</p>
+              <div class="flow-row ws-flow"><span class="flow-chip">After</span><span class="flow-arrow">&rarr;</span><span class="flow-chip">During</span><span class="flow-arrow">&rarr;</span><span class="flow-chip">Before</span></div>
+              <p class="ws-prompt">The goal is not perfection.<br /><strong>The goal is to notice earlier.</strong></p>
+            </div>
           </div>
         </div>
         </div>
@@ -1226,6 +1233,19 @@
       }
       document.getElementById('ws-wrap').addEventListener('input', markSteps);
 
+      // Every response field is required (extra anchors beyond the first are optional additions).
+      const REQ_MSG = 'Please complete this field before continuing.';
+      function clearReq(el) { const n = el.nextElementSibling; if (n && n.classList.contains('ws-req-msg')) n.remove(); el.removeAttribute('aria-invalid'); }
+      function missingFields() {
+        return [...document.querySelectorAll('#ws-wrap .ws-input')].filter(function (i) {
+          const extraAnchor = /^ws-anchor-\d+$/.test(i.id) && i.id !== 'ws-anchor-1';
+          return !extraAnchor && i.value.trim() === '';
+        });
+      }
+      document.getElementById('ws-wrap').addEventListener('input', function (e) {
+        if (e.target.classList.contains('ws-input') && e.target.value.trim() !== '') clearReq(e.target);
+      });
+
       let anchorCount = 1;
       const addBtn = document.getElementById('ws-add-anchor');
       addBtn.addEventListener('click', function () {
@@ -1265,6 +1285,17 @@
       const label = btn.textContent;
       btn.addEventListener('click', async function () {
         err.classList.remove('visible');
+        document.querySelectorAll('#ws-wrap .ws-input').forEach(clearReq);
+        const missing = missingFields();
+        if (missing.length) {
+          missing.forEach(function (i) {
+            const m = document.createElement('p'); m.className = 'ws-req-msg'; m.textContent = REQ_MSG;
+            i.insertAdjacentElement('afterend', m); i.setAttribute('aria-invalid', 'true');
+          });
+          missing[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+          missing[0].focus({ preventScroll: true });
+          return;
+        }
         btn.disabled = true; btn.textContent = 'Completing…';
         // Built from fixed values only: no workspace field is read here.
         const payload = new FormData();
@@ -1314,7 +1345,7 @@
       document.getElementById('ws-again').addEventListener('click', function (e) {
         e.preventDefault();
         lastWork = null;
-        document.querySelectorAll('#ws-wrap .ws-input').forEach(function (i) { i.value = ''; });
+        document.querySelectorAll('#ws-wrap .ws-input').forEach(function (i) { i.value = ''; clearReq(i); });
         document.querySelectorAll('#ws-anchors .ws-input').forEach(function (i, k) { if (k > 0) i.remove(); });
         anchorCount = 1; addBtn.style.display = '';
         syncName(); markSteps();
