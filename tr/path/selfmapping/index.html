@@ -685,7 +685,8 @@
     .ws-add:hover { border-color: var(--gold); }
     .ws-flow { justify-content: flex-start; margin: 1rem 0; gap: 0.4rem 0.6rem; }
     .ws-flow .flow-chip { font-size: 0.72rem; padding: 0.4rem 0.75rem; }
-    .ws-privacy { border: 1px solid var(--border-hover); padding: 1.75rem 1.75rem 1.25rem; margin: 1rem 0 2rem; background: rgba(201, 168, 76, 0.04); }
+    .ws-privacy { border: 1px solid var(--border-hover); border-left: 3px solid var(--gold); padding: 1.75rem 1.75rem 1.25rem; margin: 1rem 0 2rem; background: rgba(201, 168, 76, 0.04); }
+    .ws-privacy--start { margin: 2rem 0 0.5rem; }
     .ws-privacy-title { font-size: 0.8rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.9rem; }
     .ws-privacy p { font-size: 0.92rem; line-height: 1.8; color: rgba(232, 228, 220, 0.82); margin-bottom: 0.6rem; }
     .ws-privacy .ws-privacy-note { font-size: 0.82rem; color: var(--muted); }
@@ -977,6 +978,11 @@
           <p>Fazla analiz etmeye çalışma.</p>
           <p>O ana geri dön ve olanları mümkün olduğunca yargılamadan gözlemle.</p>
         </div>
+        <div class="ws-privacy ws-privacy--start">
+          <p class="ws-privacy-title">Bu çalışma sana ait.</p>
+          <p>Yazdığın hiçbir cevap, Eşgal adı, düşünce, duygu, Soma deneyimi, tetikleyici veya çıpa @ <span lang="en">Bliss</span>'e gönderilmez veya kaydedilmez.</p>
+          <p>Yazdıkların yalnızca bu tarayıcı penceresinde kalır.</p>
+        </div>
         <div class="ws-rail">
         <div class="ws-step ws-step--name" data-step="1">
           <div class="ws-node">01</div>
@@ -1075,10 +1081,10 @@
           </div>
         </div>
         </div>
-        <div class="ws-privacy">
-          <p class="ws-privacy-title">Bu çalışma sana ait.</p>
-          <p>Yazdığın hiçbir cevap, Eşgal adı, düşünce, duygu, Soma deneyimi, tetikleyici veya çıpa @ <span lang="en">Bliss</span>'e gönderilmez veya kaydedilmez.</p>
-          <p>Çalışmayı tamamladığında yalnızca anonim olarak bir Eşgal Çalışması'nın tamamlandığı bilgisi iletilir.</p>
+        <div class="ws-privacy ws-privacy--end">
+          <p class="ws-privacy-title">Gizliliğini hatırlatmak isteriz.</p>
+          <p>Yazdığın hiçbir cevap @ <span lang="en">Bliss</span>'e gönderilmez veya kaydedilmez.</p>
+          <p>&ldquo;Çalışmayı Tamamla&rdquo; butonuna bastığında yalnızca anonim olarak bir Eşgal Çalışması'nın tamamlandığı bilgisi iletilir.</p>
           <p class="ws-privacy-note">Yazdıkların yalnızca bu tarayıcı penceresinde durur. Sayfayı yenilersen veya kapatırsan silinir.</p>
         </div>
         <button type="button" class="btn btn-primary" id="ws-complete">Çalışmayı Tamamla</button>
