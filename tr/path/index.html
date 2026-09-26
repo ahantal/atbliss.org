@@ -8,7 +8,7 @@
   <link rel="alternate" hreflang="en" href="https://atbliss.org/path/" />
   <link rel="alternate" hreflang="tr" href="https://atbliss.org/tr/path/" />
   <link rel="alternate" hreflang="x-default" href="https://atbliss.org/path/" />
-  <meta name="description" content="Dümene yeniden sen geç. @ Bliss Yolu, dümene yeniden geçmeyi öğrenme sürecidir. Deneyimle başla: Somatik Nefes Çalışması." />
+  <meta name="description" content="@ Bliss Yolu: Uyan'dan Hatırla'ya altı aşamada Öz'e dönüş yolculuğu. Dikkatini içeriye çevirerek, Eşgal Çalışması ile başlar." />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -456,6 +456,68 @@
       .nav-hamburger { display: flex; }
       .lang-switch { margin-left: auto; margin-right: 1.25rem; }
     }
+
+    /* ── PATH + SELF-MAPPING (brief 2026-09-26) ── */
+    section.np-sec { padding: 6rem 2rem; }
+    .np-a { background: var(--deep); } .np-b { background: var(--deep2); } .np-c { background: var(--deep3); }
+    .np-narrow { max-width: 760px; margin: 0 auto; }
+    section.np-hero { padding-top: 11rem; text-align: center; }
+    .np-hero .np-narrow { max-width: 700px; }
+    .np-h1 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2.6rem, 6vw, 4rem); line-height: 1.15; margin-bottom: 0.9rem; color: var(--text); }
+    .np-tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(1.3rem, 2.6vw, 1.75rem); line-height: 1.45; color: var(--gold-light); margin-bottom: 2.75rem; }
+    .np-p { font-size: 1.02rem; line-height: 1.9; color: rgba(232, 228, 220, 0.75); margin-bottom: 1.1rem; }
+    .np-p strong { color: var(--text); font-weight: 500; }
+    .np-cascade { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(1.15rem, 2vw, 1.4rem); line-height: 1.8; color: rgba(232, 228, 220, 0.88); margin: 1.5rem 0 1.75rem; }
+    .np-high { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(1.25rem, 2.3vw, 1.6rem); line-height: 1.5; color: var(--gold-light); margin: 2rem 0 1.5rem; }
+    .np-closing { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(1.2rem, 2.2vw, 1.5rem); line-height: 1.5; color: var(--gold-light); margin-top: 2rem; }
+    .np-flow { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 0.9rem; margin: 2.25rem 0 0.5rem; }
+    .np-flow span { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--gold-light); }
+    .np-flow .np-arrow { font-family: 'DM Sans', sans-serif; font-size: 0.95rem; color: rgba(201, 168, 76, 0.45); }
+    .np-q { margin: 1.75rem 0 0.5rem; }
+    .np-q .np-qq { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.2rem, 2.2vw, 1.45rem); color: var(--text); margin: 0.35rem 0 0.9rem; }
+    .np-btn { margin-top: 2.25rem; }
+    .np-link { color: var(--gold-light); text-decoration: none; border-bottom: 1px solid rgba(232, 207, 136, 0.35); }
+    .np-link:hover { color: var(--gold); border-color: var(--gold); }
+    .np-center { text-align: center; }
+    .np-center .np-flow { justify-content: center; }
+    .np-stage-label { font-size: 0.72rem; letter-spacing: 0.28em; color: var(--gold); margin-bottom: 0.9rem; }
+    /* signals */
+    .np-sig-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin: 2.5rem 0 2rem; }
+    .np-sig { border: 1px solid var(--border); border-top: 3px solid var(--sig); padding: 2rem 1.75rem; background: rgba(255, 255, 255, 0.015); }
+    .np-sig--thought, .np-fsig--thought { --sig: #c9a84c; }
+    .np-sig--emotion, .np-fsig--emotion { --sig: #c98a78; }
+    .np-sig--soma, .np-fsig--soma { --sig: #86ae9f; }
+    .np-sig-tag { font-size: 0.66rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--sig); margin-bottom: 0.9rem; }
+    .np-sig p { font-size: 0.93rem; line-height: 1.75; color: rgba(232, 228, 220, 0.78); margin-bottom: 0.7rem; }
+    .np-sig ul { list-style: none; margin: 0.5rem 0 0; }
+    .np-sig li { font-size: 0.88rem; line-height: 1.7; color: var(--muted); font-style: italic; }
+    /* form */
+    .np-form { margin-top: 2.5rem; }
+    .np-req { font-size: 0.8rem; color: var(--muted); margin-bottom: 2rem; }
+    .np-star { color: var(--gold); }
+    .np-form .form-group { margin-bottom: 2.25rem; }
+    .np-form input[type="text"], .np-form input[type="email"] { width: 100%; background: rgba(255,255,255,0.04); border: 1px solid var(--border); color: var(--text); padding: 0.85rem 1.1rem; font-family: 'DM Sans', sans-serif; font-size: 0.92rem; transition: border-color 0.2s; }
+    .np-form input[type="email"]:focus { outline: none; border-color: rgba(201,168,76,0.5); }
+    .np-fsigs { border: 1px solid var(--border); padding: 2rem 1.75rem 0.25rem; margin: 0 0 2.25rem; }
+    .np-fsig { border-left: 3px solid var(--sig); padding-left: 1.25rem; }
+    .np-fsig .np-sig-tag { margin-bottom: 0.5rem; }
+    .np-anchor-note { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.15rem; color: var(--gold-light); margin-bottom: 0.75rem; }
+    .np-shift { border: 1px solid var(--border); padding: 2.25rem 2rem; margin: 1rem 0 2.5rem; }
+    .np-shift .np-pair { margin: 1.25rem 0; }
+    .np-shift .np-pair span { display: block; }
+    .np-pair .np-from { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; color: rgba(232, 228, 220, 0.6); }
+    .np-pair .np-to { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; color: var(--gold-light); }
+    .np-pair .np-word { font-size: 0.8rem; letter-spacing: 0.08em; color: var(--muted); margin: 0.15rem 0; }
+    .np-ty { display: none; }
+    .np-ty.visible { display: block; }
+    .np-ty-title { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2rem, 4.5vw, 3rem); line-height: 1.2; margin-bottom: 1.5rem; color: var(--text); }
+    .np-lead { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.25rem, 2.4vw, 1.55rem); color: var(--gold-light); margin-bottom: 1rem; }
+    @media (max-width: 768px) {
+      section.np-sec { padding: 4.5rem 1.5rem; }
+      section.np-hero { padding-top: 8rem; }
+      .np-sig-grid { grid-template-columns: 1fr; }
+      .np-shift, .np-fsigs { padding-left: 1.25rem; padding-right: 1.25rem; }
+    }
   </style>
 </head>
 <body>
@@ -486,293 +548,177 @@
   </div>
 
   <!-- HERO -->
-  <section class="path-hero">
-    <div class="section-inner">
-      <p class="section-label reveal">@ <span lang="en">Bliss</span> Yolu</p>
-      <h1 class="section-title reveal" style="font-size:clamp(2.6rem,6vw,4rem);">Dümene yeniden sen geç.</h1>
-      <div class="path-hero-sub reveal" style="transition-delay:0.1s;">
-        <p>İçinde, her zaman gerçek sen olmayan farklı Ben hâllerinin ortaya çıktığını fark etmiş olabilirsin. Biz bu Ben hâllerine <strong>Eşgal</strong> diyoruz.</p>
-        <p>Düşünceler ortaya çıkar. Duygular yükselir. Alışılmış kalıplar kontrolü ele alır. Bazen kendimizi, bilinçli olarak seçmediğimiz şekillerde tepki verirken izleriz.</p>
-        <p>Geminin kaptanı sensen, geminin çoğu zaman otomatik pilotta ilerlediğini fark etmeye başlayabilirsin.</p>
-        <p><strong>@ <span lang="en">Bliss</span> Yolu, dümene yeniden geçmeyi öğrenme sürecidir.</strong></p>
-      </div>
+  <section class="np-sec np-hero np-a">
+    <div class="np-narrow">
+        <p class="section-label">@ <span lang="en">Bliss</span> Yolu</p>
+        <h1 class="np-h1">Hatırlama Yolu</h1>
+        <p class="np-tagline">Bir Öz'e Dönüş Yolculuğu</p>
+        <p class="np-p">Belki buraya stres yüzünden geldin.</p>
+        <p class="np-p">Belki hayatında her şey yolunda görünüyor ama içinde bir şeylerin yolunda olmadığını hissediyorsun.</p>
+        <p class="np-p">Belki aynı düşüncelerin, aynı korkuların, aynı tepkilerin veya aynı davranış kalıplarının tekrar tekrar ortaya çıktığını fark etmeye başladın.</p>
+        <p class="np-p">Ya da belki yalnızca içinde daha derinde bir şey olduğunu hissediyorsun.</p>
+        <p class="np-high">@ <span lang="en">Bliss</span> Yolu tam burada başlıyor.</p>
+        <p class="np-p">Sana neye inanman gerektiğini söyleyerek değil.</p>
+        <p class="np-p"><strong>Dikkatini içeriye çevirerek.</strong></p>
+        <p class="np-p">Çünkü kendimizi değiştirmeye çalışmadan önce, içimizde gerçekten neler olduğunu görmeye başlamamız gerekiyor.</p>
     </div>
   </section>
 
-  <div class="divider"></div>
-
-  <!-- BEFORE YOU BEGIN -->
-  <section class="begin-section">
-    <div class="section-inner narrow center">
-      <p class="section-label reveal">Başlamadan Önce</p>
-      <blockquote class="path-quote reveal" style="transition-delay:0.1s;">
-        <strong>&ldquo;İçimde bana bir şeyler söyleyen bir ses olduğunu biliyorum ve bu sesin Öz'üm olmadığını fark ediyorum.</strong>
-        <br /><br />
-        <strong>Bu sesin zaman zaman, belki de çoğu zaman, hayatımı yaşama biçimimi etkileyen veya yönlendiren bir otomatik pilot gibi çalıştığını görüyorum.</strong>
-        <br /><br />
-        <strong>Geçmiş deneyimlerimin, alışkanlıklarımın ve koşullanmalarımın bu sesi, dolayısıyla otomatik pilotun izlediği yönü şekillendirdiğini görebiliyorum.</strong>
-        <br /><br />
-        <strong>Ve dümene yeniden geçmeyi içtenlikle istiyorum.&rdquo;</strong>
-      </blockquote>
-      <p class="ready-note reveal" style="transition-delay:0.15s;">
-        Bu sözleri söyleyebiliyorsan <strong style="color:var(--text);">başlamaya hazırsın.</strong><br />
-        <strong style="color:var(--text);">@ <span lang="en">Bliss</span>'e hoş geldin.</strong>
-      </p>
-      <a href="#first-step" class="btn btn-primary reveal" style="transition-delay:0.2s;">Bunu Fark Ediyorum ve Hazırım &rarr;</a>
+  <!-- FARK ETMEDIIMIZ EYI DEITIREMEYIZ -->
+  <section class="np-sec np-b">
+    <div class="np-narrow">
+        <h2 class="section-title">Fark etmediğimiz şeyi değiştiremeyiz</h2>
+        <p class="np-p">Çoğumuz kendimizi tek ve değişmeyen bir &ldquo;Ben&rdquo; olarak deneyimliyoruz.</p>
+        <p class="np-p">Ama biraz daha yakından baktığımızda gün içinde birbirinden oldukça farklı hâllerin ortaya çıktığını görebiliriz.</p>
+        <p class="np-cascade">Bazen sakin ve anlayışlıyız.<br />Bazen öfkeli.<br />Bazen korkuyoruz.<br />Bazen kontrol etmek istiyoruz.<br />Bazen kendimizden şüphe ediyoruz.</p>
+        <p class="np-p">Bazen sevgiyle hareket ederken birkaç dakika sonra tamamen başka bir ses kontrolü ele geçirebiliyor.</p>
+        <p class="np-p">Bu yaklaşım, kadim içe bakış geleneklerinde ve G.I. <span lang="en">Gurdjieff</span>'in Dördüncü Yol öğretisinde de karşılaştığımız bir gözlemle paralellik taşır: İnsan kendisini tek bir &ldquo;Ben&rdquo; olarak deneyimlese de, farklı anlarda farklı içsel &ldquo;Ben&rdquo;ler düşüncelerimizi ve davranışlarımızı etkileyebilir.</p>
+        <p class="np-p">@ <span lang="en">Bliss</span>'te buna çok basit bir yerden yaklaşıyoruz:</p>
+        <p class="np-high">Önce gör.<br />Sonra fark et.<br />Sonra seçim yapabileceğin alanı yarat.</p>
     </div>
   </section>
 
-  <div class="divider"></div>
-
-  <!-- YOUR FIRST STEP -->
-  <section class="first-step" id="first-step">
-    <div class="section-inner narrow">
-      <p class="section-label reveal">Deneyimle Başla</p>
-      <h2 class="section-title reveal">Nefes almak... ilk adımlardan biri olabilir</h2>
-      <p class="section-body reveal" style="transition-delay:0.1s; margin-bottom:1.25rem;">
-        Bir felsefeyi kabul etmene veya yeni bir inanç sistemini benimsemene gerek yok.
-      </p>
-      <p class="section-body reveal" style="transition-delay:0.13s; margin-bottom:1.25rem;">
-        Sadece deneyimlemen ve gözlemlemen yeterli...
-      </p>
-      <p class="section-body reveal" style="transition-delay:0.16s; margin-bottom:1.25rem;">
-        Seni <strong>Somatik Nefes Çalışması</strong> seansına davet ediyoruz.
-      </p>
-      <p class="section-body reveal" style="transition-delay:0.19s; margin-bottom:1.25rem;">
-        Bu çalışma; bilinçli nefes ve bedensel farkındalık yoluyla <strong>Soma'yı</strong>, yani bedenin içeriden hissedilen ve yaşanan hâlini deneyimleme fırsatıdır.
-      </p>
-      <p class="section-body reveal" style="transition-delay:0.22s; margin-bottom:1.25rem;">
-        Sinir sistemi, düşünceler, duygular, bedensel duyumlar ve hayata verdiğimiz tepkileri şekillendiren kalıplar arasındaki ilişkiyi fark etmeye başlarız.
-      </p>
-      <p class="section-body reveal" style="transition-delay:0.25s; margin-bottom:0;">
-        Aynı zamanda yüz yüze tanışmış oluruz, birlikte nefes almış oluruz ve seans sonrasında da biraz paylaşırız.
-      </p>
-      <p class="closing-line reveal" style="transition-delay:0.28s;">
-        <strong>Yeter ki deneyimle. Gözlemle. Merakını koru.</strong>
-      </p>
+  <!-- DIKKAT -->
+  <section class="np-sec np-c">
+    <div class="np-narrow">
+        <h2 class="section-title">Dikkat</h2>
+        <p class="np-p">Bu Yol'un merkezinde Dikkat vardır.</p>
+        <p class="np-p">Çünkü Dikkat etmediğimiz bir düşünce bizi sürükleyebilir.</p>
+        <p class="np-p">Fark etmediğimiz bir duygu tepkimizi belirleyebilir.</p>
+        <p class="np-p">Dinlemediğimiz Soma, bize çoktan bir şey anlatıyor olabilir.</p>
+        <p class="np-p">Ama Dikkatimizi içeriye çevirdiğimiz anda başka bir ihtimal ortaya çıkar.</p>
+        <p class="np-cascade">Düşünce ortaya çıkarken onu fark edebiliriz.<br />Duyguyu yaşarken fark edebiliriz.<br />Soma'daki değişimi olurken fark edebiliriz.</p>
+        <p class="np-p">Ve belki de ilk defa, otomatik tepki ile bilinçli seçim arasında küçücük bir alan açabiliriz.</p>
+        <p class="np-closing">Uyanış o alanda başlar.</p>
     </div>
   </section>
 
-  <div class="divider"></div>
-
-  <!-- REGULATE -->
-  <section class="regulate-section">
-    <div class="section-inner narrow">
-      <p class="section-label reveal">Düzenle</p>
-      <h2 class="section-title reveal">Hayatımızı yaşadığımız tek yer zihnimiz değildir.</h2>
-      <p class="section-body reveal" style="transition-delay:0.1s; margin-bottom:1.25rem;">
-        Her gün farklı baskılarla karşılaşırız.
-      </p>
-      <p class="section-body reveal" style="transition-delay:0.13s; margin-bottom:1.25rem;">
-        İş. Aile. İlişkiler. Sorumluluklar. Para. Beklentiler. Belirsizlikler. Dün yaşananlar ve yarın için şimdiden endişelendiklerimiz.
-      </p>
-      <p class="section-body reveal" style="transition-delay:0.16s; margin-bottom:1.25rem;">
-        Bütün bunlar düşüncelerimizi ve duygularımızı etkiler.
-      </p>
-      <p class="section-body reveal" style="transition-delay:0.19s; margin-bottom:1.25rem;">
-        <strong>Ama Soma'yı, bedenimizi de etkiler.</strong>
-      </p>
-      <p class="section-body reveal" style="transition-delay:0.22s; margin-bottom:1.25rem;">
-        Stres; sinir sisteminde, nefeste, kaslardaki gerginlikte, duruşumuzda ve beraberimizde taşıdığımız bedensel duyumlarda kendini gösterebilir.
-      </p>
-      <p class="section-body reveal" style="transition-delay:0.25s; margin-bottom:0.5rem;">
-        Bazen bu baskının içimizden doğal olarak geçip gitmesine izin veririz.
-      </p>
-      <p class="section-body reveal" style="transition-delay:0.27s; margin-bottom:1.25rem;">
-        Bazen veremeyiz.
-      </p>
-      <p class="section-body reveal" style="transition-delay:0.3s; margin-bottom:1.25rem;">
-        İçimizde tutarız. Kasılırız. Hissettiklerimizi bastırırız. Baskı birikmeye devam ederken günlük hayatımızı sürdürürüz.
-      </p>
-      <p class="section-body reveal" style="transition-delay:0.33s; margin-bottom:0;">
-        Zamanla berrak durmak, anda ve dengede kalmak zorlaşabilir.
-      </p>
-
-      <h3 class="section-subhead reveal" style="transition-delay:0.36s;">Somatik Nefes Çalışması yolculuğa burada katılır.</h3>
-      <p class="section-body reveal" style="transition-delay:0.39s; margin-bottom:1.25rem;">
-        Somatik Nefes Çalışması, biriken baskının sistemimizde hareket etmesine alan açmak için kullandığımız araçlardan biridir.
-      </p>
-      <p class="section-body reveal" style="transition-delay:0.42s; margin-bottom:1.25rem;">
-        Bilinçli nefes, hareket, ses ve duygusal ifade yoluyla her şeyi içimizde tutmaya ara veririz. Deneyimlediğimiz şeyin içimizden geçip hareket etmesine izin veririz.
-      </p>
-      <p class="section-body reveal" style="transition-delay:0.45s; margin-bottom:1.25rem;">
-        Amaç, ortaya çıkan her duyumu hemen analiz etmek değildir.
-      </p>
-      <p class="section-body reveal" style="transition-delay:0.48s; margin-bottom:1.5rem;">
-        Bazen yapmamız gereken yalnızca onu fark etmek, hissetmek, onunla birlikte nefes almak ve <strong>hareket etmesine izin vermektir.</strong>
-      </p>
-      <p class="section-body reveal" style="transition-delay:0.51s; margin-bottom:0.75rem;">
-        Her zaman şu soruları sormak zorunda değiliz:
-      </p>
-      <p class="cascade reveal" style="transition-delay:0.54s;">
-        Neden böyle hissediyorum?<br />
-        Bu nereden geldi?<br />
-        Bu ne anlama geliyor?
-      </p>
-      <p class="section-body reveal" style="transition-delay:0.57s; margin-bottom:0;">
-        Bir süreliğine düşünen zihnin sakinleşmesine izin verebilir ve dikkatimizi Soma'nın yaşanan deneyimine verebiliriz.
-      </p>
-      <p class="highlight-line reveal" style="transition-delay:0.6s;"><strong>Hisset. Alan aç. İfade et. Hareket etmesine izin ver.</strong></p>
-      <p class="section-body reveal" style="transition-delay:0.63s; margin-top:1.5rem; margin-bottom:0;">
-        Biriken baskının bir kısmı serbest kalmaya başladıkça daha berrak düşünmek, farklı hissetmek ve daha bilinçli karşılık vermek için alan açılabilir.
-      </p>
-      <p class="highlight-line reveal" style="transition-delay:0.66s; margin-top:2.25rem;"><strong>Düzenle &rarr; Serbest Bırak &rarr; Yeniden Şekillendir &rarr; Bütünleştir</strong></p>
-      <p class="section-body reveal" style="transition-delay:0.69s; margin-top:2rem; margin-bottom:1.25rem;">
-        Düzenleme yalnızca nefes çalışması sırasında yaptığımız bir şey değildir.
-      </p>
-      <p class="section-body reveal" style="transition-delay:0.72s; margin-bottom:1.5rem;">
-        <strong>@ <span lang="en">Bliss</span> Yolu</strong> boyunca nefesin, uykunun, beslenmenin, hareketin, dikkatin, ilişkilerin ve yaşam biçimimizin sinir sistemimizi nasıl etkilediğini araştırırız.
-      </p>
-      <p class="closing-line reveal" style="transition-delay:0.75s;">
-        <strong>Sinir sistemimizi düzenlemenin düşünme, hissetme ve karşılık verme biçimimizi değiştirebildiğini deneyimlemeye başlarız.</strong>
-      </p>
+  <!-- YOL -->
+  <section class="np-sec np-b">
+    <div class="np-narrow">
+        <h2 class="section-title">Yol</h2>
+        <p class="np-p">@ <span lang="en">Bliss</span> Yolu birbirini izleyen altı aşamada açılır.</p>
+        <p class="np-p">Bu bir kontrol listesi değil.</p>
+        <p class="np-p">Bir aşamayı tamamlayıp diğerine geçtiğimiz doğrusal bir sistem de değil.</p>
+        <p class="np-p">Tekrar tekrar içinden geçtiğimiz, her dönüşümüzde biraz daha derinleşebildiğimiz bir Yol.</p>
+        <div class="np-flow"><span>Uyan</span><span class="np-arrow">&rarr;</span><span>Düzenle</span><span class="np-arrow">&rarr;</span><span>Uyumlan</span><span class="np-arrow">&rarr;</span><span>Titreş</span><span class="np-arrow">&rarr;</span><span>Keyif Al</span><span class="np-arrow">&rarr;</span><span>Hatırla</span></div>
     </div>
   </section>
 
-  <div class="divider"></div>
-
-  <!-- AFTER THE SESSION -->
-  <section class="continue-section">
-    <div class="section-inner narrow">
-      <p class="section-label reveal">Devam Etmek İstersen</p>
-      <h2 class="section-title reveal">Bizimle 30 dakika daha kal.</h2>
-      <p class="section-body reveal" style="transition-delay:0.1s; margin-bottom:1.25rem;">
-        @ <span lang="en">Bliss</span> aracılığıyla sunulan her <strong>Soma+IQ&trade; The Journey</strong> seansının ardından, @ <span lang="en">Bliss</span> Yolu'na isteğe bağlı 30 dakikalık bir giriş yapılacaktır.
-      </p>
-      <p class="section-body reveal" style="transition-delay:0.13s; margin-bottom:1.25rem;">
-        Deneyim sende merak uyandırdıysa ve bundan sonra ne olduğunu öğrenmek istiyorsan nefes çalışmasının ardından bizimle kalman yeterli.
-      </p>
-      <p class="section-body reveal" style="transition-delay:0.16s; margin-bottom:1.5rem;">
-        Bu 30 dakika boyunca deneyim sırasında fark ettiklerin hakkında konuşacak, @ <span lang="en">Bliss</span> Yolu hakkında paylaşımlar yapacağız.
-      </p>
-      <p class="closing-line reveal" style="transition-delay:0.2s;">
-        <strong>Nefes çalışması bir deneyimdir.</strong><br />
-        <strong>Sonraki 30 dakika ise keşfe bir davettir.</strong>
-      </p>
-      <p class="section-body reveal" style="transition-delay:0.24s; margin-top:1.75rem; margin-bottom:0;">
-        Bu bölüm için ayrıca kayıt yaptırman gerekmez. Nefes çalışmasına katılan herkes kalmayı seçebilir.
-      </p>
+  <!-- UYAN -->
+  <section class="np-sec np-c">
+    <div class="np-narrow">
+        <p class="section-label">01</p>
+        <h2 class="section-title">Uyan</h2>
+        <p class="np-p"><strong>İçinde seninle konuşan, sana ne yapman gerektiğini söyleyen bir ses varsa, o ses gerçek sen olamaz. Öz olan sen olamaz.</strong></p>
+        <p class="np-p">Uyanış, düşüncelerini, kalıplarını, tepkilerini ve içindeki sesleri otomatik olarak kendin sanmak yerine onları gözlemlemeyi öğrendiğinde başlar.</p>
+        <p class="np-p">İlk çalışma bu yüzden kendini değiştirmek değildir.</p>
+        <p class="np-p"><strong>Kendini görmektir.</strong></p>
+        <p class="np-p">Düşüncelerinde, duygularında ve Soma'nda beliren ilk işaretleri fark etmeye başladıkça, otomatik bir tepki kontrolü ele geçirmeden önce onu fark etmeye başlayabilirsin.</p>
+        <p class="np-p">Biz bu ilk gözlem ve haritalama pratiğine Eşgal Çalışması diyoruz.</p>
+        <p class="np-closing">Ne olmadığını bilmek, Öz'ünü hatırlamanın başlangıcıdır.</p>
+        <div class="np-btn"><a href="/tr/path/selfmapping/" class="btn btn-primary">Eşgal Çalışmasına Başla &rarr;</a></div>
     </div>
   </section>
 
-  <div class="divider"></div>
-
-  <!-- WHAT COMES NEXT (the English closing line about the map is deliberately not used here, per the Turkish brief) -->
-  <section class="whats-next">
-    <div class="section-inner narrow">
-      <p class="section-label reveal">Sırada Ne Var?</p>
-      <h2 class="section-title reveal">Sırada biraz daha derine inmek var.</h2>
-      <p class="section-body reveal" style="transition-delay:0.1s; margin-bottom:1.25rem;">
-        Somatik Nefes Çalışması; içsel gözlem, düzenleme, tefekkür, farkındalıkla yaşama, uyumlanma, titreşim, felsefe ve hatırlamayı kapsayan çok daha geniş bir yolculuğun içindeki pratiklerden yalnızca biridir.
-      </p>
-      <p class="section-body reveal" style="transition-delay:0.13s; margin-bottom:1.5rem;">
-        Yolculuk devam ettikçe düşüncelerini, duygularını, Soma'nı, davranışlarını, kalıplarını, ilişkilerini, arzularını, alışkanlıklarını, kendini ve çevrendeki dünyayı deneyimleme biçimini keşfetmeye başlayacaksın.
-      </p>
-      <p class="cascade reveal" style="transition-delay:0.16s;">
-        Pratiklerle karşılaşacaksın.<br />
-        Sorularla karşılaşacaksın.<br />
-        Farklı bilgelik geleneklerinin taşıdığı fikirlerle karşılaşacaksın.
-      </p>
+  <!-- DZENLE -->
+  <section class="np-sec np-b">
+    <div class="np-narrow">
+        <p class="section-label">02</p>
+        <h2 class="section-title">Düzenle</h2>
+        <p class="np-p">Fark etmek başlangıçtır.</p>
+        <p class="np-p">Ama yalnızca fark etmek her zaman yeterli değildir.</p>
+        <p class="np-p">Bazen zihnimiz ne olduğunu anladığı hâlde Soma hâlâ eski tepkiyi taşımaya devam eder.</p>
+        <p class="np-p">Bu nedenle Dikkatimizi Soma'ya çevirmeyi öğreniriz.</p>
+        <p class="np-cascade">Nefeste.<br />Duruşta.<br />Kasılmada.<br />Bedensel duyumlarda.</p>
+        <p class="np-p">İstenmeyen bir tepkinin ilk işaretlerini fark ettiğimizde otomatik olarak onun peşinden gitmek yerine durmayı, nefes almayı ve uyaran ile tepkimiz arasında küçük bir alan yaratmayı öğrenebiliriz.</p>
+        <p class="np-p">Bu alan bize seçim yapabilme ihtimali verir.</p>
+        <p class="np-high">Düzenle &rarr; Serbest Bırak &rarr; Yeniden Şekillendir &rarr; Bütünleştir</p>
+        <p class="np-p"><a href="/tr/breathwork/" class="np-link">Somatik Nefes Çalışması</a> bu aşamada kullandığımız araçlardan biridir.</p>
     </div>
   </section>
 
-  <div class="divider"></div>
-
-  <!-- METHODOLOGY MAP -->
-  <section class="map-section">
-    <div class="section-inner">
-      <p class="section-label reveal">Harita</p>
-      <h2 class="section-title reveal">@ <span lang="en">Bliss</span> Metodolojisi</h2>
-      <div class="path-flow reveal" style="transition-delay:0.1s;">
-        <span>Uyan</span><span class="arrow">→</span>
-        <span>Düzenle</span><span class="arrow">→</span>
-        <span>Uyumlan</span><span class="arrow">→</span>
-        <span>Titreş</span><span class="arrow">→</span>
-        <span>Keyif Al</span><span class="arrow">→</span>
-        <span>Hatırla</span>
-      </div>
-      <p class="section-body reveal" style="transition-delay:0.15s; margin:0 auto;">
-        Bunlar tamamlanıp işaretlenecek aşamalar değildir. Birbirinin üzerine kurulan, zaman zaman iç içe geçen, giderek derinleşen ve zamanla yaşama biçimimizin bir parçasına dönüşen keşif aşamalarıdır.
-      </p>
-      <div class="stage-grid">
-        <div class="stage-card reveal" style="transition-delay:0.1s;">
-          <div class="stage-num">01</div>
-          <div class="stage-name">Uyan</div>
-          <p class="stage-desc">İçinde olup biteni gözlemle.</p>
-        </div>
-        <div class="stage-card reveal" style="transition-delay:0.14s;">
-          <div class="stage-num">02</div>
-          <div class="stage-name">Düzenle</div>
-          <p class="stage-desc">Soma'n ve içsel hâlinle bilinçli biçimde çalışmayı öğren.</p>
-        </div>
-        <div class="stage-card reveal" style="transition-delay:0.18s;">
-          <div class="stage-num">03</div>
-          <div class="stage-name">Uyumlan</div>
-          <p class="stage-desc">Kalbini, zihnini, bedenini ve duygularını daha büyük bir uyum içinde buluştur.</p>
-        </div>
-        <div class="stage-card reveal" style="transition-delay:0.22s;">
-          <div class="stage-num">04</div>
-          <div class="stage-name">Titreş</div>
-          <p class="stage-desc">Hayatı deneyimleme biçimine ne taşıdığının daha fazla farkına var.</p>
-        </div>
-        <div class="stage-card reveal" style="transition-delay:0.26s;">
-          <div class="stage-num">05</div>
-          <div class="stage-name">Keyif Al</div>
-          <p class="stage-desc">İnsan olmanın güzelliğini bütünüyle yaşayabilecek kadar özgürleş.</p>
-        </div>
-        <div class="stage-card reveal" style="transition-delay:0.3s;">
-          <div class="stage-num">06</div>
-          <div class="stage-name">Hatırla</div>
-          <p class="stage-desc">Gerçekte kim olduğunu ve Bir Olan'la bağını hatırla.</p>
-        </div>
-      </div>
+  <!-- UYUMLAN -->
+  <section class="np-sec np-c">
+    <div class="np-narrow">
+        <p class="section-label">03</p>
+        <h2 class="section-title">Uyumlan</h2>
+        <p class="np-p">Düzenleme alan açar.</p>
+        <p class="np-p">Uyumlanma, kalbi, zihni, Soma'yı ve duyguları aynı doğrultuda buluşturmayı araştırır.</p>
+        <p class="np-p">Meditasyon, nefes çalışması, odaklanmış Dikkat ve kalp merkezli pratikler aracılığıyla içimizde daha büyük bir uyum geliştirmeyi öğreniriz.</p>
+        <p class="np-p">Pratik derinleştikçe farklı bilinç hâllerini araştırmaya başlayabiliriz.</p>
+        <p class="np-p">Dikkatimizi daha bilinçli yönlendirmeyi, içsel gürültünün ötesine geçmeyi ve kalp, zihin ve Soma arasında daha derin bir uyum geliştirmeyi araştırırız.</p>
+        <p class="np-p">İçimizdeki ilişki değiştikçe, kendimizle, başkalarıyla ve yaşamla kurduğumuz ilişkinin de değişebildiğini deneyimlemeye başlayabiliriz.</p>
+        <p class="np-p">Evrenle uyumlanmak yalnızca yaptığımız bir pratik olmaktan çıkar.</p>
+        <p class="np-closing">Yaşama biçimimize dönüşmeye başlar.</p>
     </div>
   </section>
 
-  <div class="divider"></div>
-
-  <!-- EXPLORE FOR YOURSELF -->
-  <section class="doctrine-section">
-    <div class="section-inner narrow">
-      <p class="section-label reveal">Kendin Araştır</p>
-      <h2 class="section-title reveal">Amaç seni bir şeye inandırmak değil.</h2>
-      <p class="section-body reveal" style="transition-delay:0.1s; margin-bottom:1.5rem;">
-        @ <span lang="en">Bliss</span> Yolu; farklı kültürlerin ve nesillerin taşıdığı pratiklerden, felsefelerden, tefekkür geleneklerinden ve bilgelikten beslenir.
-      </p>
-      <p class="cascade reveal" style="transition-delay:0.13s;">
-        Bazı fikirler sende hemen karşılık bulabilir.<br />
-        Bazıları seni zorlayabilir.<br />
-        Bazılarını anlamak zaman alabilir.
-      </p>
-      <p class="section-body reveal" style="transition-delay:0.16s; margin-bottom:0;">
-        Buradaki davet, karşına çıkan her şeyi Hakikat olarak kabul etmen değildir.
-      </p>
-      <p class="closing-line reveal" style="transition-delay:0.2s;"><strong>Gözlemle. Deneyimle. Sorgula. Uygula.</strong><br /><strong>Ve sonunda Kalbini duy.</strong><br /><strong>Duy ki ilham al. İlham al ki KASHF&rsquo;ET.</strong></p>
+  <!-- TITRE -->
+  <section class="np-sec np-b">
+    <div class="np-narrow">
+        <p class="section-label">04</p>
+        <h2 class="section-title">Titreş</h2>
+        <p class="np-p">Uyumlandıkça nasıl titreştiğimizin daha fazla farkına varırız.</p>
+        <p class="np-cascade">Dikkatimi nereye veriyorum?<br />Neyi besliyorum?<br />Hangi düşünceleri tekrar ediyorum?<br />Hangi duygusal hâlden hareket ediyorum?<br />Ve hayatın içine ne taşıyorum?</p>
+        <p class="np-p">Meditasyon, görselleştirme, bilinçli niyet ve diğer tefekkür pratikleri aracılığıyla içsel hâlimiz ile deneyimlediğimiz gerçeklik arasındaki ilişkiyi araştırırız.</p>
+        <p class="np-p">Yaratımı yalnızca zihinsel bir istek olarak değil; Dikkatimizin, niyetimizin, duygularımızın ve eylemlerimizin aynı yönde buluştuğu bir süreç olarak keşfetmeye başlarız.</p>
+        <div class="np-q"><p class="np-p">Soru zamanla değişir:</p><p class="np-qq"><strong>&ldquo;Bunu nasıl gerçekleştirebilirim?&rdquo;</strong></p><p class="np-p">yerine:</p><p class="np-qq"><strong>&ldquo;Neyle uyumlanmam gerekiyor?&rdquo;</strong></p></div>
+        <p class="np-closing">Yaratım yalnızca ne istediğimizle değil, Dikkatimizi nereye yönelttiğimiz ve onu hangi içsel hâlden yönelttiğimizle de ilgilidir.</p>
     </div>
   </section>
 
-  <div class="divider"></div>
+  <!-- KEYIF AL -->
+  <section class="np-sec np-c">
+    <div class="np-narrow">
+        <p class="section-label">05</p>
+        <h2 class="section-title">Keyif Al</h2>
+        <p class="np-p">Yol, insan deneyiminden bir kaçış değildir.</p>
+        <p class="np-p">Onu daha bütünüyle yaşamak için bir davettir.</p>
+        <p class="np-p">Hayat bize olağanüstü güzellikler, tatlar, duyumlar, ilişkiler, yaratıcılık, kahkaha, sevgi ve neşe sunar.</p>
+        <p class="np-p">Uyanmak için bunlardan vazgeçmemiz gerekmez.</p>
+        <p class="np-p">Buradaki soru şudur:</p>
+        <p class="np-cascade">Keyif alırken Dikkatimi kaybediyor muyum?<br />Yoksa hayatın içinde hem yaşayan hem de yaşadığını seyreden olabilir miyim?</p>
+        <p class="np-p">Bir deneyimin içinde kendimizi tamamen kaybetmeden, hem yaşayan hem de yaşadığını seyreden olarak kalabildiğimizde, hayatın sunduklarından vazgeçmemiz gerekmez.</p>
+        <p class="np-p">Tam tersine, onları daha bütünüyle deneyimleyebiliriz.</p>
+        <p class="np-p">Yani bu Yolculuk keyifli de olabilir.</p>
+        <p class="np-high">Anda ol.<br />Kendinde ol.<br />İnsan olmanın keyfini çıkar.</p>
+    </div>
+  </section>
 
-  <!-- CLOSING -->
-  <section class="closing-section">
-    <div class="section-inner narrow">
-      <p class="section-label reveal">Başla</p>
-      <h2 class="section-title reveal">Yolun seni nereye götüreceğini bilmen gerekmiyor.</h2>
-      <p class="section-body reveal" style="transition-delay:0.1s; margin:0 auto 1.5rem;">
-        Yalnızca içinde olup biteni gözlemlemeye istekli olman ve dümene yeniden geçmeyi içtenlikle istemen yeterli.
-      </p>
-      <p class="section-body reveal" style="transition-delay:0.13s; margin:0 auto 1.5rem;">
-        İlk deneyimin ücretsiz. Seni Soma+IQ&trade; The Journey'a davet ediyoruz.
-      </p>
-      <p class="cascade reveal" style="transition-delay:0.16s;">
-        <strong>Nefes al.</strong><br />
-        <strong>Gözlemle.</strong><br />
-        <strong>Merakını koru.</strong>
-      </p>
-      <p class="section-body reveal" style="transition-delay:0.19s; margin:0 auto 2.25rem;">
-        Ve içinde bir şey devam etmek isterse, nefes çalışmasının ardından bizimle 30 dakika daha kal.
-      </p>
-      <a href="/tr/breathwork/" class="btn btn-primary reveal" style="transition-delay:0.23s;">Ücretsiz Somatik Nefes Çalışması Seansıyla Başla &rarr;</a>
+  <!-- HATRLA -->
+  <section class="np-sec np-b">
+    <div class="np-narrow">
+        <p class="section-label">06</p>
+        <h2 class="section-title">Hatırla</h2>
+        <p class="np-p">@ <span lang="en">Bliss</span> Yolu yeni birine dönüşmekle ilgili değildir.</p>
+        <p class="np-p"><strong>Gerçekte kim olduğunu hatırlamakla ilgilidir.</strong></p>
+        <p class="np-p">Bir zamanlar seni tanımlıyor gibi görünen sesler, kalıplar, korkular, kimlikler ve koşullanmalar üzerindeki hâkimiyetlerini kaybettikçe daha derinde olanı tanımak kolaylaşabilir.</p>
+        <p class="np-p">Başkalarıyla, hayatla ve nihayetinde Bir Olan'la bağını hatırlamaya başlarsın.</p>
+        <p class="np-p">Ama Hatırlamak bir kez ulaşılan ve artık kaybedilmeyen bir hâl değildir.</p>
+        <p class="np-p">Hayatın içinde tekrar tekrar kendimize dönmektir.</p>
+        <p class="np-p">Dikkatimizin ışığı içimizde daha önce görmeden yaşadığımız düşüncelere, duygulara, korkulara ve kalıplara değdikçe, görünmeyen görünür olmaya başlar.</p>
+        <p class="np-high">Fark edilmeyen fark edilir olur.<br />Fark edilen Şuura kavuşur.</p>
+        <p class="np-p">Dikkatimiz dağıldığında unutabiliriz.</p>
+        <p class="np-p">Dikkatimizi yeniden kendimize, içinde bulunduğumuz ana ve daha derinde olana yönelttiğimizde yeniden hatırlayabiliriz.</p>
+        <p class="np-p">Belki de Yol, sen hatırladığında sona ermez.</p>
+        <p class="np-p">Belki bir başkasının da kendi Öz'ünü hatırlamasına eşlik ettiğinde devam eder.</p>
+        <p class="np-closing">Dikkat, hatırlamanın bekçisidir.</p>
+    </div>
+  </section>
+
+  <!-- BEGIN -->
+  <section class="np-sec np-a" id="begin">
+    <div class="np-narrow np-center">
+        <h2 class="section-title">Peki nereden başlayacağız?</h2>
+        <p class="np-p">Çok daha basit bir yerden.</p>
+        <p class="np-p">Bugün içinde seni zorlayan bir &ldquo;Ben&rdquo;i fark ederek.</p>
+        <p class="np-cascade">Öfkelenen Ben.<br />Endişelenen Ben.<br />Kontrol etmek isteyen Ben.<br />Kendinden şüphe eden Ben.<br />Eleştiren Ben.<br />Kurban hisseden Ben.</p>
+        <p class="np-p">Hangisi olduğu önemli değil.</p>
+        <p class="np-p"><strong>Şimdilik yalnızca bir tanesini seç.</strong></p>
+        <p class="np-cascade">Onu değiştirmeye çalışma.<br />Yargılama.<br />Bastırma.</p>
+        <p class="np-high">Sadece eşgalini çıkarmaya başla.</p>
+        <div class="np-btn"><a href="/tr/path/selfmapping/" class="btn btn-primary">Eşgal Çalışmasına Başla &rarr;</a></div>
     </div>
   </section>
 
@@ -786,7 +732,7 @@
       <a href="/tr/" class="footer-back">&larr; atbliss.org'a dön</a>
     </div>
     <div class="footer-bottom">
-      <p class="footer-copy">&copy; 2026 @ <span lang="en">Bliss</span> Foundation &nbsp;&middot;&nbsp; atbliss.org</p>
+      <p class="footer-copy">&copy; 2026 @ <span lang="en">Bliss Foundation</span> &nbsp;&middot;&nbsp; atbliss.org</p>
     </div>
   </footer>
 
