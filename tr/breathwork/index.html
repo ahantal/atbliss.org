@@ -344,16 +344,18 @@
     }
 
     .session-tag {
-      font-size: 0.62rem;
-      letter-spacing: 0.2em;
+      font-size: 1.55rem;
+      letter-spacing: 0.12em;
+      line-height: 1.3;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 1rem;
+      margin-bottom: 0.35rem;
     }
 
     .session-time {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.6rem;
+      font-size: 3.2rem;
+      line-height: 1.1;
       font-weight: 400;
       color: var(--gold-light);
       margin-bottom: 1rem;
@@ -667,6 +669,7 @@
     .expect { background: var(--deep2); }
 
     /* ── PATH CONNECTION ── */
+    .prep-section { background: var(--deep); }
     .path-connection { background: var(--deep3); text-align: center; }
 
     .path-connection .section-inner { max-width: 680px; }
@@ -709,6 +712,8 @@
     }
 
     .footer-back:hover { color: var(--gold); }
+    .path-cta-big { font-size: 1.56rem; letter-spacing: 0.06em; white-space: nowrap; }
+    @media (max-width: 480px) { .path-cta-big { font-size: 1.12rem; letter-spacing: 0.04em; } }
 
     .footer-bottom {
       display: flex;
@@ -801,7 +806,7 @@
       <p class="section-label reveal">@ <span lang="en">Bliss</span>'te Somatik Nefes Çalışması</p>
       <h1 class="section-title reveal" style="font-size:clamp(2.6rem,6vw,4rem);">Soma ile başla.</h1>
       <div class="bw-hero-sub reveal" style="transition-delay:0.1s;">
-        <p>Düşünme biçimini değiştirmeni istemeden önce, seni bedeninde zaten yaşanmakta olanı deneyimlemeye davet ediyoruz.</p>
+        <p>Bir şeyi değiştirmeye çalışmadan önce, seni bedeninde zaten yaşanmakta olanı fark etmeye ve deneyimlemeye davet ediyoruz.</p>
         <p>Somatik Nefes Çalışması; sinir sistemimiz, duygularımız, düşüncelerimiz, bedensel duyumlarımız ve taşıdığımız kalıplar arasındaki ilişkiyi araştırmamıza olanak tanır.</p>
         <p>@ <span lang="en">Bliss</span>'te nefes çalışması varılacak son nokta değildir.<br />Dinlemeye başlama yollarımızdan biridir.</p>
       </div>
@@ -817,7 +822,7 @@
       <h2 class="section-title reveal">Soma+IQ&trade; The Journey</h2>
       <p class="experience-byline reveal" style="transition-delay:0.1s;">Bağımsız olarak geliştirilmiş ve @ <span lang="en">Bliss</span> kapsamındaki deneyimlerden biri olarak sunulan bir pratiktir.</p>
       <div class="experience-card reveal" style="transition-delay:0.15s;">
-        <p>The Journey; duygusal boşalıma alan açmak, içgörüyü uyandırmak ve seni daha derin amacın ve sezgisel zekânla yeniden buluşturmak için tasarlanmış bütünsel bir iç yolculuktur. Nefes burada bilinçaltına, ruha ve görülmeyi ve bütünleşmeyi bekleyen parçalarına uzanan bir köprüye dönüşür.</p>
+        <p>The Journey; duygusal boşalıma alan açmak, içgörüyü uyandırmak ve seni daha derin amacın ve sezgisel zekânla yeniden buluşturmak için tasarlanmış bütünsel bir iç yolculuktur. Nefes burada, içeride olup biteni daha yakından fark etmeye ve görülmeyi, hissedilmeyi veya bütünleşmeyi bekleyen parçalarımızla temas etmeye açılan bir kapıya dönüşebilir.</p>
       </div>
     </div>
   </section>
@@ -839,7 +844,7 @@
         Beden tepki vermeye hazırlanır.
       </p>
       <p class="section-body reveal" style="transition-delay:0.15s; margin-bottom:1.25rem;">
-        @ <span lang="en">Bliss</span>'te Soma sözcüğünü, yaşanan bedeni, yani bedenin içeriden deneyimlenen hâlini anlatmak için kullanıyoruz.
+        Soma, bedenimizin içeriden yaşanan deneyimini ve beden, zihin ve duygularımız arasındaki ilişkiyi ifade eder.
       </p>
       <p class="section-body reveal" style="transition-delay:0.18s; margin-bottom:0;">
         Somatik Nefes Çalışması bu deneyimle doğrudan çalışmaya başlamanın bir yolunu sunar. Bilinçli nefes ve bedensel farkındalık aracılığıyla içimizde olup biteni fark etmeyi ve ortaya çıkanlarla farklı bir ilişki kurmayı öğrenmeye başlarız.
@@ -905,7 +910,7 @@
         <p class="section-label reveal">Kayıt</p>
         <h2 class="section-title reveal">@ <span lang="en">Bliss</span> | Soma+IQ&trade; The Journey Somatik Nefes Çalışması Seansına Kaydol</h2>
         <p class="section-body reveal" style="transition-delay:0.1s; margin-bottom:2.5rem;">
-          Lütfen aşağıdaki formu doldur. Kaydın ardından seanstan önce gerekli feragatnameyi tamamlaman istenecektir.
+          Lütfen aşağıdaki formu doldur.
         </p>
 
         <form id="bw-form">
@@ -940,8 +945,8 @@
 
           <div class="form-row">
             <div class="form-group">
-              <label for="country">Ülke</label>
-              <input type="text" id="country" name="country" />
+              <label for="country">Ülke <span class="required-mark">*</span></label>
+              <input type="text" id="country" name="country" required />
             </div>
             <div class="form-group">
               <label for="phone">Cep Telefonu</label>
@@ -1000,7 +1005,7 @@
             </label>
           </div>
 
-          <button type="submit" class="btn btn-primary" id="bw-submit" style="margin-top:1rem;">Formu Gönder</button>
+          <button type="submit" class="btn btn-primary" id="bw-submit" style="margin-top:1rem;">Kayıt Ol</button>
           <p class="form-error" id="bw-error">Kaydın gönderilirken bir sorun oluştu. Lütfen yeniden dene veya doğrudan atblissfoundation@gmail.com adresine yaz.</p>
         </form>
       </div>
@@ -1028,6 +1033,40 @@
 
   <div class="divider"></div>
 
+  <!-- BEFORE THE SESSION -->
+  <section class="prep-section">
+    <div class="section-inner narrow">
+      <p class="section-label reveal">Seans Öncesi</p>
+      <h2 class="section-title reveal">Seansa nasıl hazırlanmalıyım?</h2>
+      <p class="section-body reveal" style="transition-delay:0.10s; margin-bottom:1.25rem;">
+        Deneyimin boyunca rahat edebileceğin, mümkünse rahatsız edilmeyeceğin sakin ve özel bir alan hazırla.
+      </p>
+      <p class="section-body reveal" style="transition-delay:0.13s; margin-bottom:1.25rem;">
+        Sırtüstü uzanabileceğin bir mat, yatak veya rahat bir yüzey kullanabilirsin.
+      </p>
+      <p class="section-body reveal" style="transition-delay:0.16s; margin-bottom:1.25rem;">
+        Kulaklık veya kulak içi kulaklık kullanmanı öneriyoruz. Seans başlamadan önce Zoom'un, kameranın ve sesinin çalıştığından emin ol.
+      </p>
+      <p class="section-body reveal" style="transition-delay:0.19s; margin-bottom:1.25rem;">
+        Rahat kıyafetler giy. Nefesini veya hareketini kısıtlayan kıyafetlerden kaçın.
+      </p>
+      <p class="section-body reveal" style="transition-delay:0.22s; margin-bottom:1.25rem;">
+        Seansa çok tok gelmemeni öneriyoruz. Mümkünse ağır bir öğünü seansın hemen öncesine bırakma.
+      </p>
+      <p class="section-body reveal" style="transition-delay:0.25s; margin-bottom:1.25rem;">
+        Yanında biraz su bulundurabilirsin.
+      </p>
+      <p class="section-body reveal" style="transition-delay:0.28s; margin-bottom:0;">
+        <strong>Ve en önemlisi, belirli bir şey yaşaman veya başarman gerektiği düşüncesiyle gelme.</strong>
+      </p>
+      <p class="closing-line reveal" style="transition-delay:0.33s;">
+        <strong>Olduğun gibi gel.</strong>
+      </p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
   <!-- CONNECTION TO THE PATH -->
   <section class="path-connection">
     <div class="section-inner">
@@ -1040,9 +1079,9 @@
         Yol; kendini gözlemleme, bedensel pratik, tefekkür, felsefe, farkındalıkla yaşama, uyumlanma, titreşim ve gerçekte kim olduğumuzu adım adım hatırlama süreciyle devam eder.
       </p>
       <p class="section-body reveal" style="transition-delay:0.2s; margin: 0 auto 2rem;">
-        Devam etmeyi seçenler için bu deneyimden önce ve deneyim sırasında yapılan gözlemler, Yolun ilerleyen aşamalarında yeniden anlam kazanabilir.
+        Devam etmeyi seçersen, bu deneyim sırasında kendinle ilgili fark ettiğin şeyler Yolun ilerleyen aşamalarında yeniden karşına çıkabilir ve zamanla farklı anlamlar kazanabilir.
       </p>
-      <a href="/tr/path/" class="footer-back reveal" style="transition-delay:0.25s;">@ <span lang="en">Bliss</span> Yolu'nu Keşfet &rarr;</a>
+      <a href="/tr/path/" class="footer-back path-cta-big reveal" style="transition-delay:0.25s;">@ <span lang="en">Bliss</span> Yolu'nu Keşfet &rarr;</a>
     </div>
   </section>
 
@@ -1124,7 +1163,7 @@
       } catch (err) {
         bwError.classList.add('visible');
         bwSubmit.disabled = false;
-        bwSubmit.textContent = 'Formu Gönder';
+        bwSubmit.textContent = 'Kayıt Ol';
       }
     });
 
