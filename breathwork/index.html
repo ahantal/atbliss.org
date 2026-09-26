@@ -344,16 +344,18 @@
     }
 
     .session-tag {
-      font-size: 0.62rem;
-      letter-spacing: 0.2em;
+      font-size: 1.55rem;
+      letter-spacing: 0.12em;
+      line-height: 1.3;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 1rem;
+      margin-bottom: 0.35rem;
     }
 
     .session-time {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.6rem;
+      font-size: 3.2rem;
+      line-height: 1.1;
       font-weight: 400;
       color: var(--gold-light);
       margin-bottom: 1rem;
@@ -667,6 +669,7 @@
     .expect { background: var(--deep2); }
 
     /* ── PATH CONNECTION ── */
+    .prep-section { background: var(--deep); }
     .path-connection { background: var(--deep3); text-align: center; }
 
     .path-connection .section-inner { max-width: 680px; }
@@ -709,6 +712,8 @@
     }
 
     .footer-back:hover { color: var(--gold); }
+    .path-cta-big { font-size: 1.56rem; letter-spacing: 0.06em; white-space: nowrap; }
+    @media (max-width: 480px) { .path-cta-big { font-size: 1.12rem; letter-spacing: 0.04em; } }
 
     .footer-bottom {
       display: flex;
@@ -801,7 +806,7 @@
       <p class="section-label reveal">Somatic Breathwork @ Bliss</p>
       <h1 class="section-title reveal" style="font-size:clamp(2.6rem,6vw,4rem);">Begin with the Soma.</h1>
       <div class="bw-hero-sub reveal" style="transition-delay:0.1s;">
-        <p>Before we ask you to change the way you think, we invite you to experience what is already happening within your body.</p>
+        <p>Before trying to change anything, we invite you to notice and experience what is already happening within your body.</p>
         <p>Somatic Breathwork allows us to explore the relationship between our nervous system, emotions, thoughts, physical sensations, and the patterns we carry.</p>
         <p>At @ Bliss, breathwork is not the destination.<br />It is one of the ways we begin to listen.</p>
       </div>
@@ -817,7 +822,7 @@
       <h2 class="section-title reveal">Soma+IQ&trade; The Journey</h2>
       <p class="experience-byline reveal" style="transition-delay:0.1s;">An independently developed practice, offered as one of the experiences within @ Bliss.</p>
       <div class="experience-card reveal" style="transition-delay:0.15s;">
-        <p>The Journey is a full inner voyage, designed to support emotional release, awaken insight, and reconnect you with your deeper purpose and intuitive intelligence. This is where breath becomes a bridge to the subconscious, the soul, and the parts of you that long to be seen and integrated.</p>
+        <p>The Journey is a full inner voyage, designed to support emotional release, awaken insight, and reconnect you with your deeper purpose and intuitive intelligence. Here, the breath can become a doorway into noticing more closely what is happening within and connecting with the parts of ourselves that may be waiting to be seen, felt, or integrated.</p>
       </div>
     </div>
   </section>
@@ -839,7 +844,7 @@
         The body prepares to react.
       </p>
       <p class="section-body reveal" style="transition-delay:0.15s; margin-bottom:1.25rem;">
-        At @ Bliss, we use the word Soma to describe the lived body, the body as it is experienced from within.
+        Soma is our lived experience of the body from within and the relationship between body, mind, and emotions.
       </p>
       <p class="section-body reveal" style="transition-delay:0.18s; margin-bottom:0;">
         Somatic Breathwork gives us a way to begin working with that experience directly. Through conscious breathing and embodied awareness, we begin learning to notice what is happening within us and to relate differently to what arises.
@@ -905,7 +910,7 @@
         <p class="section-label reveal">Registration</p>
         <h2 class="section-title reveal">Register for<br />@ Bliss | Soma+IQ&trade; The Journey Breathwork Session</h2>
         <p class="section-body reveal" style="transition-delay:0.1s; margin-bottom:2.5rem;">
-          Please complete the form below. After registering, you will be asked to complete the required release form before your session.
+          Please complete the form below.
         </p>
 
         <form id="bw-form">
@@ -940,8 +945,8 @@
 
           <div class="form-row">
             <div class="form-group">
-              <label for="country">Country</label>
-              <input type="text" id="country" name="country" />
+              <label for="country">Country <span class="required-mark">*</span></label>
+              <input type="text" id="country" name="country" required />
             </div>
             <div class="form-group">
               <label for="phone">Mobile Phone</label>
@@ -1000,7 +1005,7 @@
             </label>
           </div>
 
-          <button type="submit" class="btn btn-primary" id="bw-submit" style="margin-top:1rem;">Submit Form</button>
+          <button type="submit" class="btn btn-primary" id="bw-submit" style="margin-top:1rem;">Register</button>
           <p class="form-error" id="bw-error">Something went wrong submitting your registration. Please try again, or email us directly at atblissfoundation@gmail.com.</p>
         </form>
       </div>
@@ -1028,6 +1033,40 @@
 
   <div class="divider"></div>
 
+  <!-- BEFORE THE SESSION -->
+  <section class="prep-section">
+    <div class="section-inner narrow">
+      <p class="section-label reveal">Before the Session</p>
+      <h2 class="section-title reveal">How should I prepare for the session?</h2>
+      <p class="section-body reveal" style="transition-delay:0.10s; margin-bottom:1.25rem;">
+        Prepare a quiet, private space where you can be comfortable and, if possible, undisturbed throughout the experience.
+      </p>
+      <p class="section-body reveal" style="transition-delay:0.13s; margin-bottom:1.25rem;">
+        You can use a mat, bed, or another comfortable surface where you can lie on your back.
+      </p>
+      <p class="section-body reveal" style="transition-delay:0.16s; margin-bottom:1.25rem;">
+        We recommend using headphones or earbuds. Before the session begins, make sure Zoom, your camera, and your audio are working properly.
+      </p>
+      <p class="section-body reveal" style="transition-delay:0.19s; margin-bottom:1.25rem;">
+        Wear comfortable clothing. Avoid anything that restricts your breathing or movement.
+      </p>
+      <p class="section-body reveal" style="transition-delay:0.22s; margin-bottom:1.25rem;">
+        We recommend not coming to the session on a full stomach. If possible, avoid having a heavy meal immediately beforehand.
+      </p>
+      <p class="section-body reveal" style="transition-delay:0.25s; margin-bottom:1.25rem;">
+        You may also want to keep some water nearby.
+      </p>
+      <p class="section-body reveal" style="transition-delay:0.28s; margin-bottom:0;">
+        <strong>Most importantly, come without the expectation that you need to experience or accomplish anything in particular.</strong>
+      </p>
+      <p class="closing-line reveal" style="transition-delay:0.33s;">
+        <strong>Come as you are.</strong>
+      </p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
   <!-- CONNECTION TO THE PATH -->
   <section class="path-connection">
     <div class="section-inner">
@@ -1040,9 +1079,9 @@
         The Path continues through self-observation, embodied practice, contemplation, philosophy, mindful living, coherence, resonance, and the gradual process of remembering who we truly are.
       </p>
       <p class="section-body reveal" style="transition-delay:0.2s; margin: 0 auto 2rem;">
-        For those who choose to continue, the observations you make before and during this experience may become meaningful again later in the Path.
+        If you choose to continue, things you notice about yourself during this experience may come back into view later along the Path and take on different meaning over time.
       </p>
-      <a href="/path" class="footer-back reveal" style="transition-delay:0.25s;">Explore The @ Bliss Path &rarr;</a>
+      <a href="/path" class="footer-back path-cta-big reveal" style="transition-delay:0.25s;">Explore The @ Bliss Path &rarr;</a>
     </div>
   </section>
 
@@ -1124,7 +1163,7 @@
       } catch (err) {
         bwError.classList.add('visible');
         bwSubmit.disabled = false;
-        bwSubmit.textContent = 'Submit Form';
+        bwSubmit.textContent = 'Register';
       }
     });
   </script>
