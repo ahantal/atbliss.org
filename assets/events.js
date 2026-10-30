@@ -23,10 +23,10 @@ window.ATBLISS_EVENTS = {
     minutes: 90
   },
 
-  /* Turkish /tr/breathwork session: Wednesday, November 18, 2026, 21:00 to 22:30 TSİ */
+  /* Turkish /tr/breathwork session: Wednesday, November 25, 2026, 21:00 to 22:30 TSİ */
   'breathwork-tr': {
     title: '@ Bliss | Somatik Nefes Çalışması Seansı',
-    start: '2026-11-18T18:00:00Z',
+    start: '2026-11-25T18:00:00Z',
     minutes: 90
   },
 
