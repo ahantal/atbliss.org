@@ -20,7 +20,8 @@ window.ATBLISS_EVENTS = {
   'breathwork-en': {
     title: '@ Bliss | Somatic Breathwork Session',
     start: '2026-12-01T23:30:00Z',
-    minutes: 90
+    minutes: 90,
+    zoom: 'aHR0cHM6Ly91czA2d2ViLnpvb20udXMvai84NzA2NDg1OTU2Nj9wd2Q9ZGlJYURBMWV6ajVtTnFETmlXUTZ3aFZsU3BiSllxLjE='
   },
 
   /* Turkish /tr/breathwork session: Wednesday, November 25, 2026, 21:00 to 22:30 TSİ */

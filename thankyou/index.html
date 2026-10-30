@@ -677,13 +677,21 @@
 
   <script>
     // ── Add to Calendar: date and time come from /assets/events.js ('breathwork-en').
-    // The Zoom link is deliberately left out: this page is not gated, so anyone with the URL can open it.
+    // This page is not gated, so the Zoom link goes only into the calendar invite of someone who
+    // registered in this browser (localStorage flag set by /breathwork on a successful submit),
+    // and only until the session has passed. Anyone else gets the invite without it.
     (function () {
       const ev = AtBlissEvent.get('breathwork-en');
+      let isRegistered = false;
+      try {
+        const registeredAt = localStorage.getItem('bwRegistered');
+        isRegistered = !!registeredAt && Date.now() <= ev.endMs;
+        if (registeredAt && !isRegistered) localStorage.removeItem('bwRegistered');
+      } catch (e) {}
       const cal = {
         title: ev.title,
         details: 'A free online Soma+IQ™ The Journey breathwork session, offered through @ Bliss Foundation.\n\n'
-          + 'The Zoom link is in your confirmation email.\n\n'
+          + (isRegistered ? 'Join on Zoom:\n' + ev.zoomUrl : 'The Zoom link is in your confirmation email.') + '\n\n'
           + 'How to prepare:\nhttps://www.atbliss.org/prepare\n\n'
           + 'Questions: atblissfoundation@gmail.com',
         filename: 'atbliss-somatic-breathwork-session.ics'
