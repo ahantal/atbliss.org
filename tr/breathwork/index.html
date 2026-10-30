@@ -1173,6 +1173,7 @@
         const result = await response.json();
 
         if (result.success) {
+          try { localStorage.setItem('bwRegisteredTr', String(Date.now())); } catch (e) {}
           window.location.href = '/tr/thankyou/';
         } else {
           throw new Error(result.message || 'Submission failed');

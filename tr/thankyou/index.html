@@ -677,13 +677,21 @@
 
   <script>
     // ── Add to Calendar: date and time come from /assets/events.js ('breathwork-tr').
-    // The Zoom link is deliberately left out: this page is not gated, so anyone with the URL can open it.
+    // This page is not gated, so the Zoom link goes only into the calendar invite of someone who
+    // registered in this browser (localStorage flag set by /tr/breathwork on a successful submit),
+    // and only until the session has passed. Anyone else gets the invite without it.
     (function () {
       const ev = AtBlissEvent.get('breathwork-tr');
+      let isRegistered = false;
+      try {
+        const registeredAt = localStorage.getItem('bwRegisteredTr');
+        isRegistered = !!registeredAt && Date.now() <= ev.endMs;
+        if (registeredAt && !isRegistered) localStorage.removeItem('bwRegisteredTr');
+      } catch (e) {}
       const cal = {
         title: ev.title,
         details: '@ Bliss aracılığıyla sunulan ücretsiz, çevrim içi Soma+IQ™ The Journey nefes çalışması seansı.\n\n'
-          + 'Zoom bağlantısı onay e-postanda yer alıyor.\n\n'
+          + (isRegistered ? 'Zoom bağlantısı:\n' + ev.zoomUrl : 'Zoom bağlantısı onay e-postanda yer alıyor.') + '\n\n'
           + 'Seansına hazırlan:\nhttps://www.atbliss.org/tr/prepare/\n\n'
           + 'Sorular: atblissfoundation@gmail.com',
         location: 'Çevrim içi (Zoom)',

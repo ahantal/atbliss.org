@@ -28,7 +28,8 @@ window.ATBLISS_EVENTS = {
   'breathwork-tr': {
     title: '@ Bliss | Somatik Nefes Çalışması Seansı',
     start: '2026-11-25T18:00:00Z',
-    minutes: 90
+    minutes: 90,
+    zoom: 'aHR0cHM6Ly91czA2d2ViLnpvb20udXMvai84MjMyMTQ3MTgyND9wd2Q9ME9qc1dvYzFYcVRqR2gwcXduUFh0aFhnU05XOHZ5LjE='
   },
 
   /* Come Breathe With Me (English and Turkish pages share this):
