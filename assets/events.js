@@ -16,10 +16,10 @@
    ========================================================================== */
 window.ATBLISS_EVENTS = {
 
-  /* English /breathwork session: Tuesday, November 17, 2026, 6:30 to 8:00 PM ET */
+  /* English /breathwork session: Tuesday, December 1, 2026, 6:30 to 8:00 PM ET */
   'breathwork-en': {
     title: '@ Bliss | Somatic Breathwork Session',
-    start: '2026-11-17T23:30:00Z',
+    start: '2026-12-01T23:30:00Z',
     minutes: 90
   },
 
@@ -31,12 +31,12 @@ window.ATBLISS_EVENTS = {
   },
 
   /* Come Breathe With Me (English and Turkish pages share this):
-     Monday, September 28, 2026, 9:00 PM Türkiye = 2:00 PM ET */
+     Wednesday, November 25, 2026, 21:00 Türkiye = 13:00 ET */
   'cbwm': {
     title: 'Come Breathe With Me',
-    start: '2026-09-28T18:00:00Z',
+    start: '2026-11-25T18:00:00Z',
     minutes: 90,
-    zoom: 'aHR0cHM6Ly91czA2d2ViLnpvb20udXMvai84NzI4NTQ1MjAyOT9wd2Q9R1FrMlBPaXpUc2Z4MHVuaDNDZjRRa1dvcTdkUUJMLjE='
+    zoom: 'aHR0cHM6Ly91czA2d2ViLnpvb20udXMvai84MjMyMTQ3MTgyND9wd2Q9ME9qc1dvYzFYcVRqR2gwcXduUFh0aFhnU05XOHZ5LjE='
   }
 
 };
